@@ -20,7 +20,7 @@ begin
 
  for I := 1 to 30 do
   if (I in Y)and(I mod 9 = 0) then
-    Include(Y1,i);
+    Include(Y,i);
 
  N:=0;
  for I := 1 to 30 do
