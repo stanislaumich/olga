@@ -1,0 +1,30 @@
+program Project113;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+const
+ A:set of char = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п',
+                   'р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'];
+var
+ sin,sout:string;
+ i,n:integer;
+begin
+ Write('Введите строку: ');
+ ReadLn(sin);
+ for I := 1 to length(sin) do
+  begin
+   if sin[i] in A then
+    begin
+     n:=n+1;
+    end;
+  end;
+ sin:=ansiuppercase(sin);
+ Writeln('Результирующая строка: ',sout);
+ Writeln('Количество замен: ',sout);
+ WriteLn('Нажмите Enter');
+ ReadLn;
+end.
