@@ -1,0 +1,27 @@
+program Project5;
+{$APPTYPE CONSOLE}
+{$R *.res}
+uses
+  System.SysUtils;
+
+var
+ N: integer;
+ i : integer;
+ A:array[1..100] of integer;
+begin
+  Write('Введите кол-во элементов массива: ');
+  ReadLn(N);
+A[1]:=1;
+A[2]:=2;
+  for i := 3 to N do {Вычисляем оставшиеся элементы массива}
+     begin
+      A[i]:=A[i-1]+A[i-2];
+     end;
+  for i:= 1 to N do{По всем элементам массива выводим на экран}
+     begin
+      Write(A[i],'    ');
+     end;
+  Writeln('Нажмите Ввод');
+  Readln;
+end.
+
