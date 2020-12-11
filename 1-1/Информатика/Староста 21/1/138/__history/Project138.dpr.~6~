@@ -20,11 +20,10 @@ begin
  for I := 1 to 30 do{Заполняем Y1 элементами }
   if i in Y then
    begin
-    Include(Y1,i);{Включаем элемент в Y1  }
-    Write(i,'  ');{Выводим элемент }
+    Include(Y1,i);
+    Write(i,'  ');
    End;
- WriteLn;
- WriteLn('Нажмите Enter');
+WriteLn('Нажмите Enter');
  ReadLn;
 end.
 
