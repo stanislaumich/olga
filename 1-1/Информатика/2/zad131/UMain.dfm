@@ -1,0 +1,88 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1055#1086#1080#1089#1082' '#1091#1082#1072#1079#1072#1085#1085#1086#1081' '#1073#1091#1082#1074#1099' '#1074' '#1089#1090#1088#1086#1082#1077
+  ClientHeight = 131
+  ClientWidth = 324
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 15
+    Top = 11
+    Width = 34
+    Height = 13
+    Caption = #1041#1091#1082#1074#1072':'
+  end
+  object Label2: TLabel
+    Left = 9
+    Top = 38
+    Width = 41
+    Height = 13
+    Caption = #1057#1090#1088#1086#1082#1072':'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 62
+    Width = 158
+    Height = 13
+    Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090' '#1087#1086#1082#1072' '#1085#1077' '#1074#1099#1095#1080#1089#1083#1103#1083#1089#1103
+  end
+  object Edit1: TEdit
+    Left = 52
+    Top = 8
+    Width = 121
+    Height = 21
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 52
+    Top = 35
+    Width = 202
+    Height = 21
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 179
+    Top = 4
+    Width = 75
+    Height = 25
+    Caption = #1048#1089#1082#1072#1090#1100
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 256
+    Top = 4
+    Width = 65
+    Height = 25
+    Caption = #1047#1072#1082#1088#1099#1090#1100
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object MainMenu1: TMainMenu
+    Left = 228
+    Top = 76
+    object N1: TMenuItem
+      Caption = #1055#1086#1080#1089#1082
+      object N2: TMenuItem
+        Caption = #1042#1099#1087#1086#1083#1085#1080#1090#1100
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object N4: TMenuItem
+        Caption = #1042#1099#1093#1086#1076
+        OnClick = N4Click
+      end
+    end
+  end
+end

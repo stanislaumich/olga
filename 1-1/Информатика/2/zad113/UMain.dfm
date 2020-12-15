@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   DesignSize = (
     426
     272)
@@ -7472,7 +7473,7 @@ object Form1: TForm1
     Anchors = [akTop, akRight]
     Caption = #1056#1080#1089#1086#1074#1072#1090#1100
     TabOrder = 0
-    ExplicitLeft = 335
+    OnClick = Button1Click
   end
   object RadioButton1: TRadioButton
     Left = 306
@@ -7484,7 +7485,7 @@ object Form1: TForm1
     Checked = True
     TabOrder = 1
     TabStop = True
-    ExplicitLeft = 336
+    OnClick = RadioButton1Click
   end
   object RadioButton2: TRadioButton
     Left = 306
@@ -7494,17 +7495,28 @@ object Form1: TForm1
     Anchors = [akTop, akRight]
     Caption = #1047#1072#1084#1077#1076#1083#1077#1085#1085#1086
     TabOrder = 2
-    ExplicitLeft = 336
-  end
-  object Timer1: TTimer
-    Left = 356
-    Top = 140
+    OnClick = RadioButton2Click
   end
   object MainMenu1: TMainMenu
-    Left = 356
-    Top = 88
+    Left = 340
+    Top = 104
     object N1: TMenuItem
-      Caption = #1056#1080#1089#1086#1074#1072#1090#1100
+      Caption = #1050#1072#1088#1090#1080#1085#1082#1072
+      object N2: TMenuItem
+        Caption = #1056#1080#1089#1086#1074#1072#1090#1100' '#1073#1099#1089#1090#1088#1086
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = #1056#1080#1089#1086#1074#1072#1090#1100' '#1089' '#1079#1072#1084#1077#1076#1083#1077#1085#1080#1077#1084
+        OnClick = N3Click
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object N5: TMenuItem
+        Caption = #1042#1099#1093#1086#1076
+        OnClick = N5Click
+      end
     end
   end
 end

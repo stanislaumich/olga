@@ -1,0 +1,104 @@
+unit UMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Timer1: TTimer;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    Button1: TButton;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Rect:TRect;
+  D:cardinal;
+implementation
+
+{$R *.dfm}
+{
+На канве компонента Image при нажатии кнопки «Рисовать»
+построите изображение кораблика. Использовать рисование
+по точкам. При помощи компонентов RadioButton задавать
+способ вывода изображения – мгновенно, замедленно.
+Для замедления использовать компонент Timer. Выполните
+задание, добавив, если необходимо, защиту от неправильного
+ввода данных. Форма обязательно должна содержать кнопку
+для закрытия приложения, кнопку очистки компонентов и
+главное меню, дублирующее основные действия.
+}
+procedure Delay(Value: Cardinal);
+var
+  F, N: Cardinal;
+begin
+  N := 0;
+  while N <= (Value div 10) do
+  begin
+    SleepEx(1, True);
+    Application.ProcessMessages;
+    Inc(N);
+  end;
+  F := GetTickCount;
+  repeat
+    Application.ProcessMessages;
+    N := GetTickCount;
+  until (N - F >= (Value mod 10)) or (N < F);
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ Image1.Canvas.FillRect(Rect);{Очищаем компонент}
+ with Image1.Canvas do
+  begin
+   MoveTo(50, 250);
+   LineTo(Image1.Width-50, 250);
+   delay(D);
+   LineTo(Image1.Width-5, 210);
+   delay(D);
+   LineTo(5, 210);
+   delay(D);
+   LineTo(50, 250);
+   delay(D);
+   MoveTo(150, 210);
+   LineTo(150, 20);
+   delay(D);
+   LineTo(170, 30);
+   delay(D);
+   LineTo(150, 40);
+   delay(D);
+   MoveTo(150,20);
+   LineTo(30, 190);
+   delay(D);
+   LineTo(Image1.Width-35,190);
+   delay(D);
+   LineTo(150, 40);
+ end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+Rect.Left:=0;
+Rect.Top:=0;
+Rect.Right:=Image1.Width;
+Rect.Bottom:=Image1.Height;
+D:=1000;
+Button1.Click;
+end;
+
+
+
+end.
