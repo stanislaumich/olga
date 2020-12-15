@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
 
 type
   TForm1 = class(TForm)
@@ -16,6 +16,21 @@ type
     Memo1: TMemo;
     Button3: TButton;
     Label3: TLabel;
+    OpenDialog1: TOpenDialog;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    procedure N6Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,5 +43,35 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+ if Edit1.Text<>'' then
+  begin
+  if Opendialog1.Execute  then
+   Memo1.Lines.LoadFromFile(Opendialog1.filename)
+   end
+  else ShowMessage('Сначала необходимо указать количество вершин');
+end;
+
+procedure TForm1.N2Click(Sender: TObject);
+begin
+ Button1.Click;
+end;
+
+procedure TForm1.N3Click(Sender: TObject);
+begin
+ Button2.Click;
+end;
+
+procedure TForm1.N4Click(Sender: TObject);
+begin
+ Button3.Click;
+end;
+
+procedure TForm1.N6Click(Sender: TObject);
+begin
+ Application.Terminate;
+end;
 
 end.

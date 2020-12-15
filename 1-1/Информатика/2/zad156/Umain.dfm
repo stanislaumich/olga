@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1050#1088#1072#1090#1085#1099#1077' '#1088#1077#1073#1088#1072' '#1075#1088#1072#1092#1072
-  ClientHeight = 275
+  ClientHeight = 318
   ClientWidth = 287
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
@@ -34,7 +35,7 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 8
-    Top = 244
+    Top = 292
     Width = 265
     Height = 13
     AutoSize = False
@@ -46,7 +47,6 @@ object Form1: TForm1
     Width = 53
     Height = 21
     TabOrder = 0
-    Text = 'Edit1'
   end
   object Button1: TButton
     Left = 176
@@ -63,14 +63,14 @@ object Form1: TForm1
     Height = 25
     Caption = #1059#1082#1072#1079#1072#1090#1100' '#1092#1072#1081#1083
     TabOrder = 2
+    OnClick = Button2Click
   end
   object Memo1: TMemo
     Left = 4
     Top = 119
     Width = 277
     Height = 89
-    Lines.Strings = (
-      'Memo1')
+    ScrollBars = ssVertical
     TabOrder = 3
   end
   object Button3: TButton
@@ -78,7 +78,55 @@ object Form1: TForm1
     Top = 212
     Width = 271
     Height = 25
-    Caption = 'Button3'
+    Caption = #1055#1086#1076#1089#1095#1080#1090#1072#1090#1100
     TabOrder = 4
+  end
+  object RadioButton1: TRadioButton
+    Left = 8
+    Top = 240
+    Width = 113
+    Height = 17
+    Caption = #1054#1088#1080#1077#1085#1090#1080#1088#1086#1074#1072#1085#1085#1099#1081
+    Checked = True
+    TabOrder = 5
+    TabStop = True
+  end
+  object RadioButton2: TRadioButton
+    Left = 8
+    Top = 264
+    Width = 137
+    Height = 17
+    Caption = #1053#1077' '#1086#1088#1080#1077#1085#1090#1080#1088#1086#1074#1072#1085#1085#1099#1081
+    TabOrder = 6
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 184
+    Top = 64
+  end
+  object MainMenu1: TMainMenu
+    Left = 240
+    Top = 64
+    object N1: TMenuItem
+      Caption = #1043#1088#1072#1092#1099
+      object N2: TMenuItem
+        Caption = #1042#1074#1077#1089#1090#1080' '#1074#1088#1091#1095#1085#1091#1102
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = #1042#1074#1077#1089#1090#1080' '#1080#1079' '#1092#1072#1081#1083#1072
+        OnClick = N3Click
+      end
+      object N4: TMenuItem
+        Caption = #1055#1086#1076#1089#1095#1080#1090#1072#1090#1100
+        OnClick = N4Click
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object N6: TMenuItem
+        Caption = #1042#1099#1093#1086#1076
+        OnClick = N6Click
+      end
+    end
   end
 end
