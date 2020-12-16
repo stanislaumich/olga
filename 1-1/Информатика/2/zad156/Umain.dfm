@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #1050#1088#1072#1090#1085#1099#1077' '#1088#1077#1073#1088#1072' '#1075#1088#1072#1092#1072
-  ClientHeight = 318
+  ClientHeight = 261
   ClientWidth = 287
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -35,7 +35,7 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 8
-    Top = 292
+    Top = 243
     Width = 265
     Height = 13
     AutoSize = False
@@ -80,24 +80,7 @@ object Form1: TForm1
     Height = 25
     Caption = #1055#1086#1076#1089#1095#1080#1090#1072#1090#1100
     TabOrder = 4
-  end
-  object RadioButton1: TRadioButton
-    Left = 8
-    Top = 240
-    Width = 113
-    Height = 17
-    Caption = #1054#1088#1080#1077#1085#1090#1080#1088#1086#1074#1072#1085#1085#1099#1081
-    Checked = True
-    TabOrder = 5
-    TabStop = True
-  end
-  object RadioButton2: TRadioButton
-    Left = 8
-    Top = 264
-    Width = 137
-    Height = 17
-    Caption = #1053#1077' '#1086#1088#1080#1077#1085#1090#1080#1088#1086#1074#1072#1085#1085#1099#1081
-    TabOrder = 6
+    OnClick = Button3Click
   end
   object OpenDialog1: TOpenDialog
     Left = 184

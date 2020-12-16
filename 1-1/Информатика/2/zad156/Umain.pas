@@ -24,13 +24,12 @@ type
     N4: TMenuItem;
     N5: TMenuItem;
     N6: TMenuItem;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
     procedure N6Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,6 +51,53 @@ begin
    Memo1.Lines.LoadFromFile(Opendialog1.filename)
    end
   else ShowMessage('Сначала необходимо указать количество вершин');
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+ i,j:integer;
+ N,cnt,cod:integer;
+ A:array[1..10,1..10] of integer;
+ s:string;
+begin
+{}
+ N:=strtoint(Edit1.text);
+ cnt:=0;
+ {проверяем хватает ли нам элементов для матрицы}
+  if memo1.Lines.Count<N*N then
+   begin
+    ShowMessage(' Указано меньше чем нужно вершин для матрицы');
+    Exit;
+   end
+ else
+  begin
+ {заполняем матрицу смежности}
+ for i:=1 to N do
+  for j := 1 to N do
+      begin
+       A[i,j]:=strtoint(memo1.Lines[cnt]);
+       inc(cnt);
+      end;
+ {считаем кратные ребра по всем вершинам}
+ cnt:=0;
+ Memo1.Lines.Add(' ');
+ for i:=1 to N do
+ begin
+ s:='';
+  for j := 1 to N do
+   begin
+     if i<>j then
+      begin
+       if A[i,j]*A[j,i]<>0 then inc(cnt);
+      end;
+    s:=s+Inttostr(A[i,j])+'  ';
+   end;
+  Memo1.Lines.Add(s);
+ end;
+   {Выводим результат подсчета}
+   cnt:=cnt div 2;
+   Label3.Caption:='Кратных ребер: '+inttostr(cnt);
+    end;
 end;
 
 procedure TForm1.N2Click(Sender: TObject);
