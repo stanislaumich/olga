@@ -1,0 +1,85 @@
+unit UMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit2: TEdit;
+    Button2: TButton;
+    Label4: TLabel;
+    Label5: TLabel;
+    OpenDialog1: TOpenDialog;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+ s:string;
+begin
+ if OpenDialog1.Execute then
+  Memo1.Lines.LoadFromFile(OpenDialog1.FileName);
+  s:=extractfilename(OpenDialog1.FileName);
+  edit1.Text:=copy(s,4,1);
+  edit2.Text:=copy(s,1,1);
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+ a:array[1..10,1..10] of integer;
+ i,j,n,k,c:integer;
+ s:string;
+begin
+ Label5.caption:='Нет ответа';
+ if Memo1.Lines.Count<>strtoint(edit2.Text)*strtoint(edit2.Text) then
+  begin
+    ShowMessage('Указано неверное количество вершин для матрицы');
+  end
+  else
+   begin
+    n:=0;{Инициализируем переменные}
+    c:=0;
+    for I := 1 to strtoint(edit2.Text) do
+       begin{в цикле по каждой строке}
+        k:=0; {Инициализируем переменные}
+        s:='';
+        for j := 1 to strtoint(edit2.Text) do
+         begin {работаем со строкой перебирая столбцы}
+          {вносим элемент в матрицу}
+          a[i,j]:=strtoint(memo1.Lines[c]);
+          {увеличиваем счетчик ребер вершины}
+          if a[i,j]>0 then k:=k+1;
+          {вспомогательная строка для вывода матрицы}
+          s:=s+'  '+memo1.Lines[c];
+          c:=c+1;
+         end;
+         {по условию увеличиваем счетчик вершин с кратными ребрами}
+         if k>strtoint(edit1.Text) then n:=n+1;
+         Memo1.Lines.Add(s);
+       end;
+   end;
+  Label5.Caption:=inttostr(n);
+end;
+
+end.

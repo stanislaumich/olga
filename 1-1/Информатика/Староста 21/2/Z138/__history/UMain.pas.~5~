@@ -1,0 +1,63 @@
+unit UMain;
+{ —оздайте приложение, содержащее: список значений;
+поле дл€ ввода новой строки и
+кнопку дл€ добавлени€ новой строки в список;
+поле со счетчиком дл€ ввода номера удал€емой строки и
+кнопку дл€ удалени€ выбранной строки.
+ѕредусмотреть соответствие вводимого номера и количества строк}
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    ListBox1: TListBox;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label2: TLabel;
+    Button2: TButton;
+    UpDown1: TUpDown;
+    Edit2: TEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ {проверка пустой строки}
+ if EDit1.Text='' then
+  showMessage('Ќельз€ добавл€ть пустую строку')
+ else
+ {добавление строки в конец списка}
+ Listbox1.Items.Add(EDit1.Text);
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+ n:integer;
+begin
+ {преобразуем строку в число}
+ n:=strtoint(edit2.Text);
+ {ѕроверим, есть ли строка с таким пор€дковым номером}
+ if N>Listbox1.count then
+  ShowMessage('«адано удаление несуществующей строки')
+ else
+  {удал€ем строку, нумераци€ в компоненте начинаетс€ с 0}
+  Listbox1.Items.Delete(N-1);
+end;
+
+end.
