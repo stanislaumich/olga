@@ -1,0 +1,53 @@
+unit FAddData;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Bde.DBTables, Vcl.Grids,
+  Vcl.StdCtrls;
+
+type
+  TAddForm = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  AddForm: TAddForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TAddForm.FormCreate(Sender: TObject);
+begin
+SG.Cells[0,0]:=('Номер');
+SG.Cells[1,0]:=('Тип');
+SG.Cells[2,0]:=('Наименование');
+SG.Cells[3,0]:=('Кол-во з/е');
+SG.Cells[4,0]:=('Оценка');
+SG.Cells[5,0]:=('Дата');
+SG.Cells[6,0]:=('Преподаватель');
+SG.Cells[7,0]:=('Семестр');
+end;
+
+end.

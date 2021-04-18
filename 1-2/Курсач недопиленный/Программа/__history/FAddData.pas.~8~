@@ -1,0 +1,80 @@
+unit FAddData;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Bde.DBTables, Vcl.Grids,
+  Vcl.StdCtrls, FDataCreate, DynamicList;
+
+type
+  TAddForm = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Button1: TButton;
+
+Procedure Reading(var x: tData);
+Procedure AddLast(First: pItem; x: tData);
+procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+
+
+var
+  AddForm: TAddForm; x: tData;//First: pItem; DList: TDList; //
+
+implementation
+
+{$R *.dfm}
+
+Procedure TAddForm.AddLast(First: pItem; x: tData);
+var N: pItem; Last: pItem;
+begin
+ New(N);
+ N^.Data:=x;
+ N^.Next:=Nil;
+ Last:=First;
+ While(Last^.Next<>Nil) do
+ Last:= Last^.Next;
+ Last^.Next:=N;
+end;
+
+
+Procedure TAddForm.Reading(var x: tData);
+var Last: pItem;
+begin
+Last:=First;
+while Last^.Next<>Nil do
+Last:=Last^.Next;
+  x.Number := Last^.Data.Number+1;
+  x.SubType := Edit1.Text;
+  x.subject := Edit2.Text;
+  x.Count := Edit3.Text;
+  x.mark := Edit4.Text;
+  x.Date := StrToDate(Edit5.Text);
+  x.surname := Edit6.Text;
+  x.semester := StrToInt(Edit7.Text);
+end;
+
+procedure TAddForm.Button1Click(Sender: TObject);
+begin
+Reading(x);
+AddLast(First,x);
+end;
+end.
