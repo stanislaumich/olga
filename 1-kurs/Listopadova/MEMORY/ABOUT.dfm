@@ -2419,5 +2419,6 @@ object AboutBox: TAboutBox
     Default = True
     ModalResult = 1
     TabOrder = 1
+    OnClick = OKButtonClick
   end
 end

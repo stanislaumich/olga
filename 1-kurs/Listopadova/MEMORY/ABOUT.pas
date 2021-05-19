@@ -14,6 +14,7 @@ type
     Version: TLabel;
     OKButton: TButton;
     Label1: TLabel;
+    procedure OKButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TAboutBox.OKButtonClick(Sender: TObject);
+begin
+  AboutBox.Close;
+end;
 
 end.
  
