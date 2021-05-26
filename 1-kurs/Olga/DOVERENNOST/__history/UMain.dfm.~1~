@@ -27,8 +27,8 @@
       770
       37)
     object BitBtn1: TBitBtn
-      Left = 1
-      Top = -2
+      Left = 4
+      Top = 0
       Width = 33
       Height = 33
       Hint = #1057#1086#1079#1076#1072#1090#1100' '#1076#1086#1074#1077#1088#1077#1085#1085#1086#1089#1090#1100
@@ -163,8 +163,8 @@
       OnClick = BitBtn2Click
     end
     object BitBtn3: TBitBtn
-      Left = 79
-      Top = -2
+      Left = 76
+      Top = 0
       Width = 33
       Height = 33
       Hint = #1056#1072#1089#1087#1077#1095#1072#1090#1072#1090#1100' '#1090#1077#1082#1091#1097#1091#1102' '#1076#1086#1074#1077#1088#1077#1085#1085#1086#1089#1090#1100
@@ -370,7 +370,7 @@
     Top = 37
     Width = 770
     Height = 458
-    ActivePage = TabSheet1
+    ActivePage = Настройки
     Align = alClient
     TabOrder = 1
     object TabSheet1: TTabSheet
@@ -708,10 +708,6 @@
     Top = 216
     object N1: TMenuItem
       Caption = #1043#1083#1072#1074#1085#1072#1103
-      object N2: TMenuItem
-        Caption = #1057#1087#1088#1072#1074#1082#1072
-        OnClick = N2Click
-      end
     end
   end
   object FDConnection1: TFDConnection
@@ -720,6 +716,7 @@
       'Database=worker.SQLITE'
       'LockingMode=Normal')
     ConnectedStoredUsage = []
+    Connected = True
     LoginPrompt = False
     Left = 564
     Top = 156
