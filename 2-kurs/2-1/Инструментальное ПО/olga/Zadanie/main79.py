@@ -17,7 +17,6 @@ print('Номер столбца: ')
 n= int(input())-1  # считываем номер столбца
 c=len(a)
 max=a[0][n]
-print(max)
 for r in range(c):
     if a[r][n]>max:
         max=a[r][n]
