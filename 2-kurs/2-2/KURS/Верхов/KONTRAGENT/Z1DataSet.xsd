@@ -65,7 +65,18 @@
               <Mapping SourceColumn="adr" DataSetColumn="adr" />
               <Mapping SourceColumn="schet" DataSetColumn="schet" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectName="BANK" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        BANK.id, BANK.nazv, BANK.adr, BANK.schet
+FROM            (BANK INNER JOIN
+                         KONTR ON BANK.id = KONTR.id_bank)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DOLGTableAdapter" GeneratorDataComponentClassName="DOLGTableAdapter" Name="DOLG" UserDataComponentName="DOLGTableAdapter">
             <MainSource>
@@ -336,7 +347,7 @@
   <xs:element name="Z1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Z1DataSet" msprop:Generator_UserDSName="Z1DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="BANK" msprop:Generator_TableClassName="BANKDataTable" msprop:Generator_TableVarName="tableBANK" msprop:Generator_TablePropName="BANK" msprop:Generator_RowDeletingName="BANKRowDeleting" msprop:Generator_RowChangingName="BANKRowChanging" msprop:Generator_RowEvHandlerName="BANKRowChangeEventHandler" msprop:Generator_RowDeletedName="BANKRowDeleted" msprop:Generator_UserTableName="BANK" msprop:Generator_RowChangedName="BANKRowChanged" msprop:Generator_RowEvArgName="BANKRowChangeEvent" msprop:Generator_RowClassName="BANKRow">
+        <xs:element name="BANK" msprop:Generator_TableClassName="BANKDataTable" msprop:Generator_TableVarName="tableBANK" msprop:Generator_RowChangedName="BANKRowChanged" msprop:Generator_TablePropName="BANK" msprop:Generator_RowDeletingName="BANKRowDeleting" msprop:Generator_RowChangingName="BANKRowChanging" msprop:Generator_RowEvHandlerName="BANKRowChangeEventHandler" msprop:Generator_RowDeletedName="BANKRowDeleted" msprop:Generator_RowClassName="BANKRow" msprop:Generator_UserTableName="BANK" msprop:Generator_RowEvArgName="BANKRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -364,7 +375,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DOLG" msprop:Generator_TableClassName="DOLGDataTable" msprop:Generator_TableVarName="tableDOLG" msprop:Generator_TablePropName="DOLG" msprop:Generator_RowDeletingName="DOLGRowDeleting" msprop:Generator_RowChangingName="DOLGRowChanging" msprop:Generator_RowEvHandlerName="DOLGRowChangeEventHandler" msprop:Generator_RowDeletedName="DOLGRowDeleted" msprop:Generator_UserTableName="DOLG" msprop:Generator_RowChangedName="DOLGRowChanged" msprop:Generator_RowEvArgName="DOLGRowChangeEvent" msprop:Generator_RowClassName="DOLGRow">
+        <xs:element name="DOLG" msprop:Generator_TableClassName="DOLGDataTable" msprop:Generator_TableVarName="tableDOLG" msprop:Generator_RowChangedName="DOLGRowChanged" msprop:Generator_TablePropName="DOLG" msprop:Generator_RowDeletingName="DOLGRowDeleting" msprop:Generator_RowChangingName="DOLGRowChanging" msprop:Generator_RowEvHandlerName="DOLGRowChangeEventHandler" msprop:Generator_RowDeletedName="DOLGRowDeleted" msprop:Generator_RowClassName="DOLGRow" msprop:Generator_UserTableName="DOLG" msprop:Generator_RowEvArgName="DOLGRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
@@ -385,7 +396,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="KONTR" msprop:Generator_TableClassName="KONTRDataTable" msprop:Generator_TableVarName="tableKONTR" msprop:Generator_TablePropName="KONTR" msprop:Generator_RowDeletingName="KONTRRowDeleting" msprop:Generator_RowChangingName="KONTRRowChanging" msprop:Generator_RowEvHandlerName="KONTRRowChangeEventHandler" msprop:Generator_RowDeletedName="KONTRRowDeleted" msprop:Generator_UserTableName="KONTR" msprop:Generator_RowChangedName="KONTRRowChanged" msprop:Generator_RowEvArgName="KONTRRowChangeEvent" msprop:Generator_RowClassName="KONTRRow">
+        <xs:element name="KONTR" msprop:Generator_TableClassName="KONTRDataTable" msprop:Generator_TableVarName="tableKONTR" msprop:Generator_RowChangedName="KONTRRowChanged" msprop:Generator_TablePropName="KONTR" msprop:Generator_RowDeletingName="KONTRRowDeleting" msprop:Generator_RowChangingName="KONTRRowChanging" msprop:Generator_RowEvHandlerName="KONTRRowChangeEventHandler" msprop:Generator_RowDeletedName="KONTRRowDeleted" msprop:Generator_RowClassName="KONTRRow" msprop:Generator_UserTableName="KONTR" msprop:Generator_RowEvArgName="KONTRRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -408,7 +419,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PEOPLE" msprop:Generator_TableClassName="PEOPLEDataTable" msprop:Generator_TableVarName="tablePEOPLE" msprop:Generator_TablePropName="PEOPLE" msprop:Generator_RowDeletingName="PEOPLERowDeleting" msprop:Generator_RowChangingName="PEOPLERowChanging" msprop:Generator_RowEvHandlerName="PEOPLERowChangeEventHandler" msprop:Generator_RowDeletedName="PEOPLERowDeleted" msprop:Generator_UserTableName="PEOPLE" msprop:Generator_RowChangedName="PEOPLERowChanged" msprop:Generator_RowEvArgName="PEOPLERowChangeEvent" msprop:Generator_RowClassName="PEOPLERow">
+        <xs:element name="PEOPLE" msprop:Generator_TableClassName="PEOPLEDataTable" msprop:Generator_TableVarName="tablePEOPLE" msprop:Generator_RowChangedName="PEOPLERowChanged" msprop:Generator_TablePropName="PEOPLE" msprop:Generator_RowDeletingName="PEOPLERowDeleting" msprop:Generator_RowChangingName="PEOPLERowChanging" msprop:Generator_RowEvHandlerName="PEOPLERowChangeEventHandler" msprop:Generator_RowDeletedName="PEOPLERowDeleted" msprop:Generator_RowClassName="PEOPLERow" msprop:Generator_UserTableName="PEOPLE" msprop:Generator_RowEvArgName="PEOPLERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -445,7 +456,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SKLAD" msprop:Generator_TableClassName="SKLADDataTable" msprop:Generator_TableVarName="tableSKLAD" msprop:Generator_TablePropName="SKLAD" msprop:Generator_RowDeletingName="SKLADRowDeleting" msprop:Generator_RowChangingName="SKLADRowChanging" msprop:Generator_RowEvHandlerName="SKLADRowChangeEventHandler" msprop:Generator_RowDeletedName="SKLADRowDeleted" msprop:Generator_UserTableName="SKLAD" msprop:Generator_RowChangedName="SKLADRowChanged" msprop:Generator_RowEvArgName="SKLADRowChangeEvent" msprop:Generator_RowClassName="SKLADRow">
+        <xs:element name="SKLAD" msprop:Generator_TableClassName="SKLADDataTable" msprop:Generator_TableVarName="tableSKLAD" msprop:Generator_RowChangedName="SKLADRowChanged" msprop:Generator_TablePropName="SKLAD" msprop:Generator_RowDeletingName="SKLADRowDeleting" msprop:Generator_RowChangingName="SKLADRowChanging" msprop:Generator_RowEvHandlerName="SKLADRowChangeEventHandler" msprop:Generator_RowDeletedName="SKLADRowDeleted" msprop:Generator_RowClassName="SKLADRow" msprop:Generator_UserTableName="SKLAD" msprop:Generator_RowEvArgName="SKLADRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -498,10 +509,10 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="BANKKONTR" msdata:parent="BANK" msdata:child="KONTR" msdata:parentkey="id" msdata:childkey="id_bank" msprop:Generator_UserChildTable="KONTR" msprop:Generator_ChildPropName="GetKONTRRows" msprop:Generator_UserRelationName="BANKKONTR" msprop:Generator_ParentPropName="BANKRow" msprop:Generator_RelationVarName="relationBANKKONTR" msprop:Generator_UserParentTable="BANK" />
-      <msdata:Relationship name="SKLADKONTR" msdata:parent="SKLAD" msdata:child="KONTR" msdata:parentkey="id" msdata:childkey="id_sklad" msprop:Generator_UserChildTable="KONTR" msprop:Generator_ChildPropName="GetKONTRRows" msprop:Generator_UserRelationName="SKLADKONTR" msprop:Generator_RelationVarName="relationSKLADKONTR" msprop:Generator_UserParentTable="SKLAD" msprop:Generator_ParentPropName="SKLADRow" />
-      <msdata:Relationship name="DOLGPEOPLE" msdata:parent="DOLG" msdata:child="PEOPLE" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="PEOPLE" msprop:Generator_ChildPropName="GetPEOPLERows" msprop:Generator_UserRelationName="DOLGPEOPLE" msprop:Generator_ParentPropName="DOLGRow" msprop:Generator_RelationVarName="relationDOLGPEOPLE" msprop:Generator_UserParentTable="DOLG" />
-      <msdata:Relationship name="KONTRPEOPLE" msdata:parent="KONTR" msdata:child="PEOPLE" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="PEOPLE" msprop:Generator_ChildPropName="GetPEOPLERows" msprop:Generator_UserRelationName="KONTRPEOPLE" msprop:Generator_ParentPropName="KONTRRow" msprop:Generator_RelationVarName="relationKONTRPEOPLE" msprop:Generator_UserParentTable="KONTR" />
+      <msdata:Relationship name="BK" msdata:parent="KONTR" msdata:child="BANK" msdata:parentkey="id_bank" msdata:childkey="id" msprop:Generator_UserChildTable="BANK" msprop:Generator_ChildPropName="GetBANKRows" msprop:Generator_UserRelationName="BK" msprop:Generator_RelationVarName="relationBK" msprop:Generator_UserParentTable="KONTR" msprop:Generator_ParentPropName="KONTRRow" />
+      <msdata:Relationship name="SK" msdata:parent="KONTR" msdata:child="SKLAD" msdata:parentkey="id_sklad" msdata:childkey="id" msprop:Generator_UserChildTable="SKLAD" msprop:Generator_ChildPropName="GetSKLADRows" msprop:Generator_UserRelationName="SK" msprop:Generator_ParentPropName="KONTRRow" msprop:Generator_RelationVarName="relationSK" msprop:Generator_UserParentTable="KONTR" />
+      <msdata:Relationship name="PK" msdata:parent="KONTR" msdata:child="PEOPLE" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="PEOPLE" msprop:Generator_ChildPropName="GetPEOPLERows" msprop:Generator_UserRelationName="PK" msprop:Generator_ParentPropName="KONTRRow" msprop:Generator_RelationVarName="relationPK" msprop:Generator_UserParentTable="KONTR" />
+      <msdata:Relationship name="DP" msdata:parent="PEOPLE" msdata:child="DOLG" msdata:parentkey="id_dolg" msdata:childkey="id" msprop:Generator_UserChildTable="DOLG" msprop:Generator_ChildPropName="GetDOLGRows" msprop:Generator_UserRelationName="DP" msprop:Generator_RelationVarName="relationDP" msprop:Generator_UserParentTable="PEOPLE" msprop:Generator_ParentPropName="PEOPLERow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

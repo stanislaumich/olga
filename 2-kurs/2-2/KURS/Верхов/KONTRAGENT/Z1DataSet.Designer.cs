@@ -34,13 +34,13 @@ namespace KONTRAGENT {
         
         private SKLADDataTable tableSKLAD;
         
-        private global::System.Data.DataRelation relationBANKKONTR;
+        private global::System.Data.DataRelation relationBK;
         
-        private global::System.Data.DataRelation relationSKLADKONTR;
+        private global::System.Data.DataRelation relationSK;
         
-        private global::System.Data.DataRelation relationDOLGPEOPLE;
+        private global::System.Data.DataRelation relationPK;
         
-        private global::System.Data.DataRelation relationKONTRPEOPLE;
+        private global::System.Data.DataRelation relationDP;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -298,10 +298,10 @@ namespace KONTRAGENT {
                     this.tableSKLAD.InitVars();
                 }
             }
-            this.relationBANKKONTR = this.Relations["BANKKONTR"];
-            this.relationSKLADKONTR = this.Relations["SKLADKONTR"];
-            this.relationDOLGPEOPLE = this.Relations["DOLGPEOPLE"];
-            this.relationKONTRPEOPLE = this.Relations["KONTRPEOPLE"];
+            this.relationBK = this.Relations["BK"];
+            this.relationSK = this.Relations["SK"];
+            this.relationPK = this.Relations["PK"];
+            this.relationDP = this.Relations["DP"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -322,22 +322,22 @@ namespace KONTRAGENT {
             base.Tables.Add(this.tablePEOPLE);
             this.tableSKLAD = new SKLADDataTable();
             base.Tables.Add(this.tableSKLAD);
-            this.relationBANKKONTR = new global::System.Data.DataRelation("BANKKONTR", new global::System.Data.DataColumn[] {
-                        this.tableBANK.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableKONTR.id_bankColumn}, false);
-            this.Relations.Add(this.relationBANKKONTR);
-            this.relationSKLADKONTR = new global::System.Data.DataRelation("SKLADKONTR", new global::System.Data.DataColumn[] {
-                        this.tableSKLAD.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableKONTR.id_skladColumn}, false);
-            this.Relations.Add(this.relationSKLADKONTR);
-            this.relationDOLGPEOPLE = new global::System.Data.DataRelation("DOLGPEOPLE", new global::System.Data.DataColumn[] {
-                        this.tableDOLG.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePEOPLE.id_dolgColumn}, false);
-            this.Relations.Add(this.relationDOLGPEOPLE);
-            this.relationKONTRPEOPLE = new global::System.Data.DataRelation("KONTRPEOPLE", new global::System.Data.DataColumn[] {
+            this.relationBK = new global::System.Data.DataRelation("BK", new global::System.Data.DataColumn[] {
+                        this.tableKONTR.id_bankColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBANK.idColumn}, false);
+            this.Relations.Add(this.relationBK);
+            this.relationSK = new global::System.Data.DataRelation("SK", new global::System.Data.DataColumn[] {
+                        this.tableKONTR.id_skladColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSKLAD.idColumn}, false);
+            this.Relations.Add(this.relationSK);
+            this.relationPK = new global::System.Data.DataRelation("PK", new global::System.Data.DataColumn[] {
                         this.tableKONTR.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablePEOPLE.id_kontrColumn}, false);
-            this.Relations.Add(this.relationKONTRPEOPLE);
+            this.Relations.Add(this.relationPK);
+            this.relationDP = new global::System.Data.DataRelation("DP", new global::System.Data.DataColumn[] {
+                        this.tablePEOPLE.id_dolgColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDOLG.idColumn}, false);
+            this.Relations.Add(this.relationDP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1164,20 +1164,14 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KONTRRow AddKONTRRow(string nazv, string adr, BANKRow parentBANKRowByBANKKONTR, SKLADRow parentSKLADRowBySKLADKONTR) {
+            public KONTRRow AddKONTRRow(string nazv, string adr, int id_bank, int id_sklad) {
                 KONTRRow rowKONTRRow = ((KONTRRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nazv,
                         adr,
-                        null,
-                        null};
-                if ((parentBANKRowByBANKKONTR != null)) {
-                    columnValuesArray[3] = parentBANKRowByBANKKONTR[0];
-                }
-                if ((parentSKLADRowBySKLADKONTR != null)) {
-                    columnValuesArray[4] = parentSKLADRowBySKLADKONTR[0];
-                }
+                        id_bank,
+                        id_sklad};
                 rowKONTRRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKONTRRow);
                 return rowKONTRRow;
@@ -1509,7 +1503,7 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PEOPLERow AddPEOPLERow(string fio, string phone, string adr, string dop, DOLGRow parentDOLGRowByDOLGPEOPLE, KONTRRow parentKONTRRowByKONTRPEOPLE) {
+            public PEOPLERow AddPEOPLERow(string fio, string phone, string adr, string dop, int id_dolg, KONTRRow parentKONTRRowByPK) {
                 PEOPLERow rowPEOPLERow = ((PEOPLERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1517,13 +1511,10 @@ namespace KONTRAGENT {
                         phone,
                         adr,
                         dop,
-                        null,
+                        id_dolg,
                         null};
-                if ((parentDOLGRowByDOLGPEOPLE != null)) {
-                    columnValuesArray[5] = parentDOLGRowByDOLGPEOPLE[2];
-                }
-                if ((parentKONTRRowByKONTRPEOPLE != null)) {
-                    columnValuesArray[6] = parentKONTRRowByKONTRPEOPLE[0];
+                if ((parentKONTRRowByPK != null)) {
+                    columnValuesArray[6] = parentKONTRRowByPK[0];
                 }
                 rowPEOPLERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPEOPLERow);
@@ -2098,6 +2089,17 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KONTRRow KONTRRow {
+                get {
+                    return ((KONTRRow)(this.GetParentRow(this.Table.ParentRelations["BK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["BK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tableBANK.nazvColumn);
             }
@@ -2130,17 +2132,6 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetschetNull() {
                 this[this.tableBANK.schetColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KONTRRow[] GetKONTRRows() {
-                if ((this.Table.ChildRelations["BANKKONTR"] == null)) {
-                    return new KONTRRow[0];
-                }
-                else {
-                    return ((KONTRRow[])(base.GetChildRows(this.Table.ChildRelations["BANKKONTR"])));
-                }
             }
         }
         
@@ -2203,6 +2194,17 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PEOPLERow PEOPLERow {
+                get {
+                    return ((PEOPLERow)(this.GetParentRow(this.Table.ParentRelations["DP"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["DP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tableDOLG.nazvColumn);
             }
@@ -2223,17 +2225,6 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdopNull() {
                 this[this.tableDOLG.dopColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PEOPLERow[] GetPEOPLERows() {
-                if ((this.Table.ChildRelations["DOLGPEOPLE"] == null)) {
-                    return new PEOPLERow[0];
-                }
-                else {
-                    return ((PEOPLERow[])(base.GetChildRows(this.Table.ChildRelations["DOLGPEOPLE"])));
-                }
             }
         }
         
@@ -2328,28 +2319,6 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BANKRow BANKRow {
-                get {
-                    return ((BANKRow)(this.GetParentRow(this.Table.ParentRelations["BANKKONTR"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["BANKKONTR"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SKLADRow SKLADRow {
-                get {
-                    return ((SKLADRow)(this.GetParentRow(this.Table.ParentRelations["SKLADKONTR"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["SKLADKONTR"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tableKONTR.nazvColumn);
             }
@@ -2398,12 +2367,34 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BANKRow[] GetBANKRows() {
+                if ((this.Table.ChildRelations["BK"] == null)) {
+                    return new BANKRow[0];
+                }
+                else {
+                    return ((BANKRow[])(base.GetChildRows(this.Table.ChildRelations["BK"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SKLADRow[] GetSKLADRows() {
+                if ((this.Table.ChildRelations["SK"] == null)) {
+                    return new SKLADRow[0];
+                }
+                else {
+                    return ((SKLADRow[])(base.GetChildRows(this.Table.ChildRelations["SK"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PEOPLERow[] GetPEOPLERows() {
-                if ((this.Table.ChildRelations["KONTRPEOPLE"] == null)) {
+                if ((this.Table.ChildRelations["PK"] == null)) {
                     return new PEOPLERow[0];
                 }
                 else {
-                    return ((PEOPLERow[])(base.GetChildRows(this.Table.ChildRelations["KONTRPEOPLE"])));
+                    return ((PEOPLERow[])(base.GetChildRows(this.Table.ChildRelations["PK"])));
                 }
             }
         }
@@ -2531,23 +2522,12 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DOLGRow DOLGRow {
-                get {
-                    return ((DOLGRow)(this.GetParentRow(this.Table.ParentRelations["DOLGPEOPLE"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["DOLGPEOPLE"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KONTRRow KONTRRow {
                 get {
-                    return ((KONTRRow)(this.GetParentRow(this.Table.ParentRelations["KONTRPEOPLE"])));
+                    return ((KONTRRow)(this.GetParentRow(this.Table.ParentRelations["PK"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["KONTRPEOPLE"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["PK"]);
                 }
             }
             
@@ -2621,6 +2601,17 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_kontrNull() {
                 this[this.tablePEOPLE.id_kontrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DOLGRow[] GetDOLGRows() {
+                if ((this.Table.ChildRelations["DP"] == null)) {
+                    return new DOLGRow[0];
+                }
+                else {
+                    return ((DOLGRow[])(base.GetChildRows(this.Table.ChildRelations["DP"])));
+                }
             }
         }
         
@@ -2699,6 +2690,17 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KONTRRow KONTRRow {
+                get {
+                    return ((KONTRRow)(this.GetParentRow(this.Table.ParentRelations["SK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["SK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tableSKLAD.nazvColumn);
             }
@@ -2731,17 +2733,6 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetphoneNull() {
                 this[this.tableSKLAD.phoneColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KONTRRow[] GetKONTRRows() {
-                if ((this.Table.ChildRelations["SKLADKONTR"] == null)) {
-                    return new KONTRRow[0];
-                }
-                else {
-                    return ((KONTRRow[])(base.GetChildRows(this.Table.ChildRelations["SKLADKONTR"])));
-                }
             }
         }
         
@@ -3093,11 +3084,16 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, nazv, adr, schet FROM BANK";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        BANK.id, BANK.nazv, BANK.adr, BANK.schet\r\nFROM            (BANK INN" +
+                "ER JOIN\r\n                         KONTR ON BANK.id = KONTR.id_bank)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3122,6 +3118,19 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             Z1DataSet.BANKDataTable dataTable = new Z1DataSet.BANKDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Z1DataSet.BANKDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5017,33 +5026,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(Z1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bANKTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._bANKTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sKLADTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sKLADTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._dOLGTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dOLGTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._kONTRTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.KONTR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -5062,6 +5044,33 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._bANKTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._bANKTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._dOLGTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._dOLGTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sKLADTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sKLADTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -5072,30 +5081,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(Z1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bANKTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._bANKTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sKLADTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sKLADTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._dOLGTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dOLGTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._kONTRTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.KONTR.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -5112,6 +5097,30 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._bANKTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._bANKTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._dOLGTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._dOLGTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sKLADTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sKLADTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -5122,6 +5131,30 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(Z1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._sKLADTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sKLADTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._dOLGTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._dOLGTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._bANKTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._bANKTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._pEOPLETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.PEOPLE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -5135,30 +5168,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._kONTRTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._dOLGTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DOLG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dOLGTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sKLADTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SKLAD.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sKLADTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._bANKTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._bANKTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
