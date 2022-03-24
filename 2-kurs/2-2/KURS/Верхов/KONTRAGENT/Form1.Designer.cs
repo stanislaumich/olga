@@ -30,85 +30,75 @@ namespace KONTRAGENT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button2 = new System.Windows.Forms.Button();
-            this.bKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.z1DataSet1 = new KONTRAGENT.Z1DataSet();
-            this.sKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sKLADBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bANKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kONTRTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.KONTRTableAdapter();
-            this.bANKTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.BANKTableAdapter();
-            this.sKLADTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.SKLADTableAdapter();
-            this.pEOPLETableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.PEOPLETableAdapter();
-            this.dOLGTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.DOLGTableAdapter();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddolgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idkontrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkontrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpeopleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kONTRDOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.z1DataSet = new KONTRAGENT.Z1DataSet();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uadrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idbankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idskladDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.padrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.schetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bANKKONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bANKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -122,73 +112,62 @@ namespace KONTRAGENT
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kONTRBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sKLADBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bANKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            this.button12 = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.kONTRTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.KONTRTableAdapter();
+            this.dOGOVORTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.DOGOVORTableAdapter();
+            this.bANKTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.BANKTableAdapter();
+            this.kONTRPEOPLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pEOPLETableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.PEOPLETableAdapter();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddolgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkontrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRDOGOVORBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bANKKONTRBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bANKBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRPEOPLEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -200,181 +179,6 @@ namespace KONTRAGENT
             this.button2.Text = "SAVE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // bKBindingSource
-            // 
-            this.bKBindingSource.DataMember = "BK";
-            this.bKBindingSource.DataSource = this.kONTRBindingSource;
-            // 
-            // kONTRBindingSource
-            // 
-            this.kONTRBindingSource.DataMember = "KONTR";
-            this.kONTRBindingSource.DataSource = this.z1DataSet1;
-            // 
-            // z1DataSet1
-            // 
-            this.z1DataSet1.DataSetName = "Z1DataSet";
-            this.z1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sKBindingSource
-            // 
-            this.sKBindingSource.DataMember = "SK";
-            this.sKBindingSource.DataSource = this.kONTRBindingSource;
-            // 
-            // dPBindingSource
-            // 
-            this.dPBindingSource.DataMember = "DP";
-            this.dPBindingSource.DataSource = this.pKBindingSource;
-            // 
-            // pKBindingSource
-            // 
-            this.pKBindingSource.DataMember = "PK";
-            this.pKBindingSource.DataSource = this.kONTRBindingSource;
-            // 
-            // sKLADBindingSource
-            // 
-            this.sKLADBindingSource.DataMember = "SKLAD";
-            this.sKLADBindingSource.DataSource = this.z1DataSet1;
-            // 
-            // bANKBindingSource
-            // 
-            this.bANKBindingSource.DataMember = "BANK";
-            this.bANKBindingSource.DataSource = this.z1DataSet1;
-            // 
-            // kONTRTableAdapter
-            // 
-            this.kONTRTableAdapter.ClearBeforeFill = true;
-            // 
-            // bANKTableAdapter
-            // 
-            this.bANKTableAdapter.ClearBeforeFill = true;
-            // 
-            // sKLADTableAdapter
-            // 
-            this.sKLADTableAdapter.ClearBeforeFill = true;
-            // 
-            // pEOPLETableAdapter
-            // 
-            this.pEOPLETableAdapter.ClearBeforeFill = true;
-            // 
-            // dOLGTableAdapter
-            // 
-            this.dOLGTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.kONTRBindingSource;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1078, 25);
-            this.bindingNavigator1.TabIndex = 10;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tabControl1
             // 
@@ -399,17 +203,6 @@ namespace KONTRAGENT
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Сводная";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(882, 708);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Банки";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -441,31 +234,11 @@ namespace KONTRAGENT
             // 
             // dataGridView5
             // 
-            this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn4,
-            this.nazvDataGridViewTextBoxColumn3});
-            this.dataGridView5.DataSource = this.dPBindingSource;
             this.dataGridView5.Location = new System.Drawing.Point(476, 345);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(281, 110);
             this.dataGridView5.TabIndex = 19;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.Visible = false;
-            this.idDataGridViewTextBoxColumn4.Width = 300;
-            // 
-            // nazvDataGridViewTextBoxColumn3
-            // 
-            this.nazvDataGridViewTextBoxColumn3.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn3.HeaderText = "nazv";
-            this.nazvDataGridViewTextBoxColumn3.Name = "nazvDataGridViewTextBoxColumn3";
-            this.nazvDataGridViewTextBoxColumn3.Width = 200;
             // 
             // dataGridView4
             // 
@@ -474,61 +247,15 @@ namespace KONTRAGENT
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn3,
             this.fioDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn1,
-            this.adrDataGridViewTextBoxColumn3,
-            this.dopDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.adrDataGridViewTextBoxColumn,
             this.iddolgDataGridViewTextBoxColumn,
-            this.idkontrDataGridViewTextBoxColumn});
-            this.dataGridView4.DataSource = this.pKBindingSource;
+            this.idkontrDataGridViewTextBoxColumn1});
+            this.dataGridView4.DataSource = this.kONTRPEOPLEBindingSource;
             this.dataGridView4.Location = new System.Drawing.Point(6, 345);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(464, 110);
             this.dataGridView4.TabIndex = 18;
-            // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // fioDataGridViewTextBoxColumn
-            // 
-            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
-            this.fioDataGridViewTextBoxColumn.HeaderText = "fio";
-            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn1
-            // 
-            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn1.HeaderText = "phone";
-            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
-            // 
-            // adrDataGridViewTextBoxColumn3
-            // 
-            this.adrDataGridViewTextBoxColumn3.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn3.HeaderText = "adr";
-            this.adrDataGridViewTextBoxColumn3.Name = "adrDataGridViewTextBoxColumn3";
-            // 
-            // dopDataGridViewTextBoxColumn
-            // 
-            this.dopDataGridViewTextBoxColumn.DataPropertyName = "dop";
-            this.dopDataGridViewTextBoxColumn.HeaderText = "dop";
-            this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
-            // 
-            // iddolgDataGridViewTextBoxColumn
-            // 
-            this.iddolgDataGridViewTextBoxColumn.DataPropertyName = "id_dolg";
-            this.iddolgDataGridViewTextBoxColumn.HeaderText = "id_dolg";
-            this.iddolgDataGridViewTextBoxColumn.Name = "iddolgDataGridViewTextBoxColumn";
-            this.iddolgDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idkontrDataGridViewTextBoxColumn
-            // 
-            this.idkontrDataGridViewTextBoxColumn.DataPropertyName = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn.HeaderText = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn.Name = "idkontrDataGridViewTextBoxColumn";
-            this.idkontrDataGridViewTextBoxColumn.Visible = false;
             // 
             // label4
             // 
@@ -571,22 +298,99 @@ namespace KONTRAGENT
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nazvDataGridViewTextBoxColumn,
-            this.adrDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.sKBindingSource;
+            this.idDataGridViewTextBoxColumn1,
+            this.nomerDataGridViewTextBoxColumn,
+            this.datebDataGridViewTextBoxColumn,
+            this.dateeDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.idkontrDataGridViewTextBoxColumn,
+            this.idpeopleDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.kONTRDOGOVORBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(6, 473);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(751, 93);
             this.dataGridView3.TabIndex = 13;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // nomerDataGridViewTextBoxColumn
+            // 
+            this.nomerDataGridViewTextBoxColumn.DataPropertyName = "nomer";
+            this.nomerDataGridViewTextBoxColumn.HeaderText = "nomer";
+            this.nomerDataGridViewTextBoxColumn.Name = "nomerDataGridViewTextBoxColumn";
+            // 
+            // datebDataGridViewTextBoxColumn
+            // 
+            this.datebDataGridViewTextBoxColumn.DataPropertyName = "date_b";
+            this.datebDataGridViewTextBoxColumn.HeaderText = "date_b";
+            this.datebDataGridViewTextBoxColumn.Name = "datebDataGridViewTextBoxColumn";
+            // 
+            // dateeDataGridViewTextBoxColumn
+            // 
+            this.dateeDataGridViewTextBoxColumn.DataPropertyName = "date_e";
+            this.dateeDataGridViewTextBoxColumn.HeaderText = "date_e";
+            this.dateeDataGridViewTextBoxColumn.Name = "dateeDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // idkontrDataGridViewTextBoxColumn
+            // 
+            this.idkontrDataGridViewTextBoxColumn.DataPropertyName = "id_kontr";
+            this.idkontrDataGridViewTextBoxColumn.HeaderText = "id_kontr";
+            this.idkontrDataGridViewTextBoxColumn.Name = "idkontrDataGridViewTextBoxColumn";
+            // 
+            // idpeopleDataGridViewTextBoxColumn
+            // 
+            this.idpeopleDataGridViewTextBoxColumn.DataPropertyName = "id_people";
+            this.idpeopleDataGridViewTextBoxColumn.HeaderText = "id_people";
+            this.idpeopleDataGridViewTextBoxColumn.Name = "idpeopleDataGridViewTextBoxColumn";
+            // 
+            // kONTRDOGOVORBindingSource
+            // 
+            this.kONTRDOGOVORBindingSource.DataMember = "KONTRDOGOVOR";
+            this.kONTRDOGOVORBindingSource.DataSource = this.kONTRBindingSource;
+            // 
+            // kONTRBindingSource
+            // 
+            this.kONTRBindingSource.DataMember = "KONTR";
+            this.kONTRBindingSource.DataSource = this.z1DataSet;
+            // 
+            // z1DataSet
+            // 
+            this.z1DataSet.DataSetName = "Z1DataSet";
+            this.z1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nazvDataGridViewTextBoxColumn,
+            this.uadrDataGridViewTextBoxColumn,
+            this.idbankDataGridViewTextBoxColumn,
+            this.padrDataGridViewTextBoxColumn,
+            this.unnDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.kONTRBindingSource;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 43);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(751, 168);
+            this.dataGridView2.TabIndex = 12;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nazvDataGridViewTextBoxColumn
             // 
@@ -594,90 +398,48 @@ namespace KONTRAGENT
             this.nazvDataGridViewTextBoxColumn.HeaderText = "nazv";
             this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
             // 
-            // adrDataGridViewTextBoxColumn
+            // uadrDataGridViewTextBoxColumn
             // 
-            this.adrDataGridViewTextBoxColumn.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn.HeaderText = "adr";
-            this.adrDataGridViewTextBoxColumn.Name = "adrDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.nazvDataGridViewTextBoxColumn2,
-            this.adrDataGridViewTextBoxColumn2,
-            this.idbankDataGridViewTextBoxColumn,
-            this.idskladDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.kONTRBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 43);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(751, 168);
-            this.dataGridView2.TabIndex = 12;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // nazvDataGridViewTextBoxColumn2
-            // 
-            this.nazvDataGridViewTextBoxColumn2.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn2.HeaderText = "nazv";
-            this.nazvDataGridViewTextBoxColumn2.Name = "nazvDataGridViewTextBoxColumn2";
-            this.nazvDataGridViewTextBoxColumn2.Width = 500;
-            // 
-            // adrDataGridViewTextBoxColumn2
-            // 
-            this.adrDataGridViewTextBoxColumn2.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn2.HeaderText = "adr";
-            this.adrDataGridViewTextBoxColumn2.Name = "adrDataGridViewTextBoxColumn2";
-            this.adrDataGridViewTextBoxColumn2.Width = 500;
+            this.uadrDataGridViewTextBoxColumn.DataPropertyName = "uadr";
+            this.uadrDataGridViewTextBoxColumn.HeaderText = "uadr";
+            this.uadrDataGridViewTextBoxColumn.Name = "uadrDataGridViewTextBoxColumn";
             // 
             // idbankDataGridViewTextBoxColumn
             // 
             this.idbankDataGridViewTextBoxColumn.DataPropertyName = "id_bank";
             this.idbankDataGridViewTextBoxColumn.HeaderText = "id_bank";
             this.idbankDataGridViewTextBoxColumn.Name = "idbankDataGridViewTextBoxColumn";
-            this.idbankDataGridViewTextBoxColumn.Visible = false;
             // 
-            // idskladDataGridViewTextBoxColumn
+            // padrDataGridViewTextBoxColumn
             // 
-            this.idskladDataGridViewTextBoxColumn.DataPropertyName = "id_sklad";
-            this.idskladDataGridViewTextBoxColumn.HeaderText = "id_sklad";
-            this.idskladDataGridViewTextBoxColumn.Name = "idskladDataGridViewTextBoxColumn";
-            this.idskladDataGridViewTextBoxColumn.Visible = false;
+            this.padrDataGridViewTextBoxColumn.DataPropertyName = "padr";
+            this.padrDataGridViewTextBoxColumn.HeaderText = "padr";
+            this.padrDataGridViewTextBoxColumn.Name = "padrDataGridViewTextBoxColumn";
+            // 
+            // unnDataGridViewTextBoxColumn
+            // 
+            this.unnDataGridViewTextBoxColumn.DataPropertyName = "unn";
+            this.unnDataGridViewTextBoxColumn.HeaderText = "unn";
+            this.unnDataGridViewTextBoxColumn.Name = "unnDataGridViewTextBoxColumn";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nazvDataGridViewTextBoxColumn1,
-            this.adrDataGridViewTextBoxColumn1,
-            this.schetDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bKBindingSource;
+            this.idDataGridViewTextBoxColumn2,
+            this.nazvDataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.bANKKONTRBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 230);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(751, 93);
             this.dataGridView1.TabIndex = 11;
             // 
-            // idDataGridViewTextBoxColumn1
+            // idDataGridViewTextBoxColumn2
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.Visible = false;
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             // 
             // nazvDataGridViewTextBoxColumn1
             // 
@@ -685,17 +447,26 @@ namespace KONTRAGENT
             this.nazvDataGridViewTextBoxColumn1.HeaderText = "nazv";
             this.nazvDataGridViewTextBoxColumn1.Name = "nazvDataGridViewTextBoxColumn1";
             // 
-            // adrDataGridViewTextBoxColumn1
+            // bANKKONTRBindingSource
             // 
-            this.adrDataGridViewTextBoxColumn1.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn1.HeaderText = "adr";
-            this.adrDataGridViewTextBoxColumn1.Name = "adrDataGridViewTextBoxColumn1";
+            this.bANKKONTRBindingSource.DataMember = "BANK_KONTR";
+            this.bANKKONTRBindingSource.DataSource = this.bANKBindingSource;
             // 
-            // schetDataGridViewTextBoxColumn
+            // bANKBindingSource
             // 
-            this.schetDataGridViewTextBoxColumn.DataPropertyName = "schet";
-            this.schetDataGridViewTextBoxColumn.HeaderText = "schet";
-            this.schetDataGridViewTextBoxColumn.Name = "schetDataGridViewTextBoxColumn";
+            this.bANKBindingSource.DataMember = "BANK";
+            this.bANKBindingSource.DataSource = this.z1DataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(882, 708);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Банки";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -718,85 +489,14 @@ namespace KONTRAGENT
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Банки";
             // 
-            // label11
+            // button5
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Название";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Счет";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Отделение";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Адрес";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 136);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Дополнительно";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(79, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(667, 20);
-            this.textBox5.TabIndex = 5;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(78, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(402, 20);
-            this.textBox6.TabIndex = 6;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(79, 76);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(667, 20);
-            this.textBox7.TabIndex = 7;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(78, 103);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(668, 20);
-            this.textBox8.TabIndex = 8;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(100, 133);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(646, 20);
-            this.textBox9.TabIndex = 9;
+            this.button5.Location = new System.Drawing.Point(96, 162);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 23);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Очистить поля";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -807,14 +507,85 @@ namespace KONTRAGENT
             this.button4.Text = "Записать";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // textBox9
             // 
-            this.button5.Location = new System.Drawing.Point(96, 162);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Очистить поля";
-            this.button5.UseVisualStyleBackColor = true;
+            this.textBox9.Location = new System.Drawing.Point(100, 133);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(646, 20);
+            this.textBox9.TabIndex = 9;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(78, 103);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(668, 20);
+            this.textBox8.TabIndex = 8;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(79, 76);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(667, 20);
+            this.textBox7.TabIndex = 7;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(78, 45);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(402, 20);
+            this.textBox6.TabIndex = 6;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(79, 19);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(667, 20);
+            this.textBox5.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 136);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Дополнительно";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 110);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Адрес";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 79);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Отделение";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Счет";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Название";
             // 
             // tabPage3
             // 
@@ -828,6 +599,185 @@ namespace KONTRAGENT
             this.tabPage3.Text = "Сотрудники";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button7);
+            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.textBox10);
+            this.groupBox6.Controls.Add(this.label17);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Location = new System.Drawing.Point(9, 10);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(822, 113);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Должности";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(91, 81);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(110, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Очистить поля";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(10, 81);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Записать";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(82, 49);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(562, 20);
+            this.textBox11.TabIndex = 3;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(82, 19);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(562, 20);
+            this.textBox10.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Примечание";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Название";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.textBox12);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Location = new System.Drawing.Point(9, 129);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(826, 189);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Сотрудники";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(91, 151);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(110, 23);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "Очистить поля";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(10, 151);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Записать";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(90, 115);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(372, 21);
+            this.comboBox2.TabIndex = 8;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(91, 89);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(729, 20);
+            this.textBox14.TabIndex = 7;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(91, 67);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(729, 20);
+            this.textBox13.TabIndex = 6;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(91, 22);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(729, 20);
+            this.textBox12.TabIndex = 5;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(9, 118);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(65, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Должность";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 92);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 13);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Адрес";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(9, 70);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Телефон";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(11, 46);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Контрагент";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(11, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(34, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "ФИО";
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox2);
@@ -838,18 +788,6 @@ namespace KONTRAGENT
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Контрагенты";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.groupBox7);
-            this.tabPage4.Controls.Add(this.groupBox5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(882, 708);
-            this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "Договоры";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -971,25 +909,64 @@ namespace KONTRAGENT
             this.label6.TabIndex = 0;
             this.label6.Text = "УНН";
             // 
-            // groupBox4
+            // tabPage4
             // 
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.textBox14);
-            this.groupBox4.Controls.Add(this.textBox13);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Location = new System.Drawing.Point(9, 129);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(826, 189);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Сотрудники";
+            this.tabPage4.Controls.Add(this.groupBox7);
+            this.tabPage4.Controls.Add(this.groupBox5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(882, 708);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Договоры";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBox15);
+            this.groupBox7.Controls.Add(this.label23);
+            this.groupBox7.Controls.Add(this.button11);
+            this.groupBox7.Controls.Add(this.button10);
+            this.groupBox7.Location = new System.Drawing.Point(7, 9);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(469, 82);
+            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Статусы";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(56, 21);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(407, 20);
+            this.textBox15.TabIndex = 3;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(9, 24);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(41, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Статус";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(97, 51);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(124, 23);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Очистить поля";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(6, 51);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(85, 24);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Записать";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -1014,306 +991,14 @@ namespace KONTRAGENT
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Договоры";
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Location = new System.Drawing.Point(9, 10);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(822, 113);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Должности";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Название";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 52);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Примечание";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(82, 19);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(562, 20);
-            this.textBox10.TabIndex = 2;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(82, 49);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(562, 20);
-            this.textBox11.TabIndex = 3;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(10, 81);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Записать";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(91, 81);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Очиистить поля";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(11, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "ФИО";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(11, 46);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 13);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Контрагент";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(9, 70);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(52, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Телефон";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 92);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(38, 13);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "Адрес";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(9, 118);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(65, 13);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "Должность";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(91, 22);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(729, 20);
-            this.textBox12.TabIndex = 5;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(91, 67);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(729, 20);
-            this.textBox13.TabIndex = 6;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(91, 89);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(729, 20);
-            this.textBox14.TabIndex = 7;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(90, 115);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(372, 21);
-            this.comboBox2.TabIndex = 8;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(10, 151);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Записать";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(91, 151);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Очистить поля";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox15);
-            this.groupBox7.Controls.Add(this.label23);
-            this.groupBox7.Controls.Add(this.button11);
-            this.groupBox7.Controls.Add(this.button10);
-            this.groupBox7.Location = new System.Drawing.Point(7, 9);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(469, 82);
-            this.groupBox7.TabIndex = 5;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Статусы";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(6, 51);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(85, 24);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Записать";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(97, 51);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(124, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Очистить поля";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(9, 24);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Статус";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(56, 21);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(407, 20);
-            this.textBox15.TabIndex = 3;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(9, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Номер";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(10, 56);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Контрагент";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(10, 80);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(48, 13);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Куратор";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(10, 110);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(71, 13);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "Дата начала";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(10, 138);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 13);
-            this.label28.TabIndex = 4;
-            this.label28.Text = "Дата конца";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(10, 166);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(41, 13);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "Статус";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(97, 24);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(534, 20);
-            this.textBox16.TabIndex = 6;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(97, 53);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(534, 20);
-            this.textBox17.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(96, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(98, 134);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 9;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(98, 163);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 10;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(96, 79);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(522, 20);
-            this.textBox18.TabIndex = 11;
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(96, 197);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(125, 23);
+            this.button13.TabIndex = 13;
+            this.button13.Text = "Очистить поля";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
@@ -1324,14 +1009,159 @@ namespace KONTRAGENT
             this.button12.Text = "Записать";
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // textBox18
             // 
-            this.button13.Location = new System.Drawing.Point(96, 197);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(125, 23);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "Очистить поля";
-            this.button13.UseVisualStyleBackColor = true;
+            this.textBox18.Location = new System.Drawing.Point(96, 79);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(522, 20);
+            this.textBox18.TabIndex = 11;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(98, 163);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(200, 21);
+            this.comboBox3.TabIndex = 10;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(98, 134);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(96, 104);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(97, 53);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(534, 20);
+            this.textBox17.TabIndex = 7;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(97, 24);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(534, 20);
+            this.textBox16.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(10, 166);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(41, 13);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Статус";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(10, 138);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Дата конца";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(10, 110);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(71, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "Дата начала";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(10, 80);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(48, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Куратор";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(10, 56);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(65, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Контрагент";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(9, 27);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Номер";
+            // 
+            // kONTRTableAdapter
+            // 
+            this.kONTRTableAdapter.ClearBeforeFill = true;
+            // 
+            // dOGOVORTableAdapter
+            // 
+            this.dOGOVORTableAdapter.ClearBeforeFill = true;
+            // 
+            // bANKTableAdapter
+            // 
+            this.bANKTableAdapter.ClearBeforeFill = true;
+            // 
+            // kONTRPEOPLEBindingSource
+            // 
+            this.kONTRPEOPLEBindingSource.DataMember = "KONTRPEOPLE";
+            this.kONTRPEOPLEBindingSource.DataSource = this.kONTRBindingSource;
+            // 
+            // pEOPLETableAdapter
+            // 
+            this.pEOPLETableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            // 
+            // fioDataGridViewTextBoxColumn
+            // 
+            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
+            this.fioDataGridViewTextBoxColumn.HeaderText = "fio";
+            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // adrDataGridViewTextBoxColumn
+            // 
+            this.adrDataGridViewTextBoxColumn.DataPropertyName = "adr";
+            this.adrDataGridViewTextBoxColumn.HeaderText = "adr";
+            this.adrDataGridViewTextBoxColumn.Name = "adrDataGridViewTextBoxColumn";
+            // 
+            // iddolgDataGridViewTextBoxColumn
+            // 
+            this.iddolgDataGridViewTextBoxColumn.DataPropertyName = "id_dolg";
+            this.iddolgDataGridViewTextBoxColumn.HeaderText = "id_dolg";
+            this.iddolgDataGridViewTextBoxColumn.Name = "iddolgDataGridViewTextBoxColumn";
+            // 
+            // idkontrDataGridViewTextBoxColumn1
+            // 
+            this.idkontrDataGridViewTextBoxColumn1.DataPropertyName = "id_kontr";
+            this.idkontrDataGridViewTextBoxColumn1.HeaderText = "id_kontr";
+            this.idkontrDataGridViewTextBoxColumn1.Name = "idkontrDataGridViewTextBoxColumn1";
             // 
             // Form1
             // 
@@ -1340,113 +1170,59 @@ namespace KONTRAGENT
             this.ClientSize = new System.Drawing.Size(1078, 779);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.bindingNavigator1);
             this.Name = "Form1";
             this.Text = "Справочник контрагентов организации Верхов ПО-455";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kONTRBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sKLADBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bANKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRDOGOVORBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bANKKONTRBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bANKBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kONTRPEOPLEBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.BindingSource kONTRBindingSource;
-        private Z1DataSetTableAdapters.KONTRTableAdapter kONTRTableAdapter;
-        private System.Windows.Forms.BindingSource bANKBindingSource;
-        private Z1DataSetTableAdapters.BANKTableAdapter bANKTableAdapter;
-        private System.Windows.Forms.BindingSource sKLADBindingSource;
-        private Z1DataSetTableAdapters.SKLADTableAdapter sKLADTableAdapter;
-        private Z1DataSet z1DataSet1;
-        private System.Windows.Forms.BindingSource bKBindingSource;
-        private System.Windows.Forms.BindingSource sKBindingSource;
-        private System.Windows.Forms.BindingSource pKBindingSource;
-        private Z1DataSetTableAdapters.PEOPLETableAdapter pEOPLETableAdapter;
-        private System.Windows.Forms.BindingSource dPBindingSource;
-        private Z1DataSetTableAdapters.DOLGTableAdapter dOLGTableAdapter;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idbankDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idskladDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn schetDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button5;
@@ -1516,6 +1292,37 @@ namespace KONTRAGENT
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox16;
+        private Z1DataSet z1DataSet;
+        private System.Windows.Forms.BindingSource kONTRBindingSource;
+        private Z1DataSetTableAdapters.KONTRTableAdapter kONTRTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uadrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idbankDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn padrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource kONTRDOGOVORBindingSource;
+        private Z1DataSetTableAdapters.DOGOVORTableAdapter dOGOVORTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datebDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpeopleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bANKBindingSource;
+        private Z1DataSetTableAdapters.BANKTableAdapter bANKTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource bANKKONTRBindingSource;
+        private System.Windows.Forms.BindingSource kONTRPEOPLEBindingSource;
+        private Z1DataSetTableAdapters.PEOPLETableAdapter pEOPLETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn1;
     }
 }
 
