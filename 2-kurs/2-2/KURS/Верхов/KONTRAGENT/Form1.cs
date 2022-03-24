@@ -22,10 +22,13 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
-            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+            //this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
@@ -44,28 +47,37 @@ namespace KONTRAGENT
 
         }
 
+        /*
+         * 
+         * 
+         * 
+          System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+                    conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+                    try
+                    {
+                        conn.Open();
+                        String my_querry = "INSERT INTO DOLG (nazv,dop) VALUES ('123','222')";
+                        System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data saved successfuly...!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed due to" + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
 
-    
+
+
+
+         */
+
         private void button2_Click(object sender, EventArgs e)
         {
-            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-            try
-            {
-                conn.Open();
-                String my_querry = "INSERT INTO DOLG (nazv,dop) VALUES ('123','222')";
-                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data saved successfuly...!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed due to" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+           
         }
 
 
@@ -108,7 +120,7 @@ namespace KONTRAGENT
             try
             {
                 conn.Open();
-                String my_querry = "INSERT INTO BANK (nazv,adr, schet, filial,add) VALUES ('" + textBox5.Text + "','" + textBox8.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox9.Text + "')";
+                String my_querry = "INSERT INTO BANK (nazv,adr, schet, filial,dop) VALUES ('" + textBox5.Text + "','" + textBox8.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox9.Text + "');";
                 System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Данные записаны!");
@@ -121,9 +133,10 @@ namespace KONTRAGENT
             {
                 conn.Close();
             }
-
+            object dt = dataGridView1.DataSource;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dt;
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             textBox5.Text = "";
@@ -132,5 +145,62 @@ namespace KONTRAGENT
             textBox8.Text = "";
             textBox9.Text = "";
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // записать сотрудника
+            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+            try
+            {
+                conn.Open();
+                String my_querry = "INSERT INTO PEOPLE (fio,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
+                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Данные записаны!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось записать данные" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // записать договор
+            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+            try
+            {
+                conn.Open();
+                String my_querry = "INSERT INTO DOGOVOR (nomer,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
+                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Данные записаны!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось записать данные" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+            // bANKKONTRBindingSource.DataSource.up
+            //
+            //
+            dataGridView1.Update();
+            dataGridView1.Refresh();
+
+            }
     }
 }
