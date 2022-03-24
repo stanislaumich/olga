@@ -22,12 +22,15 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
-            this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
-
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
-            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
+            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
+            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
+            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+               // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
             //this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
