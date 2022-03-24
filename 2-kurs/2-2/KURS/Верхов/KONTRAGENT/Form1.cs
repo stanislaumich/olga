@@ -22,6 +22,10 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
+            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
+            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
@@ -64,26 +68,6 @@ namespace KONTRAGENT
             }
         }
 
-        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {// записать должность
@@ -105,13 +89,48 @@ namespace KONTRAGENT
             {
                 conn.Close();
             }
+            /*   внести в комбобокс   */
+            //comboBox2.DataBindings.
 
+            /*      */
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             textBox10.Text = "";
             textBox11.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {// записать банк
+            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+            try
+            {
+                conn.Open();
+                String my_querry = "INSERT INTO BANK (nazv,adr, schet, filial,add) VALUES ('" + textBox5.Text + "','" + textBox8.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox9.Text + "')";
+                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Данные записаны!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось записать данные" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
         }
     }
 }
