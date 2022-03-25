@@ -34,6 +34,10 @@ namespace KONTRAGENT
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddolg1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kONTRPEOPLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.z1DataSet = new KONTRAGENT.Z1DataSet();
@@ -42,9 +46,22 @@ namespace KONTRAGENT
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.nazvDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_b = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_e = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOGOVORKONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uadrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.padrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.schet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bANKKONTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -110,13 +127,13 @@ namespace KONTRAGENT
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button16 = new System.Windows.Forms.Button();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unnDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uadrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idbankDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.padrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unnDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -130,12 +147,20 @@ namespace KONTRAGENT
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazvDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button18 = new System.Windows.Forms.Button();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -150,59 +175,26 @@ namespace KONTRAGENT
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pEOPLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kONTRTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.KONTRTableAdapter();
             this.bANKTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.BANKTableAdapter();
             this.pEOPLETableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.PEOPLETableAdapter();
             this.dOGOVORTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.DOGOVORTableAdapter();
             this.dOLGTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.DOLGTableAdapter();
-            this.button16 = new System.Windows.Forms.Button();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.button17 = new System.Windows.Forms.Button();
-            this.dOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nomerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datebDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpeopleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddolgDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idkontrDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pidkontrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.sTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sTATUSTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.STATUSTableAdapter();
-            this.button18 = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uadrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.padrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.schet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddolg1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_b = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_e = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.z1DataSet1 = new KONTRAGENT.Z1DataSet();
+            this.z1DataSet2 = new KONTRAGENT.Z1DataSet();
+            this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.НАЧАЛО = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.knaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -230,14 +222,16 @@ namespace KONTRAGENT
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pEOPLEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pEOPLEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -303,6 +297,30 @@ namespace KONTRAGENT
             this.dataGridView4.Size = new System.Drawing.Size(1056, 110);
             this.dataGridView4.TabIndex = 18;
             // 
+            // fioDataGridViewTextBoxColumn
+            // 
+            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
+            this.fioDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "ТЕЛЕФОН";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // adrDataGridViewTextBoxColumn1
+            // 
+            this.adrDataGridViewTextBoxColumn1.DataPropertyName = "adr";
+            this.adrDataGridViewTextBoxColumn1.HeaderText = "АДРЕС";
+            this.adrDataGridViewTextBoxColumn1.Name = "adrDataGridViewTextBoxColumn1";
+            // 
+            // iddolg1DataGridViewTextBoxColumn
+            // 
+            this.iddolg1DataGridViewTextBoxColumn.DataPropertyName = "id_dolg1";
+            this.iddolg1DataGridViewTextBoxColumn.HeaderText = "ДОЛЖНОСТЬ";
+            this.iddolg1DataGridViewTextBoxColumn.Name = "iddolg1DataGridViewTextBoxColumn";
+            // 
             // kONTRPEOPLEBindingSource
             // 
             this.kONTRPEOPLEBindingSource.DataMember = "KONTRPEOPLE";
@@ -367,13 +385,36 @@ namespace KONTRAGENT
             this.nazvDataGridViewTextBoxColumn2,
             this.fio,
             this.date_b,
-            this.date_e,
-            this.statusDataGridViewTextBoxColumn});
+            this.date_e});
             this.dataGridView3.DataSource = this.dOGOVORKONTRBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(0, 463);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(1056, 278);
             this.dataGridView3.TabIndex = 13;
+            // 
+            // nazvDataGridViewTextBoxColumn2
+            // 
+            this.nazvDataGridViewTextBoxColumn2.DataPropertyName = "nomer";
+            this.nazvDataGridViewTextBoxColumn2.HeaderText = "НАЗВАНИЕ";
+            this.nazvDataGridViewTextBoxColumn2.Name = "nazvDataGridViewTextBoxColumn2";
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "fio";
+            this.fio.HeaderText = "КУРАТОР";
+            this.fio.Name = "fio";
+            // 
+            // date_b
+            // 
+            this.date_b.DataPropertyName = "date_b";
+            this.date_b.HeaderText = "НАЧАЛО";
+            this.date_b.Name = "date_b";
+            // 
+            // date_e
+            // 
+            this.date_e.DataPropertyName = "date_e";
+            this.date_e.HeaderText = "КОНЕЦ";
+            this.date_e.Name = "date_e";
             // 
             // dOGOVORKONTRBindingSource
             // 
@@ -400,6 +441,34 @@ namespace KONTRAGENT
             this.dataGridView2.Size = new System.Drawing.Size(1056, 168);
             this.dataGridView2.TabIndex = 12;
             // 
+            // nazvDataGridViewTextBoxColumn
+            // 
+            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn.HeaderText = "НАЗВАНИЕ";
+            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
+            this.nazvDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // uadrDataGridViewTextBoxColumn
+            // 
+            this.uadrDataGridViewTextBoxColumn.DataPropertyName = "uadr";
+            this.uadrDataGridViewTextBoxColumn.HeaderText = "ЮР. АДРЕС";
+            this.uadrDataGridViewTextBoxColumn.Name = "uadrDataGridViewTextBoxColumn";
+            this.uadrDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // padrDataGridViewTextBoxColumn
+            // 
+            this.padrDataGridViewTextBoxColumn.DataPropertyName = "padr";
+            this.padrDataGridViewTextBoxColumn.HeaderText = "ПОЧТ. АДРЕС";
+            this.padrDataGridViewTextBoxColumn.Name = "padrDataGridViewTextBoxColumn";
+            this.padrDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // unnDataGridViewTextBoxColumn
+            // 
+            this.unnDataGridViewTextBoxColumn.DataPropertyName = "unn";
+            this.unnDataGridViewTextBoxColumn.HeaderText = "УНП";
+            this.unnDataGridViewTextBoxColumn.Name = "unnDataGridViewTextBoxColumn";
+            this.unnDataGridViewTextBoxColumn.Width = 200;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -419,6 +488,36 @@ namespace KONTRAGENT
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1056, 93);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // schet
+            // 
+            this.schet.DataPropertyName = "schet";
+            this.schet.HeaderText = "СЧЕТ";
+            this.schet.Name = "schet";
+            // 
+            // filial
+            // 
+            this.filial.DataPropertyName = "filial";
+            this.filial.HeaderText = "ФИЛИАЛ";
+            this.filial.Name = "filial";
+            // 
+            // adr
+            // 
+            this.adr.DataPropertyName = "adr";
+            this.adr.HeaderText = "АДРЕС";
+            this.adr.Name = "adr";
+            // 
+            // nazvDataGridViewTextBoxColumn1
+            // 
+            this.nazvDataGridViewTextBoxColumn1.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn1.HeaderText = "НАЗВАНИЕ";
+            this.nazvDataGridViewTextBoxColumn1.Name = "nazvDataGridViewTextBoxColumn1";
+            // 
+            // dopDataGridViewTextBoxColumn
+            // 
+            this.dopDataGridViewTextBoxColumn.DataPropertyName = "dop";
+            this.dopDataGridViewTextBoxColumn.HeaderText = "ПРИМЕЧАНИЕ";
+            this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
             // 
             // bANKKONTRBindingSource
             // 
@@ -828,6 +927,7 @@ namespace KONTRAGENT
             this.button15.TabIndex = 13;
             this.button15.Text = "Удалить запись";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // dataGridView7
             // 
@@ -1037,6 +1137,16 @@ namespace KONTRAGENT
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Контрагенты";
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(214, 154);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(112, 23);
+            this.button16.TabIndex = 13;
+            this.button16.Text = "Удалить строку";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // dataGridView8
             // 
             this.dataGridView8.AllowUserToAddRows = false;
@@ -1047,53 +1157,47 @@ namespace KONTRAGENT
             this.dataGridView8.AutoGenerateColumns = false;
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn5,
+            this.unnDataGridViewTextBoxColumn1,
             this.nazvDataGridViewTextBoxColumn5,
             this.uadrDataGridViewTextBoxColumn1,
-            this.idbankDataGridViewTextBoxColumn1,
             this.padrDataGridViewTextBoxColumn1,
-            this.unnDataGridViewTextBoxColumn1});
+            this.idDataGridViewTextBoxColumn5});
             this.dataGridView8.DataSource = this.kONTRBindingSource;
             this.dataGridView8.Location = new System.Drawing.Point(2, 183);
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.Size = new System.Drawing.Size(751, 555);
             this.dataGridView8.TabIndex = 12;
             // 
-            // idDataGridViewTextBoxColumn5
+            // unnDataGridViewTextBoxColumn1
             // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.unnDataGridViewTextBoxColumn1.DataPropertyName = "unn";
+            this.unnDataGridViewTextBoxColumn1.HeaderText = "УНП";
+            this.unnDataGridViewTextBoxColumn1.Name = "unnDataGridViewTextBoxColumn1";
             // 
             // nazvDataGridViewTextBoxColumn5
             // 
             this.nazvDataGridViewTextBoxColumn5.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn5.HeaderText = "nazv";
+            this.nazvDataGridViewTextBoxColumn5.HeaderText = "НАЗВАНИЕ";
             this.nazvDataGridViewTextBoxColumn5.Name = "nazvDataGridViewTextBoxColumn5";
             // 
             // uadrDataGridViewTextBoxColumn1
             // 
             this.uadrDataGridViewTextBoxColumn1.DataPropertyName = "uadr";
-            this.uadrDataGridViewTextBoxColumn1.HeaderText = "uadr";
+            this.uadrDataGridViewTextBoxColumn1.HeaderText = "ЮР АДРЕС";
             this.uadrDataGridViewTextBoxColumn1.Name = "uadrDataGridViewTextBoxColumn1";
-            // 
-            // idbankDataGridViewTextBoxColumn1
-            // 
-            this.idbankDataGridViewTextBoxColumn1.DataPropertyName = "id_bank";
-            this.idbankDataGridViewTextBoxColumn1.HeaderText = "id_bank";
-            this.idbankDataGridViewTextBoxColumn1.Name = "idbankDataGridViewTextBoxColumn1";
             // 
             // padrDataGridViewTextBoxColumn1
             // 
             this.padrDataGridViewTextBoxColumn1.DataPropertyName = "padr";
-            this.padrDataGridViewTextBoxColumn1.HeaderText = "padr";
+            this.padrDataGridViewTextBoxColumn1.HeaderText = "ПОЧТ АДРЕС";
             this.padrDataGridViewTextBoxColumn1.Name = "padrDataGridViewTextBoxColumn1";
+            this.padrDataGridViewTextBoxColumn1.Width = 150;
             // 
-            // unnDataGridViewTextBoxColumn1
+            // idDataGridViewTextBoxColumn5
             // 
-            this.unnDataGridViewTextBoxColumn1.DataPropertyName = "unn";
-            this.unnDataGridViewTextBoxColumn1.HeaderText = "unn";
-            this.unnDataGridViewTextBoxColumn1.Name = "unnDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
             // 
             // button3
             // 
@@ -1103,6 +1207,7 @@ namespace KONTRAGENT
             this.button3.TabIndex = 11;
             this.button3.Text = "Очистить поля";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -1112,10 +1217,12 @@ namespace KONTRAGENT
             this.button1.TabIndex = 10;
             this.button1.Text = "Записать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // comboBox1
             // 
-            this.comboBox1.DisplayMember = "id";
+            this.comboBox1.DataSource = this.bANKBindingSource;
+            this.comboBox1.DisplayMember = "nazv";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(44, 116);
             this.comboBox1.Name = "comboBox1";
@@ -1209,6 +1316,39 @@ namespace KONTRAGENT
             this.tabPage4.Text = "Договоры";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dataGridView10
+            // 
+            this.dataGridView10.AllowUserToAddRows = false;
+            this.dataGridView10.AllowUserToDeleteRows = false;
+            this.dataGridView10.AutoGenerateColumns = false;
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn7,
+            this.nazvDataGridViewTextBoxColumn7});
+            this.dataGridView10.DataSource = this.sTATUSBindingSource;
+            this.dataGridView10.Location = new System.Drawing.Point(482, 15);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.Size = new System.Drawing.Size(438, 75);
+            this.dataGridView10.TabIndex = 6;
+            // 
+            // idDataGridViewTextBoxColumn7
+            // 
+            this.idDataGridViewTextBoxColumn7.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn7.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
+            // 
+            // nazvDataGridViewTextBoxColumn7
+            // 
+            this.nazvDataGridViewTextBoxColumn7.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn7.HeaderText = "СТАТУС";
+            this.nazvDataGridViewTextBoxColumn7.Name = "nazvDataGridViewTextBoxColumn7";
+            this.nazvDataGridViewTextBoxColumn7.Width = 250;
+            // 
+            // sTATUSBindingSource
+            // 
+            this.sTATUSBindingSource.DataMember = "STATUS";
+            this.sTATUSBindingSource.DataSource = this.z1DataSet;
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.button18);
@@ -1222,6 +1362,16 @@ namespace KONTRAGENT
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Статусы";
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(227, 52);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(123, 23);
+            this.button18.TabIndex = 4;
+            this.button18.Text = "Удалить строку";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // textBox15
             // 
@@ -1247,6 +1397,7 @@ namespace KONTRAGENT
             this.button11.TabIndex = 1;
             this.button11.Text = "Очистить поля";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -1256,6 +1407,7 @@ namespace KONTRAGENT
             this.button10.TabIndex = 0;
             this.button10.Text = "Записать";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // groupBox5
             // 
@@ -1284,6 +1436,44 @@ namespace KONTRAGENT
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Договоры";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(227, 197);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(123, 23);
+            this.button17.TabIndex = 17;
+            this.button17.Text = "Удалить строку";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.AllowUserToAddRows = false;
+            this.dataGridView9.AllowUserToDeleteRows = false;
+            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView9.AutoGenerateColumns = false;
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomer,
+            this.snaz,
+            this.НАЧАЛО,
+            this.dataGridViewTextBoxColumn1,
+            this.fioDataGridViewTextBoxColumn3,
+            this.knaz,
+            this.idDataGridViewTextBoxColumn6});
+            this.dataGridView9.DataSource = this.dOGOVORBindingSource;
+            this.dataGridView9.Location = new System.Drawing.Point(6, 226);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.Size = new System.Drawing.Size(1048, 424);
+            this.dataGridView9.TabIndex = 16;
+            this.dataGridView9.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellContentClick);
+            // 
+            // dOGOVORBindingSource
+            // 
+            this.dOGOVORBindingSource.DataMember = "DOGOVOR";
+            this.dOGOVORBindingSource.DataSource = this.z1DataSet;
             // 
             // comboBox5
             // 
@@ -1409,6 +1599,46 @@ namespace KONTRAGENT
             this.label24.TabIndex = 0;
             this.label24.Text = "Номер";
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.groupBox10);
+            this.tabPage6.Controls.Add(this.groupBox9);
+            this.tabPage6.Controls.Add(this.groupBox8);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1070, 753);
+            this.tabPage6.TabIndex = 6;
+            this.tabPage6.Text = "Поиск";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Location = new System.Drawing.Point(6, 319);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(721, 196);
+            this.groupBox10.TabIndex = 2;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Поиск сотрудника";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Location = new System.Drawing.Point(6, 159);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(721, 154);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Поиск договора";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Location = new System.Drawing.Point(6, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(721, 147);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Поиск контрагента";
+            // 
             // pEOPLEBindingSource
             // 
             this.pEOPLEBindingSource.DataMember = "PEOPLE";
@@ -1434,347 +1664,61 @@ namespace KONTRAGENT
             // 
             this.dOLGTableAdapter.ClearBeforeFill = true;
             // 
-            // button16
+            // sTATUSTableAdapter
             // 
-            this.button16.Location = new System.Drawing.Point(214, 154);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(112, 23);
-            this.button16.TabIndex = 13;
-            this.button16.Text = "Удалить строку";
-            this.button16.UseVisualStyleBackColor = true;
+            this.sTATUSTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView9
+            // z1DataSet1
             // 
-            this.dataGridView9.AllowUserToAddRows = false;
-            this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView9.AutoGenerateColumns = false;
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomerDataGridViewTextBoxColumn1,
-            this.datebDataGridViewTextBoxColumn1,
-            this.dateeDataGridViewTextBoxColumn1,
-            this.statusDataGridViewTextBoxColumn1,
-            this.idpeopleDataGridViewTextBoxColumn1,
-            this.fioDataGridViewTextBoxColumn3,
-            this.nazvDataGridViewTextBoxColumn6,
-            this.phoneDataGridViewTextBoxColumn3,
-            this.adrDataGridViewTextBoxColumn5,
-            this.iddolgDataGridViewTextBoxColumn2,
-            this.idDataGridViewTextBoxColumn6,
-            this.idkontrDataGridViewTextBoxColumn3,
-            this.pidDataGridViewTextBoxColumn1,
-            this.pidkontrDataGridViewTextBoxColumn1,
-            this.sidDataGridViewTextBoxColumn1});
-            this.dataGridView9.DataSource = this.dOGOVORBindingSource;
-            this.dataGridView9.Location = new System.Drawing.Point(6, 226);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.Size = new System.Drawing.Size(1048, 424);
-            this.dataGridView9.TabIndex = 16;
+            this.z1DataSet1.DataSetName = "Z1DataSet";
+            this.z1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button17
+            // z1DataSet2
             // 
-            this.button17.Location = new System.Drawing.Point(227, 197);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(123, 23);
-            this.button17.TabIndex = 17;
-            this.button17.Text = "Удалить строку";
-            this.button17.UseVisualStyleBackColor = true;
+            this.z1DataSet2.DataSetName = "Z1DataSet";
+            this.z1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dOGOVORBindingSource
+            // nomer
             // 
-            this.dOGOVORBindingSource.DataMember = "DOGOVOR";
-            this.dOGOVORBindingSource.DataSource = this.z1DataSet;
+            this.nomer.DataPropertyName = "nomer";
+            this.nomer.HeaderText = "НАЗВАНИЕ";
+            this.nomer.Name = "nomer";
             // 
-            // nomerDataGridViewTextBoxColumn1
+            // snaz
             // 
-            this.nomerDataGridViewTextBoxColumn1.DataPropertyName = "nomer";
-            this.nomerDataGridViewTextBoxColumn1.HeaderText = "nomer";
-            this.nomerDataGridViewTextBoxColumn1.Name = "nomerDataGridViewTextBoxColumn1";
+            this.snaz.DataPropertyName = "snaz";
+            this.snaz.HeaderText = "СТАТУС";
+            this.snaz.Name = "snaz";
             // 
-            // datebDataGridViewTextBoxColumn1
+            // НАЧАЛО
             // 
-            this.datebDataGridViewTextBoxColumn1.DataPropertyName = "date_b";
-            this.datebDataGridViewTextBoxColumn1.HeaderText = "date_b";
-            this.datebDataGridViewTextBoxColumn1.Name = "datebDataGridViewTextBoxColumn1";
+            this.НАЧАЛО.DataPropertyName = "date_b";
+            this.НАЧАЛО.HeaderText = "НАЧАЛО";
+            this.НАЧАЛО.Name = "НАЧАЛО";
             // 
-            // dateeDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn1
             // 
-            this.dateeDataGridViewTextBoxColumn1.DataPropertyName = "date_e";
-            this.dateeDataGridViewTextBoxColumn1.HeaderText = "date_e";
-            this.dateeDataGridViewTextBoxColumn1.Name = "dateeDataGridViewTextBoxColumn1";
-            // 
-            // statusDataGridViewTextBoxColumn1
-            // 
-            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn1.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
-            // 
-            // idpeopleDataGridViewTextBoxColumn1
-            // 
-            this.idpeopleDataGridViewTextBoxColumn1.DataPropertyName = "id_people";
-            this.idpeopleDataGridViewTextBoxColumn1.HeaderText = "id_people";
-            this.idpeopleDataGridViewTextBoxColumn1.Name = "idpeopleDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "date_e";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КОНЕЦ";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // fioDataGridViewTextBoxColumn3
             // 
             this.fioDataGridViewTextBoxColumn3.DataPropertyName = "fio";
-            this.fioDataGridViewTextBoxColumn3.HeaderText = "fio";
+            this.fioDataGridViewTextBoxColumn3.HeaderText = "КУРАТОР";
             this.fioDataGridViewTextBoxColumn3.Name = "fioDataGridViewTextBoxColumn3";
             // 
-            // nazvDataGridViewTextBoxColumn6
+            // knaz
             // 
-            this.nazvDataGridViewTextBoxColumn6.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn6.HeaderText = "nazv";
-            this.nazvDataGridViewTextBoxColumn6.Name = "nazvDataGridViewTextBoxColumn6";
-            // 
-            // phoneDataGridViewTextBoxColumn3
-            // 
-            this.phoneDataGridViewTextBoxColumn3.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn3.HeaderText = "phone";
-            this.phoneDataGridViewTextBoxColumn3.Name = "phoneDataGridViewTextBoxColumn3";
-            // 
-            // adrDataGridViewTextBoxColumn5
-            // 
-            this.adrDataGridViewTextBoxColumn5.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn5.HeaderText = "adr";
-            this.adrDataGridViewTextBoxColumn5.Name = "adrDataGridViewTextBoxColumn5";
-            // 
-            // iddolgDataGridViewTextBoxColumn2
-            // 
-            this.iddolgDataGridViewTextBoxColumn2.DataPropertyName = "id_dolg";
-            this.iddolgDataGridViewTextBoxColumn2.HeaderText = "id_dolg";
-            this.iddolgDataGridViewTextBoxColumn2.Name = "iddolgDataGridViewTextBoxColumn2";
+            this.knaz.DataPropertyName = "knaz";
+            this.knaz.HeaderText = "КОНТРАГЕНТ";
+            this.knaz.Name = "knaz";
             // 
             // idDataGridViewTextBoxColumn6
             // 
             this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn6.HeaderText = "id";
             this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
-            // 
-            // idkontrDataGridViewTextBoxColumn3
-            // 
-            this.idkontrDataGridViewTextBoxColumn3.DataPropertyName = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn3.HeaderText = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn3.Name = "idkontrDataGridViewTextBoxColumn3";
-            // 
-            // pidDataGridViewTextBoxColumn1
-            // 
-            this.pidDataGridViewTextBoxColumn1.DataPropertyName = "pid";
-            this.pidDataGridViewTextBoxColumn1.HeaderText = "pid";
-            this.pidDataGridViewTextBoxColumn1.Name = "pidDataGridViewTextBoxColumn1";
-            // 
-            // pidkontrDataGridViewTextBoxColumn1
-            // 
-            this.pidkontrDataGridViewTextBoxColumn1.DataPropertyName = "pidkontr";
-            this.pidkontrDataGridViewTextBoxColumn1.HeaderText = "pidkontr";
-            this.pidkontrDataGridViewTextBoxColumn1.Name = "pidkontrDataGridViewTextBoxColumn1";
-            // 
-            // sidDataGridViewTextBoxColumn1
-            // 
-            this.sidDataGridViewTextBoxColumn1.DataPropertyName = "sid";
-            this.sidDataGridViewTextBoxColumn1.HeaderText = "sid";
-            this.sidDataGridViewTextBoxColumn1.Name = "sidDataGridViewTextBoxColumn1";
-            // 
-            // dataGridView10
-            // 
-            this.dataGridView10.AllowUserToAddRows = false;
-            this.dataGridView10.AllowUserToDeleteRows = false;
-            this.dataGridView10.AutoGenerateColumns = false;
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn7,
-            this.nazvDataGridViewTextBoxColumn7});
-            this.dataGridView10.DataSource = this.sTATUSBindingSource;
-            this.dataGridView10.Location = new System.Drawing.Point(482, 15);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(438, 75);
-            this.dataGridView10.TabIndex = 6;
-            // 
-            // sTATUSBindingSource
-            // 
-            this.sTATUSBindingSource.DataMember = "STATUS";
-            this.sTATUSBindingSource.DataSource = this.z1DataSet;
-            // 
-            // sTATUSTableAdapter
-            // 
-            this.sTATUSTableAdapter.ClearBeforeFill = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(227, 52);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(123, 23);
-            this.button18.TabIndex = 4;
-            this.button18.Text = "Удалить строку";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // idDataGridViewTextBoxColumn7
-            // 
-            this.idDataGridViewTextBoxColumn7.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn7.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
-            // 
-            // nazvDataGridViewTextBoxColumn7
-            // 
-            this.nazvDataGridViewTextBoxColumn7.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn7.HeaderText = "СТАТУС";
-            this.nazvDataGridViewTextBoxColumn7.Name = "nazvDataGridViewTextBoxColumn7";
-            this.nazvDataGridViewTextBoxColumn7.Width = 250;
-            // 
-            // nazvDataGridViewTextBoxColumn
-            // 
-            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn.HeaderText = "НАЗВАНИЕ";
-            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
-            this.nazvDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // uadrDataGridViewTextBoxColumn
-            // 
-            this.uadrDataGridViewTextBoxColumn.DataPropertyName = "uadr";
-            this.uadrDataGridViewTextBoxColumn.HeaderText = "ЮР. АДРЕС";
-            this.uadrDataGridViewTextBoxColumn.Name = "uadrDataGridViewTextBoxColumn";
-            this.uadrDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // padrDataGridViewTextBoxColumn
-            // 
-            this.padrDataGridViewTextBoxColumn.DataPropertyName = "padr";
-            this.padrDataGridViewTextBoxColumn.HeaderText = "ПОЧТ. АДРЕС";
-            this.padrDataGridViewTextBoxColumn.Name = "padrDataGridViewTextBoxColumn";
-            this.padrDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // unnDataGridViewTextBoxColumn
-            // 
-            this.unnDataGridViewTextBoxColumn.DataPropertyName = "unn";
-            this.unnDataGridViewTextBoxColumn.HeaderText = "УНП";
-            this.unnDataGridViewTextBoxColumn.Name = "unnDataGridViewTextBoxColumn";
-            this.unnDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // schet
-            // 
-            this.schet.DataPropertyName = "schet";
-            this.schet.HeaderText = "СЧЕТ";
-            this.schet.Name = "schet";
-            // 
-            // filial
-            // 
-            this.filial.DataPropertyName = "filial";
-            this.filial.HeaderText = "ФИЛИАЛ";
-            this.filial.Name = "filial";
-            // 
-            // adr
-            // 
-            this.adr.DataPropertyName = "adr";
-            this.adr.HeaderText = "АДРЕС";
-            this.adr.Name = "adr";
-            // 
-            // nazvDataGridViewTextBoxColumn1
-            // 
-            this.nazvDataGridViewTextBoxColumn1.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn1.HeaderText = "НАЗВАНИЕ";
-            this.nazvDataGridViewTextBoxColumn1.Name = "nazvDataGridViewTextBoxColumn1";
-            // 
-            // dopDataGridViewTextBoxColumn
-            // 
-            this.dopDataGridViewTextBoxColumn.DataPropertyName = "dop";
-            this.dopDataGridViewTextBoxColumn.HeaderText = "ПРИМЕЧАНИЕ";
-            this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
-            // 
-            // fioDataGridViewTextBoxColumn
-            // 
-            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
-            this.fioDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "ТЕЛЕФОН";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // adrDataGridViewTextBoxColumn1
-            // 
-            this.adrDataGridViewTextBoxColumn1.DataPropertyName = "adr";
-            this.adrDataGridViewTextBoxColumn1.HeaderText = "АДРЕС";
-            this.adrDataGridViewTextBoxColumn1.Name = "adrDataGridViewTextBoxColumn1";
-            // 
-            // iddolg1DataGridViewTextBoxColumn
-            // 
-            this.iddolg1DataGridViewTextBoxColumn.DataPropertyName = "id_dolg1";
-            this.iddolg1DataGridViewTextBoxColumn.HeaderText = "ДОЛЖНОСТЬ";
-            this.iddolg1DataGridViewTextBoxColumn.Name = "iddolg1DataGridViewTextBoxColumn";
-            // 
-            // nazvDataGridViewTextBoxColumn2
-            // 
-            this.nazvDataGridViewTextBoxColumn2.DataPropertyName = "nomer";
-            this.nazvDataGridViewTextBoxColumn2.HeaderText = "НАЗВАНИЕ";
-            this.nazvDataGridViewTextBoxColumn2.Name = "nazvDataGridViewTextBoxColumn2";
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "fio";
-            this.fio.HeaderText = "КУРАТОР";
-            this.fio.Name = "fio";
-            // 
-            // date_b
-            // 
-            this.date_b.DataPropertyName = "date_b";
-            this.date_b.HeaderText = "НАЧАЛО";
-            this.date_b.Name = "date_b";
-            // 
-            // date_e
-            // 
-            this.date_e.DataPropertyName = "date_e";
-            this.date_e.HeaderText = "КОНЕЦ";
-            this.date_e.Name = "date_e";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "nazv";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "СТАТУС";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.groupBox10);
-            this.tabPage6.Controls.Add(this.groupBox9);
-            this.tabPage6.Controls.Add(this.groupBox8);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1070, 753);
-            this.tabPage6.TabIndex = 6;
-            this.tabPage6.Text = "Поиск";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Location = new System.Drawing.Point(6, 6);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(721, 147);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Поиск контрагента";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Location = new System.Drawing.Point(6, 159);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(721, 154);
-            this.groupBox9.TabIndex = 1;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Поиск договора";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Location = new System.Drawing.Point(6, 319);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(721, 196);
-            this.groupBox10.TabIndex = 2;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Поиск сотрудника";
             // 
             // Form1
             // 
@@ -1817,16 +1761,18 @@ namespace KONTRAGENT
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pEOPLEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pEOPLEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z1DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1958,31 +1904,10 @@ namespace KONTRAGENT
         private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridView dataGridView8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uadrDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idbankDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn padrDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unnDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.DataGridView dataGridView10;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.DataGridView dataGridView9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomerDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datebDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpeopleDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pidDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pidkontrDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource dOGOVORBindingSource;
         private System.Windows.Forms.BindingSource sTATUSBindingSource;
         private Z1DataSetTableAdapters.STATUSTableAdapter sTATUSTableAdapter;
@@ -2006,11 +1931,24 @@ namespace KONTRAGENT
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_b;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_e;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unnDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uadrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn padrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
+        private Z1DataSet z1DataSet1;
+        private Z1DataSet z1DataSet2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snaz;
+        private System.Windows.Forms.DataGridViewTextBoxColumn НАЧАЛО;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn knaz;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn6;
     }
 }
 

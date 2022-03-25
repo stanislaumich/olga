@@ -22,6 +22,10 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet1.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet1.DOGOVOR);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
@@ -213,10 +217,71 @@ namespace KONTRAGENT
             comboBox2.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
             comboBox6.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
             textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
-            textBox17.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
+            //textBox17.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
+            textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
         }
 
         private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // удалить сотрудника
+            this.pEOPLETableAdapter.DeleteQuery(Convert.ToInt32(textBox18.Text));
+            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+            MessageBox.Show("Строка удалена!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox4.Text = "";
+            textBox3.Text = "";
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // записать контрагента
+            this.kONTRTableAdapter.InsertQuery(textBox2.Text, textBox3.Text, Convert.ToInt32(comboBox1.SelectedValue), textBox4.Text, textBox1.Text);
+            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+            MessageBox.Show("Запись вставлена!");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        { // удалить контрагента
+            this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value));
+            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+            MessageBox.Show("Строка удалена!");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // записать статус
+            this.sTATUSTableAdapter.InsertQuery(textBox15.Text);
+            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
+            MessageBox.Show("Запись вставлена!");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox15.Text = "";
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dOGOVORBindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
         }
