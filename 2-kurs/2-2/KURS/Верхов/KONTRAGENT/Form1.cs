@@ -22,6 +22,8 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
+            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
@@ -86,28 +88,12 @@ namespace KONTRAGENT
 
         private void button6_Click(object sender, EventArgs e)
         {// записать должность
-            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-            try
-            {
-                conn.Open();
-                String my_querry = "INSERT INTO DOLG (nazv,dop) VALUES ('"+textBox10.Text+"','"+textBox11.Text+"')";
-                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Данные записаны!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Не удалось записать данные" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            /*   внести в комбобокс   */
-            //comboBox2.DataBindings.
 
-            /*      */
+            this.dOLGTableAdapter.InsertQuery(textBox10.Text, textBox11.Text);
+            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+            MessageBox.Show("Строка Вставлена!");
+
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -118,6 +104,13 @@ namespace KONTRAGENT
 
         private void button4_Click(object sender, EventArgs e)
         {// записать банк
+
+            this.bANKTableAdapter.InsertQuery(textBox5.Text, textBox8.Text, textBox6.Text, textBox7.Text, textBox9.Text);
+            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+            MessageBox.Show("Строка вставлена!");
+
+
+            /*
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
             try
@@ -136,9 +129,14 @@ namespace KONTRAGENT
             {
                 conn.Close();
             }
+
+
+
             object dt = dataGridView1.DataSource;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = dt;
+
+            */
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -205,5 +203,56 @@ namespace KONTRAGENT
             dataGridView1.Refresh();
 
             }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox10.Text = dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString();
+            textBox11.Text = dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString();
+        }
+        //SubmitChanges() все изменения сохраняются.
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            this.dOLGTableAdapter.DeleteQuery(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString(), dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString());
+            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+            MessageBox.Show("Строка удалена!");
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.bANKTableAdapter.DeleteQuery(Convert.ToInt32(textBox17.Text));
+            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+            MessageBox.Show("Строка удалена!");
+        }
+
+        private void dataGridView6_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = dataGridView6[0, dataGridView6.CurrentRow.Index].Value.ToString();
+            textBox6.Text = dataGridView6[2, dataGridView6.CurrentRow.Index].Value.ToString();
+            textBox7.Text = dataGridView6[3, dataGridView6.CurrentRow.Index].Value.ToString();
+            textBox8.Text = dataGridView6[1, dataGridView6.CurrentRow.Index].Value.ToString(); 
+            textBox9.Text = dataGridView6[4, dataGridView6.CurrentRow.Index].Value.ToString();
+            textBox17.Text = dataGridView6[5, dataGridView6.CurrentRow.Index].Value.ToString();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox12.Text = "";
+            textBox13.Text = "";
+            textBox14.Text = "";
+
+        }
+
+        private void dataGridView7_Click(object sender, EventArgs e)
+        {
+            textBox12.Text = dataGridView7[0, dataGridView7.CurrentRow.Index].Value.ToString();
+            textBox13.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
+            textBox14.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
+
+            //comboBox2.Text = comboBox2.Items.[Convert.ToInt32(dataGridView7[1, dataGridView7.CurrentRow.Index].Value.ToString())];
+
+            textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
+            textBox17.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
+        }
     }
 }

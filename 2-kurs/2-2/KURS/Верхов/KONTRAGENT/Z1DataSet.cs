@@ -21,3 +21,13 @@
         }
     }
 }
+
+namespace KONTRAGENT.Z1DataSetTableAdapters
+{
+    partial class PEOPLETableAdapter
+    {
+    }
+
+    public partial class DOLGTableAdapter {
+    }
+}
