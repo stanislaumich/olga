@@ -22,6 +22,8 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
+            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
