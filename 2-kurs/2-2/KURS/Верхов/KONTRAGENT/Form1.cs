@@ -91,7 +91,7 @@ namespace KONTRAGENT
 
             this.dOLGTableAdapter.InsertQuery(textBox10.Text, textBox11.Text);
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            MessageBox.Show("Строка Вставлена!");
+            MessageBox.Show("Запись вставлена!");
 
            
         }
@@ -107,36 +107,10 @@ namespace KONTRAGENT
 
             this.bANKTableAdapter.InsertQuery(textBox5.Text, textBox8.Text, textBox6.Text, textBox7.Text, textBox9.Text);
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            MessageBox.Show("Строка вставлена!");
+            MessageBox.Show("Запись вставлена!");
 
 
-            /*
-            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-            try
-            {
-                conn.Open();
-                String my_querry = "INSERT INTO BANK (nazv,adr, schet, filial,dop) VALUES ('" + textBox5.Text + "','" + textBox8.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox9.Text + "');";
-                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Данные записаны!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Не удалось записать данные" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-
-
-            object dt = dataGridView1.DataSource;
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dt;
-
-            */
+            
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -150,24 +124,9 @@ namespace KONTRAGENT
         private void button8_Click(object sender, EventArgs e)
         {
             // записать сотрудника
-            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-            try
-            {
-                conn.Open();
-                String my_querry = "INSERT INTO PEOPLE (fio,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
-                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Данные записаны!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Не удалось записать данные" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            this.pEOPLETableAdapter.InsertQuery(textBox12.Text, textBox13.Text, textBox14.Text, Convert.ToInt32(comboBox2.SelectedValue), Convert.ToInt32(comboBox6.SelectedValue));
+            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+            MessageBox.Show("Запись вставлена!");
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -240,19 +199,24 @@ namespace KONTRAGENT
             textBox12.Text = "";
             textBox13.Text = "";
             textBox14.Text = "";
-
+            comboBox2.Text = "";
+            comboBox6.Text = "";
         }
 
         private void dataGridView7_Click(object sender, EventArgs e)
         {
             textBox12.Text = dataGridView7[0, dataGridView7.CurrentRow.Index].Value.ToString();
-            textBox13.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
-            textBox14.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
-
-            //comboBox2.Text = comboBox2.Items.[Convert.ToInt32(dataGridView7[1, dataGridView7.CurrentRow.Index].Value.ToString())];
-
+            textBox13.Text = dataGridView7[1, dataGridView7.CurrentRow.Index].Value.ToString();
+            textBox14.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
+            comboBox2.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
+            comboBox6.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
             textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
             textBox17.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
+        }
+
+        private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
