@@ -85,7 +85,10 @@ namespace KONTRAGENT
 
 
          */
-
+        private void Errmess()
+        {
+            MessageBox.Show("Пустые поля недопустимы!");
+        }
         private void button2_Click(object sender, EventArgs e)
         {
            
@@ -94,11 +97,16 @@ namespace KONTRAGENT
 
         private void button6_Click(object sender, EventArgs e)
         {// записать должность
-
-            this.dOLGTableAdapter.InsertQuery(textBox10.Text, textBox11.Text);
-            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            MessageBox.Show("Запись вставлена!");
-
+            if ((textBox10.Text == ""))
+            {
+                Errmess();
+            }
+            else
+            {
+                this.dOLGTableAdapter.InsertQuery(textBox10.Text, textBox11.Text);
+                this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+                MessageBox.Show("Запись вставлена!");
+            }
            
         }
 
@@ -110,11 +118,14 @@ namespace KONTRAGENT
 
         private void button4_Click(object sender, EventArgs e)
         {// записать банк
-
-            this.bANKTableAdapter.InsertQuery(textBox5.Text, textBox8.Text, textBox6.Text, textBox7.Text, textBox9.Text);
-            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            MessageBox.Show("Запись вставлена!");
-
+            if ((textBox5.Text=="")|| (textBox6.Text == "") || (textBox7.Text == "") || (textBox8.Text == "")) {
+                Errmess(); 
+            }
+            else {
+                this.bANKTableAdapter.InsertQuery(textBox5.Text, textBox8.Text, textBox6.Text, textBox7.Text, textBox9.Text);
+                this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+                MessageBox.Show("Запись вставлена!");
+            }
 
             
         }
@@ -130,31 +141,45 @@ namespace KONTRAGENT
         private void button8_Click(object sender, EventArgs e)
         {
             // записать сотрудника
-            this.pEOPLETableAdapter.InsertQuery(textBox12.Text, textBox13.Text, textBox14.Text, Convert.ToInt32(comboBox2.SelectedValue), Convert.ToInt32(comboBox6.SelectedValue));
-            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            MessageBox.Show("Запись вставлена!");
+            if ((textBox12.Text == "") || (textBox13.Text == "") || (textBox14.Text == "") )
+            {
+                Errmess();
+            }
+            else
+            {
+                this.pEOPLETableAdapter.InsertQuery(textBox12.Text, textBox13.Text, textBox14.Text, Convert.ToInt32(comboBox2.SelectedValue), Convert.ToInt32(comboBox6.SelectedValue));
+                this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+                MessageBox.Show("Запись вставлена!");
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             // записать договор
-            System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-            try
+            if ((textBox16.Text == "") )
             {
-                conn.Open();
-                String my_querry = "INSERT INTO DOGOVOR (nomer,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
-                System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Данные записаны!");
+                Errmess();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Не удалось записать данные" + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
+                System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+                conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+                try
+                {
+                    conn.Open();
+                    String my_querry = "INSERT INTO DOGOVOR (nomer,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
+                    System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Данные записаны!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не удалось записать данные" + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
 
@@ -246,9 +271,16 @@ namespace KONTRAGENT
         private void button1_Click_1(object sender, EventArgs e)
         {
             // записать контрагента
-            this.kONTRTableAdapter.InsertQuery(textBox2.Text, textBox3.Text, Convert.ToInt32(comboBox1.SelectedValue), textBox4.Text, textBox1.Text);
-            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-            MessageBox.Show("Запись вставлена!");
+            if ((textBox1.Text == "") || (textBox2.Text == "") || (textBox3.Text == "") || (textBox4.Text == ""))
+            {
+                Errmess();
+            }
+            else
+            {
+                this.kONTRTableAdapter.InsertQuery(textBox2.Text, textBox3.Text, Convert.ToInt32(comboBox1.SelectedValue), textBox4.Text, textBox1.Text);
+                this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+                MessageBox.Show("Запись вставлена!");
+            }
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -261,9 +293,16 @@ namespace KONTRAGENT
         private void button10_Click(object sender, EventArgs e)
         {
             // записать статус
-            this.sTATUSTableAdapter.InsertQuery(textBox15.Text);
-            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
-            MessageBox.Show("Запись вставлена!");
+            if ((textBox15.Text == ""))
+            {
+                Errmess();
+            }
+            else
+            {
+                this.sTATUSTableAdapter.InsertQuery(textBox15.Text);
+                this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
+                MessageBox.Show("Запись вставлена!");
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -287,3 +326,23 @@ namespace KONTRAGENT
         }
     }
 }
+/*
+ * System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+                conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
+                try
+                {
+                    conn.Open();
+                    String my_querry = "INSERT INTO DOGOVOR (nomer,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
+                    System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Данные записаны!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не удалось записать данные" + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+*/
