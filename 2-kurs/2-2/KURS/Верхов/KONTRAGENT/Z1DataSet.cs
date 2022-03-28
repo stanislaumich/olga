@@ -24,6 +24,10 @@
 
 namespace KONTRAGENT.Z1DataSetTableAdapters
 {
+    partial class DOGOVORTableAdapter
+    {
+    }
+
     partial class PEOPLETableAdapter
     {
     }

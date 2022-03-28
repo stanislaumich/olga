@@ -188,6 +188,8 @@ namespace KONTRAGENT
             this.sTATUSTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.STATUSTableAdapter();
             this.z1DataSet1 = new KONTRAGENT.Z1DataSet();
             this.z1DataSet2 = new KONTRAGENT.Z1DataSet();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
             this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.snaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.НАЧАЛО = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1414,6 +1416,8 @@ namespace KONTRAGENT
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.textBox19);
+            this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Controls.Add(this.button17);
             this.groupBox5.Controls.Add(this.dataGridView9);
             this.groupBox5.Controls.Add(this.comboBox5);
@@ -1445,6 +1449,7 @@ namespace KONTRAGENT
             this.button17.TabIndex = 17;
             this.button17.Text = "Удалить строку";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // dataGridView9
             // 
@@ -1469,6 +1474,7 @@ namespace KONTRAGENT
             this.dataGridView9.Size = new System.Drawing.Size(1048, 424);
             this.dataGridView9.TabIndex = 16;
             this.dataGridView9.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellContentClick);
+            this.dataGridView9.Click += new System.EventHandler(this.dataGridView9_Click);
             // 
             // dOGOVORBindingSource
             // 
@@ -1477,7 +1483,8 @@ namespace KONTRAGENT
             // 
             // comboBox5
             // 
-            this.comboBox5.DisplayMember = "id";
+            this.comboBox5.DataSource = this.pEOPLEBindingSource;
+            this.comboBox5.DisplayMember = "fio";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(96, 78);
             this.comboBox5.Name = "comboBox5";
@@ -1487,7 +1494,8 @@ namespace KONTRAGENT
             // 
             // comboBox4
             // 
-            this.comboBox4.DisplayMember = "id";
+            this.comboBox4.DataSource = this.kONTRBindingSource;
+            this.comboBox4.DisplayMember = "nazv";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(96, 50);
             this.comboBox4.Name = "comboBox4";
@@ -1503,6 +1511,7 @@ namespace KONTRAGENT
             this.button13.TabIndex = 13;
             this.button13.Text = "Очистить поля";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button12
             // 
@@ -1516,7 +1525,8 @@ namespace KONTRAGENT
             // 
             // comboBox3
             // 
-            this.comboBox3.DisplayMember = "id";
+            this.comboBox3.DataSource = this.sTATUSBindingSource;
+            this.comboBox3.DisplayMember = "nazv";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(98, 163);
             this.comboBox3.Name = "comboBox3";
@@ -1678,6 +1688,22 @@ namespace KONTRAGENT
             this.z1DataSet2.DataSetName = "Z1DataSet";
             this.z1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(548, 106);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(18, 13);
+            this.label31.TabIndex = 18;
+            this.label31.Text = "ID";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(572, 103);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(59, 20);
+            this.textBox19.TabIndex = 19;
+            // 
             // nomer
             // 
             this.nomer.DataPropertyName = "nomer";
@@ -1717,7 +1743,7 @@ namespace KONTRAGENT
             // idDataGridViewTextBoxColumn6
             // 
             this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn6.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn6.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
             // 
             // Form1
@@ -1942,6 +1968,8 @@ namespace KONTRAGENT
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
         private Z1DataSet z1DataSet1;
         private Z1DataSet z1DataSet2;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn snaz;
         private System.Windows.Forms.DataGridViewTextBoxColumn НАЧАЛО;

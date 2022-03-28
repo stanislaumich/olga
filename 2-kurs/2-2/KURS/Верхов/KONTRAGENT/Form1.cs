@@ -22,33 +22,37 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet1.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet1.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet1.DOGOVOR);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
             this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-               // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
+               // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
             //this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
+            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
             this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
 
+            ////
+            ///
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -162,35 +166,18 @@ namespace KONTRAGENT
             }
             else
             {
-                System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-                conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-                try
-                {
-                    conn.Open();
-                    String my_querry = "INSERT INTO DOGOVOR (nomer,phone, adr, id_dolg, id_kontr) VALUES ('" + textBox12.Text + "','" + textBox13.Text + "','" + textBox14.Text + "','" + comboBox2.SelectedValue + "','" + comboBox6.SelectedValue + "')";
-                    System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Данные записаны!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Не удалось записать данные" + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                this.dOGOVORTableAdapter.InsertQuery(textBox16.Text, dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToInt32(comboBox3.SelectedValue), Convert.ToInt32(comboBox4.SelectedValue), Convert.ToInt32(comboBox5.SelectedValue));
+                this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
+                MessageBox.Show("Запись вставлена!");
             }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            // bANKKONTRBindingSource.DataSource.up
-            //
-            //
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+
+            //dataGridView1.Update();
+            //dataGridView1.Refresh();
 
             }
 
@@ -204,7 +191,7 @@ namespace KONTRAGENT
         {
             this.dOLGTableAdapter.DeleteQuery(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString(), dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString());
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            MessageBox.Show("Строка удалена!");
+            MessageBox.Show("Запись удалена!");
 
         }
 
@@ -212,7 +199,7 @@ namespace KONTRAGENT
         {
             this.bANKTableAdapter.DeleteQuery(Convert.ToInt32(textBox17.Text));
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            MessageBox.Show("Строка удалена!");
+            MessageBox.Show("Запись удалена!");
         }
 
         private void dataGridView6_Click(object sender, EventArgs e)
@@ -256,7 +243,7 @@ namespace KONTRAGENT
             // удалить сотрудника
             this.pEOPLETableAdapter.DeleteQuery(Convert.ToInt32(textBox18.Text));
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            MessageBox.Show("Строка удалена!");
+            MessageBox.Show("Запись удалена!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -287,7 +274,7 @@ namespace KONTRAGENT
         { // удалить контрагента
             this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value));
             this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-            MessageBox.Show("Строка удалена!");
+            MessageBox.Show("Запись удалена!");
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -323,6 +310,35 @@ namespace KONTRAGENT
         private void dOGOVORBindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            // удалить договор 19
+            this.dOGOVORTableAdapter.DeleteQuery(Convert.ToInt32(textBox19.Text));
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
+            MessageBox.Show("Запись удалена!");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox16.Text = "";
+            comboBox3.Text = "";
+            comboBox4.Text = "";
+            comboBox5.Text = "";
+
+        }
+
+        private void dataGridView9_Click(object sender, EventArgs e)
+        {
+            // заполнить поля контрагента
+            textBox16.Text = dataGridView9[0, dataGridView9.CurrentRow.Index].Value.ToString();
+            textBox19.Text = dataGridView9[6, dataGridView9.CurrentRow.Index].Value.ToString();
+            comboBox3.Text = dataGridView9[1, dataGridView9.CurrentRow.Index].Value.ToString();
+            comboBox5.Text = dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString();
+            comboBox4.Text = dataGridView9[5, dataGridView9.CurrentRow.Index].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView9[2, dataGridView9.CurrentRow.Index].Value.ToString());
+            dateTimePicker2.Value = Convert.ToDateTime(dataGridView9[3, dataGridView9.CurrentRow.Index].Value.ToString());
         }
     }
 }
