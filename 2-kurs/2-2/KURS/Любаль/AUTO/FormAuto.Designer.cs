@@ -29,6 +29,7 @@ namespace AUTO
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,8 @@ namespace AUTO
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.toplivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aUTODataSet = new AUTO.AUTODataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -49,7 +51,22 @@ namespace AUTO
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.markaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.godDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rashodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtoplivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoTableAdapter = new AUTO.AUTODataSetTableAdapters.autoTableAdapter();
+            this.toplivoTableAdapter = new AUTO.AUTODataSetTableAdapters.toplivoTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.toplivoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +139,7 @@ namespace AUTO
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Дополнительно";
+            this.label8.Text = "Идентификатор";
             // 
             // button1
             // 
@@ -132,6 +149,7 @@ namespace AUTO
             this.button1.TabIndex = 8;
             this.button1.Text = "Записать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -141,6 +159,7 @@ namespace AUTO
             this.button2.TabIndex = 9;
             this.button2.Text = "Стереть";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -150,17 +169,21 @@ namespace AUTO
             this.button3.TabIndex = 10;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox1
+            // toplivoBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(59, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.toplivoBindingSource.DataMember = "toplivo";
+            this.toplivoBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // aUTODataSet
+            // 
+            this.aUTODataSet.DataSetName = "AUTODataSet";
+            this.aUTODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(506, 30);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -210,14 +233,117 @@ namespace AUTO
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.markaDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.nomerDataGridViewTextBoxColumn,
+            this.godDataGridViewTextBoxColumn,
+            this.dopDataGridViewTextBoxColumn,
+            this.rashodDataGridViewTextBoxColumn,
+            this.idtoplivoDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.autoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 83);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(681, 362);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // markaDataGridViewTextBoxColumn
+            // 
+            this.markaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.markaDataGridViewTextBoxColumn.DataPropertyName = "marka";
+            this.markaDataGridViewTextBoxColumn.HeaderText = "МАРКА";
+            this.markaDataGridViewTextBoxColumn.Name = "markaDataGridViewTextBoxColumn";
+            this.markaDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "МОДЕЛЬ";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // nomerDataGridViewTextBoxColumn
+            // 
+            this.nomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nomerDataGridViewTextBoxColumn.DataPropertyName = "nomer";
+            this.nomerDataGridViewTextBoxColumn.HeaderText = "НОМЕР";
+            this.nomerDataGridViewTextBoxColumn.Name = "nomerDataGridViewTextBoxColumn";
+            this.nomerDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // godDataGridViewTextBoxColumn
+            // 
+            this.godDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.godDataGridViewTextBoxColumn.DataPropertyName = "god";
+            this.godDataGridViewTextBoxColumn.HeaderText = "ГОД";
+            this.godDataGridViewTextBoxColumn.Name = "godDataGridViewTextBoxColumn";
+            this.godDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // dopDataGridViewTextBoxColumn
+            // 
+            this.dopDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dopDataGridViewTextBoxColumn.DataPropertyName = "dop";
+            this.dopDataGridViewTextBoxColumn.HeaderText = "ИДЕНТИФИКАТОР";
+            this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
+            this.dopDataGridViewTextBoxColumn.Width = 134;
+            // 
+            // rashodDataGridViewTextBoxColumn
+            // 
+            this.rashodDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.rashodDataGridViewTextBoxColumn.DataPropertyName = "rashod";
+            this.rashodDataGridViewTextBoxColumn.HeaderText = "РАСХОД";
+            this.rashodDataGridViewTextBoxColumn.Name = "rashodDataGridViewTextBoxColumn";
+            this.rashodDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // idtoplivoDataGridViewTextBoxColumn
+            // 
+            this.idtoplivoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idtoplivoDataGridViewTextBoxColumn.DataPropertyName = "id_toplivo";
+            this.idtoplivoDataGridViewTextBoxColumn.HeaderText = "ТОПЛИВО";
+            this.idtoplivoDataGridViewTextBoxColumn.Name = "idtoplivoDataGridViewTextBoxColumn";
+            this.idtoplivoDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // autoBindingSource
+            // 
+            this.autoBindingSource.DataMember = "auto";
+            this.autoBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // autoTableAdapter
+            // 
+            this.autoTableAdapter.ClearBeforeFill = true;
+            // 
+            // toplivoTableAdapter
+            // 
+            this.toplivoTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.toplivoBindingSource;
+            this.comboBox1.DisplayMember = "nazv";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(59, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.ValueMember = "id";
             // 
             // FormAuto
             // 
@@ -247,7 +373,11 @@ namespace AUTO
             this.Name = "FormAuto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автомобили";
+            this.Load += new System.EventHandler(this.FormAuto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.toplivoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +396,6 @@ namespace AUTO
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -275,5 +404,19 @@ namespace AUTO
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private AUTODataSet aUTODataSet;
+        private System.Windows.Forms.BindingSource autoBindingSource;
+        private AUTODataSetTableAdapters.autoTableAdapter autoTableAdapter;
+        private System.Windows.Forms.BindingSource toplivoBindingSource;
+        private AUTODataSetTableAdapters.toplivoTableAdapter toplivoTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn markaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn godDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rashodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtoplivoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     }
 }

@@ -10,15 +10,21 @@ using System.Windows.Forms;
 
 namespace AUTO
 {
-    public partial class FormToplivo : Form
+    public partial class FormFind : Form
     {
-        public FormToplivo()
+        public FormFind()
         {
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1
 
         }
     }
