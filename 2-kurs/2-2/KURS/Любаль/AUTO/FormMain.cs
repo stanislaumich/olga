@@ -71,5 +71,16 @@ namespace AUTO
             this.putevkaTableAdapter.Fill(this.aUTODataSet.putevka);
 
         }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void отчетыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReport1 report1Form = new FormReport1();
+            report1Form.Show();
+        }
     }
 }
