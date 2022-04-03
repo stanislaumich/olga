@@ -65,6 +65,12 @@ namespace AUTO
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
+            this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
+            this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.voditel". При необходимости она может быть перемещена или удалена.
+            this.voditelTableAdapter.Fill(this.aUTODataSet.voditel);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
             this.autoTableAdapter.Fill(this.aUTODataSet.auto);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.putevka". При необходимости она может быть перемещена или удалена.

@@ -40,6 +40,7 @@ namespace AUTO
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.datepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +68,23 @@ namespace AUTO
             this.autoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.putevkaTableAdapter = new AUTO.AUTODataSetTableAdapters.putevkaTableAdapter();
             this.autoTableAdapter = new AUTO.AUTODataSetTableAdapters.autoTableAdapter();
-            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voditelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.voditelTableAdapter = new AUTO.AUTODataSetTableAdapters.voditelTableAdapter();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddolgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idautoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autovoditelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toplivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toplivoTableAdapter = new AUTO.AUTODataSetTableAdapters.toplivoTableAdapter();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.putevkaBindingSource)).BeginInit();
@@ -78,6 +95,9 @@ namespace AUTO
             ((System.ComponentModel.ISupportInitialize)(this.autoputevkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voditelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autovoditelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toplivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -160,6 +180,13 @@ namespace AUTO
             this.поискToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.поискToolStripMenuItem.Text = "Поиск";
             this.поискToolStripMenuItem.Click += new System.EventHandler(this.поискToolStripMenuItem_Click);
+            // 
+            // отчетыToolStripMenuItem
+            // 
+            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
+            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.отчетыToolStripMenuItem.Text = "Отчеты";
+            this.отчетыToolStripMenuItem.Click += new System.EventHandler(this.отчетыToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -329,7 +356,14 @@ namespace AUTO
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.nazvDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.dopDataGridViewTextBoxColumn1});
+            this.dataGridView4.DataSource = this.toplivoBindingSource;
             this.dataGridView4.Location = new System.Drawing.Point(545, 394);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(254, 85);
@@ -337,7 +371,18 @@ namespace AUTO
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.fioDataGridViewTextBoxColumn,
+            this.iddolgDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.adresDataGridViewTextBoxColumn,
+            this.dopDataGridViewTextBoxColumn,
+            this.idautoDataGridViewTextBoxColumn});
+            this.dataGridView5.DataSource = this.autovoditelBindingSource;
             this.dataGridView5.Location = new System.Drawing.Point(0, 394);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(536, 85);
@@ -375,12 +420,100 @@ namespace AUTO
             // 
             this.autoTableAdapter.ClearBeforeFill = true;
             // 
-            // отчетыToolStripMenuItem
+            // voditelBindingSource
             // 
-            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
-            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.отчетыToolStripMenuItem.Text = "Отчеты";
-            this.отчетыToolStripMenuItem.Click += new System.EventHandler(this.отчетыToolStripMenuItem_Click);
+            this.voditelBindingSource.DataMember = "voditel";
+            this.voditelBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // voditelTableAdapter
+            // 
+            this.voditelTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // fioDataGridViewTextBoxColumn
+            // 
+            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
+            this.fioDataGridViewTextBoxColumn.HeaderText = "fio";
+            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
+            // 
+            // iddolgDataGridViewTextBoxColumn
+            // 
+            this.iddolgDataGridViewTextBoxColumn.DataPropertyName = "id_dolg";
+            this.iddolgDataGridViewTextBoxColumn.HeaderText = "id_dolg";
+            this.iddolgDataGridViewTextBoxColumn.Name = "iddolgDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // classDataGridViewTextBoxColumn
+            // 
+            this.classDataGridViewTextBoxColumn.DataPropertyName = "class";
+            this.classDataGridViewTextBoxColumn.HeaderText = "class";
+            this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
+            // 
+            // adresDataGridViewTextBoxColumn
+            // 
+            this.adresDataGridViewTextBoxColumn.DataPropertyName = "adres";
+            this.adresDataGridViewTextBoxColumn.HeaderText = "adres";
+            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            // 
+            // dopDataGridViewTextBoxColumn
+            // 
+            this.dopDataGridViewTextBoxColumn.DataPropertyName = "dop";
+            this.dopDataGridViewTextBoxColumn.HeaderText = "dop";
+            this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
+            // 
+            // idautoDataGridViewTextBoxColumn
+            // 
+            this.idautoDataGridViewTextBoxColumn.DataPropertyName = "id_auto";
+            this.idautoDataGridViewTextBoxColumn.HeaderText = "id_auto";
+            this.idautoDataGridViewTextBoxColumn.Name = "idautoDataGridViewTextBoxColumn";
+            // 
+            // autovoditelBindingSource
+            // 
+            this.autovoditelBindingSource.DataMember = "autovoditel";
+            this.autovoditelBindingSource.DataSource = this.autoBindingSource;
+            // 
+            // toplivoBindingSource
+            // 
+            this.toplivoBindingSource.DataMember = "toplivo";
+            this.toplivoBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // toplivoTableAdapter
+            // 
+            this.toplivoTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            // 
+            // nazvDataGridViewTextBoxColumn
+            // 
+            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn.HeaderText = "nazv";
+            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // dopDataGridViewTextBoxColumn1
+            // 
+            this.dopDataGridViewTextBoxColumn1.DataPropertyName = "dop";
+            this.dopDataGridViewTextBoxColumn1.HeaderText = "dop";
+            this.dopDataGridViewTextBoxColumn1.Name = "dopDataGridViewTextBoxColumn1";
             // 
             // FormMain
             // 
@@ -412,6 +545,9 @@ namespace AUTO
             ((System.ComponentModel.ISupportInitialize)(this.autoputevkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voditelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autovoditelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toplivoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,6 +593,23 @@ namespace AUTO
         private System.Windows.Forms.BindingSource autoBindingSource1;
         private System.Windows.Forms.BindingSource autoputevkaBindingSource;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
+        private System.Windows.Forms.BindingSource voditelBindingSource;
+        private AUTODataSetTableAdapters.voditelTableAdapter voditelTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idautoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource autovoditelBindingSource;
+        private System.Windows.Forms.BindingSource toplivoBindingSource;
+        private AUTODataSetTableAdapters.toplivoTableAdapter toplivoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn1;
     }
 }
 
