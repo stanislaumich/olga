@@ -34,17 +34,13 @@ namespace AUTO {
         
         private voditelDataTable tablevoditel;
         
-        private global::System.Data.DataRelation relationtoplivoauto;
+        private global::System.Data.DataRelation relationput_auto;
         
-        private global::System.Data.DataRelation relationautoputevka;
+        private global::System.Data.DataRelation relationput_vod;
         
-        private global::System.Data.DataRelation relationvoditelputevka;
+        private global::System.Data.DataRelation relationauto_top;
         
-        private global::System.Data.DataRelation relationautovoditel;
-        
-        private global::System.Data.DataRelation relationdolgvoditel;
-        
-        private global::System.Data.DataRelation relationputevka_auto;
+        private global::System.Data.DataRelation relationvod_dolg;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -302,12 +298,10 @@ namespace AUTO {
                     this.tablevoditel.InitVars();
                 }
             }
-            this.relationtoplivoauto = this.Relations["toplivoauto"];
-            this.relationautoputevka = this.Relations["autoputevka"];
-            this.relationvoditelputevka = this.Relations["voditelputevka"];
-            this.relationautovoditel = this.Relations["autovoditel"];
-            this.relationdolgvoditel = this.Relations["dolgvoditel"];
-            this.relationputevka_auto = this.Relations["putevka_auto"];
+            this.relationput_auto = this.Relations["put_auto"];
+            this.relationput_vod = this.Relations["put_vod"];
+            this.relationauto_top = this.Relations["auto_top"];
+            this.relationvod_dolg = this.Relations["vod_dolg"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -328,30 +322,22 @@ namespace AUTO {
             base.Tables.Add(this.tabletoplivo);
             this.tablevoditel = new voditelDataTable();
             base.Tables.Add(this.tablevoditel);
-            this.relationtoplivoauto = new global::System.Data.DataRelation("toplivoauto", new global::System.Data.DataColumn[] {
-                        this.tabletoplivo.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableauto.id_toplivoColumn}, false);
-            this.Relations.Add(this.relationtoplivoauto);
-            this.relationautoputevka = new global::System.Data.DataRelation("autoputevka", new global::System.Data.DataColumn[] {
-                        this.tableauto.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableputevka.id_autoColumn}, false);
-            this.Relations.Add(this.relationautoputevka);
-            this.relationvoditelputevka = new global::System.Data.DataRelation("voditelputevka", new global::System.Data.DataColumn[] {
-                        this.tablevoditel.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableputevka.id_voditelColumn}, false);
-            this.Relations.Add(this.relationvoditelputevka);
-            this.relationautovoditel = new global::System.Data.DataRelation("autovoditel", new global::System.Data.DataColumn[] {
-                        this.tableauto.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablevoditel.id_autoColumn}, false);
-            this.Relations.Add(this.relationautovoditel);
-            this.relationdolgvoditel = new global::System.Data.DataRelation("dolgvoditel", new global::System.Data.DataColumn[] {
-                        this.tabledolg.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablevoditel.id_dolgColumn}, false);
-            this.Relations.Add(this.relationdolgvoditel);
-            this.relationputevka_auto = new global::System.Data.DataRelation("putevka_auto", new global::System.Data.DataColumn[] {
+            this.relationput_auto = new global::System.Data.DataRelation("put_auto", new global::System.Data.DataColumn[] {
                         this.tableputevka.id_autoColumn}, new global::System.Data.DataColumn[] {
                         this.tableauto.idColumn}, false);
-            this.Relations.Add(this.relationputevka_auto);
+            this.Relations.Add(this.relationput_auto);
+            this.relationput_vod = new global::System.Data.DataRelation("put_vod", new global::System.Data.DataColumn[] {
+                        this.tableputevka.id_voditelColumn}, new global::System.Data.DataColumn[] {
+                        this.tablevoditel.idColumn}, false);
+            this.Relations.Add(this.relationput_vod);
+            this.relationauto_top = new global::System.Data.DataRelation("auto_top", new global::System.Data.DataColumn[] {
+                        this.tableauto.id_toplivoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletoplivo.idColumn}, false);
+            this.Relations.Add(this.relationauto_top);
+            this.relationvod_dolg = new global::System.Data.DataRelation("vod_dolg", new global::System.Data.DataColumn[] {
+                        this.tablevoditel.id_dolgColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledolg.idColumn}, false);
+            this.Relations.Add(this.relationvod_dolg);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,20 +597,17 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public autoRow AddautoRow(string marka, string model, toplivoRow parenttoplivoRowBytoplivoauto, string nomer, int god, string dop, int rashod) {
+            public autoRow AddautoRow(string marka, string model, int id_toplivo, string nomer, int god, string dop, int rashod) {
                 autoRow rowautoRow = ((autoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         marka,
                         model,
-                        null,
+                        id_toplivo,
                         nomer,
                         god,
                         dop,
                         rashod};
-                if ((parenttoplivoRowBytoplivoauto != null)) {
-                    columnValuesArray[3] = parenttoplivoRowBytoplivoauto[0];
-                }
                 rowautoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowautoRow);
                 return rowautoRow;
@@ -1258,22 +1241,16 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public putevkaRow AddputevkaRow(string date_p, autoRow parentautoRowByautoputevka, voditelRow parentvoditelRowByvoditelputevka, string gruz, string mesto_in, string mesto_out) {
+            public putevkaRow AddputevkaRow(string date_p, int id_auto, int id_voditel, string gruz, string mesto_in, string mesto_out) {
                 putevkaRow rowputevkaRow = ((putevkaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         date_p,
-                        null,
-                        null,
+                        id_auto,
+                        id_voditel,
                         gruz,
                         mesto_in,
                         mesto_out};
-                if ((parentautoRowByautoputevka != null)) {
-                    columnValuesArray[2] = parentautoRowByautoputevka[0];
-                }
-                if ((parentvoditelRowByvoditelputevka != null)) {
-                    columnValuesArray[3] = parentvoditelRowByvoditelputevka[0];
-                }
                 rowputevkaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowputevkaRow);
                 return rowputevkaRow;
@@ -1928,23 +1905,17 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public voditelRow AddvoditelRow(string fio, dolgRow parentdolgRowBydolgvoditel, int age, int _class, string adres, string dop, autoRow parentautoRowByautovoditel) {
+            public voditelRow AddvoditelRow(string fio, int id_dolg, int age, int _class, string adres, string dop, int id_auto) {
                 voditelRow rowvoditelRow = ((voditelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fio,
-                        null,
+                        id_dolg,
                         age,
                         _class,
                         adres,
                         dop,
-                        null};
-                if ((parentdolgRowBydolgvoditel != null)) {
-                    columnValuesArray[2] = parentdolgRowBydolgvoditel[0];
-                }
-                if ((parentautoRowByautovoditel != null)) {
-                    columnValuesArray[7] = parentautoRowByautovoditel[0];
-                }
+                        id_auto};
                 rowvoditelRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvoditelRow);
                 return rowvoditelRow;
@@ -2281,23 +2252,12 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public toplivoRow toplivoRow {
-                get {
-                    return ((toplivoRow)(this.GetParentRow(this.Table.ParentRelations["toplivoauto"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["toplivoauto"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public putevkaRow putevkaRow {
                 get {
-                    return ((putevkaRow)(this.GetParentRow(this.Table.ParentRelations["putevka_auto"])));
+                    return ((putevkaRow)(this.GetParentRow(this.Table.ParentRelations["put_auto"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["putevka_auto"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["put_auto"]);
                 }
             }
             
@@ -2387,23 +2347,12 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public putevkaRow[] GetputevkaRows() {
-                if ((this.Table.ChildRelations["autoputevka"] == null)) {
-                    return new putevkaRow[0];
+            public toplivoRow[] GettoplivoRows() {
+                if ((this.Table.ChildRelations["auto_top"] == null)) {
+                    return new toplivoRow[0];
                 }
                 else {
-                    return ((putevkaRow[])(base.GetChildRows(this.Table.ChildRelations["autoputevka"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public voditelRow[] GetvoditelRows() {
-                if ((this.Table.ChildRelations["autovoditel"] == null)) {
-                    return new voditelRow[0];
-                }
-                else {
-                    return ((voditelRow[])(base.GetChildRows(this.Table.ChildRelations["autovoditel"])));
+                    return ((toplivoRow[])(base.GetChildRows(this.Table.ChildRelations["auto_top"])));
                 }
             }
         }
@@ -2467,6 +2416,17 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public voditelRow voditelRow {
+                get {
+                    return ((voditelRow)(this.GetParentRow(this.Table.ParentRelations["vod_dolg"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["vod_dolg"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tabledolg.nazvColumn);
             }
@@ -2487,17 +2447,6 @@ namespace AUTO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdopNull() {
                 this[this.tabledolg.dopColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public voditelRow[] GetvoditelRows() {
-                if ((this.Table.ChildRelations["dolgvoditel"] == null)) {
-                    return new voditelRow[0];
-                }
-                else {
-                    return ((voditelRow[])(base.GetChildRows(this.Table.ChildRelations["dolgvoditel"])));
-                }
             }
         }
         
@@ -2624,28 +2573,6 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public autoRow autoRow {
-                get {
-                    return ((autoRow)(this.GetParentRow(this.Table.ParentRelations["autoputevka"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["autoputevka"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public voditelRow voditelRow {
-                get {
-                    return ((voditelRow)(this.GetParentRow(this.Table.ParentRelations["voditelputevka"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["voditelputevka"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isdate_pNull() {
                 return this.IsNull(this.tableputevka.date_pColumn);
             }
@@ -2719,11 +2646,22 @@ namespace AUTO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public autoRow[] GetautoRows() {
-                if ((this.Table.ChildRelations["putevka_auto"] == null)) {
+                if ((this.Table.ChildRelations["put_auto"] == null)) {
                     return new autoRow[0];
                 }
                 else {
-                    return ((autoRow[])(base.GetChildRows(this.Table.ChildRelations["putevka_auto"])));
+                    return ((autoRow[])(base.GetChildRows(this.Table.ChildRelations["put_auto"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public voditelRow[] GetvoditelRows() {
+                if ((this.Table.ChildRelations["put_vod"] == null)) {
+                    return new voditelRow[0];
+                }
+                else {
+                    return ((voditelRow[])(base.GetChildRows(this.Table.ChildRelations["put_vod"])));
                 }
             }
         }
@@ -2803,6 +2741,17 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public autoRow autoRow {
+                get {
+                    return ((autoRow)(this.GetParentRow(this.Table.ParentRelations["auto_top"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["auto_top"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnazvNull() {
                 return this.IsNull(this.tabletoplivo.nazvColumn);
             }
@@ -2835,17 +2784,6 @@ namespace AUTO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdopNull() {
                 this[this.tabletoplivo.dopColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public autoRow[] GetautoRows() {
-                if ((this.Table.ChildRelations["toplivoauto"] == null)) {
-                    return new autoRow[0];
-                }
-                else {
-                    return ((autoRow[])(base.GetChildRows(this.Table.ChildRelations["toplivoauto"])));
-                }
             }
         }
         
@@ -2988,23 +2926,12 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public autoRow autoRow {
+            public putevkaRow putevkaRow {
                 get {
-                    return ((autoRow)(this.GetParentRow(this.Table.ParentRelations["autovoditel"])));
+                    return ((putevkaRow)(this.GetParentRow(this.Table.ParentRelations["put_vod"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["autovoditel"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dolgRow dolgRow {
-                get {
-                    return ((dolgRow)(this.GetParentRow(this.Table.ParentRelations["dolgvoditel"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dolgvoditel"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["put_vod"]);
                 }
             }
             
@@ -3094,12 +3021,12 @@ namespace AUTO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public putevkaRow[] GetputevkaRows() {
-                if ((this.Table.ChildRelations["voditelputevka"] == null)) {
-                    return new putevkaRow[0];
+            public dolgRow[] GetdolgRows() {
+                if ((this.Table.ChildRelations["vod_dolg"] == null)) {
+                    return new dolgRow[0];
                 }
                 else {
-                    return ((putevkaRow[])(base.GetChildRows(this.Table.ChildRelations["voditelputevka"])));
+                    return ((dolgRow[])(base.GetChildRows(this.Table.ChildRelations["vod_dolg"])));
                 }
             }
         }
@@ -4514,7 +4441,7 @@ namespace AUTO.AUTODataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT date_p, gruz, mesto_in, mesto_out, id_auto, id_voditel, id FROM putevka";
@@ -4526,15 +4453,21 @@ namespace AUTO.AUTODataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO `putevka` (`date_p`, `gruz`, `mesto_in`, `mesto_out`, `id_auto`, `id_" +
-                "voditel`) VALUES (?, ?, ?, ?, ?, ?)";
+            this._commandCollection[2].CommandText = "SELECT        date_p, gruz, mesto_in, mesto_out, id_auto, id_voditel, id\r\nFROM   " +
+                "         putevka\r\nWHERE        (date_p = ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_p", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_p", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("gruz", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "gruz", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesto_in", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesto_in", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesto_out", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesto_out", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_auto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_auto", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_voditel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_voditel", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO `putevka` (`date_p`, `gruz`, `mesto_in`, `mesto_out`, `id_auto`, `id_" +
+                "voditel`) VALUES (?, ?, ?, ?, ?, ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_p", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_p", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("gruz", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "gruz", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesto_in", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesto_in", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mesto_out", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mesto_out", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_auto", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_auto", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_voditel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_voditel", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4556,6 +4489,42 @@ namespace AUTO.AUTODataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual AUTODataSet.putevkaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            AUTODataSet.putevkaDataTable dataTable = new AUTODataSet.putevkaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(AUTODataSet.putevkaDataTable dataTable, string date_p) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((date_p == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(date_p));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AUTODataSet.putevkaDataTable GetDataBy2(string date_p) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((date_p == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(date_p));
+            }
             AUTODataSet.putevkaDataTable dataTable = new AUTODataSet.putevkaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4852,7 +4821,7 @@ namespace AUTO.AUTODataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string date_p, string gruz, string mesto_in, string mesto_out, global::System.Nullable<int> id_auto, global::System.Nullable<int> id_voditel) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
             if ((date_p == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -6252,21 +6221,21 @@ namespace AUTO.AUTODataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._toplivoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._toplivoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._autoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.auto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._autoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._voditelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._voditelTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6279,12 +6248,12 @@ namespace AUTO.AUTODataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._voditelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._toplivoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._voditelTableAdapter.Update(updatedRows));
+                    result = (result + this._toplivoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6306,19 +6275,19 @@ namespace AUTO.AUTODataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._toplivoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._toplivoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._autoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.auto.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._autoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._voditelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._voditelTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6330,11 +6299,11 @@ namespace AUTO.AUTODataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._voditelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._toplivoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._voditelTableAdapter.Update(addedRows));
+                    result = (result + this._toplivoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6348,11 +6317,11 @@ namespace AUTO.AUTODataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(AUTODataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._voditelTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._toplivoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._voditelTableAdapter.Update(deletedRows));
+                    result = (result + this._toplivoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6364,19 +6333,19 @@ namespace AUTO.AUTODataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._voditelTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.voditel.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._voditelTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._autoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.auto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._autoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._toplivoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.toplivo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._toplivoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -39,8 +39,20 @@ namespace AUTO
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.queriesTableAdapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aUTODataSet = new AUTO.AUTODataSet();
+            this.putevkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.putevkaTableAdapter = new AUTO.AUTODataSetTableAdapters.putevkaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idautoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idvoditelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gruzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mestoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mestooutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queriesTableAdapterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putevkaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,6 +102,7 @@ namespace AUTO
             this.radioButton3.TabIndex = 4;
             this.radioButton3.Text = "Путевки";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // button1
             // 
@@ -122,16 +135,88 @@ namespace AUTO
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.queriesTableAdapterBindingSource;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.datepDataGridViewTextBoxColumn,
+            this.idautoDataGridViewTextBoxColumn,
+            this.idvoditelDataGridViewTextBoxColumn,
+            this.gruzDataGridViewTextBoxColumn,
+            this.mestoinDataGridViewTextBoxColumn,
+            this.mestooutDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.putevkaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 140);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(259, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(774, 382);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.Visible = false;
             // 
             // queriesTableAdapterBindingSource
             // 
             this.queriesTableAdapterBindingSource.DataSource = typeof(AUTO.AUTODataSetTableAdapters.QueriesTableAdapter);
+            // 
+            // aUTODataSet
+            // 
+            this.aUTODataSet.DataSetName = "AUTODataSet";
+            this.aUTODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // putevkaBindingSource
+            // 
+            this.putevkaBindingSource.DataMember = "putevka";
+            this.putevkaBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // putevkaTableAdapter
+            // 
+            this.putevkaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datepDataGridViewTextBoxColumn
+            // 
+            this.datepDataGridViewTextBoxColumn.DataPropertyName = "date_p";
+            this.datepDataGridViewTextBoxColumn.HeaderText = "date_p";
+            this.datepDataGridViewTextBoxColumn.Name = "datepDataGridViewTextBoxColumn";
+            this.datepDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idautoDataGridViewTextBoxColumn
+            // 
+            this.idautoDataGridViewTextBoxColumn.DataPropertyName = "id_auto";
+            this.idautoDataGridViewTextBoxColumn.HeaderText = "id_auto";
+            this.idautoDataGridViewTextBoxColumn.Name = "idautoDataGridViewTextBoxColumn";
+            this.idautoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idvoditelDataGridViewTextBoxColumn
+            // 
+            this.idvoditelDataGridViewTextBoxColumn.DataPropertyName = "id_voditel";
+            this.idvoditelDataGridViewTextBoxColumn.HeaderText = "id_voditel";
+            this.idvoditelDataGridViewTextBoxColumn.Name = "idvoditelDataGridViewTextBoxColumn";
+            this.idvoditelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gruzDataGridViewTextBoxColumn
+            // 
+            this.gruzDataGridViewTextBoxColumn.DataPropertyName = "gruz";
+            this.gruzDataGridViewTextBoxColumn.HeaderText = "gruz";
+            this.gruzDataGridViewTextBoxColumn.Name = "gruzDataGridViewTextBoxColumn";
+            this.gruzDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mestoinDataGridViewTextBoxColumn
+            // 
+            this.mestoinDataGridViewTextBoxColumn.DataPropertyName = "mesto_in";
+            this.mestoinDataGridViewTextBoxColumn.HeaderText = "mesto_in";
+            this.mestoinDataGridViewTextBoxColumn.Name = "mestoinDataGridViewTextBoxColumn";
+            this.mestoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mestooutDataGridViewTextBoxColumn
+            // 
+            this.mestooutDataGridViewTextBoxColumn.DataPropertyName = "mesto_out";
+            this.mestooutDataGridViewTextBoxColumn.HeaderText = "mesto_out";
+            this.mestooutDataGridViewTextBoxColumn.Name = "mestooutDataGridViewTextBoxColumn";
+            this.mestooutDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormFind
             // 
@@ -139,7 +224,7 @@ namespace AUTO
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(273, 420);
+            this.ClientSize = new System.Drawing.Size(788, 525);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -153,8 +238,11 @@ namespace AUTO
             this.Name = "FormFind";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ПОИСК";
+            this.Load += new System.EventHandler(this.FormFind_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queriesTableAdapterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putevkaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +259,15 @@ namespace AUTO
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource queriesTableAdapterBindingSource;
+        private AUTODataSet aUTODataSet;
+        private System.Windows.Forms.BindingSource putevkaBindingSource;
+        private AUTODataSetTableAdapters.putevkaTableAdapter putevkaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datepDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idautoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idvoditelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gruzDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mestoinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mestooutDataGridViewTextBoxColumn;
     }
 }

@@ -65,12 +65,24 @@ namespace AUTO
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
-            this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.dolg". При необходимости она может быть перемещена или удалена.
+            this.dolgTableAdapter.Fill(this.aUTODataSet.dolg);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
             this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.voditel". При необходимости она может быть перемещена или удалена.
             this.voditelTableAdapter.Fill(this.aUTODataSet.voditel);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
+            this.autoTableAdapter.Fill(this.aUTODataSet.auto);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.putevka". При необходимости она может быть перемещена или удалена.
+            this.putevkaTableAdapter.Fill(this.aUTODataSet.putevka);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
+            this.autoTableAdapter.Fill(this.aUTODataSet.auto);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
+            //this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.toplivo". При необходимости она может быть перемещена или удалена.
+           // this.toplivoTableAdapter.Fill(this.aUTODataSet.toplivo);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.voditel". При необходимости она может быть перемещена или удалена.
+            //this.voditelTableAdapter.Fill(this.aUTODataSet.voditel);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
             this.autoTableAdapter.Fill(this.aUTODataSet.auto);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.putevka". При необходимости она может быть перемещена или удалена.
@@ -80,7 +92,10 @@ namespace AUTO
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = "AUTO.chm";
+            p.StartInfo.Arguments = ""; //чтобы программно нажать enter
+            p.Start();
         }
 
         private void отчетыToolStripMenuItem_Click(object sender, EventArgs e)
