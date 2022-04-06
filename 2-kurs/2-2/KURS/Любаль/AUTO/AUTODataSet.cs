@@ -7,9 +7,12 @@
     }
 }
 
-namespace AUTO.AUTODataSetTableAdapters {
-    
-    
+namespace AUTO.AUTODataSetTableAdapters
+{
+    partial class voditelTableAdapter
+    {
+    }
+
     public partial class toplivoTableAdapter {
     }
 }

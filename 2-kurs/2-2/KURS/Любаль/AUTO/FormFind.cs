@@ -30,11 +30,22 @@ namespace AUTO
             {
                 this.putevkaTableAdapter.FillBy(this.aUTODataSet.putevka,textBox1.Text);
             }
-
+            if (dataGridView2.Visible == true)
+            {
+                this.voditelTableAdapter.FillBy(this.aUTODataSet.voditel, textBox1.Text);
+            }
+            if (dataGridView3.Visible == true)
+            {
+                this.autoTableAdapter.FillBy(this.aUTODataSet.auto, textBox1.Text);
+            }
         }
 
         private void FormFind_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
+            this.autoTableAdapter.Fill(this.aUTODataSet.auto);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.voditel". При необходимости она может быть перемещена или удалена.
+            this.voditelTableAdapter.Fill(this.aUTODataSet.voditel);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.putevka". При необходимости она может быть перемещена или удалена.
             this.putevkaTableAdapter.Fill(this.aUTODataSet.putevka);
 
@@ -44,9 +55,28 @@ namespace AUTO
         {
             if (radioButton3.Checked)
             {
+                dataGridView2.Visible = false;                
+                dataGridView3.Visible = false;
                 dataGridView1.Visible = true;
             }
                 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView3.Visible = false;            
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = true;
+        }
     }
-}
+    }
+    
+    
+
