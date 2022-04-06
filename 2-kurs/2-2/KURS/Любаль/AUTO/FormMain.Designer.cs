@@ -43,54 +43,54 @@ namespace AUTO
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.putautoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.putvodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.putevkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aUTODataSet = new AUTO.AUTODataSet();
-            this.putevkaTableAdapter = new AUTO.AUTODataSetTableAdapters.putevkaTableAdapter();
-            this.autoTableAdapter = new AUTO.AUTODataSetTableAdapters.autoTableAdapter();
-            this.voditelTableAdapter = new AUTO.AUTODataSetTableAdapters.voditelTableAdapter();
-            this.autotopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toplivoTableAdapter = new AUTO.AUTODataSetTableAdapters.toplivoTableAdapter();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.voddolgBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dolgTableAdapter = new AUTO.AUTODataSetTableAdapters.dolgTableAdapter();
-            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dopDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gruzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mestoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mestooutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putevkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aUTODataSet = new AUTO.AUTODataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rashod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putautoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autotopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putvodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.putevkaTableAdapter = new AUTO.AUTODataSetTableAdapters.putevkaTableAdapter();
+            this.autoTableAdapter = new AUTO.AUTODataSetTableAdapters.autoTableAdapter();
+            this.voditelTableAdapter = new AUTO.AUTODataSetTableAdapters.voditelTableAdapter();
+            this.toplivoTableAdapter = new AUTO.AUTODataSetTableAdapters.toplivoTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.nazvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dopDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voddolgBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.dolgTableAdapter = new AUTO.AUTODataSetTableAdapters.dolgTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putautoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putvodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.putevkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putautoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autotopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putvodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voddolgBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -186,6 +186,7 @@ namespace AUTO
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
@@ -209,6 +210,52 @@ namespace AUTO
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(800, 150);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // datepDataGridViewTextBoxColumn
+            // 
+            this.datepDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.datepDataGridViewTextBoxColumn.DataPropertyName = "date_p";
+            this.datepDataGridViewTextBoxColumn.HeaderText = "ДАТА";
+            this.datepDataGridViewTextBoxColumn.Name = "datepDataGridViewTextBoxColumn";
+            this.datepDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datepDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // gruzDataGridViewTextBoxColumn
+            // 
+            this.gruzDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gruzDataGridViewTextBoxColumn.DataPropertyName = "gruz";
+            this.gruzDataGridViewTextBoxColumn.HeaderText = "ГРУЗ";
+            this.gruzDataGridViewTextBoxColumn.Name = "gruzDataGridViewTextBoxColumn";
+            this.gruzDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gruzDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // mestoinDataGridViewTextBoxColumn
+            // 
+            this.mestoinDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mestoinDataGridViewTextBoxColumn.DataPropertyName = "mesto_in";
+            this.mestoinDataGridViewTextBoxColumn.HeaderText = "ОТКУДА";
+            this.mestoinDataGridViewTextBoxColumn.Name = "mestoinDataGridViewTextBoxColumn";
+            this.mestoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mestoinDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // mestooutDataGridViewTextBoxColumn
+            // 
+            this.mestooutDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mestooutDataGridViewTextBoxColumn.DataPropertyName = "mesto_out";
+            this.mestooutDataGridViewTextBoxColumn.HeaderText = "КУДА";
+            this.mestooutDataGridViewTextBoxColumn.Name = "mestooutDataGridViewTextBoxColumn";
+            this.mestooutDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mestooutDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // putevkaBindingSource
+            // 
+            this.putevkaBindingSource.DataMember = "putevka";
+            this.putevkaBindingSource.DataSource = this.aUTODataSet;
+            // 
+            // aUTODataSet
+            // 
+            this.aUTODataSet.DataSetName = "AUTODataSet";
+            this.aUTODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -248,196 +295,6 @@ namespace AUTO
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(800, 150);
             this.dataGridView2.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(542, 369);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ТОПЛИВО";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nazvDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn});
-            this.dataGridView4.DataSource = this.autotopBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(545, 394);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(254, 75);
-            this.dataGridView4.TabIndex = 8;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.AutoGenerateColumns = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fioDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.classDataGridViewTextBoxColumn,
-            this.adresDataGridViewTextBoxColumn,
-            this.dopDataGridViewTextBoxColumn1});
-            this.dataGridView5.DataSource = this.putvodBindingSource;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 394);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(536, 190);
-            this.dataGridView5.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 369);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "ВОДИТЕЛЬ";
-            // 
-            // putautoBindingSource
-            // 
-            this.putautoBindingSource.DataMember = "put_auto";
-            this.putautoBindingSource.DataSource = this.putevkaBindingSource;
-            // 
-            // putvodBindingSource
-            // 
-            this.putvodBindingSource.DataMember = "put_vod";
-            this.putvodBindingSource.DataSource = this.putevkaBindingSource;
-            // 
-            // putevkaBindingSource
-            // 
-            this.putevkaBindingSource.DataMember = "putevka";
-            this.putevkaBindingSource.DataSource = this.aUTODataSet;
-            // 
-            // aUTODataSet
-            // 
-            this.aUTODataSet.DataSetName = "AUTODataSet";
-            this.aUTODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // putevkaTableAdapter
-            // 
-            this.putevkaTableAdapter.ClearBeforeFill = true;
-            // 
-            // autoTableAdapter
-            // 
-            this.autoTableAdapter.ClearBeforeFill = true;
-            // 
-            // voditelTableAdapter
-            // 
-            this.voditelTableAdapter.ClearBeforeFill = true;
-            // 
-            // autotopBindingSource
-            // 
-            this.autotopBindingSource.DataMember = "auto_top";
-            this.autotopBindingSource.DataSource = this.putautoBindingSource;
-            // 
-            // toplivoTableAdapter
-            // 
-            this.toplivoTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nazvDataGridViewTextBoxColumn1,
-            this.dopDataGridViewTextBoxColumn3});
-            this.dataGridView3.DataSource = this.voddolgBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(542, 497);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(251, 87);
-            this.dataGridView3.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(542, 481);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "ДОЛЖНОСТЬ";
-            // 
-            // voddolgBindingSource
-            // 
-            this.voddolgBindingSource.DataMember = "vod_dolg";
-            this.voddolgBindingSource.DataSource = this.putvodBindingSource;
-            // 
-            // dolgTableAdapter
-            // 
-            this.dolgTableAdapter.ClearBeforeFill = true;
-            // 
-            // nazvDataGridViewTextBoxColumn
-            // 
-            this.nazvDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn.HeaderText = "НАЗВАНИЕ";
-            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
-            this.nazvDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "ЦЕНА";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // nazvDataGridViewTextBoxColumn1
-            // 
-            this.nazvDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nazvDataGridViewTextBoxColumn1.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn1.HeaderText = "НАЗВАНИЕ";
-            this.nazvDataGridViewTextBoxColumn1.Name = "nazvDataGridViewTextBoxColumn1";
-            this.nazvDataGridViewTextBoxColumn1.Width = 91;
-            // 
-            // dopDataGridViewTextBoxColumn3
-            // 
-            this.dopDataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dopDataGridViewTextBoxColumn3.DataPropertyName = "dop";
-            this.dopDataGridViewTextBoxColumn3.HeaderText = "ПРИМ";
-            this.dopDataGridViewTextBoxColumn3.Name = "dopDataGridViewTextBoxColumn3";
-            this.dopDataGridViewTextBoxColumn3.Width = 64;
-            // 
-            // datepDataGridViewTextBoxColumn
-            // 
-            this.datepDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.datepDataGridViewTextBoxColumn.DataPropertyName = "date_p";
-            this.datepDataGridViewTextBoxColumn.HeaderText = "ДАТА";
-            this.datepDataGridViewTextBoxColumn.Name = "datepDataGridViewTextBoxColumn";
-            this.datepDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datepDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // gruzDataGridViewTextBoxColumn
-            // 
-            this.gruzDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.gruzDataGridViewTextBoxColumn.DataPropertyName = "gruz";
-            this.gruzDataGridViewTextBoxColumn.HeaderText = "ГРУЗ";
-            this.gruzDataGridViewTextBoxColumn.Name = "gruzDataGridViewTextBoxColumn";
-            this.gruzDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gruzDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // mestoinDataGridViewTextBoxColumn
-            // 
-            this.mestoinDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mestoinDataGridViewTextBoxColumn.DataPropertyName = "mesto_in";
-            this.mestoinDataGridViewTextBoxColumn.HeaderText = "ОТКУДА";
-            this.mestoinDataGridViewTextBoxColumn.Name = "mestoinDataGridViewTextBoxColumn";
-            this.mestoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mestoinDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // mestooutDataGridViewTextBoxColumn
-            // 
-            this.mestooutDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mestooutDataGridViewTextBoxColumn.DataPropertyName = "mesto_out";
-            this.mestooutDataGridViewTextBoxColumn.HeaderText = "КУДА";
-            this.mestooutDataGridViewTextBoxColumn.Name = "mestooutDataGridViewTextBoxColumn";
-            this.mestooutDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mestooutDataGridViewTextBoxColumn.Width = 63;
             // 
             // dopDataGridViewTextBoxColumn
             // 
@@ -484,6 +341,73 @@ namespace AUTO
             this.rashod.ReadOnly = true;
             this.rashod.Width = 77;
             // 
+            // putautoBindingSource
+            // 
+            this.putautoBindingSource.DataMember = "put_auto";
+            this.putautoBindingSource.DataSource = this.putevkaBindingSource;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(542, 369);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "ТОПЛИВО";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nazvDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn});
+            this.dataGridView4.DataSource = this.autotopBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(545, 394);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(254, 75);
+            this.dataGridView4.TabIndex = 8;
+            // 
+            // nazvDataGridViewTextBoxColumn
+            // 
+            this.nazvDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn.HeaderText = "НАЗВАНИЕ";
+            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
+            this.nazvDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "ЦЕНА";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // autotopBindingSource
+            // 
+            this.autotopBindingSource.DataMember = "auto_top";
+            this.autotopBindingSource.DataSource = this.putautoBindingSource;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fioDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.classDataGridViewTextBoxColumn,
+            this.adresDataGridViewTextBoxColumn,
+            this.dopDataGridViewTextBoxColumn1});
+            this.dataGridView5.DataSource = this.putvodBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 394);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.Size = new System.Drawing.Size(536, 190);
+            this.dataGridView5.TabIndex = 9;
+            // 
             // fioDataGridViewTextBoxColumn
             // 
             this.fioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -529,6 +453,83 @@ namespace AUTO
             this.dopDataGridViewTextBoxColumn1.ReadOnly = true;
             this.dopDataGridViewTextBoxColumn1.Width = 64;
             // 
+            // putvodBindingSource
+            // 
+            this.putvodBindingSource.DataMember = "put_vod";
+            this.putvodBindingSource.DataSource = this.putevkaBindingSource;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 369);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "ВОДИТЕЛЬ";
+            // 
+            // putevkaTableAdapter
+            // 
+            this.putevkaTableAdapter.ClearBeforeFill = true;
+            // 
+            // autoTableAdapter
+            // 
+            this.autoTableAdapter.ClearBeforeFill = true;
+            // 
+            // voditelTableAdapter
+            // 
+            this.voditelTableAdapter.ClearBeforeFill = true;
+            // 
+            // toplivoTableAdapter
+            // 
+            this.toplivoTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nazvDataGridViewTextBoxColumn1,
+            this.dopDataGridViewTextBoxColumn3});
+            this.dataGridView3.DataSource = this.voddolgBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(542, 497);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(251, 87);
+            this.dataGridView3.TabIndex = 11;
+            // 
+            // nazvDataGridViewTextBoxColumn1
+            // 
+            this.nazvDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nazvDataGridViewTextBoxColumn1.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn1.HeaderText = "НАЗВАНИЕ";
+            this.nazvDataGridViewTextBoxColumn1.Name = "nazvDataGridViewTextBoxColumn1";
+            this.nazvDataGridViewTextBoxColumn1.Width = 91;
+            // 
+            // dopDataGridViewTextBoxColumn3
+            // 
+            this.dopDataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dopDataGridViewTextBoxColumn3.DataPropertyName = "dop";
+            this.dopDataGridViewTextBoxColumn3.HeaderText = "ПРИМ";
+            this.dopDataGridViewTextBoxColumn3.Name = "dopDataGridViewTextBoxColumn3";
+            this.dopDataGridViewTextBoxColumn3.Width = 64;
+            // 
+            // voddolgBindingSource
+            // 
+            this.voddolgBindingSource.DataMember = "vod_dolg";
+            this.voddolgBindingSource.DataSource = this.putvodBindingSource;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(542, 481);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "ДОЛЖНОСТЬ";
+            // 
+            // dolgTableAdapter
+            // 
+            this.dolgTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,14 +554,14 @@ namespace AUTO
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putautoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putvodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.putevkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUTODataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putautoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autotopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putvodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voddolgBindingSource)).EndInit();
             this.ResumeLayout(false);
