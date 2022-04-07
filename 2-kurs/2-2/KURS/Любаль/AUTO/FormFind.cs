@@ -26,27 +26,30 @@ namespace AUTO
         {
             //https://www.cyberforum.ru/ado-net/thread326319.html
             // http://skillcoding.com/Default.aspx?id=151
-            if (dataGridView1.Visible == true)
-            {
-                this.putevkaTableAdapter.FillBy(this.aUTODataSet.putevka,textBox1.Text);
+            if (textBox1.Text == "") {
+                MessageBox.Show("Не указана строка для поиска", "ОШИБКА!");
             }
-            if (dataGridView2.Visible == true)
+            else
             {
-                this.voditelTableAdapter.FillBy(this.aUTODataSet.voditel, textBox1.Text);
-            }
-            if (dataGridView3.Visible == true)
-            {
-                this.autoTableAdapter.FillBy(this.aUTODataSet.auto, textBox1.Text);
+                if (dataGridView1.Visible == true)
+                {
+                    this.putevkaTableAdapter.FillBy(this.aUTODataSet.putevka, "%"+textBox1.Text+"%");
+                }
+                if (dataGridView2.Visible == true)
+                {
+                    this.voditelTableAdapter.FillBy(this.aUTODataSet.voditel, "%" + textBox1.Text + "%");
+                }
+                if (dataGridView3.Visible == true)
+                {
+                    this.autoTableAdapter.FillBy(this.aUTODataSet.auto, "%" + textBox1.Text + "%");
+                }
             }
         }
 
         private void FormFind_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.auto". При необходимости она может быть перемещена или удалена.
             this.autoTableAdapter.Fill(this.aUTODataSet.auto);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.voditel". При необходимости она может быть перемещена или удалена.
             this.voditelTableAdapter.Fill(this.aUTODataSet.voditel);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "aUTODataSet.putevka". При необходимости она может быть перемещена или удалена.
             this.putevkaTableAdapter.Fill(this.aUTODataSet.putevka);
 
         }
