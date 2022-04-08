@@ -23,9 +23,9 @@ namespace KONTRAGENT
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
-            this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
+            //this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
             // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet1.DOGOVOR". При необходимости она может быть перемещена или удалена.
-            this.dOGOVORTableAdapter.Fill(this.z1DataSet1.DOGOVOR);
+            //this.dOGOVORTableAdapter.Fill(this.z1DataSet1.DOGOVOR);
             // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
             // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
@@ -53,6 +53,8 @@ namespace KONTRAGENT
             ///
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Format = DateTimePickerFormat.Short;
+            //this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -339,6 +341,16 @@ namespace KONTRAGENT
             comboBox4.Text = dataGridView9[5, dataGridView9.CurrentRow.Index].Value.ToString();
             dateTimePicker1.Value = Convert.ToDateTime(dataGridView9[2, dataGridView9.CurrentRow.Index].Value.ToString());
             dateTimePicker2.Value = Convert.ToDateTime(dataGridView9[3, dataGridView9.CurrentRow.Index].Value.ToString());
+        }
+
+        private void вЫХОДToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
