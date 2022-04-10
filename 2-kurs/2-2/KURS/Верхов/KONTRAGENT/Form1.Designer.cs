@@ -30,6 +30,7 @@ namespace KONTRAGENT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.z1DataSet = new KONTRAGENT.Z1DataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -190,6 +191,7 @@ namespace KONTRAGENT
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.kONTRTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.KONTRTableAdapter();
             this.bANKTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.BANKTableAdapter();
             this.pEOPLETableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.PEOPLETableAdapter();
@@ -201,7 +203,6 @@ namespace KONTRAGENT
             this.фАЙЛToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вЫХОДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z1DataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -1235,7 +1236,7 @@ namespace KONTRAGENT
             // comboBox1
             // 
             this.comboBox1.DataSource = this.bANKBindingSource;
-            this.comboBox1.DisplayMember = "nazv";
+            this.comboBox1.DisplayMember = "dop";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(44, 116);
             this.comboBox1.Name = "comboBox1";
@@ -1729,6 +1730,18 @@ namespace KONTRAGENT
             this.tabPage7.Text = "Отчет";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // reportViewer2
+            // 
+            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.dOGOVORBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "KONTRAGENT.Report2.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(1064, 723);
+            this.reportViewer2.TabIndex = 0;
+            // 
             // kONTRTableAdapter
             // 
             this.kONTRTableAdapter.ClearBeforeFill = true;
@@ -1790,14 +1803,6 @@ namespace KONTRAGENT
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.помощьToolStripMenuItem.Text = "ПОМОЩЬ";
             this.помощьToolStripMenuItem.Click += new System.EventHandler(this.помощьToolStripMenuItem_Click);
-            // 
-            // reportViewer2
-            // 
-            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer2.Location = new System.Drawing.Point(3, 3);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(1064, 723);
-            this.reportViewer2.TabIndex = 0;
             // 
             // Form1
             // 
