@@ -9,30 +9,24 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DOGOVORTableAdapter" GeneratorDataComponentClassName="DOGOVORTableAdapter" Name="DOGOVOR" UserDataComponentName="DOGOVORTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectName="DOGOVOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        d.id, d.nomer, d.date_b, d.date_e, d.status, p.fio, s.nazv AS snaz, k.nazv AS knaz, d.id_people, d.id_kontr
-FROM            (((DOGOVOR d INNER JOIN
-                         PEOPLE p ON d.id_people = p.id) INNER JOIN
-                         STATUS s ON d.status = s.id) INNER JOIN
-                         KONTR k ON d.id = k.id)</CommandText>
+                    <CommandText>SELECT        id, nomer, date_b, date_e, status, id_kontr, id_people
+FROM            DOGOVOR</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="nomer" DataSetColumn="nomer" />
               <Mapping SourceColumn="date_b" DataSetColumn="date_b" />
               <Mapping SourceColumn="date_e" DataSetColumn="date_e" />
               <Mapping SourceColumn="status" DataSetColumn="status" />
-              <Mapping SourceColumn="fio" DataSetColumn="fio" />
-              <Mapping SourceColumn="id" DataSetColumn="id" />
-              <Mapping SourceColumn="snaz" DataSetColumn="snaz" />
-              <Mapping SourceColumn="knaz" DataSetColumn="knaz" />
-              <Mapping SourceColumn="id_people" DataSetColumn="id_people" />
               <Mapping SourceColumn="id_kontr" DataSetColumn="id_kontr" />
+              <Mapping SourceColumn="id_people" DataSetColumn="id_people" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
@@ -500,87 +494,6 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DOGOVOR1TableAdapter" GeneratorDataComponentClassName="DOGOVOR1TableAdapter" Name="DOGOVOR1" UserDataComponentName="DOGOVOR1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectName="DOGOVOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `DOGOVOR` WHERE ((`id` = ?) AND ((? = 1 AND `nomer` IS NULL) OR (`nomer` = ?)) AND ((? = 1 AND `date_b` IS NULL) OR (`date_b` = ?)) AND ((? = 1 AND `date_e` IS NULL) OR (`date_e` = ?)) AND ((? = 1 AND `status` IS NULL) OR (`status` = ?)) AND ((? = 1 AND `id_kontr` IS NULL) OR (`id_kontr` = ?)) AND ((? = 1 AND `id_people` IS NULL) OR (`id_people` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nomer" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nomer" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_date_b" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_date_b" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_date_e" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_date_e" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `DOGOVOR` (`nomer`, `date_b`, `date_e`, `status`, `id_kontr`, `id_people`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nomer" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="date_b" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="date_e" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, nomer, date_b, date_e, status, id_kontr, id_people FROM DOGOVOR</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `DOGOVOR` SET `nomer` = ?, `date_b` = ?, `date_e` = ?, `status` = ?, `id_kontr` = ?, `id_people` = ? WHERE ((`id` = ?) AND ((? = 1 AND `nomer` IS NULL) OR (`nomer` = ?)) AND ((? = 1 AND `date_b` IS NULL) OR (`date_b` = ?)) AND ((? = 1 AND `date_e` IS NULL) OR (`date_e` = ?)) AND ((? = 1 AND `status` IS NULL) OR (`status` = ?)) AND ((? = 1 AND `id_kontr` IS NULL) OR (`id_kontr` = ?)) AND ((? = 1 AND `id_people` IS NULL) OR (`id_people` = ?)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="nomer" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="date_b" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="date_e" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_nomer" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_nomer" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="nomer" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_date_b" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_date_b" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_b" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_date_e" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_date_e" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date_e" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_status" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_kontr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_kontr" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_people" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_people" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id" DataSetColumn="id" />
-              <Mapping SourceColumn="nomer" DataSetColumn="nomer" />
-              <Mapping SourceColumn="date_b" DataSetColumn="date_b" />
-              <Mapping SourceColumn="date_e" DataSetColumn="date_e" />
-              <Mapping SourceColumn="status" DataSetColumn="status" />
-              <Mapping SourceColumn="id_kontr" DataSetColumn="id_kontr" />
-              <Mapping SourceColumn="id_people" DataSetColumn="id_people" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ZdogTableAdapter" GeneratorDataComponentClassName="ZdogTableAdapter" Name="Zdog" UserDataComponentName="ZdogTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="Z1ConnectionString (Settings)" DbObjectName="Zdog" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -613,6 +526,7 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
         <xs:element name="DOGOVOR" msprop:Generator_TableClassName="DOGOVORDataTable" msprop:Generator_TableVarName="tableDOGOVOR" msprop:Generator_TablePropName="DOGOVOR" msprop:Generator_RowDeletingName="DOGOVORRowDeleting" msprop:Generator_RowChangingName="DOGOVORRowChanging" msprop:Generator_RowEvHandlerName="DOGOVORRowChangeEventHandler" msprop:Generator_RowDeletedName="DOGOVORRowDeleted" msprop:Generator_UserTableName="DOGOVOR" msprop:Generator_RowChangedName="DOGOVORRowChanged" msprop:Generator_RowEvArgName="DOGOVORRowChangeEvent" msprop:Generator_RowClassName="DOGOVORRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="nomer" msprop:Generator_ColumnVarNameInTable="columnnomer" msprop:Generator_ColumnPropNameInRow="nomer" msprop:Generator_ColumnPropNameInTable="nomerColumn" msprop:Generator_UserColumnName="nomer" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -623,30 +537,8 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
               <xs:element name="date_b" msprop:Generator_ColumnVarNameInTable="columndate_b" msprop:Generator_ColumnPropNameInRow="date_b" msprop:Generator_ColumnPropNameInTable="date_bColumn" msprop:Generator_UserColumnName="date_b" type="xs:dateTime" minOccurs="0" />
               <xs:element name="date_e" msprop:Generator_ColumnVarNameInTable="columndate_e" msprop:Generator_ColumnPropNameInRow="date_e" msprop:Generator_ColumnPropNameInTable="date_eColumn" msprop:Generator_UserColumnName="date_e" type="xs:dateTime" minOccurs="0" />
               <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:int" minOccurs="0" />
-              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="snaz" msprop:Generator_ColumnVarNameInTable="columnsnaz" msprop:Generator_ColumnPropNameInRow="snaz" msprop:Generator_ColumnPropNameInTable="snazColumn" msprop:Generator_UserColumnName="snaz" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="knaz" msprop:Generator_ColumnVarNameInTable="columnknaz" msprop:Generator_ColumnPropNameInRow="knaz" msprop:Generator_ColumnPropNameInTable="knazColumn" msprop:Generator_UserColumnName="knaz" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="id_people" msprop:Generator_ColumnVarNameInTable="columnid_people" msprop:Generator_ColumnPropNameInRow="id_people" msprop:Generator_ColumnPropNameInTable="id_peopleColumn" msprop:Generator_UserColumnName="id_people" type="xs:int" minOccurs="0" />
               <xs:element name="id_kontr" msprop:Generator_ColumnVarNameInTable="columnid_kontr" msprop:Generator_ColumnPropNameInRow="id_kontr" msprop:Generator_ColumnPropNameInTable="id_kontrColumn" msprop:Generator_UserColumnName="id_kontr" type="xs:int" minOccurs="0" />
+              <xs:element name="id_people" msprop:Generator_ColumnVarNameInTable="columnid_people" msprop:Generator_ColumnPropNameInRow="id_people" msprop:Generator_ColumnPropNameInTable="id_peopleColumn" msprop:Generator_UserColumnName="id_people" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -801,25 +693,6 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DOGOVOR1" msprop:Generator_TableClassName="DOGOVOR1DataTable" msprop:Generator_TableVarName="tableDOGOVOR1" msprop:Generator_TablePropName="DOGOVOR1" msprop:Generator_RowDeletingName="DOGOVOR1RowDeleting" msprop:Generator_RowChangingName="DOGOVOR1RowChanging" msprop:Generator_RowEvHandlerName="DOGOVOR1RowChangeEventHandler" msprop:Generator_RowDeletedName="DOGOVOR1RowDeleted" msprop:Generator_UserTableName="DOGOVOR1" msprop:Generator_RowChangedName="DOGOVOR1RowChanged" msprop:Generator_RowEvArgName="DOGOVOR1RowChangeEvent" msprop:Generator_RowClassName="DOGOVOR1Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="nomer" msprop:Generator_ColumnVarNameInTable="columnnomer" msprop:Generator_ColumnPropNameInRow="nomer" msprop:Generator_ColumnPropNameInTable="nomerColumn" msprop:Generator_UserColumnName="nomer" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="date_b" msprop:Generator_ColumnVarNameInTable="columndate_b" msprop:Generator_ColumnPropNameInRow="date_b" msprop:Generator_ColumnPropNameInTable="date_bColumn" msprop:Generator_UserColumnName="date_b" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="date_e" msprop:Generator_ColumnVarNameInTable="columndate_e" msprop:Generator_ColumnPropNameInRow="date_e" msprop:Generator_ColumnPropNameInTable="date_eColumn" msprop:Generator_UserColumnName="date_e" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:int" minOccurs="0" />
-              <xs:element name="id_kontr" msprop:Generator_ColumnVarNameInTable="columnid_kontr" msprop:Generator_ColumnPropNameInRow="id_kontr" msprop:Generator_ColumnPropNameInTable="id_kontrColumn" msprop:Generator_UserColumnName="id_kontr" type="xs:int" minOccurs="0" />
-              <xs:element name="id_people" msprop:Generator_ColumnVarNameInTable="columnid_people" msprop:Generator_ColumnPropNameInRow="id_people" msprop:Generator_ColumnPropNameInTable="id_peopleColumn" msprop:Generator_UserColumnName="id_people" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="Zdog" msprop:Generator_TableClassName="ZdogDataTable" msprop:Generator_TableVarName="tableZdog" msprop:Generator_RowChangedName="ZdogRowChanged" msprop:Generator_TablePropName="Zdog" msprop:Generator_RowDeletingName="ZdogRowDeleting" msprop:Generator_RowChangingName="ZdogRowChanging" msprop:Generator_RowEvHandlerName="ZdogRowChangeEventHandler" msprop:Generator_RowDeletedName="ZdogRowDeleted" msprop:Generator_RowClassName="ZdogRow" msprop:Generator_UserTableName="Zdog" msprop:Generator_RowEvArgName="ZdogRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -859,6 +732,10 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DOGOVOR" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="KONTR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:KONTR" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
@@ -878,20 +755,14 @@ WHERE        (nazv = ?) AND (dop = ?)</CommandText>
       <xs:selector xpath=".//mstns:DOLG" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
-    <xs:unique name="DOGOVOR1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DOGOVOR1" />
-      <xs:field xpath="mstns:id" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="KONTRPEOPLE" msdata:parent="KONTR" msdata:child="PEOPLE" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="PEOPLE" msprop:Generator_ChildPropName="GetPEOPLERows" msprop:Generator_UserRelationName="KONTRPEOPLE" msprop:Generator_ParentPropName="KONTRRow" msprop:Generator_RelationVarName="relationKONTRPEOPLE" msprop:Generator_UserParentTable="KONTR" />
       <msdata:Relationship name="BANKKONTR" msdata:parent="KONTR" msdata:child="BANK" msdata:parentkey="id_bank" msdata:childkey="id" msprop:Generator_UserChildTable="BANK" msprop:Generator_ChildPropName="GetBANKRows" msprop:Generator_UserRelationName="BANKKONTR" msprop:Generator_ParentPropName="KONTRRow" msprop:Generator_RelationVarName="relationBANKKONTR" msprop:Generator_UserParentTable="KONTR" />
       <msdata:Relationship name="BANKKONTR1" msdata:parent="BANK" msdata:child="KONTR" msdata:parentkey="id" msdata:childkey="id_bank" msprop:Generator_UserChildTable="KONTR" msprop:Generator_ChildPropName="GetKONTRRows" msprop:Generator_UserRelationName="BANKKONTR1" msprop:Generator_ParentPropName="BANKRow" msprop:Generator_RelationVarName="relationBANKKONTR1" msprop:Generator_UserParentTable="BANK" />
+      <msdata:Relationship name="KONTRDOGOVOR" msdata:parent="KONTR" msdata:child="DOGOVOR" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="DOGOVOR" msprop:Generator_ChildPropName="GetDOGOVORRows" msprop:Generator_UserRelationName="KONTRDOGOVOR" msprop:Generator_RelationVarName="relationKONTRDOGOVOR" msprop:Generator_UserParentTable="KONTR" msprop:Generator_ParentPropName="KONTRRow" />
       <msdata:Relationship name="STATUSDOGOVOR" msdata:parent="STATUS" msdata:child="DOGOVOR" msdata:parentkey="id" msdata:childkey="status" msprop:Generator_UserChildTable="DOGOVOR" msprop:Generator_ChildPropName="GetDOGOVORRows" msprop:Generator_UserRelationName="STATUSDOGOVOR" msprop:Generator_RelationVarName="relationSTATUSDOGOVOR" msprop:Generator_UserParentTable="STATUS" msprop:Generator_ParentPropName="STATUSRow" />
-      <msdata:Relationship name="DOGOVOR_KONTR" msdata:parent="KONTR" msdata:child="DOGOVOR" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="DOGOVOR" msprop:Generator_ChildPropName="GetDOGOVORRows" msprop:Generator_UserRelationName="DOGOVOR_KONTR" msprop:Generator_RelationVarName="relationDOGOVOR_KONTR" msprop:Generator_UserParentTable="KONTR" msprop:Generator_ParentPropName="KONTRRow" />
-      <msdata:Relationship name="KONTRDOGOVOR" msdata:parent="KONTR" msdata:child="DOGOVOR1" msdata:parentkey="id" msdata:childkey="id_kontr" msprop:Generator_UserChildTable="DOGOVOR1" msprop:Generator_ChildPropName="GetDOGOVOR1Rows" msprop:Generator_UserRelationName="KONTRDOGOVOR" msprop:Generator_RelationVarName="relationKONTRDOGOVOR" msprop:Generator_UserParentTable="KONTR" msprop:Generator_ParentPropName="KONTRRow" />
-      <msdata:Relationship name="STATUSDOGOVOR1" msdata:parent="STATUS" msdata:child="DOGOVOR1" msdata:parentkey="id" msdata:childkey="status" msprop:Generator_UserChildTable="DOGOVOR1" msprop:Generator_ChildPropName="GetDOGOVOR1Rows" msprop:Generator_UserRelationName="STATUSDOGOVOR1" msprop:Generator_RelationVarName="relationSTATUSDOGOVOR1" msprop:Generator_UserParentTable="STATUS" msprop:Generator_ParentPropName="STATUSRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
