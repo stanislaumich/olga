@@ -22,38 +22,20 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet2.DOGOVOR". При необходимости она может быть перемещена или удалена.
-            //this.dOGOVORTableAdapter.Fill(this.z1DataSet2.DOGOVOR);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet1.DOGOVOR". При необходимости она может быть перемещена или удалена.
-            //this.dOGOVORTableAdapter.Fill(this.z1DataSet1.DOGOVOR);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.STATUS". При необходимости она может быть перемещена или удалена.
+            this.ZdogTableAdapter.Fill(this.z1DataSet.Zdog);
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
             this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-               // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOLG". При необходимости она может быть перемещена или удалена.
-            //this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.PEOPLE". При необходимости она может быть перемещена или удалена.
             this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.BANK". При необходимости она может быть перемещена или удалена.
             this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.DOGOVOR". При необходимости она может быть перемещена или удалена.
             this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
-            // TODO: данная Запись кода позволяет загрузить данные в таблицу "z1DataSet.KONTR". При необходимости она может быть перемещена или удалена.
             this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-
-            ////
             ///
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            //this.reportViewer1.RefreshReport();
             this.reportViewer2.RefreshReport();
         }
 
@@ -64,36 +46,14 @@ namespace KONTRAGENT
 
         }
 
-        /*
-         * 
-         * 
-         * 
-          System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
-                    conn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Z1.mdb";
-                    try
-                    {
-                        conn.Open();
-                        String my_querry = "INSERT INTO DOLG (nazv,dop) VALUES ('123','222')";
-                        System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(my_querry, conn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Data saved successfuly...!");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Failed due to" + ex.Message);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-
-
-
-
-         */
+       
         private void Errmess()
         {
             MessageBox.Show("Пустые поля недопустимы!");
+        }
+        private void ErrSel()
+        {
+            MessageBox.Show("Запись не выделена!");
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -191,17 +151,22 @@ namespace KONTRAGENT
         //SubmitChanges() все изменения сохраняются.
         private void button2_Click_2(object sender, EventArgs e)
         {
-            this.dOLGTableAdapter.DeleteQuery(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString(), dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString());
-            this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
-            MessageBox.Show("Запись удалена!");
-
+            if (dataGridView5.CurrentRow.Index<1) {
+                ErrSel();
+            } else{
+                this.dOLGTableAdapter.DeleteQuery(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString(), dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString());
+                this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+                MessageBox.Show("Запись удалена!");
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            this.bANKTableAdapter.DeleteQuery(Convert.ToInt32(textBox17.Text));
-            this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
-            MessageBox.Show("Запись удалена!");
+            
+                this.bANKTableAdapter.DeleteQuery(Convert.ToInt32(textBox17.Text));
+                this.bANKTableAdapter.Fill(this.z1DataSet.BANK);
+                MessageBox.Show("Запись удалена!");
+           
         }
 
         private void dataGridView6_Click(object sender, EventArgs e)
@@ -231,7 +196,6 @@ namespace KONTRAGENT
             comboBox2.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
             comboBox6.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
             textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
-            //textBox17.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
             textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
         }
 
@@ -274,9 +238,16 @@ namespace KONTRAGENT
 
         private void button16_Click(object sender, EventArgs e)
         { // удалить контрагента
-            this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value));
-            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
-            MessageBox.Show("Запись удалена!");
+            if (dataGridView8.CurrentRow.Index < 1)
+            {
+                ErrSel();
+            }
+            else
+            {
+                this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value));
+                this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+                MessageBox.Show("Запись удалена!");
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -351,6 +322,50 @@ namespace KONTRAGENT
         private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBox20.Text = "";
+            this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            textBox21.Text = "";
+            this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            textBox22.Text = "";
+            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (textBox20.Text == "") { MessageBox.Show("Укажите строку для поиска!"); }
+            else
+            {
+                this.kONTRTableAdapter.FillBy(this.z1DataSet.KONTR, "%" + textBox20.Text + "%");
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (textBox21.Text == "") { MessageBox.Show("Укажите строку для поиска!"); }
+            else {
+                this.dOGOVORTableAdapter.FillBy(this.z1DataSet.DOGOVOR, "%"+textBox21.Text+"%");
+                }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (textBox22.Text == "") { MessageBox.Show("Укажите строку для поиска!"); }
+            else
+            {
+                this.pEOPLETableAdapter.FillBy(this.z1DataSet.PEOPLE, "%" + textBox22.Text + "%");
+            }
         }
     }
 }
