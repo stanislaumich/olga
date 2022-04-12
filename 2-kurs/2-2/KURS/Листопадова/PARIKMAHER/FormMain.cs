@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PARIKMAHER
@@ -24,13 +17,14 @@ namespace PARIKMAHER
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.rasp". При необходимости она может быть перемещена или удалена.
-            this.raspTableAdapter.FillByData(this.lISTDataSet.rasp);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.prich". При необходимости она может быть перемещена или удалена.
+            //InitializeComponent();
+            this.tipTableAdapter.Fill(this.lISTDataSet.tip);
+            this.phoneTableAdapter.Fill(this.lISTDataSet.phone);
+            label1.Text = Convert.ToString(DateTime.Now);
+            //label1.Visible = true;
+            this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
             this.prichTableAdapter.Fill(this.lISTDataSet.prich);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.fio". При необходимости она может быть перемещена или удалена.
             this.fioTableAdapter.Fill(this.lISTDataSet.fio);
-
         }
 
         private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,7 +53,61 @@ namespace PARIKMAHER
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.raspTableAdapter.FillByData(this.lISTDataSet.rasp,Convert.ToDateTime("30.04.2022"));
+            //this.raspTableAdapter.FillByData(this.lISTDataSet.rasp,Convert.ToDateTime("30.04.2022"));
+            comboBox1.Text = "";
+            comboBox2.Text = "";
+            textBox1.Text = "";
+            comboBox3.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Пустые поля не допускаются!");
+            }
+            else
+            {
+                this.raspTableAdapter.InsertQuery(Convert.ToInt32(comboBox1.SelectedValue),
+                    dateTimePicker1.Value,
+                    Convert.ToInt32(comboBox2.Text),
+                    Convert.ToInt32(textBox1.Text),
+                    Convert.ToInt32(comboBox3.SelectedValue));
+                this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
+                //this.raspTableAdapter.FillByData(this.lISTDataSet.rasp,
+                //    Convert.ToDateTime(label1.Text));
+                MessageBox.Show("Запись добавлена!");
+
+            }
+        }
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comboBox1.SelectedIndex = Convert.ToInt32(dataGridView2[4, dataGridView2.CurrentRow.Index].Value.ToString());
+            }
+            catch
+            {
+                comboBox1.Text = "";
+            }
+            try
+            {
+                comboBox3.SelectedIndex = Convert.ToInt32(dataGridView2[3, dataGridView2.CurrentRow.Index].Value.ToString());
+            }
+            catch
+            {
+                comboBox3.Text = "";
+            }
+            textBox1.Text = dataGridView2[2, dataGridView2.CurrentRow.Index].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView2[0, dataGridView2.CurrentRow.Index].Value.ToString());
+            comboBox2.Text = dataGridView2[1, dataGridView2.CurrentRow.Index].Value.ToString();
+        }
+
+        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNastr nastrForm = new FormNastr();
+            nastrForm.ShowDialog();
         }
     }
 }

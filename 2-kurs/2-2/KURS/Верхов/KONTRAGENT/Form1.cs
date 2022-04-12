@@ -22,6 +22,8 @@ namespace KONTRAGENT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "z1DataSet.Zdog". При необходимости она может быть перемещена или удалена.
+            this.ZdogTableAdapter.Fill(this.z1DataSet.Zdog);
             //this.ZdogTableAdapter.Fill(this.z1DataSet.Zdog);
             this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
             this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
@@ -36,6 +38,7 @@ namespace KONTRAGENT
             ///
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Format = DateTimePickerFormat.Short;
+            this.reportViewer2.RefreshReport();
             this.reportViewer2.RefreshReport();
         }
 
@@ -149,15 +152,16 @@ namespace KONTRAGENT
         {
             textBox10.Text = dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString();
             textBox11.Text = dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString();
+            textBox23.Text = dataGridView5[2, dataGridView5.CurrentRow.Index].Value.ToString();
         }
         //SubmitChanges() все изменения сохраняются.
         private void button2_Click_2(object sender, EventArgs e)
         {
-            if (dataGridView5.CurrentRow.Index<1) {
+            if (dataGridView5.CurrentRow.Index<0) {
                 ErrSel();
             } else{
-                this.dOLGTableAdapter.DeleteQuery(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString(), dataGridView5[1, dataGridView5.CurrentRow.Index].Value.ToString());
-                this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
+                this.dOLGTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView5[2, dataGridView5.CurrentRow.Index].Value.ToString()));
+                    this.dOLGTableAdapter.Fill(this.z1DataSet.DOLG);
                 MessageBox.Show("Запись удалена!");
             }
         }
@@ -198,9 +202,16 @@ namespace KONTRAGENT
                 textBox13.Text = dataGridView7[1, dataGridView7.CurrentRow.Index].Value.ToString();
                 textBox14.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
                 comboBox2.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
+                textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
+                // comboBox6.Text =
+                try {
+                    comboBox6.SelectedIndex = Convert.ToInt32(dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString());
+                }
+                catch
+                {
+                    comboBox6.Text = "";
+                }
 
-               // comboBox6.Text = 
-                comboBox6.SelectedIndex=Convert.ToInt32(dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString());
 
                 //textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
                 //textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
@@ -215,9 +226,16 @@ namespace KONTRAGENT
         private void button15_Click(object sender, EventArgs e)
         {
             // удалить сотрудника
-            this.pEOPLETableAdapter.DeleteQuery(Convert.ToInt32(textBox18.Text));
-            this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
-            MessageBox.Show("Запись удалена!");
+            try
+            {
+                this.pEOPLETableAdapter.DeleteQuery(Convert.ToInt32(textBox18.Text));
+                this.pEOPLETableAdapter.Fill(this.z1DataSet.PEOPLE);
+                MessageBox.Show("Запись удалена!");
+            }
+            catch
+            {
+                MessageBox.Show("Укажите запись!");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -280,7 +298,8 @@ namespace KONTRAGENT
 
         private void button18_Click(object sender, EventArgs e)
         {
-
+            this.sTATUSTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView10[0, dataGridView10.CurrentRow.Index].Value.ToString()));
+            this.sTATUSTableAdapter.Fill(this.z1DataSet.STATUS);
         }
 
         private void dataGridView9_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -296,9 +315,13 @@ namespace KONTRAGENT
         private void button17_Click(object sender, EventArgs e)
         {
             // удалить договор 
-            this.dOGOVORTableAdapter.DeleteQuery(Convert.ToInt32(textBox19.Text));
-            this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
-            MessageBox.Show("Запись удалена!");
+            if (textBox19.Text == "") { MessageBox.Show("Не указана запись!"); }
+            else
+            {
+                this.dOGOVORTableAdapter.DeleteQuery(Convert.ToInt32(textBox19.Text));
+                this.dOGOVORTableAdapter.Fill(this.z1DataSet.DOGOVOR);
+                MessageBox.Show("Запись удалена!");
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -316,10 +339,31 @@ namespace KONTRAGENT
             if (dataGridView9.RowCount > 0)
             {
                 textBox16.Text = dataGridView9[0, dataGridView9.CurrentRow.Index].Value.ToString();
-                textBox19.Text = dataGridView9[6, dataGridView9.CurrentRow.Index].Value.ToString();
-                comboBox3.Text = dataGridView9[1, dataGridView9.CurrentRow.Index].Value.ToString();
-                comboBox5.Text = dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString();
-                comboBox4.Text = dataGridView9[5, dataGridView9.CurrentRow.Index].Value.ToString();
+                try
+                {
+                    textBox19.Text = dataGridView9[6, dataGridView9.CurrentRow.Index].Value.ToString();
+                }
+                catch 
+                { 
+                    textBox19.Text = ""; 
+                }
+                try
+                {
+                    comboBox3.SelectedIndex = Convert.ToInt32(dataGridView9[1, dataGridView9.CurrentRow.Index].Value.ToString());
+                }
+                catch
+                {
+                    comboBox3.Text = "";
+                }
+                comboBox5.SelectedIndex = Convert.ToInt32(dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString());
+                try
+                {
+                    comboBox4.SelectedIndex = Convert.ToInt32(dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString());
+                }
+                catch
+                {
+                    comboBox4.Text = "";
+                }
                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView9[2, dataGridView9.CurrentRow.Index].Value.ToString());
                 dateTimePicker2.Value = Convert.ToDateTime(dataGridView9[3, dataGridView9.CurrentRow.Index].Value.ToString());
             }
@@ -392,6 +436,27 @@ namespace KONTRAGENT
         private void ZdogBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView8_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dataGridView8[0, dataGridView8.CurrentRow.Index].Value.ToString();
+            textBox2.Text = dataGridView8[1, dataGridView8.CurrentRow.Index].Value.ToString();
+            textBox3.Text = dataGridView8[2, dataGridView8.CurrentRow.Index].Value.ToString();
+            textBox4.Text = dataGridView8[3, dataGridView8.CurrentRow.Index].Value.ToString();
+            try
+            {
+                comboBox1.SelectedIndex = Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value.ToString());
+            }
+            catch
+            {
+                comboBox1.Text = "";
+            }
+        }
+
+        private void dataGridView10_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox15.Text = dataGridView10[1, dataGridView10.CurrentRow.Index].Value.ToString();
         }
     }
 }

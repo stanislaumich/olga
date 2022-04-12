@@ -46,6 +46,8 @@ namespace KONTRAGENT {
         
         private global::System.Data.DataRelation relationKONTRDOGOVOR;
         
+        private global::System.Data.DataRelation relationPEOPLEDOLG;
+        
         private global::System.Data.DataRelation relationSTATUSDOGOVOR;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -352,6 +354,7 @@ namespace KONTRAGENT {
             this.relationBANKKONTR = this.Relations["BANKKONTR"];
             this.relationBANKKONTR1 = this.Relations["BANKKONTR1"];
             this.relationKONTRDOGOVOR = this.Relations["KONTRDOGOVOR"];
+            this.relationPEOPLEDOLG = this.Relations["PEOPLEDOLG"];
             this.relationSTATUSDOGOVOR = this.Relations["STATUSDOGOVOR"];
         }
         
@@ -393,6 +396,10 @@ namespace KONTRAGENT {
                         this.tableKONTR.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableDOGOVOR.id_kontrColumn}, false);
             this.Relations.Add(this.relationKONTRDOGOVOR);
+            this.relationPEOPLEDOLG = new global::System.Data.DataRelation("PEOPLEDOLG", new global::System.Data.DataColumn[] {
+                        this.tablePEOPLE.id_dolgColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDOLG.idColumn}, false);
+            this.Relations.Add(this.relationPEOPLEDOLG);
             this.relationSTATUSDOGOVOR = new global::System.Data.DataRelation("STATUSDOGOVOR", new global::System.Data.DataColumn[] {
                         this.tableSTATUS.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableDOGOVOR.statusColumn}, false);
@@ -524,17 +531,17 @@ namespace KONTRAGENT {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DOGOVORDataTable : global::System.Data.TypedTableBase<DOGOVORRow> {
             
-            private global::System.Data.DataColumn columnid;
-            
             private global::System.Data.DataColumn columnnomer;
             
             private global::System.Data.DataColumn columndate_b;
             
             private global::System.Data.DataColumn columndate_e;
             
-            private global::System.Data.DataColumn columnstatus;
+            private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnid_kontr;
+            
+            private global::System.Data.DataColumn columnstatus;
             
             private global::System.Data.DataColumn columnid_people;
             
@@ -573,14 +580,6 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn nomerColumn {
                 get {
                     return this.columnnomer;
@@ -605,9 +604,9 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn statusColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnstatus;
+                    return this.columnid;
                 }
             }
             
@@ -616,6 +615,14 @@ namespace KONTRAGENT {
             public global::System.Data.DataColumn id_kontrColumn {
                 get {
                     return this.columnid_kontr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
                 }
             }
             
@@ -664,21 +671,21 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DOGOVORRow AddDOGOVORRow(string nomer, System.DateTime date_b, System.DateTime date_e, STATUSRow parentSTATUSRowBySTATUSDOGOVOR, KONTRRow parentKONTRRowByKONTRDOGOVOR, int id_people) {
+            public DOGOVORRow AddDOGOVORRow(string nomer, System.DateTime date_b, System.DateTime date_e, KONTRRow parentKONTRRowByKONTRDOGOVOR, STATUSRow parentSTATUSRowBySTATUSDOGOVOR, int id_people) {
                 DOGOVORRow rowDOGOVORRow = ((DOGOVORRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         nomer,
                         date_b,
                         date_e,
                         null,
                         null,
+                        null,
                         id_people};
-                if ((parentSTATUSRowBySTATUSDOGOVOR != null)) {
-                    columnValuesArray[4] = parentSTATUSRowBySTATUSDOGOVOR[0];
-                }
                 if ((parentKONTRRowByKONTRDOGOVOR != null)) {
-                    columnValuesArray[5] = parentKONTRRowByKONTRDOGOVOR[0];
+                    columnValuesArray[4] = parentKONTRRowByKONTRDOGOVOR[0];
+                }
+                if ((parentSTATUSRowBySTATUSDOGOVOR != null)) {
+                    columnValuesArray[5] = parentSTATUSRowBySTATUSDOGOVOR[0];
                 }
                 rowDOGOVORRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDOGOVORRow);
@@ -709,40 +716,40 @@ namespace KONTRAGENT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
                 this.columnnomer = base.Columns["nomer"];
                 this.columndate_b = base.Columns["date_b"];
                 this.columndate_e = base.Columns["date_e"];
-                this.columnstatus = base.Columns["status"];
+                this.columnid = base.Columns["id"];
                 this.columnid_kontr = base.Columns["id_kontr"];
+                this.columnstatus = base.Columns["status"];
                 this.columnid_people = base.Columns["id_people"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columnnomer = new global::System.Data.DataColumn("nomer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnomer);
                 this.columndate_b = new global::System.Data.DataColumn("date_b", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_b);
                 this.columndate_e = new global::System.Data.DataColumn("date_e", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_e);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnid_kontr = new global::System.Data.DataColumn("id_kontr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_kontr);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.columnid_people = new global::System.Data.DataColumn("id_people", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_people);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnnomer.MaxLength = 255;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
-                this.columnnomer.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2815,17 +2822,6 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tableDOGOVOR.idColumn]));
-                }
-                set {
-                    this[this.tableDOGOVOR.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nomer {
                 get {
                     try {
@@ -2874,17 +2870,12 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int status {
+            public int id {
                 get {
-                    try {
-                        return ((int)(this[this.tableDOGOVOR.statusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'status\' в таблице \'DOGOVOR\' равно DBNull.", e);
-                    }
+                    return ((int)(this[this.tableDOGOVOR.idColumn]));
                 }
                 set {
-                    this[this.tableDOGOVOR.statusColumn] = value;
+                    this[this.tableDOGOVOR.idColumn] = value;
                 }
             }
             
@@ -2901,6 +2892,22 @@ namespace KONTRAGENT {
                 }
                 set {
                     this[this.tableDOGOVOR.id_kontrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int status {
+                get {
+                    try {
+                        return ((int)(this[this.tableDOGOVOR.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'status\' в таблице \'DOGOVOR\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDOGOVOR.statusColumn] = value;
                 }
             }
             
@@ -2980,18 +2987,6 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsstatusNull() {
-                return this.IsNull(this.tableDOGOVOR.statusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetstatusNull() {
-                this[this.tableDOGOVOR.statusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_kontrNull() {
                 return this.IsNull(this.tableDOGOVOR.id_kontrColumn);
             }
@@ -3000,6 +2995,18 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_kontrNull() {
                 this[this.tableDOGOVOR.id_kontrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tableDOGOVOR.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tableDOGOVOR.statusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3456,6 +3463,17 @@ namespace KONTRAGENT {
             public void Setp_id_dolgNull() {
                 this[this.tablePEOPLE.p_id_dolgColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DOLGRow[] GetDOLGRows() {
+                if ((this.Table.ChildRelations["PEOPLEDOLG"] == null)) {
+                    return new DOLGRow[0];
+                }
+                else {
+                    return ((DOLGRow[])(base.GetChildRows(this.Table.ChildRelations["PEOPLEDOLG"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3765,6 +3783,17 @@ namespace KONTRAGENT {
                 }
                 set {
                     this[this.tableDOLG.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PEOPLERow PEOPLERow {
+                get {
+                    return ((PEOPLERow)(this.GetParentRow(this.Table.ParentRelations["PEOPLEDOLG"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PEOPLEDOLG"]);
                 }
             }
             
@@ -4339,12 +4368,12 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DOGOVOR";
-            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("nomer", "nomer");
             tableMapping.ColumnMappings.Add("date_b", "date_b");
             tableMapping.ColumnMappings.Add("date_e", "date_e");
-            tableMapping.ColumnMappings.Add("status", "status");
+            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("id_kontr", "id_kontr");
+            tableMapping.ColumnMappings.Add("status", "status");
             tableMapping.ColumnMappings.Add("id_people", "id_people");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -4362,8 +4391,9 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, nomer, date_b, date_e, status, id_kontr, id_people\r\nFROM       " +
-                "     DOGOVOR";
+            this._commandCollection[0].CommandText = "SELECT        DOGOVOR.id, DOGOVOR.nomer, DOGOVOR.date_b, DOGOVOR.date_e, DOGOVOR." +
+                "id_kontr, DOGOVOR.id_people, DOGOVOR.status\r\nFROM            (DOGOVOR INNER JOIN" +
+                "\r\n                         KONTR ON DOGOVOR.id_kontr = KONTR.id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -4372,12 +4402,10 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        d.id, d.nomer, d.date_b, d.date_e, d.status, p.fio, s.nazv AS snaz, k.nazv AS knaz, d.id_people, d.id_kontr
-FROM            (((DOGOVOR d INNER JOIN
-                         PEOPLE p ON d.id_people = p.id) INNER JOIN
-                         STATUS s ON d.status = s.id) INNER JOIN
-                         KONTR k ON d.id = k.id)
-WHERE        (d.nomer LIKE ?)";
+            this._commandCollection[2].CommandText = "SELECT        DOGOVOR.id, DOGOVOR.nomer, DOGOVOR.date_b, DOGOVOR.date_e, DOGOVOR." +
+                "id_kontr, DOGOVOR.id_people, DOGOVOR.status\r\nFROM            (DOGOVOR INNER JOIN" +
+                "\r\n                         KONTR ON DOGOVOR.id_kontr = KONTR.id)\r\nwhere nomer li" +
+                "ke ?";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nomer", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nomer", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
@@ -4457,14 +4485,9 @@ WHERE        (d.nomer LIKE ?)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(global::System.Nullable<int> id) {
+        public virtual int DeleteQuery(int id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((id.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(id.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[0].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4486,15 +4509,20 @@ WHERE        (d.nomer LIKE ?)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string nomer, System.DateTime date_b, global::System.Nullable<global::System.DateTime> date_e, global::System.Nullable<int> status, global::System.Nullable<int> id_kontr, global::System.Nullable<int> id_people) {
+        public virtual int InsertQuery(string nomer, global::System.Nullable<global::System.DateTime> date_b, global::System.Nullable<global::System.DateTime> date_e, global::System.Nullable<int> status, global::System.Nullable<int> id_kontr, global::System.Nullable<int> id_people) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
             if ((nomer == null)) {
-                throw new global::System.ArgumentNullException("nomer");
+                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(nomer));
             }
-            command.Parameters[1].Value = ((System.DateTime)(date_b));
+            if ((date_b.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(date_b.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((date_e.HasValue == true)) {
                 command.Parameters[2].Value = ((System.DateTime)(date_e.Value));
             }
@@ -6484,10 +6512,9 @@ WHERE        (d.nomer LIKE ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM DOLG\r\nWHERE        (nazv = ?) AND (dop = ?)";
+            this._commandCollection[1].CommandText = "DELETE FROM DOLG\r\nWHERE        (id = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nazv", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("dop", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "dop", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO `DOLG` (`nazv`, `dop`) VALUES (?, ?)";
@@ -6672,20 +6699,9 @@ WHERE        (d.nomer LIKE ?)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(string nazv, string dop) {
+        public virtual int DeleteQuery(int id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(nazv));
-            }
-            if ((dop == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(dop));
-            }
+            command.Parameters[0].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

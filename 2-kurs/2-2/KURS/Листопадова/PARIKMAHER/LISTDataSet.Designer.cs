@@ -40,6 +40,10 @@ namespace PARIKMAHER {
         
         private global::System.Data.DataRelation relationprichrasp;
         
+        private global::System.Data.DataRelation relationrasp_fio;
+        
+        private global::System.Data.DataRelation relationfio_rasp;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -299,6 +303,8 @@ namespace PARIKMAHER {
             this.relationfiophone = this.Relations["fiophone"];
             this.relationtipphone = this.Relations["tipphone"];
             this.relationprichrasp = this.Relations["prichrasp"];
+            this.relationrasp_fio = this.Relations["rasp_fio"];
+            this.relationfio_rasp = this.Relations["fio_rasp"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -331,6 +337,14 @@ namespace PARIKMAHER {
                         this.tableprich.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablerasp.id_prichColumn}, false);
             this.Relations.Add(this.relationprichrasp);
+            this.relationrasp_fio = new global::System.Data.DataRelation("rasp_fio", new global::System.Data.DataColumn[] {
+                        this.tablerasp.id_fioColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefio.idColumn}, false);
+            this.Relations.Add(this.relationrasp_fio);
+            this.relationfio_rasp = new global::System.Data.DataRelation("fio_rasp", new global::System.Data.DataColumn[] {
+                        this.tablefio.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablerasp.id_fioColumn}, false);
+            this.Relations.Add(this.relationfio_rasp);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1489,15 +1503,18 @@ namespace PARIKMAHER {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public raspRow AddraspRow(int id_fio, System.DateTime data, int hour, int price, prichRow parentprichRowByprichrasp) {
+            public raspRow AddraspRow(fioRow parentfioRowByfio_rasp, System.DateTime data, int hour, int price, prichRow parentprichRowByprichrasp) {
                 raspRow rowraspRow = ((raspRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        id_fio,
+                        null,
                         data,
                         hour,
                         price,
                         null};
+                if ((parentfioRowByfio_rasp != null)) {
+                    columnValuesArray[1] = parentfioRowByfio_rasp[0];
+                }
                 if ((parentprichRowByprichrasp != null)) {
                     columnValuesArray[5] = parentprichRowByprichrasp[0];
                 }
@@ -2053,6 +2070,17 @@ namespace PARIKMAHER {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public raspRow raspRow {
+                get {
+                    return ((raspRow)(this.GetParentRow(this.Table.ParentRelations["rasp_fio"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["rasp_fio"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfioNull() {
                 return this.IsNull(this.tablefio.fioColumn);
             }
@@ -2107,6 +2135,17 @@ namespace PARIKMAHER {
                 }
                 else {
                     return ((phoneRow[])(base.GetChildRows(this.Table.ChildRelations["fiophone"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public raspRow[] GetraspRows() {
+                if ((this.Table.ChildRelations["fio_rasp"] == null)) {
+                    return new raspRow[0];
+                }
+                else {
+                    return ((raspRow[])(base.GetChildRows(this.Table.ChildRelations["fio_rasp"])));
                 }
             }
         }
@@ -2454,6 +2493,17 @@ namespace PARIKMAHER {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public fioRow fioRow {
+                get {
+                    return ((fioRow)(this.GetParentRow(this.Table.ParentRelations["fio_rasp"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["fio_rasp"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_fioNull() {
                 return this.IsNull(this.tablerasp.id_fioColumn);
             }
@@ -2510,6 +2560,17 @@ namespace PARIKMAHER {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_prichNull() {
                 this[this.tablerasp.id_prichColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public fioRow[] GetfioRows() {
+                if ((this.Table.ChildRelations["rasp_fio"] == null)) {
+                    return new fioRow[0];
+                }
+                else {
+                    return ((fioRow[])(base.GetChildRows(this.Table.ChildRelations["rasp_fio"])));
+                }
             }
         }
         
@@ -4064,7 +4125,7 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, id_fio, data, [hour], price, id_prich FROM rasp";
@@ -4076,13 +4137,23 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                 "(rasp.data = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("data", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO `rasp` (`id_fio`, `data`, `hour`, `price`, `id_prich`) VALUES (?, ?, " +
+                "?, ?, ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_fio", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_fio", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("data", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "data", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("hour", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "hour", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_prich", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_prich", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillByData(LISTDataSet.raspDataTable dataTable) {
+        public virtual int Fill(LISTDataSet.raspDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4370,6 +4441,59 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<int> id_fio, global::System.Nullable<global::System.DateTime> data, global::System.Nullable<int> hour, global::System.Nullable<int> price, global::System.Nullable<int> id_prich) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            if ((id_fio.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(id_fio.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((data.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(data.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((hour.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(hour.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((price.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(price.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((id_prich.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(id_prich.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -4888,6 +5012,15 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._raspTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._raspTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tipTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tip.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -4903,15 +5036,6 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._phoneTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._raspTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._raspTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4941,6 +5065,14 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._raspTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._raspTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tipTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tip.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4957,14 +5089,6 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._raspTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._raspTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -4975,14 +5099,6 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(LISTDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._raspTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._raspTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._phoneTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.phone.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4996,6 +5112,14 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tipTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._raspTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rasp.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._raspTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
