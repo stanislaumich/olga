@@ -203,18 +203,8 @@ namespace KONTRAGENT
                 textBox14.Text = dataGridView7[2, dataGridView7.CurrentRow.Index].Value.ToString();
                 comboBox2.Text = dataGridView7[3, dataGridView7.CurrentRow.Index].Value.ToString();
                 textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
-                // comboBox6.Text =
-                try {
-                    comboBox6.SelectedIndex = Convert.ToInt32(dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString());
-                }
-                catch
-                {
-                    comboBox6.Text = "";
-                }
+                comboBox6.Text = dataGridView7[6, dataGridView7.CurrentRow.Index].Value.ToString();
 
-
-                //textBox9.Text = dataGridView7[4, dataGridView7.CurrentRow.Index].Value.ToString();
-                //textBox18.Text = dataGridView7[5, dataGridView7.CurrentRow.Index].Value.ToString();
             }
         }
 
@@ -264,13 +254,13 @@ namespace KONTRAGENT
 
         private void button16_Click(object sender, EventArgs e)
         { // удалить контрагента
-            if (dataGridView8.CurrentRow.Index < 1)
+            if (dataGridView8.CurrentRow.Index < 0)
             {
                 ErrSel();
             }
             else
             {
-                this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value));
+                this.kONTRTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView8[5, dataGridView8.CurrentRow.Index].Value));
                 this.kONTRTableAdapter.Fill(this.z1DataSet.KONTR);
                 MessageBox.Show("Запись удалена!");
             }
@@ -431,6 +421,7 @@ namespace KONTRAGENT
         private void dataGridView9_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //textBox19.Text = dataGridView9[6, dataGridView9.CurrentRow.Index].Value.ToString();
+
         }
 
         private void ZdogBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -446,7 +437,7 @@ namespace KONTRAGENT
             textBox4.Text = dataGridView8[3, dataGridView8.CurrentRow.Index].Value.ToString();
             try
             {
-                comboBox1.SelectedIndex = Convert.ToInt32(dataGridView8[4, dataGridView8.CurrentRow.Index].Value.ToString());
+                comboBox1.Text = dataGridView8[4, dataGridView8.CurrentRow.Index].Value.ToString();
             }
             catch
             {
@@ -457,6 +448,11 @@ namespace KONTRAGENT
         private void dataGridView10_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox15.Text = dataGridView10[1, dataGridView10.CurrentRow.Index].Value.ToString();
+        }
+
+        private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

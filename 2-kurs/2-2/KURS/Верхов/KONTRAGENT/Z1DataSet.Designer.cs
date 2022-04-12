@@ -50,6 +50,8 @@ namespace KONTRAGENT {
         
         private global::System.Data.DataRelation relationSTATUSDOGOVOR;
         
+        private global::System.Data.DataRelation relationKONTRDOGOVOR1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -356,6 +358,7 @@ namespace KONTRAGENT {
             this.relationKONTRDOGOVOR = this.Relations["KONTRDOGOVOR"];
             this.relationPEOPLEDOLG = this.Relations["PEOPLEDOLG"];
             this.relationSTATUSDOGOVOR = this.Relations["STATUSDOGOVOR"];
+            this.relationKONTRDOGOVOR1 = this.Relations["KONTRDOGOVOR1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -404,6 +407,10 @@ namespace KONTRAGENT {
                         this.tableSTATUS.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableDOGOVOR.statusColumn}, false);
             this.Relations.Add(this.relationSTATUSDOGOVOR);
+            this.relationKONTRDOGOVOR1 = new global::System.Data.DataRelation("KONTRDOGOVOR1", new global::System.Data.DataColumn[] {
+                        this.tablePEOPLE.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDOGOVOR.id_kontrColumn}, false);
+            this.Relations.Add(this.relationKONTRDOGOVOR1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -895,6 +902,8 @@ namespace KONTRAGENT {
             
             private global::System.Data.DataColumn columnunn;
             
+            private global::System.Data.DataColumn columnb;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KONTRDataTable() {
@@ -978,6 +987,14 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bColumn {
+                get {
+                    return this.columnb;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1013,7 +1030,7 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KONTRRow AddKONTRRow(string nazv, string uadr, BANKRow parentBANKRowByBANKKONTR1, string padr, string unn) {
+            public KONTRRow AddKONTRRow(string nazv, string uadr, BANKRow parentBANKRowByBANKKONTR1, string padr, string unn, string b) {
                 KONTRRow rowKONTRRow = ((KONTRRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1021,7 +1038,8 @@ namespace KONTRAGENT {
                         uadr,
                         null,
                         padr,
-                        unn};
+                        unn,
+                        b};
                 if ((parentBANKRowByBANKKONTR1 != null)) {
                     columnValuesArray[3] = parentBANKRowByBANKKONTR1[0];
                 }
@@ -1060,6 +1078,7 @@ namespace KONTRAGENT {
                 this.columnid_bank = base.Columns["id_bank"];
                 this.columnpadr = base.Columns["padr"];
                 this.columnunn = base.Columns["unn"];
+                this.columnb = base.Columns["b"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1077,6 +1096,8 @@ namespace KONTRAGENT {
                 base.Columns.Add(this.columnpadr);
                 this.columnunn = new global::System.Data.DataColumn("unn", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunn);
+                this.columnb = new global::System.Data.DataColumn("b", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnb);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1088,6 +1109,7 @@ namespace KONTRAGENT {
                 this.columnuadr.MaxLength = 255;
                 this.columnpadr.MaxLength = 255;
                 this.columnunn.MaxLength = 255;
+                this.columnb.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1235,7 +1257,9 @@ namespace KONTRAGENT {
             
             private global::System.Data.DataColumn columnid_dolg1;
             
-            private global::System.Data.DataColumn columnp_id_dolg;
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnnazv;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1328,9 +1352,17 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn p_id_dolgColumn {
+            public global::System.Data.DataColumn Expr1Column {
                 get {
-                    return this.columnp_id_dolg;
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nazvColumn {
+                get {
+                    return this.columnnazv;
                 }
             }
             
@@ -1371,7 +1403,7 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PEOPLERow AddPEOPLERow(string fio, string phone, string adr, int id_dolg, KONTRRow parentKONTRRowByKONTRPEOPLE, string id_dolg1, int p_id_dolg) {
+            public PEOPLERow AddPEOPLERow(string fio, string phone, string adr, int id_dolg, KONTRRow parentKONTRRowByKONTRPEOPLE, string id_dolg1, int Expr1, string nazv) {
                 PEOPLERow rowPEOPLERow = ((PEOPLERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1381,7 +1413,8 @@ namespace KONTRAGENT {
                         id_dolg,
                         null,
                         id_dolg1,
-                        p_id_dolg};
+                        Expr1,
+                        nazv};
                 if ((parentKONTRRowByKONTRPEOPLE != null)) {
                     columnValuesArray[5] = parentKONTRRowByKONTRPEOPLE[0];
                 }
@@ -1421,7 +1454,8 @@ namespace KONTRAGENT {
                 this.columnid_dolg = base.Columns["id_dolg"];
                 this.columnid_kontr = base.Columns["id_kontr"];
                 this.columnid_dolg1 = base.Columns["id_dolg1"];
-                this.columnp_id_dolg = base.Columns["p_id_dolg"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnnazv = base.Columns["nazv"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1441,8 +1475,10 @@ namespace KONTRAGENT {
                 base.Columns.Add(this.columnid_kontr);
                 this.columnid_dolg1 = new global::System.Data.DataColumn("id_dolg1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_dolg1);
-                this.columnp_id_dolg = new global::System.Data.DataColumn("p_id_dolg", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnp_id_dolg);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnnazv = new global::System.Data.DataColumn("nazv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnazv);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1455,7 +1491,7 @@ namespace KONTRAGENT {
                 this.columnadr.MaxLength = 255;
                 this.columnid_dolg1.Caption = "id_dolg";
                 this.columnid_dolg1.MaxLength = 255;
-                this.columnp_id_dolg.Caption = "p.id_dolg";
+                this.columnnazv.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2951,6 +2987,17 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PEOPLERow PEOPLERow {
+                get {
+                    return ((PEOPLERow)(this.GetParentRow(this.Table.ParentRelations["KONTRDOGOVOR1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["KONTRDOGOVOR1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnomerNull() {
                 return this.IsNull(this.tableDOGOVOR.nomerColumn);
             }
@@ -3129,6 +3176,22 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string b {
+                get {
+                    try {
+                        return ((string)(this[this.tableKONTR.bColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'b\' в таблице \'KONTR\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKONTR.bColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BANKRow BANKRow {
                 get {
                     return ((BANKRow)(this.GetParentRow(this.Table.ParentRelations["BANKKONTR1"])));
@@ -3196,6 +3259,18 @@ namespace KONTRAGENT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetunnNull() {
                 this[this.tableKONTR.unnColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbNull() {
+                return this.IsNull(this.tableKONTR.bColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbNull() {
+                this[this.tableKONTR.bColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3355,17 +3430,33 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int p_id_dolg {
+            public int Expr1 {
                 get {
                     try {
-                        return ((int)(this[this.tablePEOPLE.p_id_dolgColumn]));
+                        return ((int)(this[this.tablePEOPLE.Expr1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'p_id_dolg\' в таблице \'PEOPLE\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr1\' в таблице \'PEOPLE\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePEOPLE.p_id_dolgColumn] = value;
+                    this[this.tablePEOPLE.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nazv {
+                get {
+                    try {
+                        return ((string)(this[this.tablePEOPLE.nazvColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'nazv\' в таблице \'PEOPLE\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePEOPLE.nazvColumn] = value;
                 }
             }
             
@@ -3454,14 +3545,26 @@ namespace KONTRAGENT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isp_id_dolgNull() {
-                return this.IsNull(this.tablePEOPLE.p_id_dolgColumn);
+            public bool IsExpr1Null() {
+                return this.IsNull(this.tablePEOPLE.Expr1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setp_id_dolgNull() {
-                this[this.tablePEOPLE.p_id_dolgColumn] = global::System.Convert.DBNull;
+            public void SetExpr1Null() {
+                this[this.tablePEOPLE.Expr1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnazvNull() {
+                return this.IsNull(this.tablePEOPLE.nazvColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnazvNull() {
+                this[this.tablePEOPLE.nazvColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3472,6 +3575,17 @@ namespace KONTRAGENT {
                 }
                 else {
                     return ((DOLGRow[])(base.GetChildRows(this.Table.ChildRelations["PEOPLEDOLG"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DOGOVORRow[] GetDOGOVORRows() {
+                if ((this.Table.ChildRelations["KONTRDOGOVOR1"] == null)) {
+                    return new DOGOVORRow[0];
+                }
+                else {
+                    return ((DOGOVORRow[])(base.GetChildRows(this.Table.ChildRelations["KONTRDOGOVOR1"])));
                 }
             }
         }
@@ -4692,52 +4806,8 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id_bank", "id_bank");
             tableMapping.ColumnMappings.Add("padr", "padr");
             tableMapping.ColumnMappings.Add("unn", "unn");
+            tableMapping.ColumnMappings.Add("b", "b");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `KONTR` WHERE ((`id` = ?) AND ((? = 1 AND `nazv` IS NULL) OR (`nazv` = ?)) AND ((? = 1 AND `uadr` IS NULL) OR (`uadr` = ?)) AND ((? = 1 AND `id_bank` IS NULL) OR (`id_bank` = ?)) AND ((? = 1 AND `padr` IS NULL) OR (`padr` = ?)) AND ((? = 1 AND `unn` IS NULL) OR (`unn` = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_nazv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nazv", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_uadr", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_uadr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_padr", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_padr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_unn", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_unn", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `KONTR` (`nazv`, `uadr`, `id_bank`, `padr`, `unn`) VALUES (?, ?, ?, ?" +
-                ", ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nazv", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("uadr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("padr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unn", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `KONTR` SET `nazv` = ?, `uadr` = ?, `id_bank` = ?, `padr` = ?, `unn` = ? WHERE ((`id` = ?) AND ((? = 1 AND `nazv` IS NULL) OR (`nazv` = ?)) AND ((? = 1 AND `uadr` IS NULL) OR (`uadr` = ?)) AND ((? = 1 AND `id_bank` IS NULL) OR (`id_bank` = ?)) AND ((? = 1 AND `padr` IS NULL) OR (`padr` = ?)) AND ((? = 1 AND `unn` IS NULL) OR (`unn` = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nazv", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("uadr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("padr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unn", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_nazv", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nazv", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nazv", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_uadr", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_uadr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "uadr", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id_bank", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_bank", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_padr", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_padr", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "padr", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_unn", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_unn", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unn", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4753,7 +4823,9 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, nazv, uadr, id_bank, padr, unn FROM KONTR";
+            this._commandCollection[0].CommandText = "SELECT        KONTR.id, KONTR.nazv, KONTR.uadr, KONTR.id_bank, KONTR.padr, KONTR." +
+                "unn, BANK.dop AS b\r\nFROM            (KONTR INNER JOIN\r\n                         " +
+                "BANK ON KONTR.id_bank = BANK.id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -4809,7 +4881,7 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         public virtual int FillBy(Z1DataSet.KONTRDataTable dataTable, string nazv) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nazv));
@@ -4828,7 +4900,7 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         public virtual Z1DataSet.KONTRDataTable GetDataBy2(string nazv) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nazv));
@@ -4841,218 +4913,15 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Z1DataSet.KONTRDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Z1DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "KONTR");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_nazv, string Original_uadr, int Original_id_bank, string Original_padr, string Original_unn) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_nazv == null)) {
-                throw new global::System.ArgumentNullException("Original_nazv");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nazv));
-            }
-            if ((Original_uadr == null)) {
-                throw new global::System.ArgumentNullException("Original_uadr");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_uadr));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_id_bank));
-            if ((Original_padr == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_padr));
-            }
-            if ((Original_unn == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_unn));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nazv, string uadr, int id_bank, string padr, string unn) {
-            if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nazv));
-            }
-            if ((uadr == null)) {
-                throw new global::System.ArgumentNullException("uadr");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(uadr));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(id_bank));
-            if ((padr == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(padr));
-            }
-            if ((unn == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(unn));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nazv, string uadr, int id_bank, string padr, string unn, int Original_id, string Original_nazv, string Original_uadr, int Original_id_bank, string Original_padr, string Original_unn) {
-            if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nazv));
-            }
-            if ((uadr == null)) {
-                throw new global::System.ArgumentNullException("uadr");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(uadr));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(id_bank));
-            if ((padr == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(padr));
-            }
-            if ((unn == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(unn));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
-            if ((Original_nazv == null)) {
-                throw new global::System.ArgumentNullException("Original_nazv");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_nazv));
-            }
-            if ((Original_uadr == null)) {
-                throw new global::System.ArgumentNullException("Original_uadr");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_uadr));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_id_bank));
-            if ((Original_padr == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_padr));
-            }
-            if ((Original_unn == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_unn));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int id) {
+        public virtual int DeleteQuery(global::System.Nullable<int> id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(id));
+            if ((id.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5074,21 +4943,26 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string nazv, string uadr, int id_bank, string padr, string unn) {
+        public virtual int InsertQuery(string nazv, string uadr, global::System.Nullable<int> id_bank, string padr, string unn) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
             if ((nazv == null)) {
-                throw new global::System.ArgumentNullException("nazv");
+                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(nazv));
             }
             if ((uadr == null)) {
-                throw new global::System.ArgumentNullException("uadr");
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[1].Value = ((string)(uadr));
             }
-            command.Parameters[2].Value = ((int)(id_bank));
+            if ((id_bank.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(id_bank.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((padr == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
@@ -5246,7 +5120,8 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("adr", "adr");
             tableMapping.ColumnMappings.Add("id_kontr", "id_kontr");
             tableMapping.ColumnMappings.Add("id_dolg", "id_dolg1");
-            tableMapping.ColumnMappings.Add("p.id_dolg", "p_id_dolg");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("nazv", "nazv");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5263,9 +5138,10 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        p.id, p.fio, p.phone, p.adr, d.nazv AS id_dolg, p.id_kontr, p.id_do" +
-                "lg\r\nFROM            (PEOPLE p INNER JOIN\r\n                         DOLG d ON p.i" +
-                "d_dolg = d.id)";
+            this._commandCollection[0].CommandText = @"SELECT        p.id, p.fio, p.phone, p.adr, d.nazv AS id_dolg, p.id_kontr, p.id_dolg AS Expr1, KONTR.nazv
+FROM            ((PEOPLE p INNER JOIN
+                         DOLG d ON p.id_dolg = d.id) INNER JOIN
+                         KONTR ON p.id_kontr = KONTR.id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5321,7 +5197,7 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         public virtual int FillBy(Z1DataSet.PEOPLEDataTable dataTable, string fio) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((fio == null)) {
-                throw new global::System.ArgumentNullException("fio");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fio));
@@ -5340,7 +5216,7 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         public virtual Z1DataSet.PEOPLEDataTable GetDataBy2(string fio) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((fio == null)) {
-                throw new global::System.ArgumentNullException("fio");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fio));
@@ -6939,8 +6815,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private KONTRTableAdapter _kONTRTableAdapter;
-        
         private STATUSTableAdapter _sTATUSTableAdapter;
         
         private BANKTableAdapter _bANKTableAdapter;
@@ -6959,20 +6833,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public KONTRTableAdapter KONTRTableAdapter {
-            get {
-                return this._kONTRTableAdapter;
-            }
-            set {
-                this._kONTRTableAdapter = value;
             }
         }
         
@@ -7037,10 +6897,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._kONTRTableAdapter != null) 
-                            && (this._kONTRTableAdapter.Connection != null))) {
-                    return this._kONTRTableAdapter.Connection;
-                }
                 if (((this._sTATUSTableAdapter != null) 
                             && (this._sTATUSTableAdapter.Connection != null))) {
                     return this._sTATUSTableAdapter.Connection;
@@ -7066,9 +6922,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._kONTRTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._sTATUSTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -7089,15 +6942,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(Z1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._kONTRTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.KONTR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._kONTRTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._bANKTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7135,14 +6979,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(Z1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._kONTRTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.KONTR.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._kONTRTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._bANKTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.BANK.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7201,14 +7037,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._kONTRTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.KONTR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._kONTRTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -7247,11 +7075,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._kONTRTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._kONTRTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
             }
             if (((this._sTATUSTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._sTATUSTableAdapter.Connection) == false))) {
@@ -7300,15 +7123,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._kONTRTableAdapter != null)) {
-                    revertConnections.Add(this._kONTRTableAdapter, this._kONTRTableAdapter.Connection);
-                    this._kONTRTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._kONTRTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._kONTRTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._kONTRTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._kONTRTableAdapter.Adapter);
-                    }
-                }
                 if ((this._sTATUSTableAdapter != null)) {
                     revertConnections.Add(this._sTATUSTableAdapter, this._sTATUSTableAdapter.Connection);
                     this._sTATUSTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
@@ -7393,10 +7207,6 @@ namespace KONTRAGENT.Z1DataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._kONTRTableAdapter != null)) {
-                    this._kONTRTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._kONTRTableAdapter]));
-                    this._kONTRTableAdapter.Transaction = null;
                 }
                 if ((this._sTATUSTableAdapter != null)) {
                     this._sTATUSTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._sTATUSTableAdapter]));
