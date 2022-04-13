@@ -89,3 +89,7 @@ S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.csproj.AssemblyReference.cache
+S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\bin\Debug\PARIKMAHER.exe.manifest
+S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\bin\Debug\PARIKMAHER.application
+S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.exe.manifest
+S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.application
