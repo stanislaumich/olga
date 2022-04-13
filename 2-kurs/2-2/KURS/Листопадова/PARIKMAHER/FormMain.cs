@@ -148,5 +148,11 @@ namespace PARIKMAHER
                 MessageBox.Show("Запись удалена!");
             }
         }
+
+        private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReport reportForm = new FormReport();
+            reportForm.Show();
+        }
     }
 }

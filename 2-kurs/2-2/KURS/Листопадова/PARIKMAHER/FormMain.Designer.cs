@@ -41,10 +41,12 @@ namespace PARIKMAHER
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.tipBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.lISTDataSet = new PARIKMAHER.LISTDataSet();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.tipBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.tipBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,6 +65,7 @@ namespace PARIKMAHER
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -102,13 +105,13 @@ namespace PARIKMAHER
             this.phoneTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.phoneTableAdapter();
             this.prichTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.prichTableAdapter();
             this.tipTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.tipTableAdapter();
-            this.tipBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tipBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.lISTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -119,10 +122,7 @@ namespace PARIKMAHER
             ((System.ComponentModel.ISupportInitialize)(this.fiophoneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prichBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -249,10 +249,10 @@ namespace PARIKMAHER
             this.comboBox7.TabIndex = 22;
             this.comboBox7.ValueMember = "id";
             // 
-            // tipBindingSource
+            // tipBindingSource3
             // 
-            this.tipBindingSource.DataMember = "tip";
-            this.tipBindingSource.DataSource = this.lISTDataSet;
+            this.tipBindingSource3.DataMember = "tip";
+            this.tipBindingSource3.DataSource = this.lISTDataSet;
             // 
             // lISTDataSet
             // 
@@ -270,6 +270,11 @@ namespace PARIKMAHER
             this.comboBox6.TabIndex = 21;
             this.comboBox6.ValueMember = "id";
             // 
+            // tipBindingSource2
+            // 
+            this.tipBindingSource2.DataMember = "tip";
+            this.tipBindingSource2.DataSource = this.lISTDataSet;
+            // 
             // comboBox5
             // 
             this.comboBox5.DataSource = this.tipBindingSource1;
@@ -280,6 +285,11 @@ namespace PARIKMAHER
             this.comboBox5.Size = new System.Drawing.Size(121, 21);
             this.comboBox5.TabIndex = 20;
             this.comboBox5.ValueMember = "id";
+            // 
+            // tipBindingSource1
+            // 
+            this.tipBindingSource1.DataMember = "tip";
+            this.tipBindingSource1.DataSource = this.lISTDataSet;
             // 
             // label12
             // 
@@ -436,6 +446,11 @@ namespace PARIKMAHER
             this.label2.TabIndex = 0;
             this.label2.Text = "ФИО";
             // 
+            // tipBindingSource
+            // 
+            this.tipBindingSource.DataMember = "tip";
+            this.tipBindingSource.DataSource = this.lISTDataSet;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(6, 506);
@@ -523,6 +538,7 @@ namespace PARIKMAHER
             this.отчетToolStripMenuItem.Name = "отчетToolStripMenuItem";
             this.отчетToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.отчетToolStripMenuItem.Text = "Отчет";
+            this.отчетToolStripMenuItem.Click += new System.EventHandler(this.отчетToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 
@@ -776,25 +792,10 @@ namespace PARIKMAHER
             // 
             this.tipTableAdapter.ClearBeforeFill = true;
             // 
-            // tipBindingSource1
-            // 
-            this.tipBindingSource1.DataMember = "tip";
-            this.tipBindingSource1.DataSource = this.lISTDataSet;
-            // 
-            // tipBindingSource2
-            // 
-            this.tipBindingSource2.DataMember = "tip";
-            this.tipBindingSource2.DataSource = this.lISTDataSet;
-            // 
             // lISTDataSetBindingSource
             // 
             this.lISTDataSetBindingSource.DataSource = this.lISTDataSet;
             this.lISTDataSetBindingSource.Position = 0;
-            // 
-            // tipBindingSource3
-            // 
-            this.tipBindingSource3.DataMember = "tip";
-            this.tipBindingSource3.DataSource = this.lISTDataSet;
             // 
             // FormMain
             // 
@@ -821,8 +822,11 @@ namespace PARIKMAHER
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -835,10 +839,7 @@ namespace PARIKMAHER
             ((System.ComponentModel.ISupportInitialize)(this.fiophoneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prichBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
