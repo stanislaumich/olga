@@ -116,6 +116,7 @@ namespace PARIKMAHER
             this.lISTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
@@ -371,6 +372,20 @@ namespace PARIKMAHER
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.comboBox4.Location = new System.Drawing.Point(403, 173);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(51, 21);
@@ -777,7 +792,7 @@ namespace PARIKMAHER
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(319, 511);
+            this.label14.Location = new System.Drawing.Point(319, 514);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 13);
             this.label14.TabIndex = 7;
@@ -905,6 +920,12 @@ namespace PARIKMAHER
             // raspTableAdapter
             // 
             this.raspTableAdapter.ClearBeforeFill = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormMain
             // 
@@ -1043,6 +1064,7 @@ namespace PARIKMAHER
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

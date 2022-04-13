@@ -20,15 +20,10 @@ namespace PARIKMAHER
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.rasp". При необходимости она может быть перемещена или удалена.
             this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.tip". При необходимости она может быть перемещена или удалена.
             this.tipTableAdapter.Fill(this.lISTDataSet.tip);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.prich". При необходимости она может быть перемещена или удалена.
             this.prichTableAdapter.Fill(this.lISTDataSet.prich);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.phone". При необходимости она может быть перемещена или удалена.
             this.phoneTableAdapter.Fill(this.lISTDataSet.phone);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.fio". При необходимости она может быть перемещена или удалена.
             this.fioTableAdapter.Fill(this.lISTDataSet.fio);
 
         }
@@ -137,9 +132,6 @@ namespace PARIKMAHER
             {
                 MessageBox.Show("Телефоны не вставлены!");
             }
-
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -163,7 +155,7 @@ namespace PARIKMAHER
         {
             System.Diagnostics.Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = "PARIKMAHER.chm";
-            p.StartInfo.Arguments = ""; //чтобы программно нажать enter
+            p.StartInfo.Arguments = ""; 
             p.Start();
 
         }
@@ -209,6 +201,11 @@ namespace PARIKMAHER
                 this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
                 MessageBox.Show("Запись добавлена!");
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString();
         }
     }
 }
