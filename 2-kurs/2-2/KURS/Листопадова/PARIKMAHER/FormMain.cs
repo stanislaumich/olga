@@ -137,5 +137,16 @@ namespace PARIKMAHER
 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (label16.Text == "") { MessageBox.Show("Укажите запись!"); }
+            else
+            {
+                this.fioTableAdapter.DeleteQuery(Convert.ToInt32(label16.Text));
+                this.fioTableAdapter.Fill(this.lISTDataSet.fio);
+                MessageBox.Show("Запись удалена!");
+            }
+        }
     }
 }

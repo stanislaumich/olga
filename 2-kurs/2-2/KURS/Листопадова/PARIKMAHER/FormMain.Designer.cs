@@ -31,13 +31,18 @@ namespace PARIKMAHER
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.tipBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lISTDataSet = new PARIKMAHER.LISTDataSet();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,6 +63,7 @@ namespace PARIKMAHER
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -69,7 +75,16 @@ namespace PARIKMAHER
             this.отчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fiophoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -79,42 +94,35 @@ namespace PARIKMAHER
             this.button6 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.nazv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prichBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lISTDataSet = new PARIKMAHER.LISTDataSet();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fioTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.fioTableAdapter();
             this.phoneTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.phoneTableAdapter();
             this.prichTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.prichTableAdapter();
-            this.button7 = new System.Windows.Forms.Button();
-            this.tipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.tipTableAdapter();
+            this.tipBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tipBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.lISTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fiophoneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prichBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -156,14 +164,38 @@ namespace PARIKMAHER
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Клиент";
             // 
-            // button4
+            // button7
             // 
-            this.button4.Location = new System.Drawing.Point(6, 506);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 23);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Записать на процедуру";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(462, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(183, 21);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "Добавить телефоны";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(592, 179);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "label16";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(82, 176);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(159, 20);
+            this.textBox10.TabIndex = 30;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(53, 19);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(401, 20);
+            this.textBox9.TabIndex = 29;
             // 
             // button3
             // 
@@ -173,6 +205,7 @@ namespace PARIKMAHER
             this.button3.TabIndex = 27;
             this.button3.Text = "Удалить клиента";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -207,7 +240,7 @@ namespace PARIKMAHER
             // 
             // comboBox7
             // 
-            this.comboBox7.DataSource = this.tipBindingSource;
+            this.comboBox7.DataSource = this.tipBindingSource3;
             this.comboBox7.DisplayMember = "nazv";
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(97, 127);
@@ -216,9 +249,19 @@ namespace PARIKMAHER
             this.comboBox7.TabIndex = 22;
             this.comboBox7.ValueMember = "id";
             // 
+            // tipBindingSource
+            // 
+            this.tipBindingSource.DataMember = "tip";
+            this.tipBindingSource.DataSource = this.lISTDataSet;
+            // 
+            // lISTDataSet
+            // 
+            this.lISTDataSet.DataSetName = "LISTDataSet";
+            this.lISTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox6
             // 
-            this.comboBox6.DataSource = this.tipBindingSource;
+            this.comboBox6.DataSource = this.tipBindingSource2;
             this.comboBox6.DisplayMember = "nazv";
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(97, 100);
@@ -229,7 +272,7 @@ namespace PARIKMAHER
             // 
             // comboBox5
             // 
-            this.comboBox5.DataSource = this.tipBindingSource;
+            this.comboBox5.DataSource = this.tipBindingSource1;
             this.comboBox5.DisplayMember = "nazv";
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(97, 73);
@@ -393,6 +436,15 @@ namespace PARIKMAHER
             this.label2.TabIndex = 0;
             this.label2.Text = "ФИО";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 506);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(138, 23);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Записать на процедуру";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
@@ -498,6 +550,56 @@ namespace PARIKMAHER
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
+            // fioDataGridViewTextBoxColumn
+            // 
+            this.fioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
+            this.fioDataGridViewTextBoxColumn.HeaderText = "Фио";
+            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
+            this.fioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fioDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // sexDataGridViewCheckBoxColumn
+            // 
+            this.sexDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.sexDataGridViewCheckBoxColumn.DataPropertyName = "sex";
+            this.sexDataGridViewCheckBoxColumn.HeaderText = "Пол";
+            this.sexDataGridViewCheckBoxColumn.Name = "sexDataGridViewCheckBoxColumn";
+            this.sexDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.sexDataGridViewCheckBoxColumn.Width = 5;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Возр";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ageDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // workDataGridViewTextBoxColumn
+            // 
+            this.workDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.workDataGridViewTextBoxColumn.DataPropertyName = "work";
+            this.workDataGridViewTextBoxColumn.HeaderText = "Работа";
+            this.workDataGridViewTextBoxColumn.Name = "workDataGridViewTextBoxColumn";
+            this.workDataGridViewTextBoxColumn.ReadOnly = true;
+            this.workDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ИД";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 49;
+            // 
+            // fioBindingSource
+            // 
+            this.fioBindingSource.DataMember = "fio";
+            this.fioBindingSource.DataSource = this.lISTDataSet;
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -514,6 +616,33 @@ namespace PARIKMAHER
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(283, 199);
             this.dataGridView3.TabIndex = 5;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // nazv
+            // 
+            this.nazv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nazv.DataPropertyName = "nazv";
+            this.nazv.HeaderText = "Тип";
+            this.nazv.Name = "nazv";
+            this.nazv.ReadOnly = true;
+            this.nazv.Width = 51;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "ИД";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 49;
             // 
             // fiophoneBindingSource
             // 
@@ -599,38 +728,6 @@ namespace PARIKMAHER
             this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             this.dataGridView4.Click += new System.EventHandler(this.dataGridView4_Click);
             // 
-            // nazv
-            // 
-            this.nazv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nazv.DataPropertyName = "nazv";
-            this.nazv.HeaderText = "Тип";
-            this.nazv.Name = "nazv";
-            this.nazv.ReadOnly = true;
-            this.nazv.Width = 51;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(53, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(401, 20);
-            this.textBox9.TabIndex = 29;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(82, 176);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(159, 20);
-            this.textBox10.TabIndex = 30;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(592, 179);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "label16";
-            // 
             // nazvDataGridViewTextBoxColumn
             // 
             this.nazvDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -663,79 +760,6 @@ namespace PARIKMAHER
             this.prichBindingSource.DataMember = "prich";
             this.prichBindingSource.DataSource = this.lISTDataSet;
             // 
-            // lISTDataSet
-            // 
-            this.lISTDataSet.DataSetName = "LISTDataSet";
-            this.lISTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "ИД";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Width = 49;
-            // 
-            // fioBindingSource
-            // 
-            this.fioBindingSource.DataMember = "fio";
-            this.fioBindingSource.DataSource = this.lISTDataSet;
-            // 
-            // fioDataGridViewTextBoxColumn
-            // 
-            this.fioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fioDataGridViewTextBoxColumn.DataPropertyName = "fio";
-            this.fioDataGridViewTextBoxColumn.HeaderText = "Фио";
-            this.fioDataGridViewTextBoxColumn.Name = "fioDataGridViewTextBoxColumn";
-            this.fioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fioDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // sexDataGridViewCheckBoxColumn
-            // 
-            this.sexDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.sexDataGridViewCheckBoxColumn.DataPropertyName = "sex";
-            this.sexDataGridViewCheckBoxColumn.HeaderText = "Пол";
-            this.sexDataGridViewCheckBoxColumn.Name = "sexDataGridViewCheckBoxColumn";
-            this.sexDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.sexDataGridViewCheckBoxColumn.Width = 5;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Возр";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ageDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // workDataGridViewTextBoxColumn
-            // 
-            this.workDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.workDataGridViewTextBoxColumn.DataPropertyName = "work";
-            this.workDataGridViewTextBoxColumn.HeaderText = "Работа";
-            this.workDataGridViewTextBoxColumn.Name = "workDataGridViewTextBoxColumn";
-            this.workDataGridViewTextBoxColumn.ReadOnly = true;
-            this.workDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ИД";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 49;
-            // 
             // fioTableAdapter
             // 
             this.fioTableAdapter.ClearBeforeFill = true;
@@ -748,24 +772,29 @@ namespace PARIKMAHER
             // 
             this.prichTableAdapter.ClearBeforeFill = true;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(462, 99);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 21);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Добавить телефоны";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // tipBindingSource
-            // 
-            this.tipBindingSource.DataMember = "tip";
-            this.tipBindingSource.DataSource = this.lISTDataSet;
-            // 
             // tipTableAdapter
             // 
             this.tipTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipBindingSource1
+            // 
+            this.tipBindingSource1.DataMember = "tip";
+            this.tipBindingSource1.DataSource = this.lISTDataSet;
+            // 
+            // tipBindingSource2
+            // 
+            this.tipBindingSource2.DataMember = "tip";
+            this.tipBindingSource2.DataSource = this.lISTDataSet;
+            // 
+            // lISTDataSetBindingSource
+            // 
+            this.lISTDataSetBindingSource.DataSource = this.lISTDataSet;
+            this.lISTDataSetBindingSource.Position = 0;
+            // 
+            // tipBindingSource3
+            // 
+            this.tipBindingSource3.DataMember = "tip";
+            this.tipBindingSource3.DataSource = this.lISTDataSet;
             // 
             // FormMain
             // 
@@ -792,6 +821,8 @@ namespace PARIKMAHER
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -799,13 +830,15 @@ namespace PARIKMAHER
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fiophoneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prichBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lISTDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -885,6 +918,10 @@ namespace PARIKMAHER
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.BindingSource tipBindingSource;
         private LISTDataSetTableAdapters.tipTableAdapter tipTableAdapter;
+        private System.Windows.Forms.BindingSource tipBindingSource3;
+        private System.Windows.Forms.BindingSource tipBindingSource2;
+        private System.Windows.Forms.BindingSource tipBindingSource1;
+        private System.Windows.Forms.BindingSource lISTDataSetBindingSource;
     }
 }
 
