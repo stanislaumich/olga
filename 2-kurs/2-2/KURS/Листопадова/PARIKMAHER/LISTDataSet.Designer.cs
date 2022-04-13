@@ -5410,7 +5410,7 @@ namespace PARIKMAHER.LISTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::PARIKMAHER.Properties.Settings.Default.LISTConnectionString;
+            this._connection.ConnectionString = global::PARIKMAHER.Properties.Settings.Default.LISTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

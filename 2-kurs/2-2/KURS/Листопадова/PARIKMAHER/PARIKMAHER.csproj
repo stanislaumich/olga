@@ -109,7 +109,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="LISTDataSet.xsc">
       <DependentUpon>LISTDataSet.xsd</DependentUpon>
     </None>

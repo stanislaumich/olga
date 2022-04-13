@@ -30,15 +30,18 @@ namespace PARIKMAHER
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.LISTDataSet = new PARIKMAHER.LISTDataSet();
             this.raspBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LISTDataSet = new PARIKMAHER.LISTDataSet();
             this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
+            this.ReportTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.ReportTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,28 +56,37 @@ namespace PARIKMAHER
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.raspBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PARIKMAHER.Report1.rdlc";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.ReportTableBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PARIKMAHER.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(823, 557);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // LISTDataSet
-            // 
-            this.LISTDataSet.DataSetName = "LISTDataSet";
-            this.LISTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // raspBindingSource
             // 
             this.raspBindingSource.DataMember = "rasp";
             this.raspBindingSource.DataSource = this.LISTDataSet;
             // 
+            // LISTDataSet
+            // 
+            this.LISTDataSet.DataSetName = "LISTDataSet";
+            this.LISTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // raspTableAdapter
             // 
             this.raspTableAdapter.ClearBeforeFill = true;
+            // 
+            // ReportTableBindingSource
+            // 
+            this.ReportTableBindingSource.DataMember = "ReportTable";
+            this.ReportTableBindingSource.DataSource = this.LISTDataSet;
+            // 
+            // ReportTableAdapter
+            // 
+            this.ReportTableAdapter.ClearBeforeFill = true;
             // 
             // FormReport
             // 
@@ -86,8 +98,9 @@ namespace PARIKMAHER
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.FormReport_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,5 +112,7 @@ namespace PARIKMAHER
         private System.Windows.Forms.BindingSource raspBindingSource;
         private LISTDataSet LISTDataSet;
         private LISTDataSetTableAdapters.raspTableAdapter raspTableAdapter;
+        private System.Windows.Forms.BindingSource ReportTableBindingSource;
+        private LISTDataSetTableAdapters.ReportTableAdapter ReportTableAdapter;
     }
 }

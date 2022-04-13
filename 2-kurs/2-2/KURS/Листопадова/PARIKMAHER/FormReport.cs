@@ -20,6 +20,8 @@ namespace PARIKMAHER
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "LISTDataSet.ReportTable". При необходимости она может быть перемещена или удалена.
+            this.ReportTableAdapter.Fill(this.LISTDataSet.ReportTable);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "LISTDataSet.rasp". При необходимости она может быть перемещена или удалена.
             this.raspTableAdapter.Fill(this.LISTDataSet.rasp);
 

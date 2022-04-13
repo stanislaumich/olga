@@ -2,9 +2,10 @@
 <xs:schema id="LISTDataSet" targetNamespace="http://tempuri.org/LISTDataSet.xsd" xmlns:mstns="http://tempuri.org/LISTDataSet.xsd" xmlns="http://tempuri.org/LISTDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LISTConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LISTConnectionString (Settings)" PropertyReference="ApplicationSettings.PARIKMAHER.Properties.Settings.GlobalReference.Default.LISTConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LISTConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LISTConnectionString1 (Settings)" PropertyReference="ApplicationSettings.PARIKMAHER.Properties.Settings.GlobalReference.Default.LISTConnectionString1" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fioTableAdapter" GeneratorDataComponentClassName="fioTableAdapter" Name="fio" UserDataComponentName="fioTableAdapter">
@@ -335,7 +336,7 @@ WHERE        (id = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportTableAdapter" GeneratorDataComponentClassName="ReportTableAdapter" Name="ReportTable" UserDataComponentName="ReportTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="LISTConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="LISTConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        prich.nazv, fio.fio, rasp.data, rasp.[hour], rasp.price
@@ -364,7 +365,7 @@ FROM            ((fio INNER JOIN
   <xs:element name="LISTDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LISTDataSet" msprop:Generator_UserDSName="LISTDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="fio" msprop:Generator_TableClassName="fioDataTable" msprop:Generator_TableVarName="tablefio" msprop:Generator_TablePropName="fio" msprop:Generator_RowDeletingName="fioRowDeleting" msprop:Generator_RowChangingName="fioRowChanging" msprop:Generator_RowEvHandlerName="fioRowChangeEventHandler" msprop:Generator_RowDeletedName="fioRowDeleted" msprop:Generator_UserTableName="fio" msprop:Generator_RowChangedName="fioRowChanged" msprop:Generator_RowEvArgName="fioRowChangeEvent" msprop:Generator_RowClassName="fioRow">
+        <xs:element name="fio" msprop:Generator_TableClassName="fioDataTable" msprop:Generator_TableVarName="tablefio" msprop:Generator_RowChangedName="fioRowChanged" msprop:Generator_TablePropName="fio" msprop:Generator_RowDeletingName="fioRowDeleting" msprop:Generator_RowChangingName="fioRowChanging" msprop:Generator_RowEvHandlerName="fioRowChangeEventHandler" msprop:Generator_RowDeletedName="fioRowDeleted" msprop:Generator_RowClassName="fioRow" msprop:Generator_UserTableName="fio" msprop:Generator_RowEvArgName="fioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -387,7 +388,7 @@ FROM            ((fio INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="phone" msprop:Generator_TableClassName="phoneDataTable" msprop:Generator_TableVarName="tablephone" msprop:Generator_TablePropName="phone" msprop:Generator_RowDeletingName="phoneRowDeleting" msprop:Generator_RowChangingName="phoneRowChanging" msprop:Generator_RowEvHandlerName="phoneRowChangeEventHandler" msprop:Generator_RowDeletedName="phoneRowDeleted" msprop:Generator_UserTableName="phone" msprop:Generator_RowChangedName="phoneRowChanged" msprop:Generator_RowEvArgName="phoneRowChangeEvent" msprop:Generator_RowClassName="phoneRow">
+        <xs:element name="phone" msprop:Generator_TableClassName="phoneDataTable" msprop:Generator_TableVarName="tablephone" msprop:Generator_RowChangedName="phoneRowChanged" msprop:Generator_TablePropName="phone" msprop:Generator_RowDeletingName="phoneRowDeleting" msprop:Generator_RowChangingName="phoneRowChanging" msprop:Generator_RowEvHandlerName="phoneRowChangeEventHandler" msprop:Generator_RowDeletedName="phoneRowDeleted" msprop:Generator_RowClassName="phoneRow" msprop:Generator_UserTableName="phone" msprop:Generator_RowEvArgName="phoneRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -417,7 +418,7 @@ FROM            ((fio INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="prich" msprop:Generator_TableClassName="prichDataTable" msprop:Generator_TableVarName="tableprich" msprop:Generator_TablePropName="prich" msprop:Generator_RowDeletingName="prichRowDeleting" msprop:Generator_RowChangingName="prichRowChanging" msprop:Generator_RowEvHandlerName="prichRowChangeEventHandler" msprop:Generator_RowDeletedName="prichRowDeleted" msprop:Generator_UserTableName="prich" msprop:Generator_RowChangedName="prichRowChanged" msprop:Generator_RowEvArgName="prichRowChangeEvent" msprop:Generator_RowClassName="prichRow">
+        <xs:element name="prich" msprop:Generator_TableClassName="prichDataTable" msprop:Generator_TableVarName="tableprich" msprop:Generator_RowChangedName="prichRowChanged" msprop:Generator_TablePropName="prich" msprop:Generator_RowDeletingName="prichRowDeleting" msprop:Generator_RowChangingName="prichRowChanging" msprop:Generator_RowEvHandlerName="prichRowChangeEventHandler" msprop:Generator_RowDeletedName="prichRowDeleted" msprop:Generator_RowClassName="prichRow" msprop:Generator_UserTableName="prich" msprop:Generator_RowEvArgName="prichRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -432,7 +433,7 @@ FROM            ((fio INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rasp" msprop:Generator_TableClassName="raspDataTable" msprop:Generator_TableVarName="tablerasp" msprop:Generator_TablePropName="rasp" msprop:Generator_RowDeletingName="raspRowDeleting" msprop:Generator_RowChangingName="raspRowChanging" msprop:Generator_RowEvHandlerName="raspRowChangeEventHandler" msprop:Generator_RowDeletedName="raspRowDeleted" msprop:Generator_UserTableName="rasp" msprop:Generator_RowChangedName="raspRowChanged" msprop:Generator_RowEvArgName="raspRowChangeEvent" msprop:Generator_RowClassName="raspRow">
+        <xs:element name="rasp" msprop:Generator_TableClassName="raspDataTable" msprop:Generator_TableVarName="tablerasp" msprop:Generator_RowChangedName="raspRowChanged" msprop:Generator_TablePropName="rasp" msprop:Generator_RowDeletingName="raspRowDeleting" msprop:Generator_RowChangingName="raspRowChanging" msprop:Generator_RowEvHandlerName="raspRowChangeEventHandler" msprop:Generator_RowDeletedName="raspRowDeleted" msprop:Generator_RowClassName="raspRow" msprop:Generator_UserTableName="rasp" msprop:Generator_RowEvArgName="raspRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -444,7 +445,7 @@ FROM            ((fio INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tip" msprop:Generator_TableClassName="tipDataTable" msprop:Generator_TableVarName="tabletip" msprop:Generator_TablePropName="tip" msprop:Generator_RowDeletingName="tipRowDeleting" msprop:Generator_RowChangingName="tipRowChanging" msprop:Generator_RowEvHandlerName="tipRowChangeEventHandler" msprop:Generator_RowDeletedName="tipRowDeleted" msprop:Generator_UserTableName="tip" msprop:Generator_RowChangedName="tipRowChanged" msprop:Generator_RowEvArgName="tipRowChangeEvent" msprop:Generator_RowClassName="tipRow">
+        <xs:element name="tip" msprop:Generator_TableClassName="tipDataTable" msprop:Generator_TableVarName="tabletip" msprop:Generator_RowChangedName="tipRowChanged" msprop:Generator_TablePropName="tip" msprop:Generator_RowDeletingName="tipRowDeleting" msprop:Generator_RowChangingName="tipRowChanging" msprop:Generator_RowEvHandlerName="tipRowChangeEventHandler" msprop:Generator_RowDeletedName="tipRowDeleted" msprop:Generator_RowClassName="tipRow" msprop:Generator_UserTableName="tip" msprop:Generator_RowEvArgName="tipRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -458,7 +459,7 @@ FROM            ((fio INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReportTable" msprop:Generator_TableClassName="ReportTableDataTable" msprop:Generator_TableVarName="tableReportTable" msprop:Generator_TablePropName="ReportTable" msprop:Generator_RowDeletingName="ReportTableRowDeleting" msprop:Generator_RowChangingName="ReportTableRowChanging" msprop:Generator_RowEvHandlerName="ReportTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportTableRowDeleted" msprop:Generator_UserTableName="ReportTable" msprop:Generator_RowChangedName="ReportTableRowChanged" msprop:Generator_RowEvArgName="ReportTableRowChangeEvent" msprop:Generator_RowClassName="ReportTableRow">
+        <xs:element name="ReportTable" msprop:Generator_TableClassName="ReportTableDataTable" msprop:Generator_TableVarName="tableReportTable" msprop:Generator_RowChangedName="ReportTableRowChanged" msprop:Generator_TablePropName="ReportTable" msprop:Generator_RowDeletingName="ReportTableRowDeleting" msprop:Generator_RowChangingName="ReportTableRowChanging" msprop:Generator_RowEvHandlerName="ReportTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportTableRowDeleted" msprop:Generator_RowClassName="ReportTableRow" msprop:Generator_UserTableName="ReportTable" msprop:Generator_RowEvArgName="ReportTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
@@ -506,10 +507,10 @@ FROM            ((fio INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="fiophone" msdata:parent="fio" msdata:child="phone" msdata:parentkey="id" msdata:childkey="id_fio" msprop:Generator_UserChildTable="phone" msprop:Generator_ChildPropName="GetphoneRows" msprop:Generator_UserRelationName="fiophone" msprop:Generator_ParentPropName="fioRow" msprop:Generator_RelationVarName="relationfiophone" msprop:Generator_UserParentTable="fio" />
-      <msdata:Relationship name="tipphone" msdata:parent="tip" msdata:child="phone" msdata:parentkey="id" msdata:childkey="id_tip" msprop:Generator_UserChildTable="phone" msprop:Generator_ChildPropName="GetphoneRows" msprop:Generator_UserRelationName="tipphone" msprop:Generator_RelationVarName="relationtipphone" msprop:Generator_UserParentTable="tip" msprop:Generator_ParentPropName="tipRow" />
-      <msdata:Relationship name="fiorasp" msdata:parent="fio" msdata:child="rasp" msdata:parentkey="id" msdata:childkey="id_fio" msprop:Generator_UserChildTable="rasp" msprop:Generator_ChildPropName="GetraspRows" msprop:Generator_UserRelationName="fiorasp" msprop:Generator_ParentPropName="fioRow" msprop:Generator_RelationVarName="relationfiorasp" msprop:Generator_UserParentTable="fio" />
-      <msdata:Relationship name="prichrasp" msdata:parent="prich" msdata:child="rasp" msdata:parentkey="id" msdata:childkey="id_prich" msprop:Generator_UserChildTable="rasp" msprop:Generator_ChildPropName="GetraspRows" msprop:Generator_UserRelationName="prichrasp" msprop:Generator_ParentPropName="prichRow" msprop:Generator_RelationVarName="relationprichrasp" msprop:Generator_UserParentTable="prich" />
+      <msdata:Relationship name="fiophone" msdata:parent="fio" msdata:child="phone" msdata:parentkey="id" msdata:childkey="id_fio" msprop:Generator_UserChildTable="phone" msprop:Generator_ChildPropName="GetphoneRows" msprop:Generator_UserRelationName="fiophone" msprop:Generator_RelationVarName="relationfiophone" msprop:Generator_UserParentTable="fio" msprop:Generator_ParentPropName="fioRow" />
+      <msdata:Relationship name="tipphone" msdata:parent="tip" msdata:child="phone" msdata:parentkey="id" msdata:childkey="id_tip" msprop:Generator_UserChildTable="phone" msprop:Generator_ChildPropName="GetphoneRows" msprop:Generator_UserRelationName="tipphone" msprop:Generator_ParentPropName="tipRow" msprop:Generator_RelationVarName="relationtipphone" msprop:Generator_UserParentTable="tip" />
+      <msdata:Relationship name="fiorasp" msdata:parent="fio" msdata:child="rasp" msdata:parentkey="id" msdata:childkey="id_fio" msprop:Generator_UserChildTable="rasp" msprop:Generator_ChildPropName="GetraspRows" msprop:Generator_UserRelationName="fiorasp" msprop:Generator_RelationVarName="relationfiorasp" msprop:Generator_UserParentTable="fio" msprop:Generator_ParentPropName="fioRow" />
+      <msdata:Relationship name="prichrasp" msdata:parent="prich" msdata:child="rasp" msdata:parentkey="id" msdata:childkey="id_prich" msprop:Generator_UserChildTable="rasp" msprop:Generator_ChildPropName="GetraspRows" msprop:Generator_UserRelationName="prichrasp" msprop:Generator_RelationVarName="relationprichrasp" msprop:Generator_UserParentTable="prich" msprop:Generator_ParentPropName="prichRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
