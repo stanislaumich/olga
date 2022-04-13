@@ -117,6 +117,7 @@ namespace PARIKMAHER
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.искатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
@@ -625,6 +626,7 @@ namespace PARIKMAHER
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.работаToolStripMenuItem,
             this.отчетToolStripMenuItem,
+            this.искатьToolStripMenuItem,
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -927,6 +929,12 @@ namespace PARIKMAHER
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // искатьToolStripMenuItem
+            // 
+            this.искатьToolStripMenuItem.Name = "искатьToolStripMenuItem";
+            this.искатьToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.искатьToolStripMenuItem.Text = "Поиск";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1065,6 +1073,7 @@ namespace PARIKMAHER
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem искатьToolStripMenuItem;
     }
 }
 
