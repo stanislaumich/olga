@@ -339,16 +339,22 @@ namespace KONTRAGENT
                 }
                 try
                 {
-                    comboBox3.SelectedIndex = Convert.ToInt32(dataGridView9[1, dataGridView9.CurrentRow.Index].Value.ToString());
+                    comboBox3.Text = (dataGridView9[1, dataGridView9.CurrentRow.Index].Value.ToString());
                 }
                 catch
                 {
                     comboBox3.Text = "";
+                }try
+                {
+                    comboBox5.Text = dataGridView9[5, dataGridView9.CurrentRow.Index].Value.ToString();
                 }
-                comboBox5.SelectedIndex = Convert.ToInt32(dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString());
+                catch
+                {
+                    comboBox5.Text = "";
+                }
                 try
                 {
-                    comboBox4.SelectedIndex = Convert.ToInt32(dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString());
+                    comboBox4.Text = dataGridView9[4, dataGridView9.CurrentRow.Index].Value.ToString();
                 }
                 catch
                 {
