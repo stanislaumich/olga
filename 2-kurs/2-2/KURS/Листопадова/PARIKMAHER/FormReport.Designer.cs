@@ -29,12 +29,21 @@ namespace PARIKMAHER
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.LISTDataSet = new PARIKMAHER.LISTDataSet();
+            this.raspBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.reportViewer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -44,10 +53,28 @@ namespace PARIKMAHER
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.raspBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PARIKMAHER.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(823, 557);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // LISTDataSet
+            // 
+            this.LISTDataSet.DataSetName = "LISTDataSet";
+            this.LISTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // raspBindingSource
+            // 
+            this.raspBindingSource.DataMember = "rasp";
+            this.raspBindingSource.DataSource = this.LISTDataSet;
+            // 
+            // raspTableAdapter
+            // 
+            this.raspTableAdapter.ClearBeforeFill = true;
             // 
             // FormReport
             // 
@@ -58,6 +85,9 @@ namespace PARIKMAHER
             this.Name = "FormReport";
             this.Text = "FormReport";
             this.Load += new System.EventHandler(this.FormReport_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LISTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -66,5 +96,8 @@ namespace PARIKMAHER
 
         private System.Windows.Forms.Panel panel1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource raspBindingSource;
+        private LISTDataSet LISTDataSet;
+        private LISTDataSetTableAdapters.raspTableAdapter raspTableAdapter;
     }
 }

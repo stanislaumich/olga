@@ -15,12 +15,15 @@ namespace PARIKMAHER
         public FormReport()
         {
             InitializeComponent();
-            this.panel1.Controls.Add(this.reportViewer1);
+           // this.panel1.Controls.Add(this.reportViewer1);
         }
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "LISTDataSet.rasp". При необходимости она может быть перемещена или удалена.
+            this.raspTableAdapter.Fill(this.LISTDataSet.rasp);
 
+            this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer2_Load(object sender, EventArgs e)
