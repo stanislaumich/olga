@@ -154,5 +154,14 @@ namespace PARIKMAHER
             FormReport reportForm = new FormReport();
             reportForm.Show();
         }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = "PARIKMAHER.chm";
+            p.StartInfo.Arguments = ""; //чтобы программно нажать enter
+            p.Start();
+
+        }
     }
 }

@@ -106,6 +106,7 @@ namespace PARIKMAHER
             this.prichTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.prichTableAdapter();
             this.tipTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.tipTableAdapter();
             this.lISTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
@@ -179,9 +180,9 @@ namespace PARIKMAHER
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(592, 179);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.Size = new System.Drawing.Size(13, 13);
             this.label16.TabIndex = 31;
-            this.label16.Text = "label16";
+            this.label16.Text = "0";
             // 
             // textBox10
             // 
@@ -543,8 +544,10 @@ namespace PARIKMAHER
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem.Text = "Помощь";
+            this.помощьToolStripMenuItem.Click += new System.EventHandler(this.помощьToolStripMenuItem_Click);
             // 
             // dataGridView2
             // 
@@ -797,6 +800,11 @@ namespace PARIKMAHER
             this.lISTDataSetBindingSource.DataSource = this.lISTDataSet;
             this.lISTDataSetBindingSource.Position = 0;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "S:\\Контрольные\\olga\\2-kurs\\2-2\\KURS\\Листопадова\\PARIKMAHER\\bin\\Debug\\PARIKMAHER.c" +
+    "hm";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,6 +931,7 @@ namespace PARIKMAHER
         private System.Windows.Forms.BindingSource tipBindingSource2;
         private System.Windows.Forms.BindingSource tipBindingSource1;
         private System.Windows.Forms.BindingSource lISTDataSetBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 
