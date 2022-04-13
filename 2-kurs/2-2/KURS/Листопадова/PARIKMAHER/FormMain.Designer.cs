@@ -31,6 +31,8 @@ namespace PARIKMAHER
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -70,6 +72,13 @@ namespace PARIKMAHER
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raspBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -107,6 +116,7 @@ namespace PARIKMAHER
             this.tipTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.tipTableAdapter();
             this.lISTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
@@ -115,6 +125,7 @@ namespace PARIKMAHER
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -128,6 +139,8 @@ namespace PARIKMAHER
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.textBox10);
@@ -165,6 +178,26 @@ namespace PARIKMAHER
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Клиент";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(11, 143);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "label17";
+            this.label17.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(557, 173);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(87, 21);
+            this.button8.TabIndex = 33;
+            this.button8.Text = "Записать";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(462, 99);
@@ -178,15 +211,16 @@ namespace PARIKMAHER
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(592, 179);
+            this.label16.Location = new System.Drawing.Point(657, 193);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(13, 13);
+            this.label16.Size = new System.Drawing.Size(19, 13);
             this.label16.TabIndex = 31;
-            this.label16.Text = "0";
+            this.label16.Text = "16";
+            this.label16.Visible = false;
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(82, 176);
+            this.textBox10.Location = new System.Drawing.Point(65, 173);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(159, 20);
             this.textBox10.TabIndex = 30;
@@ -321,7 +355,7 @@ namespace PARIKMAHER
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(527, 176);
+            this.textBox3.Location = new System.Drawing.Point(499, 173);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(50, 20);
             this.textBox3.TabIndex = 16;
@@ -329,7 +363,7 @@ namespace PARIKMAHER
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(488, 179);
+            this.label9.Location = new System.Drawing.Point(460, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 15;
@@ -338,7 +372,7 @@ namespace PARIKMAHER
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(430, 176);
+            this.comboBox4.Location = new System.Drawing.Point(403, 173);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(51, 21);
             this.comboBox4.TabIndex = 14;
@@ -346,7 +380,7 @@ namespace PARIKMAHER
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(384, 179);
+            this.label8.Location = new System.Drawing.Point(358, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 13;
@@ -355,7 +389,7 @@ namespace PARIKMAHER
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(286, 176);
+            this.dateTimePicker1.Location = new System.Drawing.Point(260, 173);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(92, 20);
             this.dateTimePicker1.TabIndex = 12;
@@ -363,7 +397,7 @@ namespace PARIKMAHER
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(247, 179);
+            this.label7.Location = new System.Drawing.Point(230, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 11;
@@ -372,11 +406,11 @@ namespace PARIKMAHER
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 179);
+            this.label6.Location = new System.Drawing.Point(4, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Процедура";
+            this.label6.Text = "Работа";
             // 
             // groupBox3
             // 
@@ -460,6 +494,7 @@ namespace PARIKMAHER
             this.button4.TabIndex = 28;
             this.button4.Text = "Записать на процедуру";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox2
             // 
@@ -481,14 +516,88 @@ namespace PARIKMAHER
             this.button1.TabIndex = 1;
             this.button1.Text = "Удалить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataDataGridViewTextBoxColumn,
+            this.hourDataGridViewTextBoxColumn,
+            this.fio,
+            this.dataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1,
+            this.idDataGridViewTextBoxColumn3});
+            this.dataGridView1.DataSource = this.raspBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(270, 480);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // hourDataGridViewTextBoxColumn
+            // 
+            this.hourDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.hourDataGridViewTextBoxColumn.DataPropertyName = "hour";
+            this.hourDataGridViewTextBoxColumn.HeaderText = "Время";
+            this.hourDataGridViewTextBoxColumn.Name = "hourDataGridViewTextBoxColumn";
+            this.hourDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hourDataGridViewTextBoxColumn.Width = 5;
+            // 
+            // fio
+            // 
+            this.fio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fio.DataPropertyName = "fio";
+            this.fio.HeaderText = "ФИО";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            this.fio.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "nazv";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Работа";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 68;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn1.Width = 58;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "ИД";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Width = 49;
+            // 
+            // raspBindingSource
+            // 
+            this.raspBindingSource.DataMember = "rasp";
+            this.raspBindingSource.DataSource = this.lISTDataSet;
             // 
             // panel1
             // 
@@ -805,6 +914,10 @@ namespace PARIKMAHER
             this.helpProvider1.HelpNamespace = "S:\\Контрольные\\olga\\2-kurs\\2-2\\KURS\\Листопадова\\PARIKMAHER\\bin\\Debug\\PARIKMAHER.c" +
     "hm";
             // 
+            // raspTableAdapter
+            // 
+            this.raspTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,6 +950,7 @@ namespace PARIKMAHER
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raspBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -932,6 +1046,16 @@ namespace PARIKMAHER
         private System.Windows.Forms.BindingSource tipBindingSource1;
         private System.Windows.Forms.BindingSource lISTDataSetBindingSource;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.BindingSource raspBindingSource;
+        private LISTDataSetTableAdapters.raspTableAdapter raspTableAdapter;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hourDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
     }
 }
 

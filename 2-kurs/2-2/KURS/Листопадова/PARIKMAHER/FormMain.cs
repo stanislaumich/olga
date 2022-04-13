@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace PARIKMAHER
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.rasp". При необходимости она может быть перемещена или удалена.
+            this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.tip". При необходимости она может быть перемещена или удалена.
             this.tipTableAdapter.Fill(this.lISTDataSet.tip);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "lISTDataSet.prich". При необходимости она может быть перемещена или удалена.
@@ -50,6 +53,7 @@ namespace PARIKMAHER
             textBox8.Text = dataGridView4[1, dataGridView4.CurrentRow.Index].Value.ToString();
             textBox10.Text = dataGridView4[0, dataGridView4.CurrentRow.Index].Value.ToString();
             label15.Text= dataGridView4[2, dataGridView4.CurrentRow.Index].Value.ToString();
+            textBox3.Text = dataGridView4[1, dataGridView4.CurrentRow.Index].Value.ToString();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -162,6 +166,49 @@ namespace PARIKMAHER
             p.StartInfo.Arguments = ""; //чтобы программно нажать enter
             p.Start();
 
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            textBox9.Text = dataGridView1[2, dataGridView1.CurrentRow.Index].Value.ToString();
+            comboBox4.Text = dataGridView1[1, dataGridView1.CurrentRow.Index].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString());
+            textBox10.Text = dataGridView1[3, dataGridView1.CurrentRow.Index].Value.ToString();
+            textBox3.Text = dataGridView1[4, dataGridView1.CurrentRow.Index].Value.ToString();
+            label17.Text = dataGridView1[5, dataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (label17.Text == "") { MessageBox.Show("Укажите запись!"); }
+            else
+            {
+                this.raspTableAdapter.DeleteQuery(Convert.ToInt32(label17.Text));
+                this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
+                MessageBox.Show("Запись удалена!");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DateTimeFormatInfo usDtfi = new CultureInfo("ru-RU", false).DateTimeFormat;
+            if (textBox9.Text == "") { MessageBox.Show("Не указано ФИО!"); }
+            else
+            {
+                this.raspTableAdapter.InsertQuery(Convert.ToInt32(label15.Text),//prich
+                   Convert.ToInt32(textBox3.Text), //price
+                   Convert.ToInt32(comboBox4.Text),//hour
+                   Convert.ToDateTime(dateTimePicker1.Value, usDtfi),// date
+                   Convert.ToInt32(label16.Text)  //idfio
+                    );
+                this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
+                MessageBox.Show("Запись добавлена!");
+            }
         }
     }
 }
