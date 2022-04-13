@@ -196,14 +196,14 @@ namespace PARIKMAHER
 
         private void button8_Click(object sender, EventArgs e)
         {
-            DateTimeFormatInfo usDtfi = new CultureInfo("ru-RU", false).DateTimeFormat;
+            //DateTimeFormatInfo usDtfi = new CultureInfo("ru-RU", false).DateTimeFormat;
             if (textBox9.Text == "") { MessageBox.Show("Не указано ФИО!"); }
             else
             {
                 this.raspTableAdapter.InsertQuery(Convert.ToInt32(label15.Text),//prich
                    Convert.ToInt32(textBox3.Text), //price
                    Convert.ToInt32(comboBox4.Text),//hour
-                   Convert.ToDateTime(dateTimePicker1.Value, usDtfi),// date
+                   Convert.ToDateTime(dateTimePicker1.Value.Date),// date
                    Convert.ToInt32(label16.Text)  //idfio
                     );
                 this.raspTableAdapter.Fill(this.lISTDataSet.rasp);
