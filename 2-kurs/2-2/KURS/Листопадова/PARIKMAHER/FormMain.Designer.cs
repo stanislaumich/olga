@@ -84,6 +84,7 @@ namespace PARIKMAHER
             this.работаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.искатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,7 +118,6 @@ namespace PARIKMAHER
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.raspTableAdapter = new PARIKMAHER.LISTDataSetTableAdapters.raspTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.искатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lISTDataSet)).BeginInit();
@@ -655,6 +655,13 @@ namespace PARIKMAHER
             this.отчетToolStripMenuItem.Text = "Отчет";
             this.отчетToolStripMenuItem.Click += new System.EventHandler(this.отчетToolStripMenuItem_Click);
             // 
+            // искатьToolStripMenuItem
+            // 
+            this.искатьToolStripMenuItem.Name = "искатьToolStripMenuItem";
+            this.искатьToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.искатьToolStripMenuItem.Text = "Поиск";
+            this.искатьToolStripMenuItem.Click += new System.EventHandler(this.искатьToolStripMenuItem_Click);
+            // 
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
@@ -928,12 +935,6 @@ namespace PARIKMAHER
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // искатьToolStripMenuItem
-            // 
-            this.искатьToolStripMenuItem.Name = "искатьToolStripMenuItem";
-            this.искатьToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.искатьToolStripMenuItem.Text = "Поиск";
             // 
             // FormMain
             // 

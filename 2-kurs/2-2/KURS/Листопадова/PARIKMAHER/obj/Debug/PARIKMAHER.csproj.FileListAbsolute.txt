@@ -93,3 +93,4 @@ S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\bin\Debug\PARIKMAHER.application
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.exe.manifest
 S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.application
+S:\Контрольные\olga\2-kurs\2-2\KURS\Листопадова\PARIKMAHER\obj\Debug\PARIKMAHER.FormFind.resources

@@ -207,5 +207,11 @@ namespace PARIKMAHER
         {
             label1.Text = DateTime.Now.ToString();
         }
+
+        private void искатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFind findForm = new FormFind();
+            findForm.Show();
+        }
     }
 }
