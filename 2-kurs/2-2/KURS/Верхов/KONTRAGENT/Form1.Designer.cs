@@ -48,14 +48,6 @@ namespace KONTRAGENT
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_b = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_e = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idkontrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kONTRDOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,6 +165,13 @@ namespace KONTRAGENT
             this.label31 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.НАЧАЛО = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOGOVORBindingSourcedogovor = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.pEOPLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -240,13 +239,9 @@ namespace KONTRAGENT
             this.вЫХОДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ZdogTableAdapter = new KONTRAGENT.Z1DataSetTableAdapters.ZdogTableAdapter();
-            this.nomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.НАЧАЛО = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_b = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_e = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ZdogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.z1DataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -462,69 +457,12 @@ namespace KONTRAGENT
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.date_b,
-            this.date_e,
-            this.nomerDataGridViewTextBoxColumn,
-            this.datebDataGridViewTextBoxColumn,
-            this.dateeDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn2,
-            this.idkontrDataGridViewTextBoxColumn});
+            this.date_e});
             this.dataGridView3.DataSource = this.kONTRDOGOVORBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(0, 463);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(1056, 254);
             this.dataGridView3.TabIndex = 13;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nomer";
-            this.Column1.HeaderText = "НОМЕР";
-            this.Column1.Name = "Column1";
-            // 
-            // date_b
-            // 
-            this.date_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_b.DataPropertyName = "date_b";
-            this.date_b.HeaderText = "НАЧАЛО";
-            this.date_b.Name = "date_b";
-            this.date_b.Width = 78;
-            // 
-            // date_e
-            // 
-            this.date_e.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_e.DataPropertyName = "date_e";
-            this.date_e.HeaderText = "КОНЕЦ";
-            this.date_e.Name = "date_e";
-            this.date_e.Width = 70;
-            // 
-            // nomerDataGridViewTextBoxColumn
-            // 
-            this.nomerDataGridViewTextBoxColumn.DataPropertyName = "nomer";
-            this.nomerDataGridViewTextBoxColumn.HeaderText = "nomer";
-            this.nomerDataGridViewTextBoxColumn.Name = "nomerDataGridViewTextBoxColumn";
-            // 
-            // datebDataGridViewTextBoxColumn
-            // 
-            this.datebDataGridViewTextBoxColumn.DataPropertyName = "date_b";
-            this.datebDataGridViewTextBoxColumn.HeaderText = "date_b";
-            this.datebDataGridViewTextBoxColumn.Name = "datebDataGridViewTextBoxColumn";
-            // 
-            // dateeDataGridViewTextBoxColumn
-            // 
-            this.dateeDataGridViewTextBoxColumn.DataPropertyName = "date_e";
-            this.dateeDataGridViewTextBoxColumn.HeaderText = "date_e";
-            this.dateeDataGridViewTextBoxColumn.Name = "dateeDataGridViewTextBoxColumn";
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            // 
-            // idkontrDataGridViewTextBoxColumn
-            // 
-            this.idkontrDataGridViewTextBoxColumn.DataPropertyName = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn.HeaderText = "id_kontr";
-            this.idkontrDataGridViewTextBoxColumn.Name = "idkontrDataGridViewTextBoxColumn";
             // 
             // kONTRDOGOVORBindingSource
             // 
@@ -1682,6 +1620,62 @@ namespace KONTRAGENT
             this.dataGridView9.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellClick);
             this.dataGridView9.Click += new System.EventHandler(this.dataGridView9_Click);
             // 
+            // nomer
+            // 
+            this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nomer.DataPropertyName = "nomer";
+            this.nomer.HeaderText = "НАЗВАНИЕ";
+            this.nomer.Name = "nomer";
+            this.nomer.Width = 91;
+            // 
+            // stsDataGridViewTextBoxColumn
+            // 
+            this.stsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stsDataGridViewTextBoxColumn.DataPropertyName = "sts";
+            this.stsDataGridViewTextBoxColumn.HeaderText = "СТАТУС";
+            this.stsDataGridViewTextBoxColumn.Name = "stsDataGridViewTextBoxColumn";
+            this.stsDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // НАЧАЛО
+            // 
+            this.НАЧАЛО.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.НАЧАЛО.DataPropertyName = "date_b";
+            this.НАЧАЛО.HeaderText = "НАЧАЛО";
+            this.НАЧАЛО.Name = "НАЧАЛО";
+            this.НАЧАЛО.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "date_e";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КОНЕЦ";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nazv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "КОНТРАГЕНТ";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 104;
+            // 
+            // fio
+            // 
+            this.fio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fio.DataPropertyName = "fio";
+            this.fio.HeaderText = "КУРАТОР";
+            this.fio.Name = "fio";
+            this.fio.Width = 83;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ИД";
+            this.id.Name = "id";
+            this.id.Width = 49;
+            // 
             // dOGOVORBindingSourcedogovor
             // 
             this.dOGOVORBindingSourcedogovor.DataMember = "DOGOVOR";
@@ -2274,61 +2268,27 @@ namespace KONTRAGENT
             // 
             this.ZdogTableAdapter.ClearBeforeFill = true;
             // 
-            // nomer
+            // Column1
             // 
-            this.nomer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nomer.DataPropertyName = "nomer";
-            this.nomer.HeaderText = "НАЗВАНИЕ";
-            this.nomer.Name = "nomer";
-            this.nomer.Width = 91;
+            this.Column1.DataPropertyName = "nomer";
+            this.Column1.HeaderText = "НОМЕР";
+            this.Column1.Name = "Column1";
             // 
-            // stsDataGridViewTextBoxColumn
+            // date_b
             // 
-            this.stsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stsDataGridViewTextBoxColumn.DataPropertyName = "sts";
-            this.stsDataGridViewTextBoxColumn.HeaderText = "СТАТУС";
-            this.stsDataGridViewTextBoxColumn.Name = "stsDataGridViewTextBoxColumn";
-            this.stsDataGridViewTextBoxColumn.Width = 75;
+            this.date_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_b.DataPropertyName = "date_b";
+            this.date_b.HeaderText = "НАЧАЛО";
+            this.date_b.Name = "date_b";
+            this.date_b.Width = 78;
             // 
-            // НАЧАЛО
+            // date_e
             // 
-            this.НАЧАЛО.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.НАЧАЛО.DataPropertyName = "date_b";
-            this.НАЧАЛО.HeaderText = "НАЧАЛО";
-            this.НАЧАЛО.Name = "НАЧАЛО";
-            this.НАЧАЛО.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "date_e";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КОНЕЦ";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nazv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "КОНТРАГЕНТ";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 104;
-            // 
-            // fio
-            // 
-            this.fio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fio.DataPropertyName = "fio";
-            this.fio.HeaderText = "КУРАТОР";
-            this.fio.Name = "fio";
-            this.fio.Width = 83;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ИД";
-            this.id.Name = "id";
-            this.id.Width = 49;
+            this.date_e.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_e.DataPropertyName = "date_e";
+            this.date_e.HeaderText = "КОНЕЦ";
+            this.date_e.Name = "date_e";
+            this.date_e.Width = 70;
             // 
             // Form1
             // 
@@ -2604,15 +2564,7 @@ namespace KONTRAGENT
         private System.Windows.Forms.BindingSource kONTRDOGOVORBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource bANKKONTRBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_b;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_e;
         private System.Windows.Forms.BindingSource bindingDOLG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datebDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idkontrDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource pEOPLEDOLGBindingSource;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Label label35;
@@ -2651,6 +2603,9 @@ namespace KONTRAGENT
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_b;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_e;
     }
 }
 
