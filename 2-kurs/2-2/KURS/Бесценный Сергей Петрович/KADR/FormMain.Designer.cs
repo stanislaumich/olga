@@ -50,11 +50,7 @@ namespace KADR
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.koeffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razrBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kadrDataSet1 = new KADR.kadrDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -64,9 +60,6 @@ namespace KADR
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idrazrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dolgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -98,19 +91,31 @@ namespace KADR
             this.sotrudTableAdapter = new KADR.kadrDataSetTableAdapters.sotrudTableAdapter();
             this.dolgTableAdapter = new KADR.kadrDataSetTableAdapters.dolgTableAdapter();
             this.razrTableAdapter = new KADR.kadrDataSetTableAdapters.razrTableAdapter();
+            this.dolgBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.razrBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idrazrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razrBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.razrBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.koeffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dolgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dolgBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -169,6 +174,7 @@ namespace KADR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -298,51 +304,19 @@ namespace KADR
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numDataGridViewTextBoxColumn,
-            this.koeffDataGridViewTextBoxColumn,
-            this.dopDataGridViewTextBoxColumn1});
-            this.dataGridView3.DataSource = this.razrBindingSource;
+            this.koeffDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.razrBindingSource3;
             this.dataGridView3.Location = new System.Drawing.Point(6, 18);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(258, 240);
             this.dataGridView3.TabIndex = 0;
             // 
-            // numDataGridViewTextBoxColumn
-            // 
-            this.numDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.numDataGridViewTextBoxColumn.DataPropertyName = "num";
-            this.numDataGridViewTextBoxColumn.HeaderText = "Разряд";
-            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
-            this.numDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // koeffDataGridViewTextBoxColumn
-            // 
-            this.koeffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.koeffDataGridViewTextBoxColumn.DataPropertyName = "koeff";
-            this.koeffDataGridViewTextBoxColumn.HeaderText = "Коэфф";
-            this.koeffDataGridViewTextBoxColumn.Name = "koeffDataGridViewTextBoxColumn";
-            this.koeffDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // dopDataGridViewTextBoxColumn1
-            // 
-            this.dopDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dopDataGridViewTextBoxColumn1.DataPropertyName = "dop";
-            this.dopDataGridViewTextBoxColumn1.HeaderText = "Прим.";
-            this.dopDataGridViewTextBoxColumn1.Name = "dopDataGridViewTextBoxColumn1";
-            this.dopDataGridViewTextBoxColumn1.Width = 63;
-            // 
             // razrBindingSource
             // 
             this.razrBindingSource.DataMember = "razr";
-            this.razrBindingSource.DataSource = this.kadrDataSet1;
-            // 
-            // kadrDataSet1
-            // 
-            this.kadrDataSet1.DataSetName = "kadrDataSet";
-            this.kadrDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label8);
@@ -360,7 +334,7 @@ namespace KADR
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 236);
+            this.label13.Location = new System.Drawing.Point(911, 128);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(13, 13);
             this.label13.TabIndex = 7;
@@ -369,14 +343,14 @@ namespace KADR
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.razrBindingSource;
+            this.comboBox2.DataSource = this.razrBindingSource2;
             this.comboBox2.DisplayMember = "num";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(64, 242);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(54, 21);
             this.comboBox2.TabIndex = 6;
-            this.comboBox2.ValueMember = "num";
+            this.comboBox2.ValueMember = "id";
             // 
             // textBox6
             // 
@@ -433,7 +407,7 @@ namespace KADR
             this.nazvDataGridViewTextBoxColumn,
             this.idrazrDataGridViewTextBoxColumn,
             this.Column1});
-            this.dataGridView2.DataSource = this.dolgBindingSource;
+            this.dataGridView2.DataSource = this.dolgBindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(9, 18);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -441,37 +415,9 @@ namespace KADR
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
-            // nazvDataGridViewTextBoxColumn
-            // 
-            this.nazvDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
-            this.nazvDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
-            this.nazvDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nazvDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // idrazrDataGridViewTextBoxColumn
-            // 
-            this.idrazrDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idrazrDataGridViewTextBoxColumn.DataPropertyName = "id_razr";
-            this.idrazrDataGridViewTextBoxColumn.HeaderText = "Разряд";
-            this.idrazrDataGridViewTextBoxColumn.Name = "idrazrDataGridViewTextBoxColumn";
-            this.idrazrDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idrazrDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ИД";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 5;
-            // 
             // dolgBindingSource
             // 
             this.dolgBindingSource.DataMember = "dolg";
-            this.dolgBindingSource.DataSource = this.kadrDataSet1;
             // 
             // textBox5
             // 
@@ -721,6 +667,69 @@ namespace KADR
             // 
             this.razrTableAdapter.ClearBeforeFill = true;
             // 
+            // dolgBindingSource1
+            // 
+            this.dolgBindingSource1.DataMember = "dolg";
+            this.dolgBindingSource1.DataSource = this.kadrDataSet;
+            // 
+            // razrBindingSource1
+            // 
+            this.razrBindingSource1.DataMember = "razr";
+            this.razrBindingSource1.DataSource = this.kadrDataSet;
+            // 
+            // nazvDataGridViewTextBoxColumn
+            // 
+            this.nazvDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nazvDataGridViewTextBoxColumn.DataPropertyName = "nazv";
+            this.nazvDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.nazvDataGridViewTextBoxColumn.Name = "nazvDataGridViewTextBoxColumn";
+            this.nazvDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nazvDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // idrazrDataGridViewTextBoxColumn
+            // 
+            this.idrazrDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idrazrDataGridViewTextBoxColumn.DataPropertyName = "id_razr";
+            this.idrazrDataGridViewTextBoxColumn.HeaderText = "Разр.";
+            this.idrazrDataGridViewTextBoxColumn.Name = "idrazrDataGridViewTextBoxColumn";
+            this.idrazrDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idrazrDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ИД";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 5;
+            // 
+            // razrBindingSource2
+            // 
+            this.razrBindingSource2.DataMember = "razr";
+            this.razrBindingSource2.DataSource = this.kadrDataSet;
+            // 
+            // razrBindingSource3
+            // 
+            this.razrBindingSource3.DataMember = "razr";
+            this.razrBindingSource3.DataSource = this.kadrDataSet;
+            // 
+            // numDataGridViewTextBoxColumn
+            // 
+            this.numDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.numDataGridViewTextBoxColumn.DataPropertyName = "num";
+            this.numDataGridViewTextBoxColumn.HeaderText = "Разр.";
+            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
+            this.numDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // koeffDataGridViewTextBoxColumn
+            // 
+            this.koeffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.koeffDataGridViewTextBoxColumn.DataPropertyName = "koeff";
+            this.koeffDataGridViewTextBoxColumn.HeaderText = "Коэфф.";
+            this.koeffDataGridViewTextBoxColumn.Name = "koeffDataGridViewTextBoxColumn";
+            this.koeffDataGridViewTextBoxColumn.Width = 70;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,7 +750,6 @@ namespace KADR
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -749,6 +757,10 @@ namespace KADR
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dolgBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -793,7 +805,6 @@ namespace KADR
         private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private kadrDataSet kadrDataSet1;
         private System.Windows.Forms.BindingSource dolgBindingSource;
         private kadrDataSetTableAdapters.dolgTableAdapter dolgTableAdapter;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -807,9 +818,6 @@ namespace KADR
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource razrBindingSource;
         private kadrDataSetTableAdapters.razrTableAdapter razrTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn koeffDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button7;
@@ -821,9 +829,15 @@ namespace KADR
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.BindingSource razrBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazvDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idrazrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.BindingSource dolgBindingSource1;
+        private System.Windows.Forms.BindingSource razrBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn koeffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource razrBindingSource3;
     }
 }
 
