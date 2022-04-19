@@ -58,6 +58,10 @@ namespace KADR {
         
         private global::System.Data.DataRelation relationdolgsotrud1;
         
+        private global::System.Data.DataRelation relationdolgsotrud2;
+        
+        private global::System.Data.DataRelation relationrazrdolg1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -389,6 +393,8 @@ namespace KADR {
             this.relationsotrudzarplata2 = this.Relations["sotrudzarplata2"];
             this.relationsotrudzarplata3 = this.Relations["sotrudzarplata3"];
             this.relationdolgsotrud1 = this.Relations["dolgsotrud1"];
+            this.relationdolgsotrud2 = this.Relations["dolgsotrud2"];
+            this.relationrazrdolg1 = this.Relations["razrdolg1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -451,6 +457,14 @@ namespace KADR {
                         this.tabledolg.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablesotrud.id_dolgColumn}, false);
             this.Relations.Add(this.relationdolgsotrud1);
+            this.relationdolgsotrud2 = new global::System.Data.DataRelation("dolgsotrud2", new global::System.Data.DataColumn[] {
+                        this.tablesotrud.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablesotrud1.id_dolgColumn}, false);
+            this.Relations.Add(this.relationdolgsotrud2);
+            this.relationrazrdolg1 = new global::System.Data.DataRelation("razrdolg1", new global::System.Data.DataColumn[] {
+                        this.tablerazr.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablesotrud.id_razrColumn}, false);
+            this.Relations.Add(this.relationrazrdolg1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1213,6 +1227,10 @@ namespace KADR {
             
             private global::System.Data.DataColumn columndop;
             
+            private global::System.Data.DataColumn columnnazv;
+            
+            private global::System.Data.DataColumn columnid_razr;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public sotrudDataTable() {
@@ -1304,6 +1322,22 @@ namespace KADR {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nazvColumn {
+                get {
+                    return this.columnnazv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_razrColumn {
+                get {
+                    return this.columnid_razr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1339,7 +1373,7 @@ namespace KADR {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sotrudRow AddsotrudRow(string fio, dolgRow parentdolgRowBydolgsotrud1, float premia_p, string phones, string adr, string dop) {
+            public sotrudRow AddsotrudRow(string fio, dolgRow parentdolgRowBydolgsotrud1, float premia_p, string phones, string adr, string dop, string nazv, razrRow parentrazrRowByrazrdolg1) {
                 sotrudRow rowsotrudRow = ((sotrudRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1348,9 +1382,14 @@ namespace KADR {
                         premia_p,
                         phones,
                         adr,
-                        dop};
+                        dop,
+                        nazv,
+                        null};
                 if ((parentdolgRowBydolgsotrud1 != null)) {
                     columnValuesArray[2] = parentdolgRowBydolgsotrud1[0];
+                }
+                if ((parentrazrRowByrazrdolg1 != null)) {
+                    columnValuesArray[8] = parentrazrRowByrazrdolg1[0];
                 }
                 rowsotrudRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsotrudRow);
@@ -1388,6 +1427,8 @@ namespace KADR {
                 this.columnphones = base.Columns["phones"];
                 this.columnadr = base.Columns["adr"];
                 this.columndop = base.Columns["dop"];
+                this.columnnazv = base.Columns["nazv"];
+                this.columnid_razr = base.Columns["id_razr"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1407,6 +1448,10 @@ namespace KADR {
                 base.Columns.Add(this.columnadr);
                 this.columndop = new global::System.Data.DataColumn("dop", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndop);
+                this.columnnazv = new global::System.Data.DataColumn("nazv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnazv);
+                this.columnid_razr = new global::System.Data.DataColumn("id_razr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_razr);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1418,6 +1463,7 @@ namespace KADR {
                 this.columnphones.MaxLength = 255;
                 this.columnadr.MaxLength = 255;
                 this.columndop.MaxLength = 255;
+                this.columnnazv.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3497,6 +3543,17 @@ namespace KADR {
                     return ((dolgRow[])(base.GetChildRows(this.Table.ChildRelations["razrdolg"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sotrudRow[] GetsotrudRows() {
+                if ((this.Table.ChildRelations["razrdolg1"] == null)) {
+                    return new sotrudRow[0];
+                }
+                else {
+                    return ((sotrudRow[])(base.GetChildRows(this.Table.ChildRelations["razrdolg1"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3622,12 +3679,55 @@ namespace KADR {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nazv {
+                get {
+                    try {
+                        return ((string)(this[this.tablesotrud.nazvColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'nazv\' в таблице \'sotrud\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesotrud.nazvColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_razr {
+                get {
+                    try {
+                        return ((int)(this[this.tablesotrud.id_razrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id_razr\' в таблице \'sotrud\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesotrud.id_razrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dolgRow dolgRow {
                 get {
                     return ((dolgRow)(this.GetParentRow(this.Table.ParentRelations["dolgsotrud1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["dolgsotrud1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public razrRow razrRow {
+                get {
+                    return ((razrRow)(this.GetParentRow(this.Table.ParentRelations["razrdolg1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["razrdolg1"]);
                 }
             }
             
@@ -3705,6 +3805,30 @@ namespace KADR {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnazvNull() {
+                return this.IsNull(this.tablesotrud.nazvColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnazvNull() {
+                this[this.tablesotrud.nazvColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_razrNull() {
+                return this.IsNull(this.tablesotrud.id_razrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_razrNull() {
+                this[this.tablesotrud.id_razrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public zarplataRow[] GetzarplataRows() {
                 if ((this.Table.ChildRelations["sotrudzarplata2"] == null)) {
                     return new zarplataRow[0];
@@ -3722,6 +3846,17 @@ namespace KADR {
                 }
                 else {
                     return ((zarplata1Row[])(base.GetChildRows(this.Table.ChildRelations["sotrudzarplata3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sotrud1Row[] Getsotrud1Rows() {
+                if ((this.Table.ChildRelations["dolgsotrud2"] == null)) {
+                    return new sotrud1Row[0];
+                }
+                else {
+                    return ((sotrud1Row[])(base.GetChildRows(this.Table.ChildRelations["dolgsotrud2"])));
                 }
             }
         }
@@ -4293,6 +4428,17 @@ namespace KADR {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["dolgsotrud"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sotrudRow sotrudRow {
+                get {
+                    return ((sotrudRow)(this.GetParentRow(this.Table.ParentRelations["dolgsotrud2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dolgsotrud2"]);
                 }
             }
             
@@ -5922,6 +6068,8 @@ namespace KADR.kadrDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("phones", "phones");
             tableMapping.ColumnMappings.Add("adr", "adr");
             tableMapping.ColumnMappings.Add("dop", "dop");
+            tableMapping.ColumnMappings.Add("nazv", "nazv");
+            tableMapping.ColumnMappings.Add("id_razr", "id_razr");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5939,8 +6087,8 @@ namespace KADR.kadrDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        sotrud.id, sotrud.fio, sotrud.id_dolg, sotrud.premia_p, sotrud.phon" +
-                "es, sotrud.adr, sotrud.dop\r\nFROM            (sotrud INNER JOIN\r\n                " +
-                "         dolg ON sotrud.id_dolg = dolg.id)";
+                "es, sotrud.adr, sotrud.dop, dolg.nazv, dolg.id_razr\r\nFROM            (sotrud INN" +
+                "ER JOIN\r\n                         dolg ON sotrud.id_dolg = dolg.id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

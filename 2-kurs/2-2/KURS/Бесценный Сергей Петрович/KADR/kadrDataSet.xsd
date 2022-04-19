@@ -129,10 +129,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sotrudTableAdapter" GeneratorDataComponentClassName="sotrudTableAdapter" Name="sotrud" UserDataComponentName="sotrudTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="sotrud" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sotrud.id, sotrud.fio, sotrud.id_dolg, sotrud.premia_p, sotrud.phones, sotrud.adr, sotrud.dop
+                    <CommandText>SELECT        sotrud.id, sotrud.fio, sotrud.id_dolg, sotrud.premia_p, sotrud.phones, sotrud.adr, sotrud.dop, dolg.nazv, dolg.id_razr
 FROM            (sotrud INNER JOIN
                          dolg ON sotrud.id_dolg = dolg.id)</CommandText>
                     <Parameters />
@@ -148,6 +148,8 @@ FROM            (sotrud INNER JOIN
               <Mapping SourceColumn="phones" DataSetColumn="phones" />
               <Mapping SourceColumn="adr" DataSetColumn="adr" />
               <Mapping SourceColumn="dop" DataSetColumn="dop" />
+              <Mapping SourceColumn="nazv" DataSetColumn="nazv" />
+              <Mapping SourceColumn="id_razr" DataSetColumn="id_razr" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -583,7 +585,7 @@ WHERE        (data =
         <xs:element name="sotrud" msprop:Generator_TableClassName="sotrudDataTable" msprop:Generator_TableVarName="tablesotrud" msprop:Generator_RowChangedName="sotrudRowChanged" msprop:Generator_TablePropName="sotrud" msprop:Generator_RowDeletingName="sotrudRowDeleting" msprop:Generator_RowChangingName="sotrudRowChanging" msprop:Generator_RowEvHandlerName="sotrudRowChangeEventHandler" msprop:Generator_RowDeletedName="sotrudRowDeleted" msprop:Generator_RowClassName="sotrudRow" msprop:Generator_UserTableName="sotrud" msprop:Generator_RowEvArgName="sotrudRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -614,6 +616,14 @@ WHERE        (data =
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_razr" msprop:Generator_ColumnVarNameInTable="columnid_razr" msprop:Generator_ColumnPropNameInRow="id_razr" msprop:Generator_ColumnPropNameInTable="id_razrColumn" msprop:Generator_UserColumnName="id_razr" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -763,6 +773,8 @@ WHERE        (data =
       <msdata:Relationship name="sotrudzarplata2" msdata:parent="sotrud" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata2" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata2" msprop:Generator_UserParentTable="sotrud" />
       <msdata:Relationship name="sotrudzarplata3" msdata:parent="sotrud" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata3" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata3" msprop:Generator_UserParentTable="sotrud" />
       <msdata:Relationship name="dolgsotrud1" msdata:parent="dolg" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="dolgsotrud1" msprop:Generator_ParentPropName="dolgRow" msprop:Generator_RelationVarName="relationdolgsotrud1" msprop:Generator_UserParentTable="dolg" />
+      <msdata:Relationship name="dolgsotrud2" msdata:parent="sotrud" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud2" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationdolgsotrud2" msprop:Generator_UserParentTable="sotrud" />
+      <msdata:Relationship name="razrdolg1" msdata:parent="razr" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="razrdolg1" msprop:Generator_ParentPropName="razrRow" msprop:Generator_RelationVarName="relationrazrdolg1" msprop:Generator_UserParentTable="razr" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
