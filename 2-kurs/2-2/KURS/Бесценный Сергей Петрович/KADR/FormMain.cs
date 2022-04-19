@@ -19,6 +19,10 @@ namespace KADR
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet1.razr". При необходимости она может быть перемещена или удалена.
+            this.razrTableAdapter.Fill(this.kadrDataSet1.razr);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet1.dolg". При необходимости она может быть перемещена или удалена.
+            this.dolgTableAdapter.Fill(this.kadrDataSet1.dolg);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.sotrud". При необходимости она может быть перемещена или удалена.
             this.sotrudTableAdapter.Fill(this.kadrDataSet.sotrud);
 
