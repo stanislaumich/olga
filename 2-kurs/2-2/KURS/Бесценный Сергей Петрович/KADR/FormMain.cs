@@ -23,5 +23,17 @@ namespace KADR
             this.sotrudTableAdapter.Fill(this.kadrDataSet.sotrud);
 
         }
+
+        private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReport reportForm = new FormReport();
+            reportForm.Show();
+        }
+
+        private void зарплатаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormZarplata zarplataForm = new FormZarplata();
+            zarplataForm.Show();
+        }
     }
 }

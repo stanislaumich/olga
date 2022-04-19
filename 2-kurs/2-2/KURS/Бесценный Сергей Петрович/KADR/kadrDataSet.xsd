@@ -2,7 +2,7 @@
 <xs:schema id="kadrDataSet" targetNamespace="http://tempuri.org/kadrDataSet.xsd" xmlns:mstns="http://tempuri.org/kadrDataSet.xsd" xmlns="http://tempuri.org/kadrDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="kadrConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="kadrConnectionString (Settings)" PropertyReference="ApplicationSettings.KADR.Properties.Settings.GlobalReference.Default.kadrConnectionString" Provider="System.Data.OleDb" />
         </Connections>
@@ -129,13 +129,12 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sotrudTableAdapter" GeneratorDataComponentClassName="sotrudTableAdapter" Name="sotrud" UserDataComponentName="sotrudTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="sotrud" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sotrud.id, sotrud.fio, sotrud.id_dolg, sotrud.id_razr, sotrud.premia_p, sotrud.phones, sotrud.adr, sotrud.dop, razr.koeff, dolg.nazv
-FROM            ((sotrud INNER JOIN
-                         razr ON sotrud.id = razr.id) INNER JOIN
-                         dolg ON sotrud.id = dolg.id)</CommandText>
+                    <CommandText>SELECT        sotrud.id, sotrud.fio, sotrud.id_dolg, sotrud.premia_p, sotrud.phones, sotrud.adr, sotrud.dop
+FROM            (sotrud INNER JOIN
+                         dolg ON sotrud.id_dolg = dolg.id)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -145,13 +144,10 @@ FROM            ((sotrud INNER JOIN
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="fio" DataSetColumn="fio" />
               <Mapping SourceColumn="id_dolg" DataSetColumn="id_dolg" />
-              <Mapping SourceColumn="id_razr" DataSetColumn="id_razr" />
               <Mapping SourceColumn="premia_p" DataSetColumn="premia_p" />
               <Mapping SourceColumn="phones" DataSetColumn="phones" />
               <Mapping SourceColumn="adr" DataSetColumn="adr" />
               <Mapping SourceColumn="dop" DataSetColumn="dop" />
-              <Mapping SourceColumn="koeff" DataSetColumn="koeff" />
-              <Mapping SourceColumn="nazv" DataSetColumn="nazv" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -160,42 +156,67 @@ FROM            ((sotrud INNER JOIN
               <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="zarplata" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `zarplata` WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `zarplata` WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)) AND ((? = 1 AND `oklad` IS NULL) OR (`oklad` = ?)) AND ((? = 1 AND `premia` IS NULL) OR (`premia` = ?)) AND ((? = 1 AND `itogo` IS NULL) OR (`itogo` = ?)) AND ((? = 1 AND `id_stavka` IS NULL) OR (`id_stavka` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_period" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `zarplata` (`period`, `id_sotrud`) VALUES (?, ?)</CommandText>
+                    <CommandText>INSERT INTO `zarplata` (`period`, `id_sotrud`, `oklad`, `premia`, `itogo`, `id_stavka`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, period, id_sotrud FROM zarplata</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, period, id_sotrud, oklad, premia, itogo, id_stavka
+FROM            zarplata</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `zarplata` SET `period` = ?, `id_sotrud` = ? WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)))</CommandText>
+                    <CommandText>UPDATE `zarplata` SET `period` = ?, `id_sotrud` = ?, `oklad` = ?, `premia` = ?, `itogo` = ?, `id_stavka` = ? WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)) AND ((? = 1 AND `oklad` IS NULL) OR (`oklad` = ?)) AND ((? = 1 AND `premia` IS NULL) OR (`premia` = ?)) AND ((? = 1 AND `itogo` IS NULL) OR (`itogo` = ?)) AND ((? = 1 AND `id_stavka` IS NULL) OR (`id_stavka` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_period" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -205,6 +226,311 @@ FROM            ((sotrud INNER JOIN
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="period" DataSetColumn="period" />
               <Mapping SourceColumn="id_sotrud" DataSetColumn="id_sotrud" />
+              <Mapping SourceColumn="oklad" DataSetColumn="oklad" />
+              <Mapping SourceColumn="premia" DataSetColumn="premia" />
+              <Mapping SourceColumn="itogo" DataSetColumn="itogo" />
+              <Mapping SourceColumn="id_stavka" DataSetColumn="id_stavka" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO `zarplata` (`period`, `id_sotrud`, `oklad`, `premia`, `itogo`, `id_stavka`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="period" DataSourceName="zarplata" DataTypeServer="DbType.Date" DbType="Date" Direction="Input" ParameterName="period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="id_sotrud" DataSourceName="zarplata" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="oklad" DataSourceName="zarplata" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="premia" DataSourceName="zarplata" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param5" ColumnName="itogo" DataSourceName="zarplata" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="id_stavka" DataSourceName="zarplata" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SotrZarplRepTableAdapter" GeneratorDataComponentClassName="SotrZarplRepTableAdapter" Name="SotrZarplRep" UserDataComponentName="SotrZarplRepTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dolg.nazv, sotrud.fio, zarplata.period, zarplata.oklad, zarplata.premia, zarplata.itogo
+FROM            ((zarplata INNER JOIN
+                         sotrud ON zarplata.id_sotrud = sotrud.id) INNER JOIN
+                         dolg ON sotrud.id_dolg = dolg.id)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nazv" DataSetColumn="nazv" />
+              <Mapping SourceColumn="fio" DataSetColumn="fio" />
+              <Mapping SourceColumn="period" DataSetColumn="period" />
+              <Mapping SourceColumn="oklad" DataSetColumn="oklad" />
+              <Mapping SourceColumn="premia" DataSetColumn="premia" />
+              <Mapping SourceColumn="itogo" DataSetColumn="itogo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sotrud1TableAdapter" GeneratorDataComponentClassName="sotrud1TableAdapter" Name="sotrud1" UserDataComponentName="sotrud1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="sotrud" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `sotrud` WHERE ((`id` = ?) AND ((? = 1 AND `fio` IS NULL) OR (`fio` = ?)) AND ((? = 1 AND `id_dolg` IS NULL) OR (`id_dolg` = ?)) AND ((? = 1 AND `premia_p` IS NULL) OR (`premia_p` = ?)) AND ((? = 1 AND `phones` IS NULL) OR (`phones` = ?)) AND ((? = 1 AND `adr` IS NULL) OR (`adr` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fio" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_fio" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia_p" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="Original_premia_p" Precision="0" ProviderType="Single" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_phones" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_phones" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_adr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_adr" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `sotrud` (`fio`, `id_dolg`, `premia_p`, `phones`, `adr`, `dop`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="fio" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="premia_p" Precision="0" ProviderType="Single" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="phones" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="adr" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fio, id_dolg, premia_p, phones, adr, dop FROM sotrud</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `sotrud` SET `fio` = ?, `id_dolg` = ?, `premia_p` = ?, `phones` = ?, `adr` = ?, `dop` = ? WHERE ((`id` = ?) AND ((? = 1 AND `fio` IS NULL) OR (`fio` = ?)) AND ((? = 1 AND `id_dolg` IS NULL) OR (`id_dolg` = ?)) AND ((? = 1 AND `premia_p` IS NULL) OR (`premia_p` = ?)) AND ((? = 1 AND `phones` IS NULL) OR (`phones` = ?)) AND ((? = 1 AND `adr` IS NULL) OR (`adr` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="fio" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="premia_p" Precision="0" ProviderType="Single" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="phones" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="adr" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_fio" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_fio" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="fio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_dolg" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_dolg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia_p" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="Original_premia_p" Precision="0" ProviderType="Single" Scale="0" Size="0" SourceColumn="premia_p" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_phones" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_phones" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="phones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_adr" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_adr" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="adr" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fio" DataSetColumn="fio" />
+              <Mapping SourceColumn="id_dolg" DataSetColumn="id_dolg" />
+              <Mapping SourceColumn="premia_p" DataSetColumn="premia_p" />
+              <Mapping SourceColumn="phones" DataSetColumn="phones" />
+              <Mapping SourceColumn="adr" DataSetColumn="adr" />
+              <Mapping SourceColumn="dop" DataSetColumn="dop" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="stavkaTableAdapter" GeneratorDataComponentClassName="stavkaTableAdapter" Name="stavka" UserDataComponentName="stavkaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `stavka` WHERE ((`id` = ?) AND ((? = 1 AND `stavka` IS NULL) OR (`stavka` = ?)) AND ((? = 1 AND `data` IS NULL) OR (`data` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_data" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `stavka` (`stavka`, `data`, `dop`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, stavka, data, dop FROM stavka</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `stavka` SET `stavka` = ?, `data` = ?, `dop` = ? WHERE ((`id` = ?) AND ((? = 1 AND `stavka` IS NULL) OR (`stavka` = ?)) AND ((? = 1 AND `data` IS NULL) OR (`data` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_data" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="stavka" DataSetColumn="stavka" />
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="dop" DataSetColumn="dop" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="IdStavkaQuery" Modifier="Public" Name="IdStavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="IdStavkaQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id
+FROM            stavka
+WHERE        (data =
+                             (SELECT        MAX(data) AS Expr1
+                               FROM            stavka stavka_1))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="razr" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="KoeffQuery" Modifier="Public" Name="KoeffQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="KoeffQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        razr.koeff
+FROM            ((sotrud INNER JOIN
+                         dolg ON sotrud.id_dolg = dolg.id) INNER JOIN
+                         razr ON dolg.id_razr = razr.id)
+WHERE        (sotrud.id = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="id" DataSourceName="sotrud" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="StavkaQuery" Modifier="Public" Name="StavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="StavkaQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        stavka
+FROM            stavka
+WHERE        (data =
+                             (SELECT        MAX(data) AS Expr1
+                               FROM            stavka stavka_1))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="zarplata1TableAdapter" GeneratorDataComponentClassName="zarplata1TableAdapter" Name="zarplata1" UserDataComponentName="zarplata1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="zarplata" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `zarplata` WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)) AND ((? = 1 AND `oklad` IS NULL) OR (`oklad` = ?)) AND ((? = 1 AND `premia` IS NULL) OR (`premia` = ?)) AND ((? = 1 AND `itogo` IS NULL) OR (`itogo` = ?)) AND ((? = 1 AND `id_stavka` IS NULL) OR (`id_stavka` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_period" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `zarplata` (`period`, `id_sotrud`, `oklad`, `premia`, `itogo`, `id_stavka`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, period, id_sotrud, oklad, premia, itogo, id_stavka FROM zarplata</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `zarplata` SET `period` = ?, `id_sotrud` = ?, `oklad` = ?, `premia` = ?, `itogo` = ?, `id_stavka` = ? WHERE ((`id` = ?) AND ((? = 1 AND `period` IS NULL) OR (`period` = ?)) AND ((? = 1 AND `id_sotrud` IS NULL) OR (`id_sotrud` = ?)) AND ((? = 1 AND `oklad` IS NULL) OR (`oklad` = ?)) AND ((? = 1 AND `premia` IS NULL) OR (`premia` = ?)) AND ((? = 1 AND `itogo` IS NULL) OR (`itogo` = ?)) AND ((? = 1 AND `id_stavka` IS NULL) OR (`id_stavka` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_period" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_period" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_sotrud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_sotrud" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_oklad" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="oklad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_premia" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="premia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_itogo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="itogo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id_stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="period" DataSetColumn="period" />
+              <Mapping SourceColumn="id_sotrud" DataSetColumn="id_sotrud" />
+              <Mapping SourceColumn="oklad" DataSetColumn="oklad" />
+              <Mapping SourceColumn="premia" DataSetColumn="premia" />
+              <Mapping SourceColumn="itogo" DataSetColumn="itogo" />
+              <Mapping SourceColumn="id_stavka" DataSetColumn="id_stavka" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -257,7 +583,7 @@ FROM            ((sotrud INNER JOIN
         <xs:element name="sotrud" msprop:Generator_TableClassName="sotrudDataTable" msprop:Generator_TableVarName="tablesotrud" msprop:Generator_RowChangedName="sotrudRowChanged" msprop:Generator_TablePropName="sotrud" msprop:Generator_RowDeletingName="sotrudRowDeleting" msprop:Generator_RowChangingName="sotrudRowChanging" msprop:Generator_RowEvHandlerName="sotrudRowChangeEventHandler" msprop:Generator_RowDeletedName="sotrudRowDeleted" msprop:Generator_RowClassName="sotrudRow" msprop:Generator_UserTableName="sotrud" msprop:Generator_RowEvArgName="sotrudRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -266,7 +592,6 @@ FROM            ((sotrud INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="id_dolg" msprop:Generator_ColumnVarNameInTable="columnid_dolg" msprop:Generator_ColumnPropNameInRow="id_dolg" msprop:Generator_ColumnPropNameInTable="id_dolgColumn" msprop:Generator_UserColumnName="id_dolg" type="xs:int" minOccurs="0" />
-              <xs:element name="id_razr" msprop:Generator_ColumnVarNameInTable="columnid_razr" msprop:Generator_ColumnPropNameInRow="id_razr" msprop:Generator_ColumnPropNameInTable="id_razrColumn" msprop:Generator_UserColumnName="id_razr" type="xs:int" minOccurs="0" />
               <xs:element name="premia_p" msprop:Generator_ColumnVarNameInTable="columnpremia_p" msprop:Generator_ColumnPropNameInRow="premia_p" msprop:Generator_ColumnPropNameInTable="premia_pColumn" msprop:Generator_UserColumnName="premia_p" type="xs:float" minOccurs="0" />
               <xs:element name="phones" msprop:Generator_ColumnVarNameInTable="columnphones" msprop:Generator_ColumnPropNameInRow="phones" msprop:Generator_ColumnPropNameInTable="phonesColumn" msprop:Generator_UserColumnName="phones" minOccurs="0">
                 <xs:simpleType>
@@ -289,14 +614,6 @@ FROM            ((sotrud INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="koeff" msprop:Generator_ColumnVarNameInTable="columnkoeff" msprop:Generator_ColumnPropNameInRow="koeff" msprop:Generator_ColumnPropNameInTable="koeffColumn" msprop:Generator_UserColumnName="koeff" type="xs:float" minOccurs="0" />
-              <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -306,6 +623,101 @@ FROM            ((sotrud INNER JOIN
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="period" msprop:Generator_ColumnVarNameInTable="columnperiod" msprop:Generator_ColumnPropNameInRow="period" msprop:Generator_ColumnPropNameInTable="periodColumn" msprop:Generator_UserColumnName="period" type="xs:dateTime" minOccurs="0" />
               <xs:element name="id_sotrud" msprop:Generator_ColumnVarNameInTable="columnid_sotrud" msprop:Generator_ColumnPropNameInRow="id_sotrud" msprop:Generator_ColumnPropNameInTable="id_sotrudColumn" msprop:Generator_UserColumnName="id_sotrud" type="xs:int" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+              <xs:element name="oklad" msprop:Generator_ColumnVarNameInTable="columnoklad" msprop:Generator_ColumnPropNameInRow="oklad" msprop:Generator_ColumnPropNameInTable="okladColumn" msprop:Generator_UserColumnName="oklad" type="xs:double" minOccurs="0" />
+              <xs:element name="premia" msprop:Generator_ColumnVarNameInTable="columnpremia" msprop:Generator_ColumnPropNameInRow="premia" msprop:Generator_ColumnPropNameInTable="premiaColumn" msprop:Generator_UserColumnName="premia" type="xs:double" minOccurs="0" />
+              <xs:element name="itogo" msprop:Generator_ColumnVarNameInTable="columnitogo" msprop:Generator_ColumnPropNameInRow="itogo" msprop:Generator_ColumnPropNameInTable="itogoColumn" msprop:Generator_UserColumnName="itogo" type="xs:double" minOccurs="0" />
+              <xs:element name="id_stavka" msprop:Generator_ColumnVarNameInTable="columnid_stavka" msprop:Generator_ColumnPropNameInRow="id_stavka" msprop:Generator_ColumnPropNameInTable="id_stavkaColumn" msprop:Generator_UserColumnName="id_stavka" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SotrZarplRep" msprop:Generator_TableClassName="SotrZarplRepDataTable" msprop:Generator_TableVarName="tableSotrZarplRep" msprop:Generator_RowChangedName="SotrZarplRepRowChanged" msprop:Generator_TablePropName="SotrZarplRep" msprop:Generator_RowDeletingName="SotrZarplRepRowDeleting" msprop:Generator_RowChangingName="SotrZarplRepRowChanging" msprop:Generator_RowEvHandlerName="SotrZarplRepRowChangeEventHandler" msprop:Generator_RowDeletedName="SotrZarplRepRowDeleted" msprop:Generator_RowClassName="SotrZarplRepRow" msprop:Generator_UserTableName="SotrZarplRep" msprop:Generator_RowEvArgName="SotrZarplRepRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="period" msprop:Generator_ColumnVarNameInTable="columnperiod" msprop:Generator_ColumnPropNameInRow="period" msprop:Generator_ColumnPropNameInTable="periodColumn" msprop:Generator_UserColumnName="period" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="oklad" msprop:Generator_ColumnVarNameInTable="columnoklad" msprop:Generator_ColumnPropNameInRow="oklad" msprop:Generator_ColumnPropNameInTable="okladColumn" msprop:Generator_UserColumnName="oklad" type="xs:int" minOccurs="0" />
+              <xs:element name="premia" msprop:Generator_ColumnVarNameInTable="columnpremia" msprop:Generator_ColumnPropNameInRow="premia" msprop:Generator_ColumnPropNameInTable="premiaColumn" msprop:Generator_UserColumnName="premia" type="xs:int" minOccurs="0" />
+              <xs:element name="itogo" msprop:Generator_ColumnVarNameInTable="columnitogo" msprop:Generator_ColumnPropNameInRow="itogo" msprop:Generator_ColumnPropNameInTable="itogoColumn" msprop:Generator_UserColumnName="itogo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sotrud1" msprop:Generator_TableClassName="sotrud1DataTable" msprop:Generator_TableVarName="tablesotrud1" msprop:Generator_TablePropName="sotrud1" msprop:Generator_RowDeletingName="sotrud1RowDeleting" msprop:Generator_RowChangingName="sotrud1RowChanging" msprop:Generator_RowEvHandlerName="sotrud1RowChangeEventHandler" msprop:Generator_RowDeletedName="sotrud1RowDeleted" msprop:Generator_UserTableName="sotrud1" msprop:Generator_RowChangedName="sotrud1RowChanged" msprop:Generator_RowEvArgName="sotrud1RowChangeEvent" msprop:Generator_RowClassName="sotrud1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_dolg" msprop:Generator_ColumnVarNameInTable="columnid_dolg" msprop:Generator_ColumnPropNameInRow="id_dolg" msprop:Generator_ColumnPropNameInTable="id_dolgColumn" msprop:Generator_UserColumnName="id_dolg" type="xs:int" minOccurs="0" />
+              <xs:element name="premia_p" msprop:Generator_ColumnVarNameInTable="columnpremia_p" msprop:Generator_ColumnPropNameInRow="premia_p" msprop:Generator_ColumnPropNameInTable="premia_pColumn" msprop:Generator_UserColumnName="premia_p" type="xs:float" minOccurs="0" />
+              <xs:element name="phones" msprop:Generator_ColumnVarNameInTable="columnphones" msprop:Generator_ColumnPropNameInRow="phones" msprop:Generator_ColumnPropNameInTable="phonesColumn" msprop:Generator_UserColumnName="phones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adr" msprop:Generator_ColumnVarNameInTable="columnadr" msprop:Generator_ColumnPropNameInRow="adr" msprop:Generator_ColumnPropNameInTable="adrColumn" msprop:Generator_UserColumnName="adr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dop" msprop:Generator_ColumnVarNameInTable="columndop" msprop:Generator_ColumnPropNameInRow="dop" msprop:Generator_ColumnPropNameInTable="dopColumn" msprop:Generator_UserColumnName="dop" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="stavka" msprop:Generator_TableClassName="stavkaDataTable" msprop:Generator_TableVarName="tablestavka" msprop:Generator_TablePropName="stavka" msprop:Generator_RowDeletingName="stavkaRowDeleting" msprop:Generator_RowChangingName="stavkaRowChanging" msprop:Generator_RowEvHandlerName="stavkaRowChangeEventHandler" msprop:Generator_RowDeletedName="stavkaRowDeleted" msprop:Generator_UserTableName="stavka" msprop:Generator_RowChangedName="stavkaRowChanged" msprop:Generator_RowEvArgName="stavkaRowChangeEvent" msprop:Generator_RowClassName="stavkaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="stavka" msprop:Generator_ColumnVarNameInTable="columnstavka" msprop:Generator_ColumnPropNameInRow="stavka" msprop:Generator_ColumnPropNameInTable="stavkaColumn" msprop:Generator_UserColumnName="stavka" type="xs:int" minOccurs="0" />
+              <xs:element name="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dop" msprop:Generator_ColumnVarNameInTable="columndop" msprop:Generator_ColumnPropNameInRow="dop" msprop:Generator_ColumnPropNameInTable="dopColumn" msprop:Generator_UserColumnName="dop" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zarplata1" msprop:Generator_TableClassName="zarplata1DataTable" msprop:Generator_TableVarName="tablezarplata1" msprop:Generator_TablePropName="zarplata1" msprop:Generator_RowDeletingName="zarplata1RowDeleting" msprop:Generator_RowChangingName="zarplata1RowChanging" msprop:Generator_RowEvHandlerName="zarplata1RowChangeEventHandler" msprop:Generator_RowDeletedName="zarplata1RowDeleted" msprop:Generator_UserTableName="zarplata1" msprop:Generator_RowChangedName="zarplata1RowChanged" msprop:Generator_RowEvArgName="zarplata1RowChangeEvent" msprop:Generator_RowClassName="zarplata1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="period" msprop:Generator_ColumnVarNameInTable="columnperiod" msprop:Generator_ColumnPropNameInRow="period" msprop:Generator_ColumnPropNameInTable="periodColumn" msprop:Generator_UserColumnName="period" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_sotrud" msprop:Generator_ColumnVarNameInTable="columnid_sotrud" msprop:Generator_ColumnPropNameInRow="id_sotrud" msprop:Generator_ColumnPropNameInTable="id_sotrudColumn" msprop:Generator_UserColumnName="id_sotrud" type="xs:int" minOccurs="0" />
+              <xs:element name="oklad" msprop:Generator_ColumnVarNameInTable="columnoklad" msprop:Generator_ColumnPropNameInRow="oklad" msprop:Generator_ColumnPropNameInTable="okladColumn" msprop:Generator_UserColumnName="oklad" type="xs:int" minOccurs="0" />
+              <xs:element name="premia" msprop:Generator_ColumnVarNameInTable="columnpremia" msprop:Generator_ColumnPropNameInRow="premia" msprop:Generator_ColumnPropNameInTable="premiaColumn" msprop:Generator_UserColumnName="premia" type="xs:int" minOccurs="0" />
+              <xs:element name="itogo" msprop:Generator_ColumnVarNameInTable="columnitogo" msprop:Generator_ColumnPropNameInRow="itogo" msprop:Generator_ColumnPropNameInTable="itogoColumn" msprop:Generator_UserColumnName="itogo" type="xs:int" minOccurs="0" />
+              <xs:element name="id_stavka" msprop:Generator_ColumnVarNameInTable="columnid_stavka" msprop:Generator_ColumnPropNameInRow="id_stavka" msprop:Generator_ColumnPropNameInTable="id_stavkaColumn" msprop:Generator_UserColumnName="id_stavka" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -327,5 +739,30 @@ FROM            ((sotrud INNER JOIN
       <xs:selector xpath=".//mstns:zarplata" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="sotrud1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:sotrud1" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="stavka_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:stavka" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="zarplata1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:zarplata1" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="razrdolg" msdata:parent="razr" msdata:child="dolg" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="dolg" msprop:Generator_ChildPropName="GetdolgRows" msprop:Generator_UserRelationName="razrdolg" msprop:Generator_ParentPropName="razrRow" msprop:Generator_RelationVarName="relationrazrdolg" msprop:Generator_UserParentTable="razr" />
+      <msdata:Relationship name="sotrudzarplata" msdata:parent="sotrud1" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata" msprop:Generator_RelationVarName="relationsotrudzarplata" msprop:Generator_UserParentTable="sotrud1" msprop:Generator_ParentPropName="sotrud1Row" />
+      <msdata:Relationship name="stavkazarplata" msdata:parent="stavka" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="stavkazarplata" msprop:Generator_RelationVarName="relationstavkazarplata" msprop:Generator_UserParentTable="stavka" msprop:Generator_ParentPropName="stavkaRow" />
+      <msdata:Relationship name="dolgsotrud" msdata:parent="dolg" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud" msprop:Generator_ParentPropName="dolgRow" msprop:Generator_RelationVarName="relationdolgsotrud" msprop:Generator_UserParentTable="dolg" />
+      <msdata:Relationship name="sotrudzarplata1" msdata:parent="sotrud1" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata1" msprop:Generator_ParentPropName="sotrud1Row" msprop:Generator_RelationVarName="relationsotrudzarplata1" msprop:Generator_UserParentTable="sotrud1" />
+      <msdata:Relationship name="stavkazarplata1" msdata:parent="stavka" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="stavkazarplata1" msprop:Generator_ParentPropName="stavkaRow" msprop:Generator_RelationVarName="relationstavkazarplata1" msprop:Generator_UserParentTable="stavka" />
+      <msdata:Relationship name="sotrudzarplata2" msdata:parent="sotrud" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata2" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata2" msprop:Generator_UserParentTable="sotrud" />
+      <msdata:Relationship name="sotrudzarplata3" msdata:parent="sotrud" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata3" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata3" msprop:Generator_UserParentTable="sotrud" />
+      <msdata:Relationship name="dolgsotrud1" msdata:parent="dolg" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="dolgsotrud1" msprop:Generator_ParentPropName="dolgRow" msprop:Generator_RelationVarName="relationdolgsotrud1" msprop:Generator_UserParentTable="dolg" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

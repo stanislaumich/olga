@@ -19,6 +19,8 @@ namespace KADR
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.SotrZarplRep". При необходимости она может быть перемещена или удалена.
+            this.SotrZarplRepTableAdapter.Fill(this.kadrDataSet.SotrZarplRep);
 
             this.reportViewer1.RefreshReport();
         }

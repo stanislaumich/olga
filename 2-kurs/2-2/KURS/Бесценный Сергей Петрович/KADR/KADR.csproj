@@ -94,6 +94,9 @@
     <Compile Include="FormZarplata.Designer.cs">
       <DependentUpon>FormZarplata.cs</DependentUpon>
     </Compile>
+    <Compile Include="kadrDataSet.cs">
+      <DependentUpon>kadrDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="kadrDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,7 +122,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="kadrDataSet.xsc">
       <DependentUpon>kadrDataSet.xsd</DependentUpon>
     </None>

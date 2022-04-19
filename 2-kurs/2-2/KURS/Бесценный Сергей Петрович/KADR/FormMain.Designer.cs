@@ -40,9 +40,6 @@ namespace KADR
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sotrudBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kadrDataSet = new KADR.kadrDataSet();
-            this.sotrudTableAdapter = new KADR.kadrDataSetTableAdapters.sotrudTableAdapter();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.koeff = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +47,11 @@ namespace KADR
             this.phonesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idrazrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddolgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotrudBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kadrDataSet = new KADR.kadrDataSet();
+            this.sotrudTableAdapter = new KADR.kadrDataSetTableAdapters.sotrudTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,6 +92,7 @@ namespace KADR
             this.отчетToolStripMenuItem.Name = "отчетToolStripMenuItem";
             this.отчетToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.отчетToolStripMenuItem.Text = "Отчет";
+            this.отчетToolStripMenuItem.Click += new System.EventHandler(this.отчетToolStripMenuItem_Click);
             // 
             // поискToolStripMenuItem
             // 
@@ -105,6 +105,7 @@ namespace KADR
             this.зарплатаToolStripMenuItem.Name = "зарплатаToolStripMenuItem";
             this.зарплатаToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.зарплатаToolStripMenuItem.Text = "Зарплата";
+            this.зарплатаToolStripMenuItem.Click += new System.EventHandler(this.зарплатаToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 
@@ -115,9 +116,9 @@ namespace KADR
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 42);
+            this.groupBox1.Location = new System.Drawing.Point(0, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 395);
+            this.groupBox1.Size = new System.Drawing.Size(937, 492);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сотрудники";
@@ -136,7 +137,6 @@ namespace KADR
             this.phonesDataGridViewTextBoxColumn,
             this.adrDataGridViewTextBoxColumn,
             this.dopDataGridViewTextBoxColumn,
-            this.idrazrDataGridViewTextBoxColumn,
             this.iddolgDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sotrudBindingSource;
@@ -144,20 +144,6 @@ namespace KADR
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(340, 370);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // sotrudBindingSource
-            // 
-            this.sotrudBindingSource.DataMember = "sotrud";
-            this.sotrudBindingSource.DataSource = this.kadrDataSet;
-            // 
-            // kadrDataSet
-            // 
-            this.kadrDataSet.DataSetName = "kadrDataSet";
-            this.kadrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sotrudTableAdapter
-            // 
-            this.sotrudTableAdapter.ClearBeforeFill = true;
             // 
             // fioDataGridViewTextBoxColumn
             // 
@@ -215,14 +201,6 @@ namespace KADR
             this.dopDataGridViewTextBoxColumn.Name = "dopDataGridViewTextBoxColumn";
             this.dopDataGridViewTextBoxColumn.Width = 63;
             // 
-            // idrazrDataGridViewTextBoxColumn
-            // 
-            this.idrazrDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.idrazrDataGridViewTextBoxColumn.DataPropertyName = "id_razr";
-            this.idrazrDataGridViewTextBoxColumn.HeaderText = "ИДР";
-            this.idrazrDataGridViewTextBoxColumn.Name = "idrazrDataGridViewTextBoxColumn";
-            this.idrazrDataGridViewTextBoxColumn.Width = 5;
-            // 
             // iddolgDataGridViewTextBoxColumn
             // 
             this.iddolgDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
@@ -238,6 +216,20 @@ namespace KADR
             this.idDataGridViewTextBoxColumn.HeaderText = "ИДС";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.Width = 5;
+            // 
+            // sotrudBindingSource
+            // 
+            this.sotrudBindingSource.DataMember = "sotrud";
+            this.sotrudBindingSource.DataSource = this.kadrDataSet;
+            // 
+            // kadrDataSet
+            // 
+            this.kadrDataSet.DataSetName = "kadrDataSet";
+            this.kadrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sotrudTableAdapter
+            // 
+            this.sotrudTableAdapter.ClearBeforeFill = true;
             // 
             // FormMain
             // 
@@ -283,7 +275,6 @@ namespace KADR
         private System.Windows.Forms.DataGridViewTextBoxColumn phonesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dopDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idrazrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddolgDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     }
