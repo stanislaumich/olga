@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using KADR.kadrDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,13 +20,16 @@ namespace KADR
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.stavka". При необходимости она может быть перемещена или удалена.
+            this.stavkaTableAdapter.Fill(this.kadrDataSet.stavka);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet1.razr". При необходимости она может быть перемещена или удалена.
             this.razrTableAdapter.Fill(this.kadrDataSet.razr);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet1.dolg". При необходимости она может быть перемещена или удалена.
             this.dolgTableAdapter.Fill(this.kadrDataSet.dolg);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.sotrud". При необходимости она может быть перемещена или удалена.
             this.sotrudTableAdapter.Fill(this.kadrDataSet.sotrud);
-
+            textBox8.Text=Convert.ToString((float)stavkaTableAdapter.StavkaQuery());
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,7 +47,7 @@ namespace KADR
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             textBox1.Text = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();//fio
-           33
+          // 33
             comboBox1.Text = dataGridView1[1, dataGridView1.CurrentRow.Index].Value.ToString();//dolg
             
             textBox4.Text = dataGridView1[2, dataGridView1.CurrentRow.Index].Value.ToString();//premia
@@ -92,9 +96,8 @@ namespace KADR
             if (textBox1.Text == "") { MessageBox.Show("Не указано ФИО"); }
             else
             {
-
                 this.sotrudTableAdapter.UpdateQuery(textBox1.Text, 
-                    Convert.ToInt32(comboBox1.SelectedValue.ToString()),
+                    Convert.ToInt32(label11.Text),
                     Convert.ToInt32(textBox4.Text),
                     textBox2.Text, textBox3.Text, textBox5.Text, Convert.ToInt32(label12.Text));
                 this.sotrudTableAdapter.Fill(this.kadrDataSet.sotrud);
@@ -122,6 +125,17 @@ namespace KADR
             label13.Text= dataGridView2[2, dataGridView2.CurrentRow.Index].Value.ToString();
             textBox6.Text = dataGridView2[0, dataGridView2.CurrentRow.Index].Value.ToString();//
             comboBox2.Text = dataGridView2[1, dataGridView2.CurrentRow.Index].Value.ToString();//
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // записать сумму ставки новую
+            if (MessageBox.Show("Вы хотите обновить ставку 1 разряда?", "Подтверждение",
+        MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.stavkaTableAdapter.InsertQuery(Convert.ToInt32(textBox9.Text), dateTimePicker1.Value.Date, "");
+                textBox8.Text = Convert.ToString((float)stavkaTableAdapter.StavkaQuery());
+            }
         }
     }
 }

@@ -66,7 +66,7 @@
               <Mapping SourceColumn="dop" DataSetColumn="dop" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM `dolg` WHERE (`id` = ?)</CommandText>
@@ -76,7 +76,7 @@
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `dolg` (`nazv`, `id_razr`, `dop`) VALUES (?, ?, ?)</CommandText>
@@ -467,8 +467,10 @@ FROM            ((zarplata INNER JOIN
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, stavka, data, dop FROM stavka</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, stavka, data, dop
+FROM            stavka
+ORDER BY data DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -498,7 +500,7 @@ FROM            ((zarplata INNER JOIN
               <Mapping SourceColumn="dop" DataSetColumn="dop" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="IdStavkaQuery" Modifier="Public" Name="IdStavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="IdStavkaQuery">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="IdStavkaQuery" Modifier="Public" Name="IdStavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="IdStavkaQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id
@@ -510,7 +512,19 @@ WHERE        (data =
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="razr" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="KoeffQuery" Modifier="Public" Name="KoeffQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="KoeffQuery">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO `stavka` (`stavka`, `data`, `dop`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="stavka" DataSourceName="stavka" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="data" DataSourceName="stavka" DataTypeServer="DbType.Date" DbType="Date" Direction="Input" ParameterName="data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="dop" DataSourceName="stavka" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="razr" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="KoeffQuery" Modifier="Public" Name="KoeffQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="KoeffQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        razr.koeff
@@ -524,7 +538,7 @@ WHERE        (sotrud.id = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="StavkaQuery" Modifier="Public" Name="StavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="StavkaQuery">
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="StavkaQuery" Modifier="Public" Name="StavkaQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="StavkaQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        stavka
@@ -619,6 +633,68 @@ WHERE        (data =
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="stavka1TableAdapter" GeneratorDataComponentClassName="stavka1TableAdapter" Name="stavka1" UserDataComponentName="stavka1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="kadrConnectionString (Settings)" DbObjectName="stavka" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `stavka` WHERE ((`id` = ?) AND ((? = 1 AND `data` IS NULL) OR (`data` = ?)) AND ((? = 1 AND `stavka` IS NULL) OR (`stavka` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_data" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `stavka` (`data`, `stavka`, `dop`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, data, stavka, dop
+FROM            stavka
+ORDER BY data DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `stavka` SET `data` = ?, `stavka` = ?, `dop` = ? WHERE ((`id` = ?) AND ((? = 1 AND `data` IS NULL) OR (`data` = ?)) AND ((? = 1 AND `stavka` IS NULL) OR (`stavka` = ?)) AND ((? = 1 AND `dop` IS NULL) OR (`dop` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_id" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_data" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_stavka" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="stavka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_dop" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_dop" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="dop" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="stavka" DataSetColumn="stavka" />
+              <Mapping SourceColumn="dop" DataSetColumn="dop" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -627,7 +703,7 @@ WHERE        (data =
   <xs:element name="kadrDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="kadrDataSet" msprop:Generator_UserDSName="kadrDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dolg" msprop:Generator_TableClassName="dolgDataTable" msprop:Generator_TableVarName="tabledolg" msprop:Generator_RowChangedName="dolgRowChanged" msprop:Generator_TablePropName="dolg" msprop:Generator_RowDeletingName="dolgRowDeleting" msprop:Generator_RowChangingName="dolgRowChanging" msprop:Generator_RowEvHandlerName="dolgRowChangeEventHandler" msprop:Generator_RowDeletedName="dolgRowDeleted" msprop:Generator_RowClassName="dolgRow" msprop:Generator_UserTableName="dolg" msprop:Generator_RowEvArgName="dolgRowChangeEvent">
+        <xs:element name="dolg" msprop:Generator_TableClassName="dolgDataTable" msprop:Generator_TableVarName="tabledolg" msprop:Generator_TablePropName="dolg" msprop:Generator_RowDeletingName="dolgRowDeleting" msprop:Generator_RowChangingName="dolgRowChanging" msprop:Generator_RowEvHandlerName="dolgRowChangeEventHandler" msprop:Generator_RowDeletedName="dolgRowDeleted" msprop:Generator_UserTableName="dolg" msprop:Generator_RowChangedName="dolgRowChanged" msprop:Generator_RowEvArgName="dolgRowChangeEvent" msprop:Generator_RowClassName="dolgRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -649,7 +725,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="razr" msprop:Generator_TableClassName="razrDataTable" msprop:Generator_TableVarName="tablerazr" msprop:Generator_RowChangedName="razrRowChanged" msprop:Generator_TablePropName="razr" msprop:Generator_RowDeletingName="razrRowDeleting" msprop:Generator_RowChangingName="razrRowChanging" msprop:Generator_RowEvHandlerName="razrRowChangeEventHandler" msprop:Generator_RowDeletedName="razrRowDeleted" msprop:Generator_RowClassName="razrRow" msprop:Generator_UserTableName="razr" msprop:Generator_RowEvArgName="razrRowChangeEvent">
+        <xs:element name="razr" msprop:Generator_TableClassName="razrDataTable" msprop:Generator_TableVarName="tablerazr" msprop:Generator_TablePropName="razr" msprop:Generator_RowDeletingName="razrRowDeleting" msprop:Generator_RowChangingName="razrRowChanging" msprop:Generator_RowEvHandlerName="razrRowChangeEventHandler" msprop:Generator_RowDeletedName="razrRowDeleted" msprop:Generator_UserTableName="razr" msprop:Generator_RowChangedName="razrRowChanged" msprop:Generator_RowEvArgName="razrRowChangeEvent" msprop:Generator_RowClassName="razrRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -665,10 +741,10 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sotrud" msprop:Generator_TableClassName="sotrudDataTable" msprop:Generator_TableVarName="tablesotrud" msprop:Generator_RowChangedName="sotrudRowChanged" msprop:Generator_TablePropName="sotrud" msprop:Generator_RowDeletingName="sotrudRowDeleting" msprop:Generator_RowChangingName="sotrudRowChanging" msprop:Generator_RowEvHandlerName="sotrudRowChangeEventHandler" msprop:Generator_RowDeletedName="sotrudRowDeleted" msprop:Generator_RowClassName="sotrudRow" msprop:Generator_UserTableName="sotrud" msprop:Generator_RowEvArgName="sotrudRowChangeEvent">
+        <xs:element name="sotrud" msprop:Generator_TableClassName="sotrudDataTable" msprop:Generator_TableVarName="tablesotrud" msprop:Generator_TablePropName="sotrud" msprop:Generator_RowDeletingName="sotrudRowDeleting" msprop:Generator_RowChangingName="sotrudRowChanging" msprop:Generator_RowEvHandlerName="sotrudRowChangeEventHandler" msprop:Generator_RowDeletedName="sotrudRowDeleted" msprop:Generator_UserTableName="sotrud" msprop:Generator_RowChangedName="sotrudRowChanged" msprop:Generator_RowEvArgName="sotrudRowChangeEvent" msprop:Generator_RowClassName="sotrudRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -710,7 +786,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="zarplata" msprop:Generator_TableClassName="zarplataDataTable" msprop:Generator_TableVarName="tablezarplata" msprop:Generator_RowChangedName="zarplataRowChanged" msprop:Generator_TablePropName="zarplata" msprop:Generator_RowDeletingName="zarplataRowDeleting" msprop:Generator_RowChangingName="zarplataRowChanging" msprop:Generator_RowEvHandlerName="zarplataRowChangeEventHandler" msprop:Generator_RowDeletedName="zarplataRowDeleted" msprop:Generator_RowClassName="zarplataRow" msprop:Generator_UserTableName="zarplata" msprop:Generator_RowEvArgName="zarplataRowChangeEvent">
+        <xs:element name="zarplata" msprop:Generator_TableClassName="zarplataDataTable" msprop:Generator_TableVarName="tablezarplata" msprop:Generator_TablePropName="zarplata" msprop:Generator_RowDeletingName="zarplataRowDeleting" msprop:Generator_RowChangingName="zarplataRowChanging" msprop:Generator_RowEvHandlerName="zarplataRowChangeEventHandler" msprop:Generator_RowDeletedName="zarplataRowDeleted" msprop:Generator_UserTableName="zarplata" msprop:Generator_RowChangedName="zarplataRowChanged" msprop:Generator_RowEvArgName="zarplataRowChangeEvent" msprop:Generator_RowClassName="zarplataRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -724,7 +800,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SotrZarplRep" msprop:Generator_TableClassName="SotrZarplRepDataTable" msprop:Generator_TableVarName="tableSotrZarplRep" msprop:Generator_RowChangedName="SotrZarplRepRowChanged" msprop:Generator_TablePropName="SotrZarplRep" msprop:Generator_RowDeletingName="SotrZarplRepRowDeleting" msprop:Generator_RowChangingName="SotrZarplRepRowChanging" msprop:Generator_RowEvHandlerName="SotrZarplRepRowChangeEventHandler" msprop:Generator_RowDeletedName="SotrZarplRepRowDeleted" msprop:Generator_RowClassName="SotrZarplRepRow" msprop:Generator_UserTableName="SotrZarplRep" msprop:Generator_RowEvArgName="SotrZarplRepRowChangeEvent">
+        <xs:element name="SotrZarplRep" msprop:Generator_TableClassName="SotrZarplRepDataTable" msprop:Generator_TableVarName="tableSotrZarplRep" msprop:Generator_TablePropName="SotrZarplRep" msprop:Generator_RowDeletingName="SotrZarplRepRowDeleting" msprop:Generator_RowChangingName="SotrZarplRepRowChanging" msprop:Generator_RowEvHandlerName="SotrZarplRepRowChangeEventHandler" msprop:Generator_RowDeletedName="SotrZarplRepRowDeleted" msprop:Generator_UserTableName="SotrZarplRep" msprop:Generator_RowChangedName="SotrZarplRepRowChanged" msprop:Generator_RowEvArgName="SotrZarplRepRowChangeEvent" msprop:Generator_RowClassName="SotrZarplRepRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nazv" msprop:Generator_ColumnVarNameInTable="columnnazv" msprop:Generator_ColumnPropNameInRow="nazv" msprop:Generator_ColumnPropNameInTable="nazvColumn" msprop:Generator_UserColumnName="nazv" minOccurs="0">
@@ -748,7 +824,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sotrud1" msprop:Generator_TableClassName="sotrud1DataTable" msprop:Generator_TableVarName="tablesotrud1" msprop:Generator_TablePropName="sotrud1" msprop:Generator_RowDeletingName="sotrud1RowDeleting" msprop:Generator_RowChangingName="sotrud1RowChanging" msprop:Generator_RowEvHandlerName="sotrud1RowChangeEventHandler" msprop:Generator_RowDeletedName="sotrud1RowDeleted" msprop:Generator_UserTableName="sotrud1" msprop:Generator_RowChangedName="sotrud1RowChanged" msprop:Generator_RowEvArgName="sotrud1RowChangeEvent" msprop:Generator_RowClassName="sotrud1Row">
+        <xs:element name="sotrud1" msprop:Generator_TableClassName="sotrud1DataTable" msprop:Generator_TableVarName="tablesotrud1" msprop:Generator_RowChangedName="sotrud1RowChanged" msprop:Generator_TablePropName="sotrud1" msprop:Generator_RowDeletingName="sotrud1RowDeleting" msprop:Generator_RowChangingName="sotrud1RowChanging" msprop:Generator_RowEvHandlerName="sotrud1RowChangeEventHandler" msprop:Generator_RowDeletedName="sotrud1RowDeleted" msprop:Generator_RowClassName="sotrud1Row" msprop:Generator_UserTableName="sotrud1" msprop:Generator_RowEvArgName="sotrud1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -785,7 +861,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="stavka" msprop:Generator_TableClassName="stavkaDataTable" msprop:Generator_TableVarName="tablestavka" msprop:Generator_TablePropName="stavka" msprop:Generator_RowDeletingName="stavkaRowDeleting" msprop:Generator_RowChangingName="stavkaRowChanging" msprop:Generator_RowEvHandlerName="stavkaRowChangeEventHandler" msprop:Generator_RowDeletedName="stavkaRowDeleted" msprop:Generator_UserTableName="stavka" msprop:Generator_RowChangedName="stavkaRowChanged" msprop:Generator_RowEvArgName="stavkaRowChangeEvent" msprop:Generator_RowClassName="stavkaRow">
+        <xs:element name="stavka" msprop:Generator_TableClassName="stavkaDataTable" msprop:Generator_TableVarName="tablestavka" msprop:Generator_RowChangedName="stavkaRowChanged" msprop:Generator_TablePropName="stavka" msprop:Generator_RowDeletingName="stavkaRowDeleting" msprop:Generator_RowChangingName="stavkaRowChanging" msprop:Generator_RowEvHandlerName="stavkaRowChangeEventHandler" msprop:Generator_RowDeletedName="stavkaRowDeleted" msprop:Generator_RowClassName="stavkaRow" msprop:Generator_UserTableName="stavka" msprop:Generator_RowEvArgName="stavkaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -801,7 +877,7 @@ WHERE        (data =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="zarplata1" msprop:Generator_TableClassName="zarplata1DataTable" msprop:Generator_TableVarName="tablezarplata1" msprop:Generator_TablePropName="zarplata1" msprop:Generator_RowDeletingName="zarplata1RowDeleting" msprop:Generator_RowChangingName="zarplata1RowChanging" msprop:Generator_RowEvHandlerName="zarplata1RowChangeEventHandler" msprop:Generator_RowDeletedName="zarplata1RowDeleted" msprop:Generator_UserTableName="zarplata1" msprop:Generator_RowChangedName="zarplata1RowChanged" msprop:Generator_RowEvArgName="zarplata1RowChangeEvent" msprop:Generator_RowClassName="zarplata1Row">
+        <xs:element name="zarplata1" msprop:Generator_TableClassName="zarplata1DataTable" msprop:Generator_TableVarName="tablezarplata1" msprop:Generator_RowChangedName="zarplata1RowChanged" msprop:Generator_TablePropName="zarplata1" msprop:Generator_RowDeletingName="zarplata1RowDeleting" msprop:Generator_RowChangingName="zarplata1RowChanging" msprop:Generator_RowEvHandlerName="zarplata1RowChangeEventHandler" msprop:Generator_RowDeletedName="zarplata1RowDeleted" msprop:Generator_RowClassName="zarplata1Row" msprop:Generator_UserTableName="zarplata1" msprop:Generator_RowEvArgName="zarplata1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -811,6 +887,22 @@ WHERE        (data =
               <xs:element name="premia" msprop:Generator_ColumnVarNameInTable="columnpremia" msprop:Generator_ColumnPropNameInRow="premia" msprop:Generator_ColumnPropNameInTable="premiaColumn" msprop:Generator_UserColumnName="premia" type="xs:int" minOccurs="0" />
               <xs:element name="itogo" msprop:Generator_ColumnVarNameInTable="columnitogo" msprop:Generator_ColumnPropNameInRow="itogo" msprop:Generator_ColumnPropNameInTable="itogoColumn" msprop:Generator_UserColumnName="itogo" type="xs:int" minOccurs="0" />
               <xs:element name="id_stavka" msprop:Generator_ColumnVarNameInTable="columnid_stavka" msprop:Generator_ColumnPropNameInRow="id_stavka" msprop:Generator_ColumnPropNameInTable="id_stavkaColumn" msprop:Generator_UserColumnName="id_stavka" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="stavka1" msprop:Generator_TableClassName="stavka1DataTable" msprop:Generator_TableVarName="tablestavka1" msprop:Generator_TablePropName="stavka1" msprop:Generator_RowDeletingName="stavka1RowDeleting" msprop:Generator_RowChangingName="stavka1RowChanging" msprop:Generator_RowEvHandlerName="stavka1RowChangeEventHandler" msprop:Generator_RowDeletedName="stavka1RowDeleted" msprop:Generator_UserTableName="stavka1" msprop:Generator_RowChangedName="stavka1RowChanged" msprop:Generator_RowEvArgName="stavka1RowChangeEvent" msprop:Generator_RowClassName="stavka1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="stavka" msprop:Generator_ColumnVarNameInTable="columnstavka" msprop:Generator_ColumnPropNameInRow="stavka" msprop:Generator_ColumnPropNameInTable="stavkaColumn" msprop:Generator_UserColumnName="stavka" type="xs:int" minOccurs="0" />
+              <xs:element name="dop" msprop:Generator_ColumnVarNameInTable="columndop" msprop:Generator_ColumnPropNameInRow="dop" msprop:Generator_ColumnPropNameInTable="dopColumn" msprop:Generator_UserColumnName="dop" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -844,20 +936,26 @@ WHERE        (data =
       <xs:selector xpath=".//mstns:zarplata1" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="stavka1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:stavka1" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="razrdolg" msdata:parent="razr" msdata:child="dolg" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="dolg" msprop:Generator_ChildPropName="GetdolgRows" msprop:Generator_UserRelationName="razrdolg" msprop:Generator_ParentPropName="razrRow" msprop:Generator_RelationVarName="relationrazrdolg" msprop:Generator_UserParentTable="razr" />
-      <msdata:Relationship name="sotrudzarplata" msdata:parent="sotrud1" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata" msprop:Generator_RelationVarName="relationsotrudzarplata" msprop:Generator_UserParentTable="sotrud1" msprop:Generator_ParentPropName="sotrud1Row" />
-      <msdata:Relationship name="stavkazarplata" msdata:parent="stavka" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="stavkazarplata" msprop:Generator_RelationVarName="relationstavkazarplata" msprop:Generator_UserParentTable="stavka" msprop:Generator_ParentPropName="stavkaRow" />
-      <msdata:Relationship name="dolgsotrud" msdata:parent="dolg" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud" msprop:Generator_ParentPropName="dolgRow" msprop:Generator_RelationVarName="relationdolgsotrud" msprop:Generator_UserParentTable="dolg" />
-      <msdata:Relationship name="sotrudzarplata1" msdata:parent="sotrud1" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata1" msprop:Generator_ParentPropName="sotrud1Row" msprop:Generator_RelationVarName="relationsotrudzarplata1" msprop:Generator_UserParentTable="sotrud1" />
-      <msdata:Relationship name="stavkazarplata1" msdata:parent="stavka" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="stavkazarplata1" msprop:Generator_ParentPropName="stavkaRow" msprop:Generator_RelationVarName="relationstavkazarplata1" msprop:Generator_UserParentTable="stavka" />
-      <msdata:Relationship name="sotrudzarplata2" msdata:parent="sotrud" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata2" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata2" msprop:Generator_UserParentTable="sotrud" />
-      <msdata:Relationship name="sotrudzarplata3" msdata:parent="sotrud" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata3" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationsotrudzarplata3" msprop:Generator_UserParentTable="sotrud" />
-      <msdata:Relationship name="dolgsotrud1" msdata:parent="dolg" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="dolgsotrud1" msprop:Generator_ParentPropName="dolgRow" msprop:Generator_RelationVarName="relationdolgsotrud1" msprop:Generator_UserParentTable="dolg" />
-      <msdata:Relationship name="dolgsotrud2" msdata:parent="sotrud" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud2" msprop:Generator_ParentPropName="sotrudRow" msprop:Generator_RelationVarName="relationdolgsotrud2" msprop:Generator_UserParentTable="sotrud" />
-      <msdata:Relationship name="razrdolg1" msdata:parent="razr" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="razrdolg1" msprop:Generator_ParentPropName="razrRow" msprop:Generator_RelationVarName="relationrazrdolg1" msprop:Generator_UserParentTable="razr" />
+      <msdata:Relationship name="razrdolg" msdata:parent="razr" msdata:child="dolg" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="dolg" msprop:Generator_ChildPropName="GetdolgRows" msprop:Generator_UserRelationName="razrdolg" msprop:Generator_RelationVarName="relationrazrdolg" msprop:Generator_UserParentTable="razr" msprop:Generator_ParentPropName="razrRow" />
+      <msdata:Relationship name="sotrudzarplata" msdata:parent="sotrud1" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata" msprop:Generator_ParentPropName="sotrud1Row" msprop:Generator_RelationVarName="relationsotrudzarplata" msprop:Generator_UserParentTable="sotrud1" />
+      <msdata:Relationship name="stavkazarplata" msdata:parent="stavka" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="stavkazarplata" msprop:Generator_ParentPropName="stavkaRow" msprop:Generator_RelationVarName="relationstavkazarplata" msprop:Generator_UserParentTable="stavka" />
+      <msdata:Relationship name="dolgsotrud" msdata:parent="dolg" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud" msprop:Generator_RelationVarName="relationdolgsotrud" msprop:Generator_UserParentTable="dolg" msprop:Generator_ParentPropName="dolgRow" />
+      <msdata:Relationship name="sotrudzarplata1" msdata:parent="sotrud1" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata1" msprop:Generator_RelationVarName="relationsotrudzarplata1" msprop:Generator_UserParentTable="sotrud1" msprop:Generator_ParentPropName="sotrud1Row" />
+      <msdata:Relationship name="stavkazarplata1" msdata:parent="stavka" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="stavkazarplata1" msprop:Generator_RelationVarName="relationstavkazarplata1" msprop:Generator_UserParentTable="stavka" msprop:Generator_ParentPropName="stavkaRow" />
+      <msdata:Relationship name="sotrudzarplata2" msdata:parent="sotrud" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="sotrudzarplata2" msprop:Generator_RelationVarName="relationsotrudzarplata2" msprop:Generator_UserParentTable="sotrud" msprop:Generator_ParentPropName="sotrudRow" />
+      <msdata:Relationship name="sotrudzarplata3" msdata:parent="sotrud" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_sotrud" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="sotrudzarplata3" msprop:Generator_RelationVarName="relationsotrudzarplata3" msprop:Generator_UserParentTable="sotrud" msprop:Generator_ParentPropName="sotrudRow" />
+      <msdata:Relationship name="dolgsotrud1" msdata:parent="dolg" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="dolgsotrud1" msprop:Generator_RelationVarName="relationdolgsotrud1" msprop:Generator_UserParentTable="dolg" msprop:Generator_ParentPropName="dolgRow" />
+      <msdata:Relationship name="dolgsotrud2" msdata:parent="sotrud" msdata:child="sotrud1" msdata:parentkey="id" msdata:childkey="id_dolg" msprop:Generator_UserChildTable="sotrud1" msprop:Generator_ChildPropName="Getsotrud1Rows" msprop:Generator_UserRelationName="dolgsotrud2" msprop:Generator_RelationVarName="relationdolgsotrud2" msprop:Generator_UserParentTable="sotrud" msprop:Generator_ParentPropName="sotrudRow" />
+      <msdata:Relationship name="razrdolg1" msdata:parent="razr" msdata:child="sotrud" msdata:parentkey="id" msdata:childkey="id_razr" msprop:Generator_UserChildTable="sotrud" msprop:Generator_ChildPropName="GetsotrudRows" msprop:Generator_UserRelationName="razrdolg1" msprop:Generator_RelationVarName="relationrazrdolg1" msprop:Generator_UserParentTable="razr" msprop:Generator_ParentPropName="razrRow" />
+      <msdata:Relationship name="stavkazarplata2" msdata:parent="stavka1" msdata:child="zarplata" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata" msprop:Generator_ChildPropName="GetzarplataRows" msprop:Generator_UserRelationName="stavkazarplata2" msprop:Generator_RelationVarName="relationstavkazarplata2" msprop:Generator_UserParentTable="stavka1" msprop:Generator_ParentPropName="stavka1Row" />
+      <msdata:Relationship name="stavkazarplata3" msdata:parent="stavka1" msdata:child="zarplata1" msdata:parentkey="id" msdata:childkey="id_stavka" msprop:Generator_UserChildTable="zarplata1" msprop:Generator_ChildPropName="Getzarplata1Rows" msprop:Generator_UserRelationName="stavkazarplata3" msprop:Generator_RelationVarName="relationstavkazarplata3" msprop:Generator_UserParentTable="stavka1" msprop:Generator_ParentPropName="stavka1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

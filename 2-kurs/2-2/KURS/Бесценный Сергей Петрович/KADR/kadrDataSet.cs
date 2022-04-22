@@ -10,9 +10,12 @@
     }
 }
 
-namespace KADR.kadrDataSetTableAdapters {
-    
-    
+namespace KADR.kadrDataSetTableAdapters
+{
+    partial class stavkaTableAdapter
+    {
+    }
+
     public partial class sotrudTableAdapter {
     }
 }
