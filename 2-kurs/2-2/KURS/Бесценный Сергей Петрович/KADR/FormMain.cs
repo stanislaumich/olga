@@ -137,6 +137,12 @@ namespace KADR
                 textBox8.Text = Convert.ToString((float)stavkaTableAdapter.StavkaQuery());
             }
         }
+
+        private void поискToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFind findForm = new FormFind();
+            findForm.Show();
+        }
     }
 }
 

@@ -19,20 +19,17 @@ namespace KADR
 
         private void FormZarplata_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.stavka". При необходимости она может быть перемещена или удалена.
-            
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.zarplata". При необходимости она может быть перемещена или удалена.
             this.zarplataTableAdapter.Fill(this.kadrDataSet.zarplata);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kadrDataSet.sotrud". При необходимости она может быть перемещена или удалена.
             this.sotrudTableAdapter.Fill(this.kadrDataSet.sotrud);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
            double stavka= (float)stavkaTableAdapter.StavkaQuery();
            double idstavka = (float)stavkaTableAdapter.IdStavkaQuery();
-
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = dataGridView1.RowCount;
+            progressBar1.Step = 1;
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
@@ -44,6 +41,7 @@ namespace KADR
 
                 this.zarplataTableAdapter.InsertQuery(dateTimePicker1.Value,id_sotrud, (int?)oklad, (int?)premia,
                     (int?)itogo, (int?)idstavka);
+                progressBar1.PerformStep();
             }
             MessageBox.Show("Завершено!");
         }

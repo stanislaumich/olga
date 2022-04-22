@@ -90,3 +90,4 @@ S:\Контрольные\olga\2-kurs\2-2\KURS\Бесценный Сергей �
 S:\Контрольные\olga\2-kurs\2-2\KURS\Бесценный Сергей Петрович\KADR\obj\Debug\RdlCompile.compiled
 S:\Контрольные\olga\2-kurs\2-2\KURS\Бесценный Сергей Петрович\KADR\obj\Debug\KADR.csproj.CopyComplete
 S:\Контрольные\olga\2-kurs\2-2\KURS\Бесценный Сергей Петрович\KADR\obj\Debug\KADR.csproj.AssemblyReference.cache
+S:\Контрольные\olga\2-kurs\2-2\KURS\Бесценный Сергей Петрович\KADR\obj\Debug\KADR.FormFind.resources
