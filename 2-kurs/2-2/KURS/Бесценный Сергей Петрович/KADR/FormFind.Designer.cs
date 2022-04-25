@@ -34,28 +34,28 @@ namespace KADR
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.sotrudBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kadrDataSet = new KADR.kadrDataSet();
             this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okladDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.premiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zarplataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zarplataTableAdapter = new KADR.kadrDataSetTableAdapters.zarplataTableAdapter();
-            this.sotrudTableAdapter = new KADR.kadrDataSetTableAdapters.sotrudTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.kadrDataSet = new KADR.kadrDataSet();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotrudBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zarplataTableAdapter = new KADR.kadrDataSetTableAdapters.zarplataTableAdapter();
+            this.sotrudTableAdapter = new KADR.kadrDataSetTableAdapters.sotrudTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zarplataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zarplataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -97,41 +97,11 @@ namespace KADR
             this.itogoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.zarplataBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 300);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(565, 150);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fioDataGridViewTextBoxColumn,
-            this.nazvDataGridViewTextBoxColumn,
-            this.adrDataGridViewTextBoxColumn,
-            this.phonesDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.sotrudBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 157);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(565, 137);
-            this.dataGridView2.TabIndex = 4;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // sotrudBindingSource
-            // 
-            this.sotrudBindingSource.DataMember = "sotrud";
-            this.sotrudBindingSource.DataSource = this.kadrDataSet;
-            // 
-            // kadrDataSet
-            // 
-            this.kadrDataSet.DataSetName = "kadrDataSet";
-            this.kadrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // periodDataGridViewTextBoxColumn
             // 
@@ -174,33 +144,30 @@ namespace KADR
             this.zarplataBindingSource.DataMember = "zarplata";
             this.zarplataBindingSource.DataSource = this.kadrDataSet;
             // 
-            // zarplataTableAdapter
+            // kadrDataSet
             // 
-            this.zarplataTableAdapter.ClearBeforeFill = true;
+            this.kadrDataSet.DataSetName = "kadrDataSet";
+            this.kadrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sotrudTableAdapter
+            // dataGridView2
             // 
-            this.sotrudTableAdapter.ClearBeforeFill = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(488, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Сбросить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "0";
-            this.label2.Visible = false;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fioDataGridViewTextBoxColumn,
+            this.nazvDataGridViewTextBoxColumn,
+            this.adrDataGridViewTextBoxColumn,
+            this.phonesDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.sotrudBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 48);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(565, 137);
+            this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // fioDataGridViewTextBoxColumn
             // 
@@ -247,11 +214,44 @@ namespace KADR
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 5;
             // 
+            // sotrudBindingSource
+            // 
+            this.sotrudBindingSource.DataMember = "sotrud";
+            this.sotrudBindingSource.DataSource = this.kadrDataSet;
+            // 
+            // zarplataTableAdapter
+            // 
+            this.zarplataTableAdapter.ClearBeforeFill = true;
+            // 
+            // sotrudTableAdapter
+            // 
+            this.sotrudTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(488, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Сбросить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "0";
+            this.label2.Visible = false;
+            // 
             // FormFind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 450);
+            this.ClientSize = new System.Drawing.Size(565, 337);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView2);
@@ -260,13 +260,14 @@ namespace KADR
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormFind";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Форма поиска";
             this.Load += new System.EventHandler(this.FormFind_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zarplataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotrudBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kadrDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zarplataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
