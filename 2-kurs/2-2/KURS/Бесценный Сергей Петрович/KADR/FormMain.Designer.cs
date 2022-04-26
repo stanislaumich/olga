@@ -127,6 +127,11 @@ namespace KADR
             ((System.ComponentModel.ISupportInitialize)(this.razrBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "S:\\Контрольные\\olga\\2-kurs\\2-2\\KURS\\Бесценный Сергей Петрович\\KADR\\bin\\Debug\\KADR" +
+    ".chm";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -179,8 +184,10 @@ namespace KADR
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem.Text = "Помощь";
+            this.помощьToolStripMenuItem.Click += new System.EventHandler(this.помощьToolStripMenuItem_Click);
             // 
             // groupBox1
             // 

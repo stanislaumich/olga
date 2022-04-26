@@ -143,6 +143,15 @@ namespace KADR
             FormFind findForm = new FormFind();
             findForm.Show();
         }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = "KADR.chm";
+            p.StartInfo.Arguments = ""; //чтобы программно нажать enter
+            p.Start();
+
+        }
     }
 }
 
