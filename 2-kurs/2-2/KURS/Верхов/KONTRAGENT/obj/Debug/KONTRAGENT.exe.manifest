@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KONTRAGENT.exe" size="284576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KONTRAGENT.exe" size="285088">
       <assemblyIdentity name="KONTRAGENT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>t3CYVlBT+euKicZYsiz7bcVli460pAqha61OOnKfKT4=</dsig:DigestValue>
+        <dsig:DigestValue>j8fEaVoZwV7bWLKzg9JQN+jGqcS92E45wNICsfmkJxU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

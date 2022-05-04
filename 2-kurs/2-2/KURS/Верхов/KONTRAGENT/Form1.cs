@@ -372,7 +372,10 @@ namespace KONTRAGENT
 
         private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = "KONTRAGENT.chm";
+            p.StartInfo.Arguments = ""; //чтобы программно нажать enter
+            p.Start();
         }
 
         private void button20_Click(object sender, EventArgs e)
