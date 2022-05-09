@@ -1,0 +1,7 @@
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+E:\ПО-455\Верхов\КПиЯП\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
