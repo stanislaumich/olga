@@ -1,0 +1,13 @@
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.exe
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.deps.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.runtimeconfig.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.runtimeconfig.dev.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.dll
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\bin\Debug\netcoreapp3.1\ConsoleApp8.pdb
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.GeneratedMSBuildEditorConfig.editorconfig
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.AssemblyInfoInputs.cache
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.AssemblyInfo.cs
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.csproj.CoreCompileInputs.cache
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.dll
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.pdb
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp8\obj\Debug\netcoreapp3.1\ConsoleApp8.genruntimeconfig.cache

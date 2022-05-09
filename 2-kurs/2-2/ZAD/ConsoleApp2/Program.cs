@@ -16,6 +16,7 @@ namespace ConsoleApp2
             p2 = .5 + Math.Pow(Math.Sin(y), 2);
             p3 = 1 + Math.Pow(z,2) / (3-(Math.Pow(z,2)/5));
             t = p1 / p2 * p3;
+            Console.Write("t=");
             Console.WriteLine(t);
         }
     
