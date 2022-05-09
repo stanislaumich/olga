@@ -1,0 +1,14 @@
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.exe
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.deps.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.runtimeconfig.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.runtimeconfig.dev.json
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.dll
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\bin\Debug\netcoreapp3.1\ConsoleApp10.pdb
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.csproj.AssemblyReference.cache
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.GeneratedMSBuildEditorConfig.editorconfig
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.AssemblyInfoInputs.cache
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.AssemblyInfo.cs
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.csproj.CoreCompileInputs.cache
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.dll
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.pdb
+S:\Контрольные\Olga\2-kurs\2-2\ZAD\ConsoleApp10\obj\Debug\netcoreapp3.1\ConsoleApp10.genruntimeconfig.cache
