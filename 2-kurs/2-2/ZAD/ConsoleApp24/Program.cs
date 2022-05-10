@@ -28,10 +28,9 @@ namespace ConsoleApp24
                 {
                     s+=a[i, j];
                     k += 1;
-                }
-               
+                }               
             }
-            sr = 1.0*s / k;
+            sr = 1.0 * s / k;
             Console.WriteLine("");
             Console.WriteLine("Number N={0}",k);
             Console.WriteLine("Summa S={0}",s);
