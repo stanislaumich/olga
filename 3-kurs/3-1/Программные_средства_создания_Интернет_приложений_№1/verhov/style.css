@@ -1,0 +1,21 @@
+h1 {
+  font-size: 32px;
+  color: green;
+  text-align : left;
+}
+p.right{text-align: right;
+font-size: 1.2em;
+font-style: italic;
+color: #0000ff;
+}
+table {
+  border: 2px;
+ }
+td {
+ }
+th {
+  background-color:grey;
+ }
+ a{
+	color: magenta;
+ }
