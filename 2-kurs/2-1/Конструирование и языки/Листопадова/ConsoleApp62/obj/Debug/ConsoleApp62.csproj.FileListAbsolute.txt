@@ -1,7 +1,0 @@
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\obj\Debug\ConsoleApp62.csproj.AssemblyReference.cache
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\obj\Debug\ConsoleApp62.csproj.CoreCompileInputs.cache
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\bin\Debug\ConsoleApp62.exe.config
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\bin\Debug\ConsoleApp62.exe
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\bin\Debug\ConsoleApp62.pdb
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\obj\Debug\ConsoleApp62.exe
-S:\Контрольные\olga\2-kurs\2-1\Конструирование и языки\Листопадова\ConsoleApp62\obj\Debug\ConsoleApp62.pdb

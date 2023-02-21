@@ -1,6 +1,0 @@
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
-E:\ПО-455\Верхов\КПиЯП\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

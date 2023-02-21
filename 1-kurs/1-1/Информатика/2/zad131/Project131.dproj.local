@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-  <Transactions>
-    <Transaction>2020.12.15 09:59:44.092,=S:\_programming\Unit1.pas</Transaction>
-    <Transaction>2020.12.15 11:19:58.256,S:\Контрольные\olga\1-1\Информатика\2\zad131\UMain.pas=S:\_programming\Unit1.pas</Transaction>
-    <Transaction>2020.12.15 11:19:58.256,S:\Контрольные\olga\1-1\Информатика\2\zad131\UMain.dfm=S:\_programming\Unit1.dfm</Transaction>
-    <Transaction>2020.12.15 11:20:16.357,S:\Контрольные\olga\1-1\Информатика\2\zad131\Project131.dproj=S:\_programming\Project1.dproj</Transaction>
-  </Transactions>
-</BorlandProject>
