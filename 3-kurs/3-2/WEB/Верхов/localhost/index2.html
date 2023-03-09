@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Добро пожаловать!</title> 
+</head>
+
+<body>
+<script>
+ function test(){	
+  let array = [15, 97, 2, 158, 26, 268, 88, 105, 43, 33];
+  let emin = array[0];
+  let pmin = 0;
+  console.log(array);
+  for (let i = 1; i < array.length; i++) { 
+    if(array[i] < emin){
+	emin = array[i];
+	pmin = i;	
+	}
+  }
+  let t = array[9];
+  array[9] = array[pmin];
+  array[pmin] = t;
+  console.log(emin);
+  console.log(array);
+  alert(emin);
+}
+</script>
+<input type=button value='Выполнить' onclick = test()><br>	
+<br>
+<br>	
+let array = [15, 97, 2, 158, 26, 268, 88, 105, 43, 33];<br>
+let result = 0;<br>
+for (let i = 1; i < array.length; i+=2) { <br>
+  result += array[i];<br>  
+}<br>
+console.log(result);<br>
+alert(result);<br>
+	
+</body>
+
+</html>

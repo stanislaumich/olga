@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Добро пожаловать!</title> 
+</head>
+
+<body>
+<script>
+ function test(){	
+  let array = [15, 97, 2, 158, 26, 268, 88, 105, 43];
+  let result = 0;
+  for (let i = 1; i < array.length; i+=2) { 
+    result += array[i];  
+  }
+  console.log(result);
+  alert(result);
+}
+</script>
+<input type=button value='Вычислить' onclick = test()><br>	
+<br>
+<br>	
+let array = [15, 97, 2, 158, 26, 268, 88, 105, 43];<br>
+let result = 0;<br>
+for (let i = 1; i < array.length; i+=2) { <br>
+  result += array[i];<br>  
+}<br>
+console.log(result);<br>
+alert(result);<br>
+	
+</body>
+
+</html>
