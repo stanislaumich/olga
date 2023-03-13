@@ -66,7 +66,7 @@ switch ($act)
 			$result = mysqli_query($link, $sql);
 			$sql = "INSERT INTO `dat` (`raon`, `mast`, `etag`, `sq`, `rooms`,  `cena`) VALUES ('Персвомайский', 'Кривонос К. К.', '2', '43.14', '1',  '364210');";
 			$result = mysqli_query($link, $sql);
-			// выводим жданные в таблицу
+			// выводим данные в таблицу
 			echo"<table border=1>";// начало таблицы			
 			$sql = 'SELECT * FROM dat';// выбираем все записи
 			$result = mysqli_query($link, $sql);
@@ -82,7 +82,7 @@ switch ($act)
 			echo"<br><form action='index.php?act=2' method=POST><input type=submit value='Задание 1'></form>";
 			echo"<br><form action='index.php?act=3' method=POST><input type=submit value='Задание 2'></form>";
 		break;
- case 2: // Выбрано действие поиска журнала по названию, создаем форму
+ case 2: // Выбрано действие поиска квартиры по этажу, создаем форму
 			echo"<br><form action='index.php?act=21' method=POST>
 			<br>Введите этаж:<input type=text name='et'><br>			
 			<input type=submit value='Найти'></form>"; // в ней запрашиваем название
@@ -108,9 +108,9 @@ case 21: // выбираем квартиру по этажу, et - параме
 			echo"<br><form action='index.php?act=3' method=POST><input type=submit value='Задание 2'></form>";
         break;
 		
- case 3:    // выводим форму для выбора диапазона страниц
+ case 3:    // выводим форму для выбора диапазона площадей
 			echo"<br><form action='index.php?act=31' method=POST>
-			<br>Введите страницы от:<input type=text name='sq1'> и до:<input type=text name='sq2'><br>			
+			<br>Введите площадь от:<input type=text name='sq1'> и до:<input type=text name='sq2'><br>			
 			<input type=submit value='Найти'></form>";
 			// далее выводим кнопки с выбором варианта действий
 			echo"<br><form action='index.php?act=0' method=POST><input type=submit value='Начало'></form>";
