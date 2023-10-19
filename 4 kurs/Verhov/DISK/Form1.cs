@@ -233,28 +233,23 @@ namespace Disk
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            //dataBase.openConnection();
             var addQuery = $"delete from [Group] where ID={textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
-            //this.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //dataBase.openConnection();
             var addQuery = $"update [Group] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
-            //this.Close();
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Group". При необходимости она может быть перемещена или удалена.
-            this.groupTableAdapter.Fill(this.databaseDataSet.Group);
+           this.groupTableAdapter.Fill(this.databaseDataSet.Group);
 
         }
 
@@ -267,8 +262,24 @@ namespace Disk
                 textBox5.Text = row.Cells[0].Value.ToString();
                 textBox6.Text = row.Cells[1].Value.ToString();
                 textBox7.Text = row.Cells[2].Value.ToString();
-                comboBox1.Text = row.Cells[3].Value.ToString();
+                comboBox1.SelectedIndex = Int32.Parse(row.Cells[3].Value.ToString())-1;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var addQuery = $"insert into [Song] (Name,Len, IdDisk) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
+            var command = new SqlCommand(addQuery, database.getConnection());
+            command.ExecuteNonQuery();
+            refreshDG2(dataGridView2);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var addQuery = $"delete from [Song] where ID={textBox5.Text}";
+            var command = new SqlCommand(addQuery, database.getConnection());
+            command.ExecuteNonQuery();
+            refreshDG2(dataGridView2);
         }
     }
 
