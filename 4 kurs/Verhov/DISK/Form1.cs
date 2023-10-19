@@ -29,11 +29,13 @@ namespace Disk
             InitializeComponent();
             CreateColumns();
             refreshDG(dataGridView1);
+            refreshDG2(dataGridView2);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateColumns();
             refreshDG(dataGridView1);
+            refreshDG2(dataGridView2);
         }
         private void CreateColumns()
         {
@@ -41,11 +43,21 @@ namespace Disk
             dataGridView1.Columns.Add("Name", "Name");
             dataGridView1.Columns.Add("Descr", "Descr");
             dataGridView1.Columns.Add("IsNew", String.Empty);
+            dataGridView2.Columns.Add("ID", "ID");
+            dataGridView2.Columns.Add("Name", "Name");
+            dataGridView2.Columns.Add("Len", "Len");
+            dataGridView2.Columns.Add("IDDisk", "IDDisk");
+            dataGridView2.Columns.Add("IsNew", String.Empty);
+
         }
 
         private void ReadSinglRow(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), rowState.ModifiedNew);
+        }
+        private void ReadSinglRow2(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), rowState.ModifiedNew);
         }
         private void refreshDG(DataGridView dgw)
         {
@@ -61,7 +73,20 @@ namespace Disk
             }
             reader.Close();
         }
+        private void refreshDG2(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+            string querystr = $"Select * from [Song]";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
 
+            while (reader.Read())
+            {
+                ReadSinglRow2(dgw, reader);
+            }
+            reader.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -224,6 +249,26 @@ namespace Disk
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
             //this.Close();
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Group". При необходимости она может быть перемещена или удалена.
+            this.groupTableAdapter.Fill(this.databaseDataSet.Group);
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView2.Rows[selectedRow];
+                textBox5.Text = row.Cells[0].Value.ToString();
+                textBox6.Text = row.Cells[1].Value.ToString();
+                textBox7.Text = row.Cells[2].Value.ToString();
+                comboBox1.Text = row.Cells[3].Value.ToString();
+            }
         }
     }
 
