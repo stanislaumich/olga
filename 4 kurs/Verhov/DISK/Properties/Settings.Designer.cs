@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DISK.Properties
+namespace Disk.Properties
 {
 
 

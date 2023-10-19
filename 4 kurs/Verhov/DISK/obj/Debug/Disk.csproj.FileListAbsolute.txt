@@ -1,0 +1,11 @@
+S:\Disk\bin\Debug\Disk.exe.config
+S:\Disk\bin\Debug\Disk.exe
+S:\Disk\bin\Debug\Disk.pdb
+S:\Disk\obj\Debug\Disk.csproj.AssemblyReference.cache
+S:\Disk\obj\Debug\Disk.Form1.resources
+S:\Disk\obj\Debug\Disk.Properties.Resources.resources
+S:\Disk\obj\Debug\Disk.csproj.GenerateResource.cache
+S:\Disk\obj\Debug\Disk.csproj.CoreCompileInputs.cache
+S:\Disk\obj\Debug\Disk.exe
+S:\Disk\obj\Debug\Disk.pdb
+S:\Disk\obj\Debug\Disk.Form2.resources
