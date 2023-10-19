@@ -115,6 +115,7 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Шуфутинский";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.Click += new System.EventHandler(this.radioButton4_Click);
             // 
             // radioButton3
             // 
@@ -126,6 +127,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Metallica";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.Click += new System.EventHandler(this.radioButton3_Click);
             // 
             // radioButton2
             // 
@@ -137,6 +139,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Сектор газа";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
             // 
             // radioButton1
             // 
@@ -179,6 +182,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -188,6 +192,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Изменить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label4
             // 
@@ -273,6 +278,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(555, 146);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
             // tabPage2
             // 

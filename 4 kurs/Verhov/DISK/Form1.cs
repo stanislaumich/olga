@@ -147,6 +147,84 @@ namespace Disk
             refreshDG(dataGridView1);
 
         }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[selectedRow];
+                textBox1.Text = row.Cells[0].Value.ToString();
+                textBox2.Text = row.Cells[1].Value.ToString();
+                textBox3.Text = row.Cells[2].Value.ToString();
+            }
+
+        }
+
+        private void radioButton2_Click(object sender, EventArgs e)
+        {
+            DataGridView dwg = dataGridView1;
+            dwg.Rows.Clear();
+            string querystr = $" select * from [Group] Where Name = 'Сектор газа'";
+            SqlCommand com = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSinglRow(dwg, reader);
+            }
+            reader.Close();
+        }
+
+        private void radioButton4_Click(object sender, EventArgs e)
+        {
+            DataGridView dwg = dataGridView1;
+            dwg.Rows.Clear();
+            string querystr = $" select * from [Group] Where Name = 'Шуфутинский'";
+            SqlCommand com = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSinglRow(dwg, reader);
+            }
+            reader.Close();
+        }
+
+        private void radioButton3_Click(object sender, EventArgs e)
+        {
+            DataGridView dwg = dataGridView1;
+            dwg.Rows.Clear();
+            string querystr = $" select * from [Group] Where Name = 'Metallica'";
+            SqlCommand com = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSinglRow(dwg, reader);
+            }
+            reader.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //dataBase.openConnection();
+            var addQuery = $"delete from [Group] where ID={textBox1.Text}";
+            var command = new SqlCommand(addQuery, database.getConnection());
+            command.ExecuteNonQuery();
+            refreshDG(dataGridView1);
+            //this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //dataBase.openConnection();
+            var addQuery = $"update [Group] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
+            var command = new SqlCommand(addQuery, database.getConnection());
+            command.ExecuteNonQuery();
+            refreshDG(dataGridView1);
+            //this.Close();
+        }
     }
 
     class DataBase
