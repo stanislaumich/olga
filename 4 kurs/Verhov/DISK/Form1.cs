@@ -139,12 +139,20 @@ namespace Disk
         {
             refreshDG(dataGridView1);
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form2 f_add = new Form2();
+            f_add.ShowDialog();
+            refreshDG(dataGridView1);
+
+        }
     }
 
     class DataBase
     {
 
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=LZ42NOTE\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=PROG\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True");
 
         public void openConnection()
         {
