@@ -31,6 +31,7 @@ namespace Disk
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
+            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,6 +39,7 @@ namespace Disk
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
+            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
         }
         private void CreateColumns()
         {
@@ -54,6 +56,10 @@ namespace Disk
             dataGridView3.Columns.Add("Name", "Название");
             dataGridView3.Columns.Add("IDGroup", "Группа");
             dataGridView3.Columns.Add("IsNew", String.Empty);
+            dataGridView4.Columns.Add("Col1", "COLUMN 1");
+            dataGridView4.Columns.Add("Col2", "COLUMN 2");
+            dataGridView4.Columns.Add("Col3", "COLUMN 3");
+            dataGridView4.Columns.Add("Col4", "COLUMN 4");
         }
 
         private void ReadSinglRow(DataGridView dgw, IDataRecord record)
@@ -67,6 +73,10 @@ namespace Disk
         private void ReadSinglRow3(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), rowState.ModifiedNew);
+        }
+        private void ReadSinglRow4(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetString(0), record.GetString(1), record.GetString(2), record.GetString(3));
         }
         private void refreshDG(DataGridView dgw)
         {
@@ -110,6 +120,21 @@ namespace Disk
             }
             reader.Close();
         }
+        private void refreshDG4(DataGridView dgw, string s)
+        {
+            dgw.Rows.Clear();
+            string querystr = s;// $"Select * from [Disk]";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSinglRow4(dgw, reader);
+            }
+            reader.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -347,6 +372,39 @@ namespace Disk
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            dataGridView4.Rows.Clear();
+            string querystr = $"select s.name as col1, g.name as col2, d.name as col3,'' as col4\r\nfrom [Disk] d, [Song] s, [Group] g\r\nwhere d.idgroup=g.id and s.iddisk=d.id";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSinglRow4(dataGridView4, reader);
+            }
+            reader.Close();
+
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, CAST(len*3 AS varchar(5)) as col3, '' as col4 from [Song] s";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSinglRow4(dataGridView4, reader);
+            }
+            reader.Close();
         }
     }
 
