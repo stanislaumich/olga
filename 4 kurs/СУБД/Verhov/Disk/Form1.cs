@@ -297,7 +297,11 @@ namespace Disk
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-           this.groupTableAdapter.Fill(this.databaseDataSet.Group);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Group". При необходимости она может быть перемещена или удалена.
+            this.groupTableAdapter.Fill(this.databaseDataSet1.Group);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Disk". При необходимости она может быть перемещена или удалена.
+            this.diskTableAdapter.Fill(this.databaseDataSet1.Disk);
+
 
         }
 
@@ -338,7 +342,7 @@ namespace Disk
               DataGridViewRow row = dataGridView3.Rows[selectedRow];
                 textBox8.Text = row.Cells[0].Value.ToString();
                 textBox9.Text = row.Cells[1].Value.ToString();
-                comboBox2.SelectedIndex = Int32.Parse(row.Cells[2].Value.ToString()) - 1;
+                comboBox2.SelectedIndex = Int32.Parse(row.Cells[2].Value.ToString())-1;
             }
         }
 
@@ -406,12 +410,50 @@ namespace Disk
             }
             reader.Close();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {// условие
+            dataGridView4.Rows.Clear();
+            string s = "OR";
+            if (comboBox3.SelectedIndex == 0) {
+                 s = "AND"; }
+            string n = textBox10.Text;
+            string l = textBox11.Text;
+
+
+            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}' {s} Len='{l}'";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSinglRow4(dataGridView4, reader);
+            }
+            reader.Close();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            dataGridView4.Rows.Clear();
+            string n = textBox12.Text;
+            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}'";
+            SqlCommand command = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSinglRow4(dataGridView4, reader);
+            }
+            reader.Close();
+        }
     }
 
     class DataBase
     {
 
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=PROG\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True");
 
         public void openConnection()
         {

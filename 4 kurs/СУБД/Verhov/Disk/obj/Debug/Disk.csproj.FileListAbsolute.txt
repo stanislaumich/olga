@@ -25,7 +25,6 @@ S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\bin\Debug\Disk.exe.co
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\bin\Debug\Disk.exe
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\bin\Debug\Disk.pdb
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\obj\Debug\Disk.csproj.AssemblyReference.cache
-S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\obj\Debug\Disk.csproj.SuggestedBindingRedirects.cache
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\obj\Debug\Disk.Form1.resources
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\obj\Debug\Disk.Form2.resources
 S:\Контрольные\olga\4 kurs\СУБД\Verhov\Disk\obj\Debug\Disk.Properties.Resources.resources

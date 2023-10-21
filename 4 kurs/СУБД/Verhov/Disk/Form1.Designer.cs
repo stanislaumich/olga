@@ -63,8 +63,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Disk.DatabaseDataSet();
+            this.diskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet1 = new Disk.DatabaseDataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -72,7 +72,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.groupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -80,6 +80,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -91,7 +94,8 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.groupTableAdapter = new Disk.DatabaseDataSetTableAdapters.GroupTableAdapter();
+            this.diskTableAdapter = new Disk.DatabaseDataSet1TableAdapters.DiskTableAdapter();
+            this.groupTableAdapter = new Disk.DatabaseDataSet1TableAdapters.GroupTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,12 +103,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diskBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -265,6 +269,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(174, 20);
             this.textBox4.TabIndex = 7;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button3
             // 
@@ -457,7 +462,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.groupBindingSource;
+            this.comboBox1.DataSource = this.diskBindingSource;
             this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(73, 64);
@@ -466,15 +471,15 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Id";
             // 
-            // groupBindingSource
+            // diskBindingSource
             // 
-            this.groupBindingSource.DataMember = "Group";
-            this.groupBindingSource.DataSource = this.databaseDataSet;
+            this.diskBindingSource.DataMember = "Disk";
+            this.diskBindingSource.DataSource = this.databaseDataSet1;
             // 
-            // databaseDataSet
+            // databaseDataSet1
             // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseDataSet1.DataSetName = "DatabaseDataSet1";
+            this.databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView2
             // 
@@ -548,7 +553,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.groupBindingSource1;
+            this.comboBox2.DataSource = this.groupBindingSource;
             this.comboBox2.DisplayMember = "Name";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(72, 73);
@@ -557,10 +562,10 @@
             this.comboBox2.TabIndex = 5;
             this.comboBox2.ValueMember = "Id";
             // 
-            // groupBindingSource1
+            // groupBindingSource
             // 
-            this.groupBindingSource1.DataMember = "Group";
-            this.groupBindingSource1.DataSource = this.databaseDataSet;
+            this.groupBindingSource.DataMember = "Group";
+            this.groupBindingSource.DataSource = this.databaseDataSet1;
             // 
             // textBox9
             // 
@@ -615,6 +620,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button14);
+            this.tabPage4.Controls.Add(this.textBox12);
+            this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.button12);
             this.tabPage4.Controls.Add(this.button11);
@@ -626,6 +634,32 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Задания";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(322, 246);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 7;
+            this.button14.Text = "Вывести";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(154, 250);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(162, 20);
+            this.textBox12.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 252);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Параметр название песни";
             // 
             // groupBox5
             // 
@@ -665,6 +699,7 @@
             this.button13.TabIndex = 13;
             this.button13.Text = "Вывести";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // comboBox3
             // 
@@ -689,11 +724,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 49);
+            this.label14.Location = new System.Drawing.Point(23, 45);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 13);
+            this.label14.Size = new System.Drawing.Size(73, 13);
             this.label14.TabIndex = 10;
-            this.label14.Text = "Название диска";
+            this.label14.Text = "Длина песни";
             // 
             // label13
             // 
@@ -732,6 +767,10 @@
             this.dataGridView4.Size = new System.Drawing.Size(798, 71);
             this.dataGridView4.TabIndex = 0;
             // 
+            // diskTableAdapter
+            // 
+            this.diskTableAdapter.ClearBeforeFill = true;
+            // 
             // groupTableAdapter
             // 
             this.groupTableAdapter.ClearBeforeFill = true;
@@ -755,15 +794,16 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diskBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -798,9 +838,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private DatabaseDataSet databaseDataSet;
-        private System.Windows.Forms.BindingSource groupBindingSource;
-        private DatabaseDataSetTableAdapters.GroupTableAdapter groupTableAdapter;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox7;
@@ -818,7 +855,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.BindingSource groupBindingSource1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label11;
@@ -836,6 +872,14 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private DatabaseDataSet1 databaseDataSet1;
+        private System.Windows.Forms.BindingSource diskBindingSource;
+        private DatabaseDataSet1TableAdapters.DiskTableAdapter diskTableAdapter;
+        private System.Windows.Forms.BindingSource groupBindingSource;
+        private DatabaseDataSet1TableAdapters.GroupTableAdapter groupTableAdapter;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button14;
     }
 }
 
