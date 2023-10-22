@@ -31,7 +31,7 @@ namespace Disk
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
-            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
+            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Park]");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,27 +39,27 @@ namespace Disk
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
-            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
+            //refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Park]");
         }
         private void CreateColumns()
         {
             dataGridView1.Columns.Add("ID", "Номер");
             dataGridView1.Columns.Add("Name", "Название");
-            dataGridView1.Columns.Add("Descr", "Описание");
+            dataGridView1.Columns.Add("Adr", "Адрес");
             dataGridView1.Columns.Add("IsNew", String.Empty);
             dataGridView2.Columns.Add("ID", "Номер");
-            dataGridView2.Columns.Add("Name", "Название");
-            dataGridView2.Columns.Add("Len", "Длина");
-            dataGridView2.Columns.Add("IDDisk", "Диск");
+            dataGridView2.Columns.Add("FIO", "ФИО");
+            dataGridView2.Columns.Add("Age", "Возраст");
+            dataGridView2.Columns.Add("IDAvto", "Машина");
             dataGridView2.Columns.Add("IsNew", String.Empty);
             dataGridView3.Columns.Add("ID", "Номер");
             dataGridView3.Columns.Add("Name", "Название");
-            dataGridView3.Columns.Add("IDGroup", "Группа");
+            dataGridView3.Columns.Add("IDPark", "Парк");
             dataGridView3.Columns.Add("IsNew", String.Empty);
-            dataGridView4.Columns.Add("Col1", "COLUMN 1");
-            dataGridView4.Columns.Add("Col2", "COLUMN 2");
-            dataGridView4.Columns.Add("Col3", "COLUMN 3");
-            dataGridView4.Columns.Add("Col4", "COLUMN 4");
+            dataGridView4.Columns.Add("Col1", String.Empty);
+            dataGridView4.Columns.Add("Col2", String.Empty);
+            dataGridView4.Columns.Add("Col3", String.Empty);
+            dataGridView4.Columns.Add("Col4", String.Empty);
         }
 
         private void ReadSinglRow(DataGridView dgw, IDataRecord record)
@@ -81,7 +81,7 @@ namespace Disk
         private void refreshDG(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Group]";
+            string querystr = $"Select * from [Park]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -95,7 +95,7 @@ namespace Disk
         private void refreshDG2(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Song]";
+            string querystr = $"Select * from [Voditel]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -109,7 +109,7 @@ namespace Disk
         private void refreshDG3(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Disk]";
+            string querystr = $"Select * from [Avto]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -123,7 +123,7 @@ namespace Disk
         private void refreshDG4(DataGridView dgw, string s)
         {
             dgw.Rows.Clear();
-            string querystr = s;// $"Select * from [Disk]";
+            string querystr = s;
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -297,12 +297,6 @@ namespace Disk
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Group". При необходимости она может быть перемещена или удалена.
-            this.groupTableAdapter.Fill(this.databaseDataSet1.Group);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Disk". При необходимости она может быть перемещена или удалена.
-            this.diskTableAdapter.Fill(this.databaseDataSet1.Disk);
-
-
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -415,7 +409,7 @@ namespace Disk
         {// условие
             dataGridView4.Rows.Clear();
             string s = "OR";
-            if (comboBox3.SelectedIndex == 0) {
+            if (radioButton5.Checked) {
                  s = "AND"; }
             string n = textBox10.Text;
             string l = textBox11.Text;

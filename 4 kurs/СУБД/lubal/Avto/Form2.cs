@@ -24,7 +24,7 @@ namespace Disk
         private void button1_Click_1(object sender, EventArgs e)
         {
             dataBase.openConnection();
-            var addQuery = $"insert into [Group] (Name,Descr) values ('{textBox1.Text}' , '{textBox2.Text}')";
+            var addQuery = $"insert into [Park] (Name,Adr) values ('{textBox1.Text}' , '{textBox2.Text}')";
             var command = new SqlCommand(addQuery, dataBase.getConnection());
             command.ExecuteNonQuery();
             dataBase.closeConnection();
