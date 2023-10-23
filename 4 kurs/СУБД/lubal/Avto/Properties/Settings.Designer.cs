@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Avto.Properties {
+namespace Disk.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -41,6 +41,16 @@ namespace Avto.Properties {
         public string DatabaseConnectionString1 {
             get {
                 return ((string)(this["DatabaseConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Avto;Integrated Security=True")]
+        public string AvtoConnectionString {
+            get {
+                return ((string)(this["AvtoConnectionString"]));
             }
         }
     }

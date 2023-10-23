@@ -376,7 +376,7 @@ namespace Avto
         {
 
             dataGridView4.Rows.Clear();
-            string querystr = $"select s.name as col1, g.name as col2, d.name as col3,'' as col4\r\nfrom [Voditel] d, [Avto] s, [Park] g\r\nwhere d.idAvto=s.id and s.idPark=g.id";
+            string querystr = $"select s.name as col1, g.name as col2, d.fio as col3,'' as col4\r\nfrom [Voditel] d, [Avto] s, [Park] g\r\nwhere d.idAvto=s.id and s.idPark=g.id";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
