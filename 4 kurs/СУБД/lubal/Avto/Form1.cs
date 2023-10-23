@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Disk
+namespace Avto
 {
     enum rowState
     {
@@ -175,7 +175,7 @@ namespace Disk
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where concat(Name,Descr) like '%" + textBox4.Text + "%'";
+            string querystr = $" select * from [Park] Where concat(Name,Adr) like '%" + textBox4.Text + "%'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -196,7 +196,7 @@ namespace Disk
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Ласковый май'";
+            string querystr = $" select * from [Park] Where Name = 'Автобаза №4'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -238,7 +238,7 @@ namespace Disk
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Сектор газа'";
+            string querystr = $" select * from [Park] Where Name = 'Автопарк №10'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -253,7 +253,7 @@ namespace Disk
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Шуфутинский'";
+            string querystr = $" select * from [Park] Where Name = 'Городской автопарк №1'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -268,7 +268,7 @@ namespace Disk
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Metallica'";
+            string querystr = $" select * from [Park] Where Name = 'Автобусный парк №2'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -281,7 +281,7 @@ namespace Disk
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Group] where ID={textBox1.Text}";
+            var addQuery = $"delete from [Park] where ID={textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
@@ -289,7 +289,7 @@ namespace Disk
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var addQuery = $"update [Group] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
+            var addQuery = $"update [Park] set Name='{textBox2.Text}' , Adr =  '{textBox3.Text}' where ID = {textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
@@ -314,7 +314,7 @@ namespace Disk
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var addQuery = $"insert into [Song] (Name,Len, IdDisk) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
+            var addQuery = $"insert into [Voditel] (Fio,Age, IdAvto) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -322,7 +322,7 @@ namespace Disk
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Song] where ID={textBox5.Text}";
+            var addQuery = $"delete from [Voditel] where ID={textBox5.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -342,7 +342,7 @@ namespace Disk
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var addQuery = $"insert into [Disk] (Name,IdGroup) values ('{textBox9.Text}' ,{comboBox2.SelectedIndex + 1})";
+            var addQuery = $"insert into [Avto] (Name,IdPark) values ('{textBox9.Text}' ,{comboBox2.SelectedIndex + 1})";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -350,7 +350,7 @@ namespace Disk
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Disk] where ID={textBox8.Text}";
+            var addQuery = $"delete from [Avto] where ID={textBox8.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -358,7 +358,7 @@ namespace Disk
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var addQuery = $"update [Song] set Name='{textBox6.Text}' , Len =  '{textBox7.Text}', IdDisk = '{comboBox1.SelectedIndex+1}' where ID = {textBox5.Text}";
+            var addQuery = $"update [Voditel] set Fio='{textBox6.Text}' , Age =  '{textBox7.Text}', IdAvto = '{comboBox1.SelectedIndex+1}' where ID = {textBox5.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -366,7 +366,7 @@ namespace Disk
 
         private void button9_Click(object sender, EventArgs e)
         {
-            var addQuery = $"update [Disk] set Name='{textBox9.Text}' , IdGroup =  '{comboBox2.SelectedIndex+1}' where ID = {textBox8.Text}";
+            var addQuery = $"update [Avto] set Name='{textBox9.Text}' , IdPark =  '{comboBox2.SelectedIndex+1}' where ID = {textBox8.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -376,7 +376,7 @@ namespace Disk
         {
 
             dataGridView4.Rows.Clear();
-            string querystr = $"select s.name as col1, g.name as col2, d.name as col3,'' as col4\r\nfrom [Disk] d, [Song] s, [Group] g\r\nwhere d.idgroup=g.id and s.iddisk=d.id";
+            string querystr = $"select s.name as col1, g.name as col2, d.name as col3,'' as col4\r\nfrom [Voditel] d, [Avto] s, [Park] g\r\nwhere d.idAvto=s.id and s.idPark=g.id";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -393,7 +393,7 @@ namespace Disk
         private void button12_Click(object sender, EventArgs e)
         {
             dataGridView4.Rows.Clear();
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, CAST(len*3 AS varchar(5)) as col3, '' as col4 from [Song] s";
+            string querystr = $"select FIO as col1, CAST(Age AS varchar(5)) as col2, CAST(Age+20 AS varchar(5)) as col3, '' as col4 from [Voditel]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -415,7 +415,7 @@ namespace Disk
             string l = textBox11.Text;
 
 
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}' {s} Len='{l}'";
+            string querystr = $"select fio as col1, CAST(Age AS varchar(5)) as col2, '' as col3, '' as col4 from [Voditel] s where Fio='{n}' {s} Age='{l}'";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -431,7 +431,7 @@ namespace Disk
         {
             dataGridView4.Rows.Clear();
             string n = textBox12.Text;
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}'";
+            string querystr = $"select Fio as col1, CAST(Age AS varchar(5)) as col2, '' as col3, '' as col4 from [Voditel] s where Fio='{n}'";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();

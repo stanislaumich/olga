@@ -1,4 +1,4 @@
-﻿namespace Disk
+﻿namespace Avto
 {
     partial class Form2
     {

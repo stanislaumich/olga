@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Disk {
+namespace Avto {
     
     
     /// <summary>
@@ -681,7 +681,7 @@ namespace Disk {
         }
     }
 }
-namespace Disk.DatabaseDataSetTableAdapters {
+namespace Avto.DatabaseDataSetTableAdapters {
     
     
     /// <summary>
@@ -846,7 +846,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.DatabaseConnectionString;
+            this._connection.ConnectionString = global::Avto.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

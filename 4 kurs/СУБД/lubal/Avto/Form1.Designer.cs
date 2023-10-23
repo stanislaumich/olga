@@ -1,4 +1,4 @@
-﻿namespace Disk
+﻿namespace Avto
 {
     partial class Form1
     {
@@ -64,7 +64,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.diskBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet1 = new Disk.DatabaseDataSet1();
+            this.databaseDataSet1 = new Avto.DatabaseDataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -84,6 +84,8 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -93,10 +95,8 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.diskTableAdapter = new Disk.DatabaseDataSet1TableAdapters.DiskTableAdapter();
-            this.groupTableAdapter = new Disk.DatabaseDataSet1TableAdapters.GroupTableAdapter();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.diskTableAdapter = new Avto.DatabaseDataSet1TableAdapters.DiskTableAdapter();
+            this.groupTableAdapter = new Avto.DatabaseDataSet1TableAdapters.GroupTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -126,7 +126,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(822, 301);
+            this.tabControl1.Size = new System.Drawing.Size(576, 346);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -137,7 +137,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(814, 275);
+            this.tabPage1.Size = new System.Drawing.Size(568, 320);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Парк";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -149,9 +149,9 @@
             this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(567, 8);
+            this.groupBox2.Location = new System.Drawing.Point(323, 164);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(238, 143);
+            this.groupBox2.Size = new System.Drawing.Size(238, 151);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильтр";
@@ -162,13 +162,14 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(224, 23);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Сбросить";
+            this.button4.Text = "Вывести всё";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.Black;
             this.radioButton4.Location = new System.Drawing.Point(8, 92);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(149, 17);
@@ -230,14 +231,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 158);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 106);
+            this.groupBox1.Size = new System.Drawing.Size(314, 157);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Запись";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(480, 48);
+            this.button2.Location = new System.Drawing.Point(202, 126);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
@@ -247,7 +248,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(391, 48);
+            this.button1.Location = new System.Drawing.Point(113, 126);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
             this.button1.TabIndex = 9;
@@ -258,7 +259,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(331, 27);
+            this.label4.Location = new System.Drawing.Point(260, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 8;
@@ -266,15 +267,15 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(381, 24);
+            this.textBox4.Location = new System.Drawing.Point(6, 100);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 20);
+            this.textBox4.Size = new System.Drawing.Size(248, 20);
             this.textBox4.TabIndex = 7;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(310, 48);
+            this.button3.Location = new System.Drawing.Point(32, 126);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 6;
@@ -335,10 +336,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(562, 146);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
@@ -349,7 +351,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(814, 275);
+            this.tabPage2.Size = new System.Drawing.Size(568, 320);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Водитель";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -369,14 +371,14 @@
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Location = new System.Drawing.Point(9, 163);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(796, 111);
+            this.groupBox3.Size = new System.Drawing.Size(556, 149);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Запись";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(454, 16);
+            this.button7.Location = new System.Drawing.Point(178, 91);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 10;
@@ -386,7 +388,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(371, 16);
+            this.button6.Location = new System.Drawing.Point(95, 91);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(77, 23);
             this.button6.TabIndex = 9;
@@ -453,7 +455,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(290, 16);
+            this.button5.Location = new System.Drawing.Point(14, 91);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 1;
@@ -485,9 +487,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 6);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(798, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(562, 150);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -498,7 +501,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(814, 275);
+            this.tabPage3.Size = new System.Drawing.Size(568, 320);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Авто";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -517,14 +520,14 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 153);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(808, 119);
+            this.groupBox4.Size = new System.Drawing.Size(562, 164);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Запись";
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(431, 22);
+            this.button10.Location = new System.Drawing.Point(174, 110);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 8;
@@ -534,7 +537,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(350, 23);
+            this.button9.Location = new System.Drawing.Point(93, 111);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 7;
@@ -544,7 +547,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(269, 23);
+            this.button8.Location = new System.Drawing.Point(12, 111);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 6;
@@ -615,7 +618,7 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(808, 150);
+            this.dataGridView3.Size = new System.Drawing.Size(562, 150);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
@@ -631,7 +634,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(814, 275);
+            this.tabPage4.Size = new System.Drawing.Size(568, 320);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Задания";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -679,11 +682,33 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Условие";
             // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(112, 48);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(49, 17);
+            this.radioButton6.TabIndex = 17;
+            this.radioButton6.Text = "ИЛИ";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Checked = true;
+            this.radioButton5.Location = new System.Drawing.Point(73, 48);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(33, 17);
+            this.radioButton5.TabIndex = 16;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "И";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(394, 16);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 20);
+            this.textBox11.Size = new System.Drawing.Size(141, 20);
             this.textBox11.TabIndex = 15;
             // 
             // textBox10
@@ -734,7 +759,7 @@
             // 
             this.button12.Location = new System.Drawing.Point(322, 83);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(308, 23);
+            this.button12.Size = new System.Drawing.Size(240, 23);
             this.button12.TabIndex = 2;
             this.button12.Text = "Вычисляемое поле - возраст прибавить 20";
             this.button12.UseVisualStyleBackColor = true;
@@ -766,33 +791,11 @@
             // 
             this.groupTableAdapter.ClearBeforeFill = true;
             // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Checked = true;
-            this.radioButton5.Location = new System.Drawing.Point(73, 48);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(33, 17);
-            this.radioButton5.TabIndex = 16;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "И";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(112, 48);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(49, 17);
-            this.radioButton6.TabIndex = 17;
-            this.radioButton6.Text = "ИЛИ";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 301);
+            this.ClientSize = new System.Drawing.Size(576, 346);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Программа учета дисков";

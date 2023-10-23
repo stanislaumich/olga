@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Disk {
+namespace Avto {
     
     
     /// <summary>
@@ -1608,7 +1608,7 @@ namespace Disk {
         }
     }
 }
-namespace Disk.DatabaseDataSet1TableAdapters {
+namespace Avto.DatabaseDataSet1TableAdapters {
     
     
     /// <summary>
@@ -1773,7 +1773,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Avto.Properties.Settings.Default.DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2132,7 +2132,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Avto.Properties.Settings.Default.DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2496,7 +2496,7 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Avto.Properties.Settings.Default.DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
