@@ -1,4 +1,4 @@
-﻿namespace Fakultet
+﻿namespace kolledg
 {
     partial class Form1
     {
@@ -61,7 +61,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gROUPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fAKULTETDataSet = new Disk.FAKULTETDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -93,14 +92,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.gROUPTableAdapter = new Disk.FAKULTETDataSetTableAdapters.GROUPTableAdapter();
-            this.sPECTableAdapter = new Disk.FAKULTETDataSetTableAdapters.SPECTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fAKULTETDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPECBindingSource)).BeginInit();
@@ -246,6 +242,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox3
             // 
@@ -428,12 +425,6 @@
             // gROUPBindingSource
             // 
             this.gROUPBindingSource.DataMember = "GROUP";
-            this.gROUPBindingSource.DataSource = this.fAKULTETDataSet;
-            // 
-            // fAKULTETDataSet
-            // 
-            this.fAKULTETDataSet.DataSetName = "FAKULTETDataSet";
-            this.fAKULTETDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView2
             // 
@@ -505,7 +496,6 @@
             // sPECBindingSource
             // 
             this.sPECBindingSource.DataMember = "SPEC";
-            this.sPECBindingSource.DataSource = this.fAKULTETDataSet;
             // 
             // textBox9
             // 
@@ -572,7 +562,6 @@
             this.groupBox5.TabIndex = 19;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Условие";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // textBox11
             // 
@@ -663,7 +652,6 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(449, 139);
             this.dataGridView4.TabIndex = 16;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // button14
             // 
@@ -681,7 +669,6 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(162, 20);
             this.textBox12.TabIndex = 21;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label12
             // 
@@ -691,7 +678,6 @@
             this.label12.Size = new System.Drawing.Size(119, 13);
             this.label12.TabIndex = 20;
             this.label12.Text = "Параметр часть ФИО";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label16
             // 
@@ -729,14 +715,6 @@
             this.label19.TabIndex = 26;
             this.label19.Text = "Задания";
             // 
-            // gROUPTableAdapter
-            // 
-            this.gROUPTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPECTableAdapter
-            // 
-            this.sPECTableAdapter.ClearBeforeFill = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,7 +748,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fAKULTETDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -846,11 +823,11 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private Disk.FAKULTETDataSet fAKULTETDataSet;
+        //private Disk.FAKULTETDataSet fAKULTETDataSet;
         private System.Windows.Forms.BindingSource gROUPBindingSource;
-        private Disk.FAKULTETDataSetTableAdapters.GROUPTableAdapter gROUPTableAdapter;
+        //private Disk.FAKULTETDataSetTableAdapters.GROUPTableAdapter gROUPTableAdapter;
         private System.Windows.Forms.BindingSource sPECBindingSource;
-        private Disk.FAKULTETDataSetTableAdapters.SPECTableAdapter sPECTableAdapter;
+        //private Disk.FAKULTETDataSetTableAdapters.SPECTableAdapter sPECTableAdapter;
     }
 }
 
