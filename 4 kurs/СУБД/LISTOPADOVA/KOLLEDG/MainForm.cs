@@ -13,43 +13,34 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace kolledg
 {
     
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         DataBase database = new DataBase();
         int selectedRow;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             CreateColumns();
             refreshDG1(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
-            refreshDG4(dataGridView4,$"select TOP (1) '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [fak]");
+            refreshDG4(dataGridView4,$"select TOP (1) ' ' as Col1, ' ' as col2, ' ' as col3, ' ' as col4 from [fak]");
         }
-        /*
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CreateColumns();
-            refreshDG1(dataGridView1);
-            refreshDG2(dataGridView2);
-            refreshDG3(dataGridView3);
-            //refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [fak]");
-        }
-        */
+
         private void CreateColumns()
         {
             dataGridView1.Columns.Add("ID", "Номер");
-            dataGridView1.Columns.Add("Name", "Название");
+            dataGridView1.Columns.Add("Name", "Название факульт.");
             dataGridView1.Columns.Add("Descr", "Описание");
             //dataGridView1.Columns.Add("IsNew", String.Empty);
             dataGridView2.Columns.Add("ID", "Номер");
-            dataGridView2.Columns.Add("Name", "Название");
-            dataGridView2.Columns.Add("post", "Г. Рожд.");
+            dataGridView2.Columns.Add("Name", "ФИО");
+            dataGridView2.Columns.Add("post", "Год поступл.");
             dataGridView2.Columns.Add("IDgrp", "Группа");
             //dataGridView2.Columns.Add("IsNew", String.Empty);
             dataGridView3.Columns.Add("ID", "Номер");
-            dataGridView3.Columns.Add("Name", "Название");
-            dataGridView3.Columns.Add("IDfak", "Группа");
+            dataGridView3.Columns.Add("Name", "Название группы");
+            dataGridView3.Columns.Add("IDfak", "Факульт.");
             //dataGridView3.Columns.Add("IsNew", String.Empty);
             dataGridView4.Columns.Add("C1", String.Empty);
             dataGridView4.Columns.Add("C2", String.Empty);
@@ -128,13 +119,7 @@ namespace kolledg
                 ReadSinglRow4(dgw, reader);
             }
             reader.Close();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-       
+        }           
         private void button3_Click(object sender, EventArgs e)
         {
             database.openConnection();
@@ -146,7 +131,6 @@ namespace kolledg
             refreshDG1(dataGridView1);
 
         }
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             DataGridView dwg = dataGridView1;
@@ -161,13 +145,7 @@ namespace kolledg
             }
             reader.Close();
 
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }        
         private void radioButton1_Click(object sender, EventArgs e)
         {
             DataGridView dwg = dataGridView1;
@@ -183,14 +161,6 @@ namespace kolledg
             reader.Close();
 
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            refreshDG1(dataGridView1);
-        }
-
-        
-
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -203,7 +173,6 @@ namespace kolledg
             }
 
         }
-
         private void radioButton2_Click(object sender, EventArgs e)
         {
             DataGridView dwg = dataGridView1;
@@ -218,7 +187,6 @@ namespace kolledg
             }
             reader.Close();
         }
-
         private void radioButton4_Click(object sender, EventArgs e)
         {
             DataGridView dwg = dataGridView1;
@@ -233,7 +201,6 @@ namespace kolledg
             }
             reader.Close();
         }
-
         private void radioButton3_Click(object sender, EventArgs e)
         {
             DataGridView dwg = dataGridView1;
@@ -248,7 +215,6 @@ namespace kolledg
             }
             reader.Close();
         }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             var addQuery = $"delete from [fak] where ID={textBox1.Text}";
@@ -256,7 +222,6 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG1(dataGridView1);
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             var addQuery = $"update [fak] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
@@ -264,13 +229,10 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG1(dataGridView1);
         }
-
         private void Form1_Load_1(object sender, EventArgs e)
         {
             
-
         }
-
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -283,7 +245,6 @@ namespace kolledg
                 comboBox1.SelectedIndex = Int32.Parse(row.Cells[3].Value.ToString())-1;
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             var addQuery = $"insert into [uch] (Name,post, Idgrp) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
@@ -291,7 +252,6 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             var addQuery = $"delete from [uch] where ID={textBox5.Text}";
@@ -299,7 +259,6 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
         }
-
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -311,7 +270,6 @@ namespace kolledg
                 comboBox2.SelectedIndex = Int32.Parse(row.Cells[2].Value.ToString())-1;
             }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             var addQuery = $"insert into [Gruop] (Name,Idfak) values ('{textBox9.Text}' ,{comboBox2.SelectedIndex + 1})";
@@ -319,7 +277,7 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
         }
-
+        /*
         private void button10_Click(object sender, EventArgs e)
         {
             var addQuery = $"delete from [grp] where ID={textBox8.Text}";
@@ -327,7 +285,7 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
         }
-
+        */
         private void button6_Click(object sender, EventArgs e)
         {
             var addQuery = $"update [uch] set Name='{textBox6.Text}' , post =  '{textBox7.Text}', Idgrp = '{comboBox1.SelectedIndex+1}' where ID = {textBox5.Text}";
@@ -335,7 +293,6 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
         }
-
         private void button9_Click(object sender, EventArgs e)
         {
             var addQuery = $"update [grp] set Name='{textBox9.Text}' , Idfak =  '{comboBox2.SelectedIndex+1}' where ID = {textBox8.Text}";
@@ -343,23 +300,18 @@ namespace kolledg
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
         }
-
         private void button11_Click(object sender, EventArgs e)
         {
-
             dataGridView4.Rows.Clear();
             string querystr = $"select s.fio as c1, s.post as c2, g.name as c3, d.name as c4 from [fak] d, [uch] s, [grp] g where g.idfak=d.id and s.idgrp=g.id";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
-
             while (reader.Read())
             {
                 ReadSinglRow4(dataGridView4, reader);
             }
             reader.Close();
-
-
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -369,14 +321,12 @@ namespace kolledg
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
-
             while (reader.Read())
             {
                 ReadSinglRow4(dataGridView4, reader);
             }
             reader.Close();
         }
-
         private void button13_Click(object sender, EventArgs e)
         {// условие
             dataGridView4.Rows.Clear();
@@ -385,20 +335,16 @@ namespace kolledg
                  s = "AND"; }
             string n = '%'+textBox10.Text+'%';
             string l = textBox11.Text;
-
-
             string querystr = $"select fio as c1, CAST(post AS varchar(5)) as c2, '' as c3, '' as c4 from [uch] s where fio like '{n}' {s} post='{l}'";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
-
             while (reader.Read())
             {
                 ReadSinglRow4(dataGridView4, reader);
             }
             reader.Close();
         }
-
         private void button14_Click(object sender, EventArgs e)
         {
             dataGridView4.Rows.Clear();
@@ -407,56 +353,17 @@ namespace kolledg
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
-
             while (reader.Read())
             {
                 ReadSinglRow4(dataGridView4, reader);
             }
             reader.Close();
-        }
-        /*
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        */
+        }       
     }
 
     class DataBase
     {
-
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=kolledg;Integrated Security=True");
-
         public void openConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Closed)
@@ -475,8 +382,5 @@ namespace kolledg
         {
             return sqlConnection;
         }
-
     }
-
-
 }
