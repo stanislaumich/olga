@@ -2,7 +2,6 @@ S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\bin\Debug\Disk.ex
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\bin\Debug\Disk.exe
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\bin\Debug\Disk.pdb
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\obj\Debug\FAKULTET.csproj.AssemblyReference.cache
-S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\obj\Debug\FAKULTET.csproj.SuggestedBindingRedirects.cache
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\obj\Debug\Fakultet.Form1.resources
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\obj\Debug\Fakultet.Form2.resources
 S:\Контрольные\olga\4 kurs\СУБД\DUDKIN\FAKULTET\obj\Debug\Disk.Properties.Resources.resources

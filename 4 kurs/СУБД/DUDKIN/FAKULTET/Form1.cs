@@ -12,14 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fakultet
 {
-    enum rowState
-    {
-        Existed,
-        New,
-        Modified,
-        ModifiedNew,
-        Deleted
-    }
+    
     public partial class Form1 : Form
     {
         DataBase database = new DataBase();
@@ -31,7 +24,7 @@ namespace Fakultet
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
-            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
+            refreshDG4(dataGridView4,$"select TOP (1) '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [SPEC]");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,40 +32,40 @@ namespace Fakultet
             refreshDG(dataGridView1);
             refreshDG2(dataGridView2);
             refreshDG3(dataGridView3);
-            refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [Disk]");
+            //refreshDG4(dataGridView4,$"select '1' as Col1, '2' as col2, '3' as col3, '4' as col4 from [SPEC]");
         }
         private void CreateColumns()
         {
             dataGridView1.Columns.Add("ID", "Номер");
             dataGridView1.Columns.Add("Name", "Название");
             dataGridView1.Columns.Add("Descr", "Описание");
-            dataGridView1.Columns.Add("IsNew", String.Empty);
+            //dataGridView1.Columns.Add("IsNew", String.Empty);
             dataGridView2.Columns.Add("ID", "Номер");
             dataGridView2.Columns.Add("Name", "Название");
-            dataGridView2.Columns.Add("Len", "Длина");
-            dataGridView2.Columns.Add("IDDisk", "Диск");
-            dataGridView2.Columns.Add("IsNew", String.Empty);
+            dataGridView2.Columns.Add("Born", "Г. Рожд.");
+            dataGridView2.Columns.Add("IDGroup", "Группа");
+            //dataGridView2.Columns.Add("IsNew", String.Empty);
             dataGridView3.Columns.Add("ID", "Номер");
             dataGridView3.Columns.Add("Name", "Название");
-            dataGridView3.Columns.Add("IDGroup", "Группа");
-            dataGridView3.Columns.Add("IsNew", String.Empty);
-            dataGridView4.Columns.Add("Col1", "COLUMN 1");
-            dataGridView4.Columns.Add("Col2", "COLUMN 2");
-            dataGridView4.Columns.Add("Col3", "COLUMN 3");
-            dataGridView4.Columns.Add("Col4", "COLUMN 4");
+            dataGridView3.Columns.Add("IDSPEC", "Группа");
+            //dataGridView3.Columns.Add("IsNew", String.Empty);
+            dataGridView4.Columns.Add("Col1", String.Empty);
+            dataGridView4.Columns.Add("Col2", String.Empty);
+            dataGridView4.Columns.Add("Col3", String.Empty);
+            dataGridView4.Columns.Add("Col4", String.Empty);
         }
 
         private void ReadSinglRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), rowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2));
         }
         private void ReadSinglRow2(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), rowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3));
         }
         private void ReadSinglRow3(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), rowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2));
         }
         private void ReadSinglRow4(DataGridView dgw, IDataRecord record)
         {
@@ -81,7 +74,7 @@ namespace Fakultet
         private void refreshDG(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Group]";
+            string querystr = $"Select * from [Spec]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -95,7 +88,7 @@ namespace Fakultet
         private void refreshDG2(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Song]";
+            string querystr = $"Select * from [Student]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -109,7 +102,7 @@ namespace Fakultet
         private void refreshDG3(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string querystr = $"Select * from [Disk]";
+            string querystr = $"Select * from [Group]";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -123,7 +116,7 @@ namespace Fakultet
         private void refreshDG4(DataGridView dgw, string s)
         {
             dgw.Rows.Clear();
-            string querystr = s;// $"Select * from [Disk]";
+            string querystr = s;
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -135,21 +128,11 @@ namespace Fakultet
             reader.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
+        /*
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
@@ -162,7 +145,7 @@ namespace Fakultet
             }
 
         }
-
+        */
         private void button3_Click(object sender, EventArgs e)
         {
             Form2 f_add = new Form2();
@@ -175,7 +158,7 @@ namespace Fakultet
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where concat(Name,Descr) like '%" + textBox4.Text + "%'";
+            string querystr = $" select * from [Spec] Where concat(Name,Descr) like '%" + textBox4.Text + "%'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -196,7 +179,7 @@ namespace Fakultet
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Ласковый май'";
+            string querystr = $" select * from [Spec] Where Name = 'Программное обеспечение'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -238,7 +221,7 @@ namespace Fakultet
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Сектор газа'";
+            string querystr = $" select * from [Spec] Where Name = 'Препринимательство'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -253,7 +236,7 @@ namespace Fakultet
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Шуфутинский'";
+            string querystr = $" select * from [Spec] Where Name = 'Металлургия'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -268,7 +251,7 @@ namespace Fakultet
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [Group] Where Name = 'Metallica'";
+            string querystr = $" select * from [Spec] Where Name = 'Сварочная спец.'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -281,7 +264,7 @@ namespace Fakultet
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Group] where ID={textBox1.Text}";
+            var addQuery = $"delete from [Spec] where ID={textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
@@ -289,7 +272,7 @@ namespace Fakultet
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var addQuery = $"update [Group] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
+            var addQuery = $"update [Spec] set Name='{textBox2.Text}' , Descr =  '{textBox3.Text}' where ID = {textBox1.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG(dataGridView1);
@@ -297,10 +280,14 @@ namespace Fakultet
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fAKULTETDataSet.SPEC". При необходимости она может быть перемещена или удалена.
+            this.sPECTableAdapter.Fill(this.fAKULTETDataSet.SPEC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fAKULTETDataSet.GROUP". При необходимости она может быть перемещена или удалена.
+            this.gROUPTableAdapter.Fill(this.fAKULTETDataSet.GROUP);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Group". При необходимости она может быть перемещена или удалена.
-            this.groupTableAdapter.Fill(this.databaseDataSet1.Group);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.Disk". При необходимости она может быть перемещена или удалена.
-            this.diskTableAdapter.Fill(this.databaseDataSet1.Disk);
+            //this.groupTableAdapter.Fill(this.databaseDataSet1.Group);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet1.SPEC". При необходимости она может быть перемещена или удалена.
+            //this.SPECTableAdapter.Fill(this.databaseDataSet1.SPEC);
 
 
         }
@@ -320,7 +307,7 @@ namespace Fakultet
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var addQuery = $"insert into [Song] (Name,Len, IdDisk) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
+            var addQuery = $"insert into [Student] (Name,Born, IdGroup) values ('{textBox6.Text}' , '{textBox7.Text}',{comboBox1.SelectedIndex+1})";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -328,7 +315,7 @@ namespace Fakultet
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Song] where ID={textBox5.Text}";
+            var addQuery = $"delete from [Student] where ID={textBox5.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -348,7 +335,7 @@ namespace Fakultet
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var addQuery = $"insert into [Disk] (Name,IdGroup) values ('{textBox9.Text}' ,{comboBox2.SelectedIndex + 1})";
+            var addQuery = $"insert into [Gruop] (Name,IdSpec) values ('{textBox9.Text}' ,{comboBox2.SelectedIndex + 1})";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -356,7 +343,7 @@ namespace Fakultet
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var addQuery = $"delete from [Disk] where ID={textBox8.Text}";
+            var addQuery = $"delete from [Group] where ID={textBox8.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -364,7 +351,7 @@ namespace Fakultet
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var addQuery = $"update [Song] set Name='{textBox6.Text}' , Len =  '{textBox7.Text}', IdDisk = '{comboBox1.SelectedIndex+1}' where ID = {textBox5.Text}";
+            var addQuery = $"update [Student] set Name='{textBox6.Text}' , Born =  '{textBox7.Text}', IdGroup = '{comboBox1.SelectedIndex+1}' where ID = {textBox5.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG2(dataGridView2);
@@ -372,7 +359,7 @@ namespace Fakultet
 
         private void button9_Click(object sender, EventArgs e)
         {
-            var addQuery = $"update [Disk] set Name='{textBox9.Text}' , IdGroup =  '{comboBox2.SelectedIndex+1}' where ID = {textBox8.Text}";
+            var addQuery = $"update [Group] set Name='{textBox9.Text}' , IdSpec =  '{comboBox2.SelectedIndex+1}' where ID = {textBox8.Text}";
             var command = new SqlCommand(addQuery, database.getConnection());
             command.ExecuteNonQuery();
             refreshDG3(dataGridView3);
@@ -382,7 +369,7 @@ namespace Fakultet
         {
 
             dataGridView4.Rows.Clear();
-            string querystr = $"select s.name as col1, g.name as col2, d.name as col3,'' as col4\r\nfrom [Disk] d, [Song] s, [Group] g\r\nwhere d.idgroup=g.id and s.iddisk=d.id";
+            string querystr = $"select s.fio as c1, s.born as c2, g.name as c3, d.name as c4 from [SPEC] d, [Student] s, [Group] g where g.idSpec=d.id and s.idGroup=g.id";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -399,7 +386,7 @@ namespace Fakultet
         private void button12_Click(object sender, EventArgs e)
         {
             dataGridView4.Rows.Clear();
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, CAST(len*3 AS varchar(5)) as col3, '' as col4 from [Song] s";
+            string querystr = $"select fio as col1, CAST(born AS varchar(5)) as col2, CAST(born-1000 AS varchar(5)) as col3, 'Born-1000' as col4 from [Student] s";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -417,11 +404,11 @@ namespace Fakultet
             string s = "OR";
             if (comboBox3.SelectedIndex == 0) {
                  s = "AND"; }
-            string n = textBox10.Text;
+            string n = '%'+textBox10.Text+'%';
             string l = textBox11.Text;
 
 
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}' {s} Len='{l}'";
+            string querystr = $"select fio as c1, CAST(born AS varchar(5)) as c2, '' as c3, '' as c4 from [Student] s where fio like '{n}' {s} born='{l}'";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -436,8 +423,8 @@ namespace Fakultet
         private void button14_Click(object sender, EventArgs e)
         {
             dataGridView4.Rows.Clear();
-            string n = textBox12.Text;
-            string querystr = $"select name as col1, CAST(len AS varchar(5)) as col2, '' as col3, '' as col4 from [Song] s where Name='{n}'";
+            string n = '%'+textBox12.Text+'%';
+            string querystr = $"select fio as c1, CAST(born AS varchar(5)) as c2, '' as c3, '' as c4 from [Student] s where fio like'{n}'";
             SqlCommand command = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -448,12 +435,47 @@ namespace Fakultet
             }
             reader.Close();
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
     class DataBase
     {
 
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=FAKULTET;Integrated Security=True");
 
         public void openConnection()
         {

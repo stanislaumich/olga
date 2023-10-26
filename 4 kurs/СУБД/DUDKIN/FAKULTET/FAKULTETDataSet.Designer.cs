@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Fakultet {
+namespace Disk {
     
     
     /// <summary>
@@ -20,21 +20,21 @@ namespace Fakultet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FAKULTETDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DatabaseDataSet1 : global::System.Data.DataSet {
+    public partial class FAKULTETDataSet : global::System.Data.DataSet {
         
-        private DiskDataTable tableDisk;
+        private GROUPDataTable tableGROUP;
         
-        private GroupDataTable tableGroup;
+        private SPECDataTable tableSPEC;
         
-        private SongDataTable tableSong;
+        private STUDENTDataTable tableSTUDENT;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DatabaseDataSet1() {
+        public FAKULTETDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +45,7 @@ namespace Fakultet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DatabaseDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FAKULTETDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -58,14 +58,14 @@ namespace Fakultet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Disk"] != null)) {
-                    base.Tables.Add(new DiskDataTable(ds.Tables["Disk"]));
+                if ((ds.Tables["GROUP"] != null)) {
+                    base.Tables.Add(new GROUPDataTable(ds.Tables["GROUP"]));
                 }
-                if ((ds.Tables["Group"] != null)) {
-                    base.Tables.Add(new GroupDataTable(ds.Tables["Group"]));
+                if ((ds.Tables["SPEC"] != null)) {
+                    base.Tables.Add(new SPECDataTable(ds.Tables["SPEC"]));
                 }
-                if ((ds.Tables["Song"] != null)) {
-                    base.Tables.Add(new SongDataTable(ds.Tables["Song"]));
+                if ((ds.Tables["STUDENT"] != null)) {
+                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -89,9 +89,9 @@ namespace Fakultet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DiskDataTable Disk {
+        public GROUPDataTable GROUP {
             get {
-                return this.tableDisk;
+                return this.tableGROUP;
             }
         }
         
@@ -99,9 +99,9 @@ namespace Fakultet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GroupDataTable Group {
+        public SPECDataTable SPEC {
             get {
-                return this.tableGroup;
+                return this.tableSPEC;
             }
         }
         
@@ -109,9 +109,9 @@ namespace Fakultet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SongDataTable Song {
+        public STUDENTDataTable STUDENT {
             get {
-                return this.tableSong;
+                return this.tableSTUDENT;
             }
         }
         
@@ -157,7 +157,7 @@ namespace Fakultet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DatabaseDataSet1 cln = ((DatabaseDataSet1)(base.Clone()));
+            FAKULTETDataSet cln = ((FAKULTETDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -182,14 +182,14 @@ namespace Fakultet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Disk"] != null)) {
-                    base.Tables.Add(new DiskDataTable(ds.Tables["Disk"]));
+                if ((ds.Tables["GROUP"] != null)) {
+                    base.Tables.Add(new GROUPDataTable(ds.Tables["GROUP"]));
                 }
-                if ((ds.Tables["Group"] != null)) {
-                    base.Tables.Add(new GroupDataTable(ds.Tables["Group"]));
+                if ((ds.Tables["SPEC"] != null)) {
+                    base.Tables.Add(new SPECDataTable(ds.Tables["SPEC"]));
                 }
-                if ((ds.Tables["Song"] != null)) {
-                    base.Tables.Add(new SongDataTable(ds.Tables["Song"]));
+                if ((ds.Tables["STUDENT"] != null)) {
+                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -224,22 +224,22 @@ namespace Fakultet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDisk = ((DiskDataTable)(base.Tables["Disk"]));
+            this.tableGROUP = ((GROUPDataTable)(base.Tables["GROUP"]));
             if ((initTable == true)) {
-                if ((this.tableDisk != null)) {
-                    this.tableDisk.InitVars();
+                if ((this.tableGROUP != null)) {
+                    this.tableGROUP.InitVars();
                 }
             }
-            this.tableGroup = ((GroupDataTable)(base.Tables["Group"]));
+            this.tableSPEC = ((SPECDataTable)(base.Tables["SPEC"]));
             if ((initTable == true)) {
-                if ((this.tableGroup != null)) {
-                    this.tableGroup.InitVars();
+                if ((this.tableSPEC != null)) {
+                    this.tableSPEC.InitVars();
                 }
             }
-            this.tableSong = ((SongDataTable)(base.Tables["Song"]));
+            this.tableSTUDENT = ((STUDENTDataTable)(base.Tables["STUDENT"]));
             if ((initTable == true)) {
-                if ((this.tableSong != null)) {
-                    this.tableSong.InitVars();
+                if ((this.tableSTUDENT != null)) {
+                    this.tableSTUDENT.InitVars();
                 }
             }
         }
@@ -247,34 +247,34 @@ namespace Fakultet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DatabaseDataSet1";
+            this.DataSetName = "FAKULTETDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DatabaseDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/FAKULTETDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDisk = new DiskDataTable();
-            base.Tables.Add(this.tableDisk);
-            this.tableGroup = new GroupDataTable();
-            base.Tables.Add(this.tableGroup);
-            this.tableSong = new SongDataTable();
-            base.Tables.Add(this.tableSong);
+            this.tableGROUP = new GROUPDataTable();
+            base.Tables.Add(this.tableGROUP);
+            this.tableSPEC = new SPECDataTable();
+            base.Tables.Add(this.tableSPEC);
+            this.tableSTUDENT = new STUDENTDataTable();
+            base.Tables.Add(this.tableSTUDENT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDisk() {
+        private bool ShouldSerializeGROUP() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeGroup() {
+        private bool ShouldSerializeSPEC() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeSong() {
+        private bool ShouldSerializeSTUDENT() {
             return false;
         }
         
@@ -289,7 +289,7 @@ namespace Fakultet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DatabaseDataSet1 ds = new DatabaseDataSet1();
+            FAKULTETDataSet ds = new FAKULTETDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -334,31 +334,31 @@ namespace Fakultet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DiskRowChangeEventHandler(object sender, DiskRowChangeEvent e);
+        public delegate void GROUPRowChangeEventHandler(object sender, GROUPRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void GroupRowChangeEventHandler(object sender, GroupRowChangeEvent e);
+        public delegate void SPECRowChangeEventHandler(object sender, SPECRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void SongRowChangeEventHandler(object sender, SongRowChangeEvent e);
+        public delegate void STUDENTRowChangeEventHandler(object sender, STUDENTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DiskDataTable : global::System.Data.TypedTableBase<DiskRow> {
+        public partial class GROUPDataTable : global::System.Data.TypedTableBase<GROUPRow> {
             
             private global::System.Data.DataColumn columnId;
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnIdGroup;
+            private global::System.Data.DataColumn columnIdSPEC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskDataTable() {
-                this.TableName = "Disk";
+            public GROUPDataTable() {
+                this.TableName = "GROUP";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -366,7 +366,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DiskDataTable(global::System.Data.DataTable table) {
+            internal GROUPDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -383,7 +383,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DiskDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GROUPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -406,9 +406,9 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdGroupColumn {
+            public global::System.Data.DataColumn IdSPECColumn {
                 get {
-                    return this.columnIdGroup;
+                    return this.columnIdSPEC;
                 }
             }
             
@@ -423,54 +423,54 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRow this[int index] {
+            public GROUPRow this[int index] {
                 get {
-                    return ((DiskRow)(this.Rows[index]));
+                    return ((GROUPRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiskRowChangeEventHandler DiskRowChanging;
+            public event GROUPRowChangeEventHandler GROUPRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiskRowChangeEventHandler DiskRowChanged;
+            public event GROUPRowChangeEventHandler GROUPRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiskRowChangeEventHandler DiskRowDeleting;
+            public event GROUPRowChangeEventHandler GROUPRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DiskRowChangeEventHandler DiskRowDeleted;
+            public event GROUPRowChangeEventHandler GROUPRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDiskRow(DiskRow row) {
+            public void AddGROUPRow(GROUPRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRow AddDiskRow(string Name, int IdGroup) {
-                DiskRow rowDiskRow = ((DiskRow)(this.NewRow()));
+            public GROUPRow AddGROUPRow(string Name, int IdSPEC) {
+                GROUPRow rowGROUPRow = ((GROUPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
-                        IdGroup};
-                rowDiskRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDiskRow);
-                return rowDiskRow;
+                        IdSPEC};
+                rowGROUPRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGROUPRow);
+                return rowGROUPRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRow FindById(int Id) {
-                return ((DiskRow)(this.Rows.Find(new object[] {
+            public GROUPRow FindById(int Id) {
+                return ((GROUPRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DiskDataTable cln = ((DiskDataTable)(base.Clone()));
+                GROUPDataTable cln = ((GROUPDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -478,7 +478,7 @@ namespace Fakultet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DiskDataTable();
+                return new GROUPDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -486,7 +486,7 @@ namespace Fakultet {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnName = base.Columns["Name"];
-                this.columnIdGroup = base.Columns["IdGroup"];
+                this.columnIdSPEC = base.Columns["IdSPEC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -496,8 +496,8 @@ namespace Fakultet {
                 base.Columns.Add(this.columnId);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnIdGroup = new global::System.Data.DataColumn("IdGroup", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdGroup);
+                this.columnIdSPEC = new global::System.Data.DataColumn("IdSPEC", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdSPEC);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -511,28 +511,28 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRow NewDiskRow() {
-                return ((DiskRow)(this.NewRow()));
+            public GROUPRow NewGROUPRow() {
+                return ((GROUPRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DiskRow(builder);
+                return new GROUPRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DiskRow);
+                return typeof(GROUPRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DiskRowChanged != null)) {
-                    this.DiskRowChanged(this, new DiskRowChangeEvent(((DiskRow)(e.Row)), e.Action));
+                if ((this.GROUPRowChanged != null)) {
+                    this.GROUPRowChanged(this, new GROUPRowChangeEvent(((GROUPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -540,8 +540,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DiskRowChanging != null)) {
-                    this.DiskRowChanging(this, new DiskRowChangeEvent(((DiskRow)(e.Row)), e.Action));
+                if ((this.GROUPRowChanging != null)) {
+                    this.GROUPRowChanging(this, new GROUPRowChangeEvent(((GROUPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -549,8 +549,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DiskRowDeleted != null)) {
-                    this.DiskRowDeleted(this, new DiskRowChangeEvent(((DiskRow)(e.Row)), e.Action));
+                if ((this.GROUPRowDeleted != null)) {
+                    this.GROUPRowDeleted(this, new GROUPRowChangeEvent(((GROUPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -558,14 +558,14 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DiskRowDeleting != null)) {
-                    this.DiskRowDeleting(this, new DiskRowChangeEvent(((DiskRow)(e.Row)), e.Action));
+                if ((this.GROUPRowDeleting != null)) {
+                    this.GROUPRowDeleting(this, new GROUPRowChangeEvent(((GROUPRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDiskRow(DiskRow row) {
+            public void RemoveGROUPRow(GROUPRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -574,7 +574,7 @@ namespace Fakultet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseDataSet1 ds = new DatabaseDataSet1();
+                FAKULTETDataSet ds = new FAKULTETDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -592,7 +592,7 @@ namespace Fakultet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DiskDataTable";
+                attribute2.FixedValue = "GROUPDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -638,7 +638,7 @@ namespace Fakultet {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GroupDataTable : global::System.Data.TypedTableBase<GroupRow> {
+        public partial class SPECDataTable : global::System.Data.TypedTableBase<SPECRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -648,8 +648,8 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupDataTable() {
-                this.TableName = "Group";
+            public SPECDataTable() {
+                this.TableName = "SPEC";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -657,7 +657,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GroupDataTable(global::System.Data.DataTable table) {
+            internal SPECDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -674,7 +674,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected GroupDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SPECDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -714,54 +714,54 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRow this[int index] {
+            public SPECRow this[int index] {
                 get {
-                    return ((GroupRow)(this.Rows[index]));
+                    return ((SPECRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GroupRowChangeEventHandler GroupRowChanging;
+            public event SPECRowChangeEventHandler SPECRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GroupRowChangeEventHandler GroupRowChanged;
+            public event SPECRowChangeEventHandler SPECRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GroupRowChangeEventHandler GroupRowDeleting;
+            public event SPECRowChangeEventHandler SPECRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GroupRowChangeEventHandler GroupRowDeleted;
+            public event SPECRowChangeEventHandler SPECRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddGroupRow(GroupRow row) {
+            public void AddSPECRow(SPECRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRow AddGroupRow(string Name, string Descr) {
-                GroupRow rowGroupRow = ((GroupRow)(this.NewRow()));
+            public SPECRow AddSPECRow(string Name, string Descr) {
+                SPECRow rowSPECRow = ((SPECRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         Descr};
-                rowGroupRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGroupRow);
-                return rowGroupRow;
+                rowSPECRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSPECRow);
+                return rowSPECRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRow FindById(int Id) {
-                return ((GroupRow)(this.Rows.Find(new object[] {
+            public SPECRow FindById(int Id) {
+                return ((SPECRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GroupDataTable cln = ((GroupDataTable)(base.Clone()));
+                SPECDataTable cln = ((SPECDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -769,7 +769,7 @@ namespace Fakultet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GroupDataTable();
+                return new SPECDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -803,28 +803,28 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRow NewGroupRow() {
-                return ((GroupRow)(this.NewRow()));
+            public SPECRow NewSPECRow() {
+                return ((SPECRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GroupRow(builder);
+                return new SPECRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GroupRow);
+                return typeof(SPECRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GroupRowChanged != null)) {
-                    this.GroupRowChanged(this, new GroupRowChangeEvent(((GroupRow)(e.Row)), e.Action));
+                if ((this.SPECRowChanged != null)) {
+                    this.SPECRowChanged(this, new SPECRowChangeEvent(((SPECRow)(e.Row)), e.Action));
                 }
             }
             
@@ -832,8 +832,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GroupRowChanging != null)) {
-                    this.GroupRowChanging(this, new GroupRowChangeEvent(((GroupRow)(e.Row)), e.Action));
+                if ((this.SPECRowChanging != null)) {
+                    this.SPECRowChanging(this, new SPECRowChangeEvent(((SPECRow)(e.Row)), e.Action));
                 }
             }
             
@@ -841,8 +841,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GroupRowDeleted != null)) {
-                    this.GroupRowDeleted(this, new GroupRowChangeEvent(((GroupRow)(e.Row)), e.Action));
+                if ((this.SPECRowDeleted != null)) {
+                    this.SPECRowDeleted(this, new SPECRowChangeEvent(((SPECRow)(e.Row)), e.Action));
                 }
             }
             
@@ -850,14 +850,14 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GroupRowDeleting != null)) {
-                    this.GroupRowDeleting(this, new GroupRowChangeEvent(((GroupRow)(e.Row)), e.Action));
+                if ((this.SPECRowDeleting != null)) {
+                    this.SPECRowDeleting(this, new SPECRowChangeEvent(((SPECRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveGroupRow(GroupRow row) {
+            public void RemoveSPECRow(SPECRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -866,7 +866,7 @@ namespace Fakultet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseDataSet1 ds = new DatabaseDataSet1();
+                FAKULTETDataSet ds = new FAKULTETDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -884,7 +884,7 @@ namespace Fakultet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GroupDataTable";
+                attribute2.FixedValue = "SPECDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -930,20 +930,20 @@ namespace Fakultet {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SongDataTable : global::System.Data.TypedTableBase<SongRow> {
+        public partial class STUDENTDataTable : global::System.Data.TypedTableBase<STUDENTRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnName;
+            private global::System.Data.DataColumn columnFio;
             
-            private global::System.Data.DataColumn columnLen;
+            private global::System.Data.DataColumn columnBorn;
             
-            private global::System.Data.DataColumn columnIdDisk;
+            private global::System.Data.DataColumn columnIdGROUP;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongDataTable() {
-                this.TableName = "Song";
+            public STUDENTDataTable() {
+                this.TableName = "STUDENT";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -951,7 +951,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SongDataTable(global::System.Data.DataTable table) {
+            internal STUDENTDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -968,7 +968,7 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected SongDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected STUDENTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -983,25 +983,25 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
+            public global::System.Data.DataColumn FioColumn {
                 get {
-                    return this.columnName;
+                    return this.columnFio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LenColumn {
+            public global::System.Data.DataColumn BornColumn {
                 get {
-                    return this.columnLen;
+                    return this.columnBorn;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdDiskColumn {
+            public global::System.Data.DataColumn IdGROUPColumn {
                 get {
-                    return this.columnIdDisk;
+                    return this.columnIdGROUP;
                 }
             }
             
@@ -1016,55 +1016,55 @@ namespace Fakultet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRow this[int index] {
+            public STUDENTRow this[int index] {
                 get {
-                    return ((SongRow)(this.Rows[index]));
+                    return ((STUDENTRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SongRowChangeEventHandler SongRowChanging;
+            public event STUDENTRowChangeEventHandler STUDENTRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SongRowChangeEventHandler SongRowChanged;
+            public event STUDENTRowChangeEventHandler STUDENTRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SongRowChangeEventHandler SongRowDeleting;
+            public event STUDENTRowChangeEventHandler STUDENTRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event SongRowChangeEventHandler SongRowDeleted;
+            public event STUDENTRowChangeEventHandler STUDENTRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddSongRow(SongRow row) {
+            public void AddSTUDENTRow(STUDENTRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRow AddSongRow(string Name, string Len, int IdDisk) {
-                SongRow rowSongRow = ((SongRow)(this.NewRow()));
+            public STUDENTRow AddSTUDENTRow(string Fio, string Born, int IdGROUP) {
+                STUDENTRow rowSTUDENTRow = ((STUDENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Name,
-                        Len,
-                        IdDisk};
-                rowSongRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSongRow);
-                return rowSongRow;
+                        Fio,
+                        Born,
+                        IdGROUP};
+                rowSTUDENTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSTUDENTRow);
+                return rowSTUDENTRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRow FindById(int Id) {
-                return ((SongRow)(this.Rows.Find(new object[] {
+            public STUDENTRow FindById(int Id) {
+                return ((STUDENTRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SongDataTable cln = ((SongDataTable)(base.Clone()));
+                STUDENTDataTable cln = ((STUDENTDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1072,16 +1072,16 @@ namespace Fakultet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SongDataTable();
+                return new STUDENTDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnName = base.Columns["Name"];
-                this.columnLen = base.Columns["Len"];
-                this.columnIdDisk = base.Columns["IdDisk"];
+                this.columnFio = base.Columns["Fio"];
+                this.columnBorn = base.Columns["Born"];
+                this.columnIdGROUP = base.Columns["IdGROUP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1089,12 +1089,12 @@ namespace Fakultet {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnLen = new global::System.Data.DataColumn("Len", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLen);
-                this.columnIdDisk = new global::System.Data.DataColumn("IdDisk", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdDisk);
+                this.columnFio = new global::System.Data.DataColumn("Fio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFio);
+                this.columnBorn = new global::System.Data.DataColumn("Born", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBorn);
+                this.columnIdGROUP = new global::System.Data.DataColumn("IdGROUP", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdGROUP);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1103,34 +1103,34 @@ namespace Fakultet {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnName.MaxLength = 100;
-                this.columnLen.MaxLength = 100;
+                this.columnFio.MaxLength = 100;
+                this.columnBorn.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRow NewSongRow() {
-                return ((SongRow)(this.NewRow()));
+            public STUDENTRow NewSTUDENTRow() {
+                return ((STUDENTRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SongRow(builder);
+                return new STUDENTRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SongRow);
+                return typeof(STUDENTRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SongRowChanged != null)) {
-                    this.SongRowChanged(this, new SongRowChangeEvent(((SongRow)(e.Row)), e.Action));
+                if ((this.STUDENTRowChanged != null)) {
+                    this.STUDENTRowChanged(this, new STUDENTRowChangeEvent(((STUDENTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1138,8 +1138,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SongRowChanging != null)) {
-                    this.SongRowChanging(this, new SongRowChangeEvent(((SongRow)(e.Row)), e.Action));
+                if ((this.STUDENTRowChanging != null)) {
+                    this.STUDENTRowChanging(this, new STUDENTRowChangeEvent(((STUDENTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1147,8 +1147,8 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SongRowDeleted != null)) {
-                    this.SongRowDeleted(this, new SongRowChangeEvent(((SongRow)(e.Row)), e.Action));
+                if ((this.STUDENTRowDeleted != null)) {
+                    this.STUDENTRowDeleted(this, new STUDENTRowChangeEvent(((STUDENTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1156,14 +1156,14 @@ namespace Fakultet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SongRowDeleting != null)) {
-                    this.SongRowDeleting(this, new SongRowChangeEvent(((SongRow)(e.Row)), e.Action));
+                if ((this.STUDENTRowDeleting != null)) {
+                    this.STUDENTRowDeleting(this, new STUDENTRowChangeEvent(((STUDENTRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveSongRow(SongRow row) {
+            public void RemoveSTUDENTRow(STUDENTRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1172,7 +1172,7 @@ namespace Fakultet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatabaseDataSet1 ds = new DatabaseDataSet1();
+                FAKULTETDataSet ds = new FAKULTETDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1190,7 +1190,7 @@ namespace Fakultet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SongDataTable";
+                attribute2.FixedValue = "STUDENTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1234,25 +1234,25 @@ namespace Fakultet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DiskRow : global::System.Data.DataRow {
+        public partial class GROUPRow : global::System.Data.DataRow {
             
-            private DiskDataTable tableDisk;
+            private GROUPDataTable tableGROUP;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DiskRow(global::System.Data.DataRowBuilder rb) : 
+            internal GROUPRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDisk = ((DiskDataTable)(this.Table));
+                this.tableGROUP = ((GROUPDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableDisk.IdColumn]));
+                    return ((int)(this[this.tableGROUP.IdColumn]));
                 }
                 set {
-                    this[this.tableDisk.IdColumn] = value;
+                    this[this.tableGROUP.IdColumn] = value;
                 }
             }
             
@@ -1261,80 +1261,80 @@ namespace Fakultet {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableDisk.NameColumn]));
+                        return ((string)(this[this.tableGROUP.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Disk\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'GROUP\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDisk.NameColumn] = value;
+                    this[this.tableGROUP.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int IdGroup {
+            public int IdSPEC {
                 get {
                     try {
-                        return ((int)(this[this.tableDisk.IdGroupColumn]));
+                        return ((int)(this[this.tableGROUP.IdSPECColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'IdGroup\' в таблице \'Disk\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'IdSPEC\' в таблице \'GROUP\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDisk.IdGroupColumn] = value;
+                    this[this.tableGROUP.IdSPECColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableDisk.NameColumn);
+                return this.IsNull(this.tableGROUP.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNameNull() {
-                this[this.tableDisk.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableGROUP.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIdGroupNull() {
-                return this.IsNull(this.tableDisk.IdGroupColumn);
+            public bool IsIdSPECNull() {
+                return this.IsNull(this.tableGROUP.IdSPECColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIdGroupNull() {
-                this[this.tableDisk.IdGroupColumn] = global::System.Convert.DBNull;
+            public void SetIdSPECNull() {
+                this[this.tableGROUP.IdSPECColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GroupRow : global::System.Data.DataRow {
+        public partial class SPECRow : global::System.Data.DataRow {
             
-            private GroupDataTable tableGroup;
+            private SPECDataTable tableSPEC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GroupRow(global::System.Data.DataRowBuilder rb) : 
+            internal SPECRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGroup = ((GroupDataTable)(this.Table));
+                this.tableSPEC = ((SPECDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableGroup.IdColumn]));
+                    return ((int)(this[this.tableSPEC.IdColumn]));
                 }
                 set {
-                    this[this.tableGroup.IdColumn] = value;
+                    this[this.tableSPEC.IdColumn] = value;
                 }
             }
             
@@ -1343,14 +1343,14 @@ namespace Fakultet {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableGroup.NameColumn]));
+                        return ((string)(this[this.tableSPEC.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Group\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'SPEC\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGroup.NameColumn] = value;
+                    this[this.tableSPEC.NameColumn] = value;
                 }
             }
             
@@ -1359,149 +1359,149 @@ namespace Fakultet {
             public string Descr {
                 get {
                     try {
-                        return ((string)(this[this.tableGroup.DescrColumn]));
+                        return ((string)(this[this.tableSPEC.DescrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Descr\' в таблице \'Group\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Descr\' в таблице \'SPEC\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGroup.DescrColumn] = value;
+                    this[this.tableSPEC.DescrColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableGroup.NameColumn);
+                return this.IsNull(this.tableSPEC.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNameNull() {
-                this[this.tableGroup.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableSPEC.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDescrNull() {
-                return this.IsNull(this.tableGroup.DescrColumn);
+                return this.IsNull(this.tableSPEC.DescrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDescrNull() {
-                this[this.tableGroup.DescrColumn] = global::System.Convert.DBNull;
+                this[this.tableSPEC.DescrColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SongRow : global::System.Data.DataRow {
+        public partial class STUDENTRow : global::System.Data.DataRow {
             
-            private SongDataTable tableSong;
+            private STUDENTDataTable tableSTUDENT;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal SongRow(global::System.Data.DataRowBuilder rb) : 
+            internal STUDENTRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSong = ((SongDataTable)(this.Table));
+                this.tableSTUDENT = ((STUDENTDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableSong.IdColumn]));
+                    return ((int)(this[this.tableSTUDENT.IdColumn]));
                 }
                 set {
-                    this[this.tableSong.IdColumn] = value;
+                    this[this.tableSTUDENT.IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Name {
+            public string Fio {
                 get {
                     try {
-                        return ((string)(this[this.tableSong.NameColumn]));
+                        return ((string)(this[this.tableSTUDENT.FioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Song\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Fio\' в таблице \'STUDENT\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSong.NameColumn] = value;
+                    this[this.tableSTUDENT.FioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Len {
+            public string Born {
                 get {
                     try {
-                        return ((string)(this[this.tableSong.LenColumn]));
+                        return ((string)(this[this.tableSTUDENT.BornColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Len\' в таблице \'Song\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Born\' в таблице \'STUDENT\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSong.LenColumn] = value;
+                    this[this.tableSTUDENT.BornColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int IdDisk {
+            public int IdGROUP {
                 get {
                     try {
-                        return ((int)(this[this.tableSong.IdDiskColumn]));
+                        return ((int)(this[this.tableSTUDENT.IdGROUPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'IdDisk\' в таблице \'Song\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'IdGROUP\' в таблице \'STUDENT\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSong.IdDiskColumn] = value;
+                    this[this.tableSTUDENT.IdGROUPColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableSong.NameColumn);
+            public bool IsFioNull() {
+                return this.IsNull(this.tableSTUDENT.FioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableSong.NameColumn] = global::System.Convert.DBNull;
+            public void SetFioNull() {
+                this[this.tableSTUDENT.FioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLenNull() {
-                return this.IsNull(this.tableSong.LenColumn);
+            public bool IsBornNull() {
+                return this.IsNull(this.tableSTUDENT.BornColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLenNull() {
-                this[this.tableSong.LenColumn] = global::System.Convert.DBNull;
+            public void SetBornNull() {
+                this[this.tableSTUDENT.BornColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIdDiskNull() {
-                return this.IsNull(this.tableSong.IdDiskColumn);
+            public bool IsIdGROUPNull() {
+                return this.IsNull(this.tableSTUDENT.IdGROUPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIdDiskNull() {
-                this[this.tableSong.IdDiskColumn] = global::System.Convert.DBNull;
+            public void SetIdGROUPNull() {
+                this[this.tableSTUDENT.IdGROUPColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1509,22 +1509,22 @@ namespace Fakultet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DiskRowChangeEvent : global::System.EventArgs {
+        public class GROUPRowChangeEvent : global::System.EventArgs {
             
-            private DiskRow eventRow;
+            private GROUPRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRowChangeEvent(DiskRow row, global::System.Data.DataRowAction action) {
+            public GROUPRowChangeEvent(GROUPRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DiskRow Row {
+            public GROUPRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1543,22 +1543,22 @@ namespace Fakultet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class GroupRowChangeEvent : global::System.EventArgs {
+        public class SPECRowChangeEvent : global::System.EventArgs {
             
-            private GroupRow eventRow;
+            private SPECRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRowChangeEvent(GroupRow row, global::System.Data.DataRowAction action) {
+            public SPECRowChangeEvent(SPECRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GroupRow Row {
+            public SPECRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1577,22 +1577,22 @@ namespace Fakultet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class SongRowChangeEvent : global::System.EventArgs {
+        public class STUDENTRowChangeEvent : global::System.EventArgs {
             
-            private SongRow eventRow;
+            private STUDENTRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRowChangeEvent(SongRow row, global::System.Data.DataRowAction action) {
+            public STUDENTRowChangeEvent(STUDENTRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SongRow Row {
+            public STUDENTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1608,7 +1608,7 @@ namespace Fakultet {
         }
     }
 }
-namespace Fakultet.DatabaseDataSet1TableAdapters {
+namespace Disk.FAKULTETDataSetTableAdapters {
     
     
     /// <summary>
@@ -1620,7 +1620,7 @@ namespace Fakultet.DatabaseDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DiskTableAdapter : global::System.ComponentModel.Component {
+    public partial class GROUPTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1634,7 +1634,7 @@ namespace Fakultet.DatabaseDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DiskTableAdapter() {
+        public GROUPTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1731,41 +1731,41 @@ namespace Fakultet.DatabaseDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Disk";
+            tableMapping.DataSetTable = "GROUP";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("IdGroup", "IdGroup");
+            tableMapping.ColumnMappings.Add("IdSPEC", "IdSPEC");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Disk] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND " +
-                "[Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_IdGroup = 1 AND [IdG" +
-                "roup] IS NULL) OR ([IdGroup] = @Original_IdGroup)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[GROUP] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND" +
+                " [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_IdSPEC = 1 AND [IdS" +
+                "PEC] IS NULL) OR ([IdSPEC] = @Original_IdSPEC)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Disk] ([Name], [IdGroup]) VALUES (@Name, @IdGroup);\r\nSELECT Id" +
-                ", Name, IdGroup FROM [Disk] WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[GROUP] ([Name], [IdSPEC]) VALUES (@Name, @IdSPEC);\r\nSELECT Id," +
+                " Name, IdSPEC FROM [GROUP] WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Disk] SET [Name] = @Name, [IdGroup] = @IdGroup WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_IdGroup = 1 AND [IdGroup] IS NULL) OR ([IdGroup] = @Original_IdGroup)));
-SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GROUP] SET [Name] = @Name, [IdSPEC] = @IdSPEC WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_IdSPEC = 1 AND [IdSPEC] IS NULL) OR ([IdSPEC] = @Original_IdSPEC)));
+SELECT Id, Name, IdSPEC FROM [GROUP] WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGroup", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGroup", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSPEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSPEC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1773,7 +1773,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Fakultet.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.FAKULTETConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1782,7 +1782,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, IdGroup FROM dbo.[Disk]";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, IdSPEC FROM dbo.[GROUP]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1790,7 +1790,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet1.DiskDataTable dataTable) {
+        public virtual int Fill(FAKULTETDataSet.GROUPDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1803,9 +1803,9 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet1.DiskDataTable GetData() {
+        public virtual FAKULTETDataSet.GROUPDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet1.DiskDataTable dataTable = new DatabaseDataSet1.DiskDataTable();
+            FAKULTETDataSet.GROUPDataTable dataTable = new FAKULTETDataSet.GROUPDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1813,15 +1813,15 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1.DiskDataTable dataTable) {
+        public virtual int Update(FAKULTETDataSet.GROUPDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Disk");
+        public virtual int Update(FAKULTETDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "GROUP");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1843,7 +1843,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdGroup) {
+        public virtual int Delete(int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdSPEC) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1853,9 +1853,9 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Name));
             }
-            if ((Original_IdGroup.HasValue == true)) {
+            if ((Original_IdSPEC.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_IdGroup.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_IdSPEC.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -1881,15 +1881,15 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, global::System.Nullable<int> IdGroup) {
+        public virtual int Insert(string Name, global::System.Nullable<int> IdSPEC) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((IdGroup.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdGroup.Value));
+            if ((IdSPEC.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdSPEC.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1914,15 +1914,15 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<int> IdGroup, int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdGroup, int Id) {
+        public virtual int Update(string Name, global::System.Nullable<int> IdSPEC, int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdSPEC, int Id) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((IdGroup.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdGroup.Value));
+            if ((IdSPEC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdSPEC.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1936,9 +1936,9 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Name));
             }
-            if ((Original_IdGroup.HasValue == true)) {
+            if ((Original_IdSPEC.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IdGroup.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IdSPEC.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
@@ -1965,8 +1965,8 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<int> IdGroup, int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdGroup) {
-            return this.Update(Name, IdGroup, Original_Id, Original_Name, Original_IdGroup, Original_Id);
+        public virtual int Update(string Name, global::System.Nullable<int> IdSPEC, int Original_Id, string Original_Name, global::System.Nullable<int> Original_IdSPEC) {
+            return this.Update(Name, IdSPEC, Original_Id, Original_Name, Original_IdSPEC, Original_Id);
         }
     }
     
@@ -1979,7 +1979,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GroupTableAdapter : global::System.ComponentModel.Component {
+    public partial class SPECTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1993,7 +1993,7 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public GroupTableAdapter() {
+        public SPECTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2090,16 +2090,16 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Group";
+            tableMapping.DataSetTable = "SPEC";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Descr", "Descr");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Group] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND" +
-                " [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Descr = 1 AND [Desc" +
-                "r] IS NULL) OR ([Descr] = @Original_Descr)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[SPEC] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND " +
+                "[Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Descr = 1 AND [Descr" +
+                "] IS NULL) OR ([Descr] = @Original_Descr)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2108,15 +2108,15 @@ SELECT Id, Name, IdGroup FROM [Disk] WHERE (Id = @Id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descr", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Group] ([Name], [Descr]) VALUES (@Name, @Descr);\r\nSELECT Id, N" +
-                "ame, Descr FROM [Group] WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[SPEC] ([Name], [Descr]) VALUES (@Name, @Descr);\r\nSELECT Id, Na" +
+                "me, Descr FROM SPEC WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descr", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Group] SET [Name] = @Name, [Descr] = @Descr WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Descr = 1 AND [Descr] IS NULL) OR ([Descr] = @Original_Descr)));
-SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SPEC] SET [Name] = @Name, [Descr] = @Descr WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Descr = 1 AND [Descr] IS NULL) OR ([Descr] = @Original_Descr)));
+SELECT Id, Name, Descr FROM SPEC WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descr", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2132,7 +2132,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Fakultet.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.FAKULTETConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2141,7 +2141,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, Descr FROM dbo.[Group]";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, Descr FROM dbo.SPEC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2149,7 +2149,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet1.GroupDataTable dataTable) {
+        public virtual int Fill(FAKULTETDataSet.SPECDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2162,9 +2162,9 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet1.GroupDataTable GetData() {
+        public virtual FAKULTETDataSet.SPECDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet1.GroupDataTable dataTable = new DatabaseDataSet1.GroupDataTable();
+            FAKULTETDataSet.SPECDataTable dataTable = new FAKULTETDataSet.SPECDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2172,15 +2172,15 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1.GroupDataTable dataTable) {
+        public virtual int Update(FAKULTETDataSet.SPECDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Group");
+        public virtual int Update(FAKULTETDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "SPEC");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2338,7 +2338,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SongTableAdapter : global::System.ComponentModel.Component {
+    public partial class STUDENTTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2352,7 +2352,7 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public SongTableAdapter() {
+        public STUDENTTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2449,46 +2449,46 @@ SELECT Id, Name, Descr FROM [Group] WHERE (Id = @Id)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Song";
+            tableMapping.DataSetTable = "STUDENT";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Len", "Len");
-            tableMapping.ColumnMappings.Add("IdDisk", "IdDisk");
+            tableMapping.ColumnMappings.Add("Fio", "Fio");
+            tableMapping.ColumnMappings.Add("Born", "Born");
+            tableMapping.ColumnMappings.Add("IdGROUP", "IdGROUP");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Song] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Len = 1 AND [Len] IS NULL) OR ([Len] = @Original_Len)) AND ((@IsNull_IdDisk = 1 AND [IdDisk] IS NULL) OR ([IdDisk] = @Original_IdDisk)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[STUDENT] WHERE (([Id] = @Original_Id) AND ((@IsNull_Fio = 1 AND [Fio] IS NULL) OR ([Fio] = @Original_Fio)) AND ((@IsNull_Born = 1 AND [Born] IS NULL) OR ([Born] = @Original_Born)) AND ((@IsNull_IdGROUP = 1 AND [IdGROUP] IS NULL) OR ([IdGROUP] = @Original_IdGROUP)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Len", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Len", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Born", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Born", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Song] ([Name], [Len], [IdDisk]) VALUES (@Name, @Len, @IdDisk);" +
-                "\r\nSELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[STUDENT] ([Fio], [Born], [IdGROUP]) VALUES (@Fio, @Born, @IdGR" +
+                "OUP);\r\nSELECT Id, Fio, Born, IdGROUP FROM STUDENT WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Len", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Born", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Song] SET [Name] = @Name, [Len] = @Len, [IdDisk] = @IdDisk WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Len = 1 AND [Len] IS NULL) OR ([Len] = @Original_Len)) AND ((@IsNull_IdDisk = 1 AND [IdDisk] IS NULL) OR ([IdDisk] = @Original_IdDisk)));
-SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[STUDENT] SET [Fio] = @Fio, [Born] = @Born, [IdGROUP] = @IdGROUP WHERE (([Id] = @Original_Id) AND ((@IsNull_Fio = 1 AND [Fio] IS NULL) OR ([Fio] = @Original_Fio)) AND ((@IsNull_Born = 1 AND [Born] IS NULL) OR ([Born] = @Original_Born)) AND ((@IsNull_IdGROUP = 1 AND [IdGROUP] IS NULL) OR ([IdGROUP] = @Original_IdGROUP)));
+SELECT Id, Fio, Born, IdGROUP FROM STUDENT WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Len", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Born", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Len", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Len", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Len", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdDisk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdDisk", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Born", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Born", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Born", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGROUP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGROUP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2496,7 +2496,7 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Fakultet.Properties.Settings.Default.DatabaseConnectionString1;
+            this._connection.ConnectionString = global::Disk.Properties.Settings.Default.FAKULTETConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2505,7 +2505,7 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, Len, IdDisk FROM dbo.Song";
+            this._commandCollection[0].CommandText = "SELECT Id, Fio, Born, IdGROUP FROM dbo.STUDENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2513,7 +2513,7 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet1.SongDataTable dataTable) {
+        public virtual int Fill(FAKULTETDataSet.STUDENTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2526,9 +2526,9 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet1.SongDataTable GetData() {
+        public virtual FAKULTETDataSet.STUDENTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet1.SongDataTable dataTable = new DatabaseDataSet1.SongDataTable();
+            FAKULTETDataSet.STUDENTDataTable dataTable = new FAKULTETDataSet.STUDENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2536,15 +2536,15 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1.SongDataTable dataTable) {
+        public virtual int Update(FAKULTETDataSet.STUDENTDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Song");
+        public virtual int Update(FAKULTETDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "STUDENT");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2566,27 +2566,27 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, string Original_Len, global::System.Nullable<int> Original_IdDisk) {
+        public virtual int Delete(int Original_Id, string Original_Fio, string Original_Born, global::System.Nullable<int> Original_IdGROUP) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Name == null)) {
+            if ((Original_Fio == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Name));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Fio));
             }
-            if ((Original_Len == null)) {
+            if ((Original_Born == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Len));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Born));
             }
-            if ((Original_IdDisk.HasValue == true)) {
+            if ((Original_IdGROUP.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdDisk.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdGROUP.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
@@ -2612,21 +2612,21 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string Len, global::System.Nullable<int> IdDisk) {
-            if ((Name == null)) {
+        public virtual int Insert(string Fio, string Born, global::System.Nullable<int> IdGROUP) {
+            if ((Fio == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Fio));
             }
-            if ((Len == null)) {
+            if ((Born == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Len));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Born));
             }
-            if ((IdDisk.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IdDisk.Value));
+            if ((IdGROUP.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IdGROUP.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -2651,45 +2651,45 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Len, global::System.Nullable<int> IdDisk, int Original_Id, string Original_Name, string Original_Len, global::System.Nullable<int> Original_IdDisk, int Id) {
-            if ((Name == null)) {
+        public virtual int Update(string Fio, string Born, global::System.Nullable<int> IdGROUP, int Original_Id, string Original_Fio, string Original_Born, global::System.Nullable<int> Original_IdGROUP, int Id) {
+            if ((Fio == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Fio));
             }
-            if ((Len == null)) {
+            if ((Born == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Len));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Born));
             }
-            if ((IdDisk.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IdDisk.Value));
+            if ((IdGROUP.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IdGROUP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
-            if ((Original_Name == null)) {
+            if ((Original_Fio == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Fio));
             }
-            if ((Original_Len == null)) {
+            if ((Original_Born == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Len));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Born));
             }
-            if ((Original_IdDisk.HasValue == true)) {
+            if ((Original_IdGROUP.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IdDisk.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IdGROUP.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
@@ -2716,8 +2716,8 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Len, global::System.Nullable<int> IdDisk, int Original_Id, string Original_Name, string Original_Len, global::System.Nullable<int> Original_IdDisk) {
-            return this.Update(Name, Len, IdDisk, Original_Id, Original_Name, Original_Len, Original_IdDisk, Original_Id);
+        public virtual int Update(string Fio, string Born, global::System.Nullable<int> IdGROUP, int Original_Id, string Original_Fio, string Original_Born, global::System.Nullable<int> Original_IdGROUP) {
+            return this.Update(Fio, Born, IdGROUP, Original_Id, Original_Fio, Original_Born, Original_IdGROUP, Original_Id);
         }
     }
     
@@ -2733,11 +2733,11 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         
         private UpdateOrderOption _updateOrder;
         
-        private DiskTableAdapter _diskTableAdapter;
+        private GROUPTableAdapter _gROUPTableAdapter;
         
-        private GroupTableAdapter _groupTableAdapter;
+        private SPECTableAdapter _sPECTableAdapter;
         
-        private SongTableAdapter _songTableAdapter;
+        private STUDENTTableAdapter _sTUDENTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2759,12 +2759,12 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DiskTableAdapter DiskTableAdapter {
+        public GROUPTableAdapter GROUPTableAdapter {
             get {
-                return this._diskTableAdapter;
+                return this._gROUPTableAdapter;
             }
             set {
-                this._diskTableAdapter = value;
+                this._gROUPTableAdapter = value;
             }
         }
         
@@ -2773,12 +2773,12 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public GroupTableAdapter GroupTableAdapter {
+        public SPECTableAdapter SPECTableAdapter {
             get {
-                return this._groupTableAdapter;
+                return this._sPECTableAdapter;
             }
             set {
-                this._groupTableAdapter = value;
+                this._sPECTableAdapter = value;
             }
         }
         
@@ -2787,12 +2787,12 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SongTableAdapter SongTableAdapter {
+        public STUDENTTableAdapter STUDENTTableAdapter {
             get {
-                return this._songTableAdapter;
+                return this._sTUDENTTableAdapter;
             }
             set {
-                this._songTableAdapter = value;
+                this._sTUDENTTableAdapter = value;
             }
         }
         
@@ -2815,17 +2815,17 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._diskTableAdapter != null) 
-                            && (this._diskTableAdapter.Connection != null))) {
-                    return this._diskTableAdapter.Connection;
+                if (((this._gROUPTableAdapter != null) 
+                            && (this._gROUPTableAdapter.Connection != null))) {
+                    return this._gROUPTableAdapter.Connection;
                 }
-                if (((this._groupTableAdapter != null) 
-                            && (this._groupTableAdapter.Connection != null))) {
-                    return this._groupTableAdapter.Connection;
+                if (((this._sPECTableAdapter != null) 
+                            && (this._sPECTableAdapter.Connection != null))) {
+                    return this._sPECTableAdapter.Connection;
                 }
-                if (((this._songTableAdapter != null) 
-                            && (this._songTableAdapter.Connection != null))) {
-                    return this._songTableAdapter.Connection;
+                if (((this._sTUDENTTableAdapter != null) 
+                            && (this._sTUDENTTableAdapter.Connection != null))) {
+                    return this._sTUDENTTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2840,13 +2840,13 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._diskTableAdapter != null)) {
+                if ((this._gROUPTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._groupTableAdapter != null)) {
+                if ((this._sPECTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._songTableAdapter != null)) {
+                if ((this._sTUDENTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2858,32 +2858,32 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DatabaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FAKULTETDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._diskTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Disk.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._gROUPTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GROUP.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._diskTableAdapter.Update(updatedRows));
+                    result = (result + this._gROUPTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._groupTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Group.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sPECTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SPEC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._groupTableAdapter.Update(updatedRows));
+                    result = (result + this._sPECTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._songTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Song.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sTUDENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._songTableAdapter.Update(updatedRows));
+                    result = (result + this._sTUDENTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2895,29 +2895,29 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DatabaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FAKULTETDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._diskTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Disk.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._gROUPTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GROUP.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._diskTableAdapter.Update(addedRows));
+                    result = (result + this._gROUPTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._groupTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Group.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sPECTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SPEC.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._groupTableAdapter.Update(addedRows));
+                    result = (result + this._sPECTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._songTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Song.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sTUDENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.STUDENT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._songTableAdapter.Update(addedRows));
+                    result = (result + this._sTUDENTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2929,29 +2929,29 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DatabaseDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FAKULTETDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._songTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Song.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sTUDENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.STUDENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._songTableAdapter.Update(deletedRows));
+                    result = (result + this._sTUDENTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._groupTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Group.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sPECTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SPEC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._groupTableAdapter.Update(deletedRows));
+                    result = (result + this._sPECTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._diskTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Disk.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gROUPTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GROUP.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._diskTableAdapter.Update(deletedRows));
+                    result = (result + this._gROUPTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2987,25 +2987,25 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DatabaseDataSet1 dataSet) {
+        public virtual int UpdateAll(FAKULTETDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._diskTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._diskTableAdapter.Connection) == false))) {
+            if (((this._gROUPTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._gROUPTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._groupTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._groupTableAdapter.Connection) == false))) {
+            if (((this._sPECTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sPECTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._songTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._songTableAdapter.Connection) == false))) {
+            if (((this._sTUDENTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sTUDENTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -3041,31 +3041,31 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._diskTableAdapter != null)) {
-                    revertConnections.Add(this._diskTableAdapter, this._diskTableAdapter.Connection);
-                    this._diskTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._diskTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._diskTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._diskTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._diskTableAdapter.Adapter);
+                if ((this._gROUPTableAdapter != null)) {
+                    revertConnections.Add(this._gROUPTableAdapter, this._gROUPTableAdapter.Connection);
+                    this._gROUPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._gROUPTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._gROUPTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._gROUPTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._gROUPTableAdapter.Adapter);
                     }
                 }
-                if ((this._groupTableAdapter != null)) {
-                    revertConnections.Add(this._groupTableAdapter, this._groupTableAdapter.Connection);
-                    this._groupTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._groupTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._groupTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._groupTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._groupTableAdapter.Adapter);
+                if ((this._sPECTableAdapter != null)) {
+                    revertConnections.Add(this._sPECTableAdapter, this._sPECTableAdapter.Connection);
+                    this._sPECTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sPECTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sPECTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sPECTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sPECTableAdapter.Adapter);
                     }
                 }
-                if ((this._songTableAdapter != null)) {
-                    revertConnections.Add(this._songTableAdapter, this._songTableAdapter.Connection);
-                    this._songTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._songTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._songTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._songTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._songTableAdapter.Adapter);
+                if ((this._sTUDENTTableAdapter != null)) {
+                    revertConnections.Add(this._sTUDENTTableAdapter, this._sTUDENTTableAdapter.Connection);
+                    this._sTUDENTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sTUDENTTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sTUDENTTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3126,17 +3126,17 @@ SELECT Id, Name, Len, IdDisk FROM Song WHERE (Id = @Id)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._diskTableAdapter != null)) {
-                    this._diskTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._diskTableAdapter]));
-                    this._diskTableAdapter.Transaction = null;
+                if ((this._gROUPTableAdapter != null)) {
+                    this._gROUPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._gROUPTableAdapter]));
+                    this._gROUPTableAdapter.Transaction = null;
                 }
-                if ((this._groupTableAdapter != null)) {
-                    this._groupTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._groupTableAdapter]));
-                    this._groupTableAdapter.Transaction = null;
+                if ((this._sPECTableAdapter != null)) {
+                    this._sPECTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sPECTableAdapter]));
+                    this._sPECTableAdapter.Transaction = null;
                 }
-                if ((this._songTableAdapter != null)) {
-                    this._songTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._songTableAdapter]));
-                    this._songTableAdapter.Transaction = null;
+                if ((this._sTUDENTTableAdapter != null)) {
+                    this._sTUDENTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sTUDENTTableAdapter]));
+                    this._sTUDENTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

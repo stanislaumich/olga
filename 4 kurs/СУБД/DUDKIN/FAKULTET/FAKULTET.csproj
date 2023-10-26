@@ -46,15 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseDataSet.Designer.cs">
+    <Compile Include="FAKULTETDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
+      <DependentUpon>FAKULTETDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,27 +86,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DatabaseDataSet.xsc">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    <None Include="FAKULTETDataSet.xsc">
+      <DependentUpon>FAKULTETDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DatabaseDataSet.xsd">
+    <None Include="FAKULTETDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>FAKULTETDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DatabaseDataSet.xss">
-      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet1.xsc">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet1.xss">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
+    <None Include="FAKULTETDataSet.xss">
+      <DependentUpon>FAKULTETDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
