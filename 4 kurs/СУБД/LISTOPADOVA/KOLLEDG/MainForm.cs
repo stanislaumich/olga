@@ -181,7 +181,7 @@ namespace kolledg
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [fak] Where Name = 'Программное обеспечение'";
+            string querystr = $" select * from [fak] Where Name = 'Исторический факультет'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -208,7 +208,7 @@ namespace kolledg
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [fak] Where Name = 'Препринимательство'";
+            string querystr = $" select * from [fak] Where Name = 'Юридический факультет'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -222,7 +222,7 @@ namespace kolledg
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [fak] Where Name = 'Металлургия'";
+            string querystr = $" select * from [fak] Where Name = 'Биологический факультет'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -236,7 +236,7 @@ namespace kolledg
         {
             DataGridView dwg = dataGridView1;
             dwg.Rows.Clear();
-            string querystr = $" select * from [fak] Where Name = 'Сварочная спец.'";
+            string querystr = $" select * from [fak] Where Name = 'Военный факультет'";
             SqlCommand com = new SqlCommand(querystr, database.getConnection());
             database.openConnection();
             SqlDataReader reader = com.ExecuteReader();
@@ -362,7 +362,7 @@ namespace kolledg
         {// условие
             dataGridView4.Rows.Clear();
             string s = "OR";
-            if (comboBox3.SelectedIndex == 0) {
+            if (radioButton5.Checked) {
                  s = "AND"; }
             string n = '%'+textBox10.Text+'%';
             string l = textBox11.Text;
@@ -389,7 +389,20 @@ namespace kolledg
                 ReadSinglRow4(dataGridView4, reader);
             }
             reader.Close();
-        }       
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var addQuery = $"delete from [grp] where ID={textBox1.Text}";
+            var command = new SqlCommand(addQuery, database.getConnection());
+            command.ExecuteNonQuery();
+            refreshDG1(dataGridView1);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            refreshDG1(dataGridView1);
+        }
     }
 
     class DataBase
