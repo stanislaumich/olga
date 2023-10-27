@@ -413,14 +413,11 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.gROUPBindingSource;
-            this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(73, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(197, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "Id";
             // 
             // gROUPBindingSource
             // 
@@ -484,14 +481,11 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.sPECBindingSource;
-            this.comboBox2.DisplayMember = "Name";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(92, 73);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(252, 21);
             this.comboBox2.TabIndex = 5;
-            this.comboBox2.ValueMember = "Id";
             // 
             // sPECBindingSource
             // 
@@ -715,7 +709,7 @@
             this.label19.TabIndex = 26;
             this.label19.Text = "Задания";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -737,7 +731,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Учащиеся";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox1.ResumeLayout(false);

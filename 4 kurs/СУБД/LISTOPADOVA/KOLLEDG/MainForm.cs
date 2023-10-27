@@ -32,22 +32,53 @@ namespace kolledg
             dataGridView1.Columns.Add("ID", "Номер");
             dataGridView1.Columns.Add("Name", "Название факульт.");
             dataGridView1.Columns.Add("Descr", "Описание");
-            //dataGridView1.Columns.Add("IsNew", String.Empty);
+
             dataGridView2.Columns.Add("ID", "Номер");
             dataGridView2.Columns.Add("Name", "ФИО");
             dataGridView2.Columns.Add("post", "Год поступл.");
             dataGridView2.Columns.Add("IDgrp", "Группа");
-            //dataGridView2.Columns.Add("IsNew", String.Empty);
+
             dataGridView3.Columns.Add("ID", "Номер");
             dataGridView3.Columns.Add("Name", "Название группы");
             dataGridView3.Columns.Add("IDfak", "Факульт.");
-            //dataGridView3.Columns.Add("IsNew", String.Empty);
+
             dataGridView4.Columns.Add("C1", String.Empty);
             dataGridView4.Columns.Add("C2", String.Empty);
             dataGridView4.Columns.Add("C3", String.Empty);
             dataGridView4.Columns.Add("C4", String.Empty);
-        }
+            //
+            
+            comboBox1.Items.Clear();
+            string querystr = $" select name from [grp] order by id";
+            SqlCommand com = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSinglRowc1(reader);
+            }
+            reader.Close();
+            comboBox2.Items.Clear();
+            querystr = $" select name from [fak] order by id";
+            com = new SqlCommand(querystr, database.getConnection());
+            database.openConnection();
+            reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSinglRowc2(reader);
+            }
+            reader.Close();
 
+
+        }
+        private void ReadSinglRowc1(IDataRecord record)
+        {
+            comboBox1.Items.Add(record.GetString(0));
+        }
+        private void ReadSinglRowc2(IDataRecord record)
+        {
+            comboBox2.Items.Add(record.GetString(0));
+        }
         private void ReadSinglRow(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2));
