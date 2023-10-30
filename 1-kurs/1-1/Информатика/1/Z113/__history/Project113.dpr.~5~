@@ -1,0 +1,26 @@
+program Project113;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+const
+ A:set of char = ['а','б','в','г','д','е','Є','ж','з','и','й','к','л','м','н','о','п',
+                   'р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','€'];
+var
+ sin,sout:string;
+
+begin
+ Write('¬ведите строку: ');
+ ReadLn(sin);
+
+
+
+
+ Write('–езультирующа€ строка: ',sout);
+ Writeln(sout);
+ WriteLn('Ќажмите Enter');
+ ReadLn;
+end.

@@ -1,0 +1,121 @@
+unit Umain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Label2: TLabel;
+    Memo1: TMemo;
+    Button3: TButton;
+    Label3: TLabel;
+    OpenDialog1: TOpenDialog;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    procedure N6Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+ if Edit1.Text<>'' then
+  begin
+  if Opendialog1.Execute  then
+   Memo1.Lines.LoadFromFile(Opendialog1.filename)
+   end
+  else ShowMessage('Сначала необходимо указать количество вершин');
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+ i,j:integer;
+ N,cnt,cod:integer;
+ A:array[1..10,1..10] of integer;
+ s:string;
+begin
+{}
+ N:=strtoint(Edit1.text);
+ cnt:=0;
+ {проверяем хватает ли нам элементов для матрицы}
+  if memo1.Lines.Count<N*N then
+   begin
+    ShowMessage(' Указано меньше чем нужно вершин для матрицы');
+    Exit;
+   end
+ else
+  begin
+ {заполняем матрицу смежности}
+ for i:=1 to N do
+  for j := 1 to N do
+      begin
+       A[i,j]:=strtoint(memo1.Lines[i]);
+       inc(cnt);
+      end;
+ {считаем кратные ребра по всем вершинам}
+ for i:=1 to N do
+ begin
+ s:='';
+  for j := 1 to N do
+   begin
+     if i<>j then
+      begin
+       if A[i,j]*A[j,i]<>0 then inc(cnt);
+      end;
+    s:=s+'  '+Inttostr(A[i,j]);
+   end;
+  Memo1.Lines.Add(s);
+ end;
+   {Выводим результат подсчета}
+   cnt:=cnt div 2;
+   Label3.Caption:='Кратных ребер: '+inttostr(cnt);
+    end;
+end;
+
+procedure TForm1.N2Click(Sender: TObject);
+begin
+ Button1.Click;
+end;
+
+procedure TForm1.N3Click(Sender: TObject);
+begin
+ Button2.Click;
+end;
+
+procedure TForm1.N4Click(Sender: TObject);
+begin
+ Button3.Click;
+end;
+
+procedure TForm1.N6Click(Sender: TObject);
+begin
+ Application.Terminate;
+end;
+
+end.

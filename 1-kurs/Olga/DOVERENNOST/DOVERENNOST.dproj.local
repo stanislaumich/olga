@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.220,S:\_programming\_DOVERENNOST_2019\UMain.dfm=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.641,S:\_programming\_DOVERENNOST_2019\DOVERENNOST.dproj=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.220,S:\_programming\_DOVERENNOST_2019\UMain.pas=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.107,=S:\_programming\MYUNITS\Ustr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.964,=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.540,=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.335,=C:\Users\Lz42\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021.05.26 23:29:30.129,=S:\Контрольные\olga\1-kurs\Olga\DOVERENNOST\Unit2.pas</Transaction>
+    <Transaction>2021.05.26 23:30:01.279,=S:\Контрольные\olga\1-kurs\Olga\DOVERENNOST\ABOUT.pas</Transaction>
+  </Transactions>
+</BorlandProject>

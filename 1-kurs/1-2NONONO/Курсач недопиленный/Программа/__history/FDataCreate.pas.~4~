@@ -1,0 +1,76 @@
+unit FDataCreate;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DynamicList;
+
+type
+{tData= record
+Number: byte;
+SubType: string[15];
+subject: string[20];
+Count: string[10];
+mark: string[15];
+Date: TDateTime;
+surname: string[20];
+semester: byte;
+end; }
+  TCreateForm = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Button1: TButton;
+
+
+   Procedure Reading(var x: tData);
+   procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+
+    { Public declarations }
+  end;
+
+var
+ DList: TDList; CreateForm: TCreateForm;  First: pItem; x: tData;
+
+implementation
+
+{$R *.dfm}
+
+Procedure TCreateForm.Reading(var x: tData);
+begin
+  x.Number := 1;
+  x.SubType := Edit1.Text;
+  x.subject := Edit2.Text;
+  x.Count := Edit3.Text;
+  x.mark := Edit4.Text;
+  x.Date := StrToDate(Edit5.Text);
+  x.surname := Edit6.Text;
+  x.semester := StrToInt(Edit7.Text);
+end;
+
+
+
+procedure TCreateForm.Button1Click(Sender: TObject);
+begin
+  DList.ListInit(First);
+  Reading(x);
+  DList.AddFirst(First,x);
+  ShowMessage('Ranbontaet');
+end;
+
+end.

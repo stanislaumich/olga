@@ -1,0 +1,30 @@
+unit DynamicList;
+
+interface
+type
+//Динамический список
+tData= record
+Number: byte;
+SubType: string[15];
+subject: string[20];
+Count: string[10];
+mark: string[15];
+day,month:  byte;
+year: word;
+surname: string[20];
+semester: byte;
+end;
+pItem=^tItem;
+tItem=record
+Data: tData;
+Next: pItem;
+//Методы
+public
+Procedure ListInit(var First: pItem);
+Procedure AddFirst(var First: pItem; x: tData);
+Procedure AddLast(First: pItem; x: tData);
+
+end;
+implementation
+
+end.

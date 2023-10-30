@@ -1,0 +1,17 @@
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\bin\Debug\net6.0-windows\LUBAL54.exe
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\bin\Debug\net6.0-windows\LUBAL54.deps.json
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\bin\Debug\net6.0-windows\LUBAL54.runtimeconfig.json
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\bin\Debug\net6.0-windows\LUBAL54.dll
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\bin\Debug\net6.0-windows\LUBAL54.pdb
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.csproj.AssemblyReference.cache
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.Form1.resources
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.csproj.GenerateResource.cache
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.GeneratedMSBuildEditorConfig.editorconfig
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.AssemblyInfoInputs.cache
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.AssemblyInfo.cs
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.csproj.CoreCompileInputs.cache
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.dll
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\refint\LUBAL54.dll
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.pdb
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\LUBAL54.genruntimeconfig.cache
+S:\Контрольные\olga\2-kurs\2-2\Конструирование_программ_и_языки_программирования_№2\olga\LUBAL54\obj\Debug\net6.0-windows\ref\LUBAL54.dll

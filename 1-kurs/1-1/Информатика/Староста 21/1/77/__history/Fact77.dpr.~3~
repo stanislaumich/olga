@@ -1,0 +1,29 @@
+program Fact77;
+{77	Напишите программу вычисления суммы факториалов
+всех нечетных чисел от 1 до 55,
+используя подпрограмму вычисления факториала.}
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+var
+ N,i:integer;
+ F:double;
+
+ Function Fact(N:integer):double;
+  var
+   i:integer;
+   r:double;
+  begin
+    R:=1;
+    for i:= 1 to N do
+     R:=R*i;
+    result:=R;
+  end;
+begin
+ for I := 1 to 55 do
+  if (i mod 2) =1 then
+    F:=F+FAct(i);
+end.

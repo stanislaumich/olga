@@ -1,0 +1,22 @@
+program PStudentBook;
+
+uses
+  Vcl.Forms,
+  StudentBook in 'StudentBook.pas' {MainForm},
+  FScreenSaver in 'FScreenSaver.pas' {ScreenSaver},
+  FAbout in 'FAbout.pas' {FAboutProgramm},
+  FAddData in 'FAddData.pas' {AddData};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  ScreenSaver:=TScreenSaver.Create(Nil);
+  ScreenSaver.ShowModal;
+  ScreenSaver.Free;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TFAboutProgramm, FAboutProgramm);
+  Application.CreateForm(TAddData, AddData);
+  Application.Run;
+end.

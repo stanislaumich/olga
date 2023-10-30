@@ -1,0 +1,69 @@
+unit FDataFind;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.StdCtrls, DynamicList;
+
+type
+  TFindForm = class(TForm)
+    FindSG: TStringGrid;
+    Label1: TLabel;
+    Label2: TLabel;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure ComboBox1Select(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FindForm: TFindForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFindForm.Button1Click(Sender: TObject);
+begin
+//if Combobox2.Text = 'Тип зачетной единицы' then
+
+
+end;
+
+procedure TFindForm.ComboBox1Select(Sender: TObject);
+begin
+Combobox2.Items.Clear;
+if (Combobox1.Text = 'Тип зачетной единицы') then begin
+Combobox2.Items.Add('Зачет');
+Combobox2.Items.Add('Диференцированный зачет');
+Combobox2.Items.Add('Экзамен');
+Combobox2.Items.Add('Курсовая работа');
+end
+else begin
+  while First<>Nil do begin
+Combobox2.Items.Add(First^.Data.subject);
+First:=First^.Next;
+  end;
+end;
+end;
+
+procedure TFindForm.FormCreate(Sender: TObject);
+begin
+FindSG.Cells[0,0]:=('Номер');
+FindSG.Cells[1,0]:=('Тип');
+FindSG.Cells[2,0]:=('Наименование');
+FindSG.Cells[3,0]:=('Кол-во з/е');
+FindSG.Cells[4,0]:=('Оценка');
+FindSG.Cells[5,0]:=('Дата');
+FindSG.Cells[6,0]:=('Преподаватель');
+FindSG.Cells[7,0]:=('Семестр');
+end;
+
+end.

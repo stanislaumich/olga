@@ -1,0 +1,47 @@
+program Project60;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+var
+ Nkrat,Notr:integer;
+ Ncurotr,Ncurpos:integer;
+ i,j:integer;
+ B:array[1..100,1..100] of integer;
+begin
+  Write('Введите l: ');
+  ReadLn(l);
+  Write('Введите p: ');
+  ReadLn(p);
+  Nkrat:=0;
+  Notr:=0;
+  for I := 1 to l do
+     begin
+      for J := 1 to p do
+       begin
+        Write('Введите B[',i,']: ');
+        ReadLn(A[i]);
+       end;
+      Writeln;
+     end;
+
+  for I:= 1 to n-1 do
+     begin
+      if (A[i]>0) and (A[i+1]>0) then inc(Ncurpos)
+       else Ncurpos:=1;
+      if (A[i]<0) and (A[i+1]<0) then inc(Ncurotr)
+       else Ncurotr:=1;
+      if Ncurpos>Npos then Npos:=Ncurpos;
+      if Ncurotr>Notr then Notr:=Ncurotr;
+     end;
+  Writeln('Максимально подряд положительных элементов: ',Npos);
+  Writeln('Максимально подряд отрицательных элементов: ',Notr);
+  Writeln('Нажмите Enter');
+  Readln;
+  Readln;
+end.
+
